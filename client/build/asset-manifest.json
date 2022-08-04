@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9a450e78.css",
+    "main.js": "/static/js/main.f75172aa.js",
+    "static/media/msm854_fol.32suchgooddatasetheresaveforrestingandalphabet_1L_4.jpg": "/static/media/msm854_fol.32suchgooddatasetheresaveforrestingandalphabet_1L_4.bc61c5efaf1cdaf185c3.jpg",
+    "index.html": "/index.html",
+    "main.9a450e78.css.map": "/static/css/main.9a450e78.css.map",
+    "main.f75172aa.js.map": "/static/js/main.f75172aa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9a450e78.css",
+    "static/js/main.f75172aa.js"
+  ]
+}
