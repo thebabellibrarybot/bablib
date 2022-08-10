@@ -15,7 +15,7 @@ const getBabeltombs = async (req, res) => {
 const getBabeltombByname = async (req, res) => {
   
     const { id } = req.params 
-    console.log(id, 'id from backend')
+    
 
     const babeltomb = await BabelTombs.findById(id)
     if (!babeltomb) {
@@ -25,7 +25,7 @@ const getBabeltombByname = async (req, res) => {
     const buk = babeltomb.s3buk
     const query = {buk: buk}
 
-    const babeltombdeets = await BabelTombDetailsModel.find(query)
+    const babeltombdeets = await BabelTombDetailsModel.find(query)  // i wanna add a sort func here plzzzz
     res.status(200).json(babeltombdeets);
     
 
@@ -43,16 +43,18 @@ const getBabeltombMicrofilm = async (req, res) => {
     }
 
     const buk = babeltomb.s3buk
+    console.log(buk)
     const query = {
         buk: buk,
         type: 'micro-film'
     }
-    console.log(query)
-
 
     const babeltombfilm = await BabelTombDetailsModel.find(query)
-    res.status(200).json(babeltombfilm);
-    console.log(babeltombfilm.length)
+        .sort({'acess_key':1})
+    res.status(200).json(babeltombfilm)
+
+
+    
 }
 
 

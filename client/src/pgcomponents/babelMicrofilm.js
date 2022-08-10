@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import HTMLFlipBook from "react-pageflip";
 import '../styles/flip.css'
-import cover from '../msm854_fol.32suchgooddatasetheresaveforrestingandalphabet_1L_4.jpg';
 
 
 
@@ -22,13 +21,22 @@ const BabelMicrofilm = () => {
     .catch((err) => console.log(err))
     }, [id])
 
-    //console.log(microfilms, 'microfilmssssssssss')
 
 
     if (microfilms === undefined) {
         return <>Still loading...</>; 
         }
     
+    
+    const cover_url = microfilms.find((e) => {
+        const title = ('title_' + microfilms[0].buk + '.jpg')
+        console.log(title, 'title')
+        console.log(e.access_key, 'access')
+        return e.access_key === title
+
+    })
+    const url = cover_url.obj_url
+    console.log(url, 'url')
 
     return (
         <div className="tombscreen">
@@ -62,12 +70,13 @@ const BabelMicrofilm = () => {
                 style={{ background: "lavender" }}
             >
                 <div className="demoPage">
-                <img src={cover} alt="cover" />
+                <img src = {url} alt = "alt" />
+                <p>{microfilms[0].book_title}</p>
                 </div>
                 {microfilms && microfilms.map((microfilm, i) => (
                 <div className="demomicrofilm.obj_url" key={i}>
-                    <img src={microfilm.obj_url} alt={microfilm.obj_rurl} />
-                    <p>{microfilm.obj_url}
+                    <img src={microfilm.obj_url} alt={i} />
+                    <p>{microfilm.book_title} page:{microfilm.page_num}
                     </p>
                 </div>
                 ))}

@@ -8,8 +8,8 @@ const path = require('path');
 //  }
 
 const babelTombRoutes = require('./routes/babelTombs');
-const babelPracRoute = require('./routes/babelPracRoute');
-const babelHomeRoute = require('./routes/babelHomeRoute')
+const babelHomeRoute = require('./routes/babelHomeRoute');
+const babelBloglsRoute = require('./routes/babelBloglsRoute');
 
 const mongoose = require('mongoose');
 
@@ -38,6 +38,8 @@ const connection = mongoose.connection;
 connection.once('open', () => {
     console.log('md conn')
 })
+ 
+
 
 // routes
 
@@ -45,6 +47,8 @@ connection.once('open', () => {
 app.use('/home', babelHomeRoute);   
 // route for tombs
 app.use('/babeltombs', babelTombRoutes);
+// route for blogs
+app.use('/babelblogs', babelBloglsRoute)
 
 
 
