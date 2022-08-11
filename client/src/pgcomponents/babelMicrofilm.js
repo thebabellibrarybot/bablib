@@ -27,16 +27,16 @@ const BabelMicrofilm = () => {
         return <>Still loading...</>; 
         }
     
-    
+
     const cover_url = microfilms.find((e) => {
         const title = ('title_' + microfilms[0].buk + '.jpg')
-        console.log(title, 'title')
-        console.log(e.access_key, 'access')
+  
         return e.access_key === title
 
     })
     const url = cover_url.obj_url
-    console.log(url, 'url')
+   
+
 
     return (
         <div className="tombscreen">

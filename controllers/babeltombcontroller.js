@@ -53,8 +53,6 @@ const getBabeltombMicrofilm = async (req, res) => {
         .sort({'acess_key':1})
     res.status(200).json(babeltombfilm)
 
-
-    
 }
 
 
@@ -68,15 +66,7 @@ const getBabeltombTranslate = async (req, res) => {
         return res.status(404).json({err: 'no such tombP'})
     }
 
-    const buk = babeltomb.s3buk
-    const query = {
-        buk: buk,
-        type: 'translate'
-    }
-
-
-    const babeltombdeets = await BabelTombDetailsModel.find(query)
-    res.status(200).json(babeltombdeets);
+    res.status(200).json(babeltomb);
 }
 const getBabeltombTranscript = async (req, res) => {
 
@@ -86,16 +76,7 @@ const getBabeltombTranscript = async (req, res) => {
     if (!babeltomb) {
         return res.status(404).json({err: 'no such tombP'})
     }
-
-    const buk = babeltomb.s3buk
-    const query = {
-        buk: buk,
-        type: 'transcript'
-    }
-
-
-    const babeltombdeets = await BabelTombDetailsModel.find(query)
-    res.status(200).json(babeltombdeets);
+    res.status(200).json(babeltomb);
 }
 
 
