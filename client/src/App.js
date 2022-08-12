@@ -14,6 +14,7 @@ import BabelMicrofilm from './pgcomponents/babelMicrofilm';
 import BabelTranslate from './pgcomponents/babelTranslate';
 import BabelTranscript from './pgcomponents/babelTranscript';
 import BabelBlogls from './pgcomponents/babelBlogs';
+import BabelBlogDeets from './pgcomponents/babelBlogDetails';
 import { BrowserRouter as Router, Route, Routes} from  'react-router-dom';
 
 
@@ -58,6 +59,10 @@ function App() {
 
           <Routes>
             <Route path = "/babelblogls" element = { <BabelBlogls/>}/>
+          </Routes>
+
+          <Routes>
+            <Route path = "/babelblogls/:id" element = { <BabelBlogDeets/> }/>
           </Routes>
 
           <Routes>

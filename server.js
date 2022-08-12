@@ -48,7 +48,7 @@ app.use('/home', babelHomeRoute);
 // route for tombs
 app.use('/babeltombs', babelTombRoutes);
 // route for blogs
-app.use('/babelblogs', babelBloglsRoute)
+app.use('/babelblogls', babelBloglsRoute)
 
 
 

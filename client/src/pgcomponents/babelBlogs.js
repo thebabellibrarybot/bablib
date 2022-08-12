@@ -1,16 +1,16 @@
 import React from 'react';
 import { useEffect, useState } from "react";
 import axios from "axios";
-//import { Link } from 'react-router-dom';
+import BlogLister from '../components/bloglister';
+import '../styles/blogchart.css'
 
 
 const BabelBlogls = () => {
 
-    //const params = useParams();
     const [blogls, setBlogls] = useState([]);
     
     useEffect(() => {
-        axios('/babelblogs/')
+        axios('/babelblogls/')
         .then((res) => {
             setBlogls(res.data);
         })
@@ -22,18 +22,12 @@ const BabelBlogls = () => {
         }
 
     return (
+        <>
         <div>
-              {blogls.map(blogls => {
-                return (
-                <div className='blogchart'>
-                <h4>{blogls.title}</h4>
-                <p>{blogls.date}</p>
-                </div>
-                )
-              })}
+            <BlogLister blogls = {blogls}></BlogLister>
         </div>
+        </>
     )
 }
-
 
 export default BabelBlogls;

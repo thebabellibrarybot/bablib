@@ -1,6 +1,5 @@
 const BabelTombs = require('../models/BabelTombs')
 const BabelTombDetailsModel = require('../models/BabelTombDeets')
-const mongoose = require('mongoose');
 
 
 // get all babelTombs

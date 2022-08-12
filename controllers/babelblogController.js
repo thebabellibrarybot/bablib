@@ -1,5 +1,4 @@
 const Babelblogls = require('../models/BabelBlogMod')
-const mongoose = require('mongoose');
 
 // get all babelblogs
 const getBabelBlogls = async (req, res) => {
@@ -19,7 +18,7 @@ const getBabelBlogls = async (req, res) => {
 // get babelblog by id
 const getBabelBlogById = async (req, res) => {
     const { id } = req.params 
-    const babelblogbyID = await Babelblogls.findById({id})
+    const babelblogbyID = await Babelblogls.findById(id)
     if (!babelblogbyID) {
         return res.status(404).json({err: 'no such blog ID'})
     }
@@ -28,6 +27,7 @@ const getBabelBlogById = async (req, res) => {
 }
 
 // post babelblog from yatch
+/*
 const postBabelBlogbyMain = async (req, res) => {
     const title = req.body.title;
     const date = req.body.date;
@@ -46,5 +46,6 @@ const postBabelBlogbyMain = async (req, res) => {
         res.status(400).json({err: err.message})
     }
 }
+*/
 
-module.exports = { getBabelBlogls, getBabelBlogById, postBabelBlogbyMain }
+module.exports = { getBabelBlogls, getBabelBlogById }
