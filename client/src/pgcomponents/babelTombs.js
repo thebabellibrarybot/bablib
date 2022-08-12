@@ -5,24 +5,15 @@ import { COLUMNS } from '../components/tombcolumns';
 import '../styles/table.css';
 import { useEffect, useState } from "react";
 import axios from "axios";
-import GlobalFilter from "./globalFilter";
-import { Checkbox } from './selectBox'
-
-//import { useParams } from "react-router-dom";
-//import MOCK_DATA from '../MOCK_DATA.json';
-
-
-// NOTE THIS WAS A PRAC PAGE AND CAN NOW BE DELETED
+import GlobalFilter from "../components/globalFilter";
 
 
 const BasicTable = () => {
 
-
-    //const params = useParams();
     const [data, setData] = useState([]);
  
     useEffect(() => {
-      axios('/babelprac/')
+      axios('/babeltombs/')
         .then((res) => {
          setData(res.data);
         })
@@ -30,12 +21,9 @@ const BasicTable = () => {
     }, []);
 
     
-    //console.log(data);
 
 
     const columns = useMemo(() => COLUMNS, [])
-    //const datam = useMemo(() => data, [])
-    
     const {
       getTableProps,
       getTableBodyProps,
@@ -45,7 +33,6 @@ const BasicTable = () => {
       nextPage,
       previousPage,
       prepareRow,
-      selectedFlatRows,
       canNextPage,
       canPreviousPage,
       pageOptions,
@@ -58,24 +45,11 @@ const BasicTable = () => {
     useGlobalFilter,
     useSortBy,
     usePagination,
-    useRowSelect,
-    hooks => {
-      hooks.visibleColumns.push(columns => [
-        {
-          id: 'selection',
-          Header: ({ getToggleAllRowsSelectedProps }) => (
-            <Checkbox {...getToggleAllRowsSelectedProps()} />
-          ),
-          Cell: ({ row }) => <Checkbox {...row.getToggleRowSelectedProps()} />
-        },
-        ...columns
-      ])
-    },
-    
+    useRowSelect
     )
-
     const { globalFilter } = state
     const { pageIndex } = state
+
   
     return (
       <>
@@ -99,22 +73,23 @@ const BasicTable = () => {
               </tr>
             ))}
           </thead>
+
           <tbody {...getTableBodyProps()}>
             {page.map(row => {
               prepareRow(row)
               return (
-                <tr {...row.getRowProps()}>
-                  
+                  <tr {...row.getRowProps()}>
                   {row.cells.map(cell => {
-                    //console.log(cell, 'row cell log')
-                    return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                    return (
+                    <td {...cell.getCellProps()}><Link to = {`/babeltombs/${row.original._id}`}>{cell.render('Cell')}</Link></td>
+                    )
                   })}
                 </tr>
               )
             })}
+          </tbody>  
 
-          </tbody>
-          <tfoot>
+           <tfoot>
             {footerGroups.map(footerGroup => (
               <tr {...footerGroup.getFooterGroupProps()}>
                 {footerGroup.headers.map(column => (
@@ -123,35 +98,10 @@ const BasicTable = () => {
               </tr>
             ))}
           </tfoot>
+
+
         </table>
-        <pre>
-          <Link to = {`/babelprac/${selectedFlatRows.map(row => row.original._id)}`} key=
-            {
-              selectedFlatRows.map(row => row.original._id)
-            }>
-            <h2>
-              view tomb
-              {JSON.stringify(
-            {
-              selectedFlatRows: selectedFlatRows.map(row => row.original._id)
-            },
-            null,
-            2
-          )} 
-            </h2>
-          </Link>
-        <code> <button >
-          {JSON.stringify(
-            {
-              selectedFlatRows: selectedFlatRows.map(row => row.original._id)
-            },
-            null,
-            2
-          )} 
-        </button>
-       
-        </code>
-      </pre>
+
         <div>
           <span>
             Page{' '}
@@ -169,5 +119,15 @@ const BasicTable = () => {
 export default BasicTable 
 
 
-/// might wanna add an async debounce to filter data
-/// after it's been typed out fully
+/*  REINTRODUCE BELOW TBODY
+ <tfoot>
+            {footerGroups.map(footerGroup => (
+              <tr {...footerGroup.getFooterGroupProps()}>
+                {footerGroup.headers.map(column => (
+                  <td {...column.getFooterProps()}>{column.render('Footer')}</td>
+                ))}
+              </tr>
+            ))}
+          </tfoot>
+
+*/

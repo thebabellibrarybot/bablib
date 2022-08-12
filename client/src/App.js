@@ -7,9 +7,8 @@ import BabelTools from './components/babeltools';
 import AboutForusers from './pgcomponents/aboutforusers.js';
 //import ToolsLearn from './pgcomponents/learn';
 import AboutHistory from './pgcomponents/history';
-import BabelTombs from './components/babelTombs';
+import BabelTombs from './pgcomponents/babelTombs';
 import CreatebabelTombs from './components/createBabelTombs';
-import Babelprac from './components/tombTable';
 import BabelID from './pgcomponents/babelTombDetail'
 import BabelMicrofilm from './pgcomponents/babelMicrofilm';
 import BabelTranslate from './pgcomponents/babelTranslate';
@@ -63,10 +62,6 @@ function App() {
 
           <Routes>
             <Route path = "/babeltombs/create" element = {<CreatebabelTombs/>}/>
-          </Routes>
-
-          <Routes>
-            <Route path = "/babelprac" element = {<Babelprac/>}/>
           </Routes>
 
           <Routes>

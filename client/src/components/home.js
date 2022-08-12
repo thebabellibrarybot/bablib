@@ -18,7 +18,7 @@ const BabelHomePg = () => {
     return (
         <div className = 'homepage'>
             {imgs && imgs.map((img) => (
-                <img src = {img.s3_uri} alt = {img.book_title} height = "100" width = "100"/>
+                <img src = {img.s3_uri} alt = {img.book_title} height = "100" width = "100" key = {img.s3_uri}/>
             ))}
         </div>
     )
