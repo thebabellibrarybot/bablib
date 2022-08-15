@@ -10,25 +10,7 @@ const getBabeltombs = async (req, res) => {
 }
  
  
-// get a single babel tombs
-const getBabeltombByname = async (req, res) => {
-  
-    const { id } = req.params 
-    
 
-    const babeltomb = await BabelTombs.findById(id)
-    if (!babeltomb) {
-        return res.status(404).json({err: 'no such tombP'})
-    }
-
-    const buk = babeltomb.s3buk
-    const query = {buk: buk}
-
-    const babeltombdeets = await BabelTombDetailsModel.find(query)  // i wanna add a sort func here plzzzz
-    res.status(200).json(babeltombdeets);
-    
-
-}
 
 // get a single microfilm data 
 const getBabeltombMicrofilm = async (req, res) => {
@@ -59,7 +41,7 @@ const getBabeltombMicrofilm = async (req, res) => {
 const getBabeltombTranslate = async (req, res) => {
 
     const { id } = req.params 
-
+    console.log('translate')
     const babeltomb = await BabelTombs.findById(id)
     if (!babeltomb) {
         return res.status(404).json({err: 'no such tombP'})
@@ -67,15 +49,29 @@ const getBabeltombTranslate = async (req, res) => {
 
     res.status(200).json(babeltomb);
 }
+
+// get babel transcription by ID
 const getBabeltombTranscript = async (req, res) => {
 
     const { id } = req.params 
 
+    console.log(id, 'from transcript')
     const babeltomb = await BabelTombs.findById(id)
     if (!babeltomb) {
         return res.status(404).json({err: 'no such tombP'})
     }
-    res.status(200).json(babeltomb);
+
+    const buk = babeltomb.s3buk
+    const query = {
+        buk: buk,
+        type: 'micro-film'
+    }
+// imma need to switch micro-film to transcript when I can
+
+    const babeltombtranscript = await BabelTombDetailsModel.find(query)
+        .sort({'acess_key':1})
+    res.status(200).json(babeltombtranscript)
+
 }
 
 
@@ -118,7 +114,6 @@ const createBabeltombs = async (req, res) => {
 module.exports = {
     createBabeltombs,
     getBabeltombs,
-    getBabeltombByname,
     getBabeltombMicrofilm,
     getBabeltombTranscript,
     getBabeltombTranslate

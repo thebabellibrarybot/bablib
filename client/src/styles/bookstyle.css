@@ -1,0 +1,218 @@
+* {
+    margin: 10px;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-full {
+    border: 1px solid black;
+    align-items: center;
+    display: flex;
+    width: 250;
+    height: 400;
+}
+
+.book-pages {
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.front-page {
+    z-index: 1;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.back-page {
+    z-index: 0;
+    background-color: white;
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.front-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-button {
+    align-items: center;
+    width: 50%;
+    height: 50%;
+    background-color: transparent;
+    
+}
+
+.right-button {
+    align-items: center;
+    width: 50%;
+    height: 50%;
+    background-color: transparent;
+}
+
+.right-arrow :hover,
+.left-arrow :hover {
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 1);
+    background-color: #f1686d;
+}
+
+
+
+
+
+
+
+
+
+
+
+.book {
+    border: 1px solid black;
+    position: relative;
+    width: 350px;
+    height: 500px;
+}
+.paper {
+    border: 1px solid red;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+}
+/*
+.book-open {
+    border: 1px solid black;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 350px;
+    height: 500px;
+}
+.front-open,
+.back-open {
+    border: 1px solid black;
+    background-color: whitesmoke;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+
+*/
+
+
+.front,
+.back {
+    border: 1px solid black;
+    background-color: whitesmoke;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+.front {
+    z-index: 1;
+    backface-visibility: hidden;
+    border-left: 1px;
+}
+
+.back-content {
+    transform: rotateY(180deg);
+}
+
+.back {
+    z-index: 0;
+}
+
+.front-content,
+.back-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.flipped1 .front,
+.flipped1 .back {
+    transform: rotateY(-180deg)
+}
+.flipped2 .front,
+.flipped2 .back {
+    transform: rotateY(-180deg)
+}
+
+
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:focus {
+    outline: none;
+}
+
+button :hover {
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 1);
+    background-color: #f1686d;
+}
+
+.prev-btn,
+.next-btn {
+    font-size: 50px;
+    color: gray;
+
+}
+
+#p1 {
+    z-index: 3;
+}
+#p2 {
+    z-index: 2;
+}
+#p3 {
+    z-index: 1;
+}

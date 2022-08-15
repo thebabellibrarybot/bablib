@@ -34,7 +34,6 @@ const BabelBlogDeets = () => {
                 <p>{data.date}
                 <p>{data.full}</p></p></h1>
         </div>
-
         </>
     )
 

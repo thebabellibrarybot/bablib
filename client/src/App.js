@@ -12,9 +12,12 @@ import CreatebabelTombs from './components/createBabelTombs';
 import BabelID from './pgcomponents/babelTombDetail'
 import BabelMicrofilm from './pgcomponents/babelMicrofilm';
 import BabelTranslate from './pgcomponents/babelTranslate';
+
 import BabelTranscript from './pgcomponents/babelTranscript';
+
 import BabelBlogls from './pgcomponents/babelBlogs';
 import BabelBlogDeets from './pgcomponents/babelBlogDetails';
+import BabelUsers from './pgcomponents/babelUsers';
 import { BrowserRouter as Router, Route, Routes} from  'react-router-dom';
 
 
@@ -58,6 +61,10 @@ function App() {
           </Routes>
 
           <Routes>
+            <Route path = "/babelusers" element = { <BabelUsers /> } />
+          </Routes>
+
+          <Routes>
             <Route path = "/babelblogls" element = { <BabelBlogls/>}/>
           </Routes>
 
@@ -74,12 +81,14 @@ function App() {
           </Routes>
 
           <Routes>
-            <Route path = "/babeltombs/:id/:type" element = { <BabelMicrofilm/> }/>
+            <Route path = "/babeltombs/:id/microfilm" element = { <BabelMicrofilm/> }/>
           </Routes>
 
           <Routes>
             <Route path = "/babeltombs/:id/translate" element = { <BabelTranslate/> }/>
           </Routes>
+
+
 
           <Routes>
             <Route path = "/babeltombs/:id/transcript" element = { <BabelTranscript/> }/>

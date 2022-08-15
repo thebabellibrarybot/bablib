@@ -1,13 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-const { getBabeltombs, createBabeltombs, getBabeltombByname, getBabeltombMicrofilm, getBabeltombTranscript, getBabeltombTranslate } = require('../controllers/babeltombcontroller')
+const { getBabeltombs, createBabeltombs, getBabeltombMicrofilm, getBabeltombTranscript, getBabeltombTranslate } = require('../controllers/babeltombcontroller')
 
 // get all tombs list
 router.get('/', getBabeltombs)
 
 // get a single tomb pdf
-router.get('/:id', getBabeltombByname)
 
 // get a microfilm from :id
 router.get('/:id/microfilm', getBabeltombMicrofilm)

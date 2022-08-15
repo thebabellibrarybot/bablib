@@ -26,6 +26,9 @@ export default class Navbar extends Component {
                 <li className='nav-item'>
                     <Link to="/babelblogls" className='nav-link'>babelBlogls</Link>
                 </li>
+                <li>
+                    <Link to = "/babelusers" className='nav-link'>babelUsers</Link>
+                </li>
                 
             </nav>
         )
