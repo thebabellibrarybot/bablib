@@ -22,7 +22,6 @@ const BabelMicrofilm = () => {
     }, [id])
 
 
-
     if (microfilms === undefined) {
         return <>Still loading...</>; 
         }
@@ -35,59 +34,59 @@ const BabelMicrofilm = () => {
 
     })
     const url = cover_url.obj_url
+    const H = `${microfilms[1].page_size[1] * .1}`
+    const W = `${microfilms[1].page_size[0] * .1}`
+    console.log(H, W)
    
 
 
     return (
+        <div className='tombpage'>
+            <div className='topstuff'>
+                <p>stuff</p>
+            </div>
+        
         <div className="tombscreen">
-            <h1>
-            Title: {microfilms[0].book_title}
-            </h1>
-            <p>
-            date: {microfilms[0].book_date}
-            </p>
-            <p>
-            location: {microfilms[0].book_location}
-            </p>
-            <p>
-            current lib: {microfilms[0].current_lib}
-            </p>
-            <p>
-            type: {microfilms[0].type}
-            </p>
 
-
-            <div className="App">
-
-        <div className="book">
-    
+            <div className="book">
+        
                 <HTMLFlipBook
-                width={675}
-                height={540}
+                width= {W}
+                height = {H}
                 showCover={true}
                 maxShadowOpacity={0.5}
                 mobileScrollSupport={true}
-                style={{ background: "lavender" }}
-            >
+                >
+
                 <div className="demoPage">
-                <img src = {url} alt = "alt" />
+                <img src = {url} alt = "alt" height = {H} width = {W}/>
                 <p>{microfilms[0].book_title}</p>
                 </div>
+
                 {microfilms && microfilms.map((microfilm, i) => (
-                <div className="demomicrofilm.obj_url" key={i}>
-                    <img src={microfilm.obj_url} alt={i} />
+                <div className="page" key={i}>
+                    <img src = {microfilm.obj_url} height = {H} width = {W} />
                     <p>{microfilm.book_title} page:{microfilm.page_num}
                     </p>
                 </div>
                 ))}
-            </HTMLFlipBook>
-            
-            
-        </div>
+                
+                </HTMLFlipBook>
+                
+            </div>
         </div>
         </div>
         
-    )
+        )
 }
 
 export default BabelMicrofilm;
+
+
+/*
+<div className="demoPage" key='title'>
+                            <img src = {url} alt = "alt" />
+                            <p>{microfilms[0].book_title}</p>
+                            
+                        </div>
+                        */

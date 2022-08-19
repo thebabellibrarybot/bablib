@@ -1,5 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
+import '../styles/toolspg.css'
+import Toolstuff from './toolstuff';
+import Bibstuff from './bibstuff';
+import Teamstuff from './teamstuff';
+import Aboutstuff from './aboutstuff';
+
+
+
 
 
 const BabelTools = () => {
@@ -9,60 +17,33 @@ const BabelTools = () => {
 
     return (
         <div>
-                        <nav className = "subnavbar">
+                <nav className = "subnavbar">
                 
                 <li className = "nav-item">
-                    <Link to="/babeltools/forusers" className="nav-link">forusers</Link>
+                    <Link to="/babeltools/forusers" className="nav-link"><p>forusers</p></Link>
                 </li>
                 <li className = "nav-item">
-                    <Link to="/babeltools/documentation" className="nav-link">documentation</Link>
+                    <Link to="/babeltools/documentation" className="nav-link"><p>documentation</p></Link>
                 </li>
                 <li className = "nav-item">
-                    <Link to="/babeltools/bibliography" className="nav-link">bibliographies</Link>
+                    <Link to="/babeltools/bibliography" className="nav-link"><p>bibliographies</p></Link>
                 </li>
                 <li className = "nav-item">
-                    <Link to="/babeltools/prepfolio" className = "nav-link">prepfolio</Link>
+                    <Link to="/babeltools/prepfolio" className = "nav-link"><p>prepfolio</p></Link>
                 </li>
                 
             </nav>
         <div className = 'about'>
-            <h2>about</h2>
-            <p>stuff</p>
+            <Aboutstuff></Aboutstuff>
         </div>
         <div className = 'team'>
-            <h2>
-                team
-            </h2>
-            <p>stuff</p>
+            <Teamstuff></Teamstuff>
         </div>
         <div className='tools'>
-            <h1>
-                tools
-            </h1>
-            <p>
-                stuff
-            </p>
-            <h2>
-                ocr
-            </h2>
-            <p>ocr stuff</p>
-            <h2>
-                transcript
-            </h2>
-            <p>transcript stuff</p>
-            <h2>
-                translate
-            </h2>
-            <p>translate stuff</p>
-
+            <Toolstuff></Toolstuff>
         </div>
         <div className='bibliographies'>
-            <h2>
-                bibliographies
-            </h2>
-            <p>
-                stuff
-            </p>
+            <Bibstuff></Bibstuff>
         </div>
         </div>
     )

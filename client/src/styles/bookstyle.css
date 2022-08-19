@@ -1,218 +1,154 @@
-* {
-    margin: 10px;
-    padding: 3px;
-    box-sizing: border-box;
-}
-
-body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.book-full {
-    border: 1px solid black;
-    align-items: center;
-    display: flex;
-    width: 250;
-    height: 400;
-}
-
-.book-pages {
-    border: 1px solid black;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
-
-.front-page {
-    z-index: 1;
-    background-color: whitesmoke;
-    border: 1px solid black;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
-
-.back-page {
-    z-index: 0;
-    background-color: white;
-    border: 1px solid black;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
-
-.front-content {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.back-content {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.left-button {
-    align-items: center;
-    width: 50%;
-    height: 50%;
-    background-color: transparent;
-    
-}
-
-.right-button {
-    align-items: center;
-    width: 50%;
-    height: 50%;
-    background-color: transparent;
-}
-
-.right-arrow :hover,
-.left-arrow :hover {
-    box-shadow: 1px 3px 5px rgba(0, 0, 0, 1);
-    background-color: #f1686d;
-}
-
-
-
-
-
-
-
-
-
-
-
-.book {
-    border: 1px solid black;
+/* Book in its unopened state */
+/*.book {
     position: relative;
-    width: 350px;
-    height: 500px;
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    width: 300px;
+    height: 550px;
 }
-.paper {
-    border: 1px solid red;
+
+.page {
+    display: flex;
+    align-items: center;
     position: absolute;
+    background-color: white;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    perspective: 1500px;
 }
-/*
-.book-open {
-    border: 1px solid black;
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 350px;
-    height: 500px;
-}
-.front-open,
-.back-open {
-    border: 1px solid black;
-    background-color: whitesmoke;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    transform-origin: left;
-    transition: transform 0.5s;
-}
-
-
-*/
-
-
 .front,
 .back {
-    border: 1px solid black;
-    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
+    background-color: whitesmoke;
     width: 100%;
     height: 100%;
     top: 0;
-    left: 0;
-    transform-origin: left;
-    transition: transform 0.5s;
+    left:0;
 }
-
 .front {
     z-index: 1;
     backface-visibility: hidden;
-    border-left: 1px;
 }
-
-.back-content {
-    transform: rotateY(180deg);
-}
-
 .back {
     z-index: 0;
 }
+.pg1 {
+    z-index: 3;
+}
+/* slid animation 
+.slid {
+    animation: slide-open
+}
 
-.front-content,
-.back-content {
+
+
+
+
+
+.book-open {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    width: 300px;
+    height: 550px;
+    perspective: 1500px;
+}
+.book-open .page {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    background-color: whitesmoke;
     width: 100%;
     height: 100%;
+    perspective: 1500px;
+    top: 0;
+    left:410px;
+}
+.book-open #pg1 {
+    z-index: 3;
+    transform-origin: left;
+    transition: transform 5.5s;
+    transform: rotateY(-180deg); 
+}
+.book-open #pg2 {
+    z-index: 2;  
+}
+.book-open #pg2 .front {
+    backface-visibility: hidden;
+    z-index: 2;
+}
+.book-open #pg3 {
+    z-index: 1;
+}
+.book-open #pg1 .back-content {
+    transform: rotateY(-180deg);
+}
+.book-open .front {
     display: flex;
+    align-items: center;
     justify-content: center;
-    align-content: center;
+    position: absolute;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left:0;
+    background-color: white;
+    z-index: 1;
+}
+.book-open #pg1 .back{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left:0;
+    background-color: whitesmoke;
+    z-index: 2;
 }
 
-.flipped1 .front,
-.flipped1 .back {
-    transform: rotateY(-180deg)
-}
-.flipped2 .front,
-.flipped2 .back {
-    transform: rotateY(-180deg)
-}
 
 
+
+
+
+
+
+
+/* buttons and index 
 button {
     border: none;
     background-color: transparent;
     cursor: pointer;
     margin: 10px;
 }
-
 button:focus {
     outline: none;
 }
-
-button :hover {
+button :hover{
     box-shadow: 1px 3px 5px rgba(0, 0, 0, 1);
-    background-color: #f1686d;
+    background-color: blue;
 }
-
 .prev-btn,
 .next-btn {
     font-size: 50px;
     color: gray;
-
 }
-
-#p1 {
+.book #pg1 {
     z-index: 3;
 }
-#p2 {
+#pg2 {
     z-index: 2;
 }
-#p3 {
+#pg3 {
     z-index: 1;
 }
+*/

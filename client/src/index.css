@@ -18,19 +18,17 @@
   margin: 0 auto;
   border-bottom: 1px;
 }
-.subnavbar h1 {
-  color: #696969;
+.subnavbar p {
+  color: white;
+  padding: 10px;
 }
 .subnavbar .links {
   margin-left: auto;
 }
-.subnavbar a {
-  margin-left: 16px;
-  text-decoration: none;
-  padding: 5px;
-}
-.subnavbar a:hover {
+
+.subnavbar p:hover {
   color: #f1356d;
+  border: 1px dashed black;
 }
 
 
@@ -73,7 +71,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 table {
   width: 100%;
@@ -86,7 +83,6 @@ table {
   justify-content: center;
   align-items: center;
   padding: 5px;
-
 }
 
 .tombscreen h2:hover {
@@ -102,14 +98,11 @@ table {
   grid-row-gap: 0px;
   grid-column-gap: 0px;
   max-width: 600px;
-
-
 }
 .homepage img {
   width: 150px;
   height: 200px;
   border-style: solid;
-
 }
 
 .homepage img:hover {

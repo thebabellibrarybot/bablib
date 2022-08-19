@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 const babeltombsdetailsSchema = new Schema({
     access_key: { type: String, required: true },
     page_num: {type: Number, required: true },
-    page_size: {type: Number, required: true },
+    page_size: [{type: Number}],
     buk: { type: String, required: true },
     s3_uri: { type: String, required: true },
     arn: { type: String, required: true },

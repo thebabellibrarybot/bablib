@@ -11,19 +11,19 @@ const BabelAbout = () => {
         <div>
            <nav className = "subnavbar">
                 <li className = "nav-item">
-                    <Link to="/about/" className="nav-link">about</Link>
+                    <Link to="/about/" className="nav-link"><p>about</p></Link>
                 </li>
                 <li className = "nav-item">
-                    <Link to="/about/forusers" className="nav-link">forusers</Link>
+                    <Link to="/about/forusers" className="nav-link"><p>forusers</p></Link>
                 </li>
                 <li className = "nav-item">
-                    <Link to="/about/history" className="nav-link">history</Link>
+                    <Link to="/about/history" className="nav-link"><p>history</p></Link>
                 </li>
                 <li className = "nav-item">
-                    <Link to="/babeltools" className = "nav-link">tools</Link>
+                    <Link to="/babeltools" className = "nav-link"><p>tools</p></Link>
                 </li>
                 <li className = "nav-item">
-                    <Link to="/about/learn" className="nav-link">learn</Link>
+                    <Link to="/about/learn" className="nav-link"><p>learn</p></Link>
                 </li>
                 
             </nav>

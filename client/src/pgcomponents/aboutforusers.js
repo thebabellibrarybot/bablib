@@ -20,7 +20,7 @@ const AboutForusers = () => {
                     <Link to="/about/history" className="nav-link">history</Link>
                 </li>
                 <li className = "nav-item">
-                    <Link to="/about/tools" className = "nav-link">tools</Link>
+                    <Link to="/babeltools" className = "nav-link">tools</Link>
                 </li>
                 <li className = "nav-item">
                     <Link to="/about/learn" className="nav-link">learn</Link>

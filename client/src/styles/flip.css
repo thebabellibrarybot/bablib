@@ -1,6 +1,13 @@
-img {
-    width: 430px;
-    height: 450px;
-  }
+.tombscreen {
+  border: 1px black solid;
+  display: flex;
+  justify-content: center;
+}
+.book {
+  border: 1px solid red;
 
+}
+.page {
+  border: 10px solid black;
   
+}
