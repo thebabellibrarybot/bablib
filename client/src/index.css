@@ -30,13 +30,16 @@
   color: #f1356d;
   border: 1px dashed black;
 }
+.nav-item :hover {
+  color: #f1356d;
+}
 
 
 
 
 /* navbar */
 .navbar {
-  padding: 0px;
+  padding: 20px;
   display: flex;
   align-items: center;
   max-width: 1300px;
@@ -46,8 +49,8 @@
 .navbar h1 {
   color: #696969;
 }
-.navbar .links {
-  margin-left: auto;
+.nav-link {
+  margin-left: 1px;
 }
 .navbar a {
   margin-left: 16px;
@@ -59,7 +62,6 @@
 }
 .content {
   max-width: 1300px;
-  margin: 20px auto;
   padding: 0px;
 }
 

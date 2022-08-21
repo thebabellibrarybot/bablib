@@ -1,0 +1,46 @@
+.usernav-items {
+    background-color: grey;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user-item {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.user-item :hover {
+    color: #f1356d;
+    padding: 5px;
+    border: 1px dashed black;
+}
+.user-icon {
+    padding: 3px;
+    font-size: 40px;
+}
+
+.about-navbar {
+    background-color: #696969;
+    padding: 5px;
+}
+.about-navbar button {
+    border: transparent;
+    background-color: transparent;
+    color: white;
+    font-size: medium;
+}
+.about-navbar button:hover {
+    color: #f1356d;
+    border: 1px dashed black;
+}
+.user-item .nav-link {
+    font-size: large;
+}
+.user-item button {
+    background-color: transparent;
+    border: transparent;
+}
+.user-login {
+    color: white;
+    border: 1px solid black;
+}

@@ -10,6 +10,7 @@ const path = require('path');
 const babelTombRoutes = require('./routes/babelTombs');
 const babelHomeRoute = require('./routes/babelHomeRoute');
 const babelBloglsRoute = require('./routes/babelBloglsRoute');
+const babelUserRoute = require('./routes/babelUserRoute');
 
 const mongoose = require('mongoose');
 
@@ -26,7 +27,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use((req, res, next) => {
-    console.log(req.path, req.method, 'server msg')
+    console.log(req.path, req.method, req.body, 'server msg from port')
     next()
 })
 
@@ -48,7 +49,9 @@ app.use('/home', babelHomeRoute);
 // route for tombs
 app.use('/babeltombs', babelTombRoutes);
 // route for blogs
-app.use('/babelblogls', babelBloglsRoute)
+app.use('/babelblogls', babelBloglsRoute);
+// route for user register // login
+app.use('/register', babelUserRoute);
 
 
 

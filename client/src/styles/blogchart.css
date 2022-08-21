@@ -1,15 +1,19 @@
 /* blog preview */
 
 .blogchart {
-    padding: 10px 16px;
-    margin: 20px 0;
-    border-bottom: 1px solid #fafafa
+    padding-left: 10px;
+    padding-right: 10px;
+    display: grid;
+    border-bottom: 1px solid #fafafa;
 }
 .blogchart h2:hover {
-    box-shadow: 1px 3px 5px rgba(0, 0, 0, 1);
-    background-color: #f1686d;
+    border: 2px dashed #f1686d;
 }
-.blogchart h2 {
+.blogchart h2{
     font-size: 20px;
-    margin-bottom: 8px;
+    border: 1px dashed black;
+    padding: 5px;
 } 
+.blogchart h2 p {
+    font-size: small;
+}

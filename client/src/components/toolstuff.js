@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from 'react';
 import '../styles/toolspg.css';
 import { CgTranscript, CgGhostCharacter } from 'react-icons/cg';
-import { BsTranslate } from 'react-icons/bs'
+import { BsTranslate } from 'react-icons/bs';
 
 
 
@@ -34,9 +34,9 @@ const Toolstuff = () => {
             <div className="intro-tools">
                 <h1>about the tools</h1>
                 <p>here is our mission state and terms of use</p>
-            </div>
+            </div> 
             <div className="toolbar">
-                <h2>toolbar</h2>
+                <h2>toolBar</h2>
                 <div className='tbar'>
 
                     <div className="OCR-full" id = 'box'>

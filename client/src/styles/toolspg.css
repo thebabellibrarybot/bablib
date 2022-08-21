@@ -5,6 +5,9 @@
     align-items: center;
     text-align: center;
 }
+.intro-tools {
+    padding-top: 20px;
+}
 .toolbar {
     display: flex;
     font-size: small;

@@ -17,17 +17,11 @@ export default class Navbar extends Component {
                 <li className = "nav-item">
                     <Link to="/babelTombs" className="nav-link">babelTombs</Link>
                 </li>
-                <li className = "nav-item">
-                    <Link to="/babeltools" className="nav-link">babelTools</Link>
-                </li>
-                <li className = "nav-item">
-                    <Link to="/about" className = "nav-link">aboutBabel</Link>
-                </li>
                 <li className='nav-item'>
                     <Link to="/babelblogls" className='nav-link'>babelBlogls</Link>
                 </li>
                 <li>
-                    <Link to = "/babelusers" className='nav-link'>babelUsers</Link>
+                    <Link to = "/babelusers" className='nav-link'>forUsers</Link>
                 </li>
                 
             </nav>
