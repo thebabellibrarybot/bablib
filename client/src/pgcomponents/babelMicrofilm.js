@@ -65,7 +65,7 @@ const BabelMicrofilm = () => {
 
                 {microfilms && microfilms.map((microfilm, i) => (
                 <div className="page" key={i}>
-                    <img src = {microfilm.obj_url} height = {H} width = {W} />
+                    <img src = {microfilm.obj_url} alt = 'alt' height = {H} width = {W} />
                     <p>{microfilm.book_title} page:{microfilm.page_num}
                     </p>
                 </div>

@@ -32,8 +32,8 @@ const getBabeltombMicrofilm = async (req, res) => {
 
     const babeltombfilm = await BabelTombDetailsModel.find(query)
         .sort({'acess_key':1})
-    console.log(babeltombfilm)
-    res.status(200).json(babeltombfilm)
+
+        res.status(200).json(babeltombfilm)
 
 }
 
