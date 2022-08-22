@@ -1,5 +1,4 @@
 import {  useState } from "react";
-import { FaCrow } from "react-icons/fa";
 import BirdProfile from "../components/BirdProfile";
 //import axios from "axios";
 import '../styles/register.css';
@@ -16,7 +15,7 @@ const BabelReg = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [ability, setAbility] = useState('ability');
+    const [ability, setAbility] = useState('crow');
     //     ^^^^^^^^    ability will also display icon num so if ability === 1-6 user can do this or that 
 
     async function registerUser () {
@@ -39,8 +38,7 @@ const BabelReg = () => {
     return (
         <div>
             <div className="babelReg">
-                <BirdProfile></BirdProfile>
-                <FaCrow className="icon"></FaCrow>
+                <BirdProfile ability = {ability} className = "icon"></BirdProfile>
                 <form className = 'mainform' onSubmit={(registerUser)}>
                     <input className = 'main-input' 
                     value = {username}

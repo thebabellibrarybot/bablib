@@ -8,7 +8,7 @@
 }
 
 .babelReg .icon {
-    font-size: 60px;
+    font-size: 90px;
     margin-right: 7px;
     top: 2px;
     animation: spin 5s infinite linear;
@@ -52,11 +52,9 @@
 .ablities p {
     font-size: medium;
 }
-
-.ability .birdprofile {
-    position: absolute;
-    font-size: 40px;
-}
 .ability {
     border: 1px solid black;
-}
+} 
+
+
+
