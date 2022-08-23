@@ -5,5 +5,4 @@ const { createBabelUser } = require('../controllers/babelregController');
 
 router.post('/', createBabelUser);
 
-
 module.exports = router; 

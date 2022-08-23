@@ -14,6 +14,7 @@ import BabelBlogDeets from './pgcomponents/babelBlogDetails';
 
 import BabelUsers from './pgcomponents/babelUsers';
 import BabelReg from './pgcomponents/babelRegister';
+import UserSpine from './pgcomponents/userspine';
 
 import { BrowserRouter as Router, Route, Routes} from  'react-router-dom';
 
@@ -50,6 +51,9 @@ function App() {
           </Routes>
           <Routes>
             <Route path = "/register" element = { <BabelReg/>} />
+          </Routes>
+          <Routes>
+            <Route path = "/userspine" element = { <UserSpine/> }/>
           </Routes>
 
           <Routes>

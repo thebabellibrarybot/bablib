@@ -1,24 +1,26 @@
 const BabelUserModel = require('../models/UserModel');
 
+
+
 const createBabelUser = async (req, res) => {
 
     console.log('add babel user')
-
-
     try {
         await BabelUserModel.create({
             username: req.body.username,
             email: req.body.email,
             password: req.body.password,
+            ability: req.body.ability
         }) 
         console.log(BabelUserModel, 'res from create babel user controller')
-        res.status(200).json(BabelUserModel)
+        res.status(200).json(createBabelUser)
 
     } catch (err) {
         console.log({status: 'err'});
     }
 
 };
+
 /*
 const getBabelUser = async (req, res) => {
     console.log('get babel user')

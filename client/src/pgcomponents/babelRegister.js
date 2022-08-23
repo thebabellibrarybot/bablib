@@ -18,6 +18,11 @@ const BabelReg = () => {
     const [ability, setAbility] = useState('crow');
     //     ^^^^^^^^    ability will also display icon num so if ability === 1-6 user can do this or that 
 
+    const setNewUser = (e) => {
+        setUsername(e.target.value)
+        setAbility('nest-bird')
+    }
+
     async function registerUser () {
         const response = await fetch('/register', {
             method: 'POST',
@@ -42,7 +47,7 @@ const BabelReg = () => {
                 <form className = 'mainform' onSubmit={(registerUser)}>
                     <input className = 'main-input' 
                     value = {username}
-                    onChange={(e) => setUsername(e.target.value)}
+                    onChange={(e) => setNewUser(e)}
                     type="text" 
                     placeholder="username" />
                     <input className = 'main-input' 

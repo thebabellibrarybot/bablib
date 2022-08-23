@@ -11,6 +11,8 @@ const babelTombRoutes = require('./routes/babelTombs');
 const babelHomeRoute = require('./routes/babelHomeRoute');
 const babelBloglsRoute = require('./routes/babelBloglsRoute');
 const babelUserRoute = require('./routes/babelUserRoute');
+const babelLoginRoutes = require('./routes/babelLoginRoute');
+const userSpineRoutes = require('./routes/userSpineRoute');
 
 const mongoose = require('mongoose');
 
@@ -50,9 +52,12 @@ app.use('/home', babelHomeRoute);
 app.use('/babeltombs', babelTombRoutes);
 // route for blogs
 app.use('/babelblogls', babelBloglsRoute);
-// route for user register // login
+// route for user register 
 app.use('/register', babelUserRoute);
-
+// route for user login
+app.use('/babelusers', babelLoginRoutes);
+// route for user dashboard
+app.use('/userspine', userSpineRoutes);
 
 
 // serve static assests if in production

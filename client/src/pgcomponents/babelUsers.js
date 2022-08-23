@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import  AboutForusers  from '../pgcomponents/aboutforusers';
 import { FaCrow } from "react-icons/fa";
+import Loginstuff from '../components/loginstuff';
 import '../styles/usernav.css';
 
 
@@ -12,18 +13,14 @@ const BabelUsers = () => {
     const handleLogin = () => {
         setlogin(current => !current)
     }
+    
 
     return (
         <div>
             <nav className = "usernav">
                 <div className='usernav-items'>
                     <div className={login ? 'user-inputs': 'invisible'}>
-                        <form>
-                            <p>userName</p>
-                            <input type="text"></input>
-                            <p>passWord</p>
-                            <input type="text"></input>
-                        </form>
+                        <Loginstuff></Loginstuff>
                     </div>
                     <li className = "user-item">
                         <button className="nav-link" onClick={(handleLogin)}>Login</button>
@@ -47,4 +44,4 @@ const BabelUsers = () => {
 
 
 
-export default BabelUsers
+export default BabelUsers;
