@@ -1,6 +1,7 @@
 import BirdProfile from "../components/BirdProfile";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+//import DashGrid from '../components/dashgrid';
 
 
 const UserSpine = () => {

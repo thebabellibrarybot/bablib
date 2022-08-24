@@ -1,0 +1,46 @@
+.fullbox {
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.gridbox {
+    display: flex;
+    padding-top: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.title {
+    border: 1px dashed #f1686d;
+    padding: 10px;
+}
+.grid {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, 2fr);
+}
+.header {
+    display: inline;
+    border: 1px dashed black;
+}
+.butts p{
+    border: 1px dashed black;
+    padding: 2px
+}
+button {
+    background-color: white;
+    border: transparent;
+}
+button :hover {
+    border: 1px dashed #f1686d;
+}
+
+
+
+.icon{
+    font-size: 30px;
+}
+.invisible {
+    display: none;
+}

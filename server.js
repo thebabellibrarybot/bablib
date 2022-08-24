@@ -54,7 +54,7 @@ app.use('/babeltombs', babelTombRoutes);
 app.use('/babelblogls', babelBloglsRoute);
 // route for user register 
 app.use('/register', babelUserRoute);
-// route for user login
+// route for user login && info
 app.use('/babelusers', babelLoginRoutes);
 // route for user dashboard
 app.use('/userspine', userSpineRoutes);

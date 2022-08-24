@@ -30,9 +30,11 @@ const BabelBlogDeets = () => {
     return(
         <>
         <div>
-                <h1>{data.title}
-                <p>{data.date}
-                <p>{data.full}</p></p></h1>
+            <img src = {data.img} alt = {data.alt}/>
+            <h2>{data.title}</h2>
+            <h3>{data.author}</h3>
+            <p>{data.full}</p>
+            
         </div>
         </>
     )

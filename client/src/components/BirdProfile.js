@@ -1,15 +1,21 @@
 import { FaEarlybirds, FaKiwiBird } from 'react-icons/fa';
 import { GiBirdTwitter, GiEgyptianBird, GiKiwiBird, GiNestBirds } from 'react-icons/gi';
 import '../styles/register.css';
-import { FaCrow } from "react-icons/fa";
-
+import { FaCrow, FaBalanceScaleRight,FaBookDead, FaCommentDots, FaCubes, FaMortarPestle  } from 'react-icons/fa';
+import { CgTranscript, CgGhostCharacter } from 'react-icons/cg';
+import { BsTranslate } from 'react-icons/bs';
 
 const BirdProfile = (props) => {
 
     const type = props.ability;
     console.log(type, 'type')
 
-    if (type === 'crow') {
+    if (type === 'crow' ) {
+        return (
+            <FaCrow className='icon'></FaCrow>
+        )
+    }
+    if (type === 'mk-crow' ) {
         return (
             <FaCrow className='icon'></FaCrow>
         )
@@ -44,5 +50,51 @@ const BirdProfile = (props) => {
             <GiNestBirds className='icon'></GiNestBirds>
         )
     }
+    if (type === 'scales') {
+        return (
+        <FaBalanceScaleRight className='icon'></FaBalanceScaleRight>
+            )
+    }
+    if (type === 'word-box') {
+        return (
+        <FaCommentDots className='icon'></FaCommentDots>
+            )
+    }
+    if (type === 'cubes') {
+        return (
+        <FaCubes className='icon'></FaCubes>
+            )
+    }
+    if (type === 'dead-book') {
+        return (
+        <FaBookDead className='icon'></FaBookDead>
+            )
+    }
+    if (type === 'cubes') {
+        return (
+        <FaCubes className='icon'></FaCubes>
+            )
+    }
+    if (type === 'mortar-pestal') {
+        return (
+        <FaMortarPestle className='icon'></FaMortarPestle>
+            )
+    }
+    if (type === 'ghost') {
+        return (
+        <CgGhostCharacter className='icon'></CgGhostCharacter>
+            )
+    }
+    if (type === 'transcript') {
+        return (
+        <CgTranscript className='icon'></CgTranscript>
+            )
+    }
+    if (type === 'translate') {
+        return (
+        <BsTranslate className='icon'></BsTranslate>
+            )
+    }
+    
 }
 export default BirdProfile;
