@@ -1,19 +1,35 @@
+/* standard gridbox styles */
 .fullbox {
     display: inline;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
+.aboutsection {
+    text-align: center;
+    display: inline-block;
+    padding: 20px;
+    padding-left: 20%;
+    padding-right: 20%;
+    text-align: center;
+}
+.extra {
+    display: inline;
+    padding-bottom: 30px;
+}
 .gridbox {
     display: flex;
-    padding-top: 20px;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 .title {
+    display: flex;
+    padding: 20px;
+}
+.title p {
     border: 1px dashed #f1686d;
-    padding: 10px;
+    padding: 5px;
 }
 .grid {
     display: grid;
@@ -22,24 +38,26 @@
 }
 .header {
     display: inline;
+}
+.inner {
     border: 1px dashed black;
+    padding: 5px;
 }
 .butts p{
     border: 1px dashed black;
-    padding: 2px
+    padding: 4px
 }
-button {
-    background-color: white;
-    border: transparent;
-}
-button :hover {
+.butts p:hover {
+    cursor: pointer;
     border: 1px dashed #f1686d;
 }
 
+/* userdash gridbox styles */
 
 
+/* universal icon and invisible statements */
 .icon{
-    font-size: 30px;
+    font-size: 40px;
 }
 .invisible {
     display: none;

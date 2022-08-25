@@ -5,9 +5,10 @@ import DashGrid from '../components/dashgrid';
 import '../styles/usernav.css';
 
 const AboutForusers = () => {
+    // set babelusers to const {id} = useParams() and change in router
     const [data, setData] = useState();
     useEffect (() => {
-        axios.get(`/babelusers/usernav`)
+        axios.get(`/babelusers`)
         .then((res) => {
             setData(res.data)
 
@@ -15,7 +16,7 @@ const AboutForusers = () => {
         .catch((err) => console.log(err))
         }, []);
 
-    const unique = Array.from(new Set(data && data.map((data) => data.title))) 
+    const uniqueNav = Array.from(new Set(data && data.map((data) => data.title))) 
     const [myclass, setMyclass] = useState('forUsers')
     function clickedPart  (val)  {
         setMyclass(val)
@@ -25,7 +26,7 @@ const AboutForusers = () => {
         <div className='usernav'>
 
             <nav className='about-navbar'>
-            {unique && unique.map((unique, i)=>(
+            {uniqueNav && uniqueNav.map((unique, i)=>(
             <button onClick={() => clickedPart(unique)} key = {i}>
                 {unique}
             </button>

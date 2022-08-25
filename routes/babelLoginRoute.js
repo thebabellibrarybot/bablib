@@ -5,7 +5,7 @@ const { getUserLogin, getUserNav, getBox } = require('../controllers/babelLoginC
 
 router.post('/login', getUserLogin);
 
-router.get('/usernav', getUserNav);
+router.get('/', getUserNav);
 
 router.get('/:title', getBox);
 

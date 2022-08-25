@@ -1,9 +1,11 @@
 import { FaEarlybirds, FaKiwiBird } from 'react-icons/fa';
 import { GiBirdTwitter, GiEgyptianBird, GiKiwiBird, GiNestBirds } from 'react-icons/gi';
 import '../styles/register.css';
-import { FaCrow, FaBalanceScaleRight,FaBookDead, FaCommentDots, FaCubes, FaMortarPestle  } from 'react-icons/fa';
+import { FaCrow, FaReceipt, FaBalanceScaleRight,FaBookDead, FaCommentDots, FaCubes, FaMortarPestle  } from 'react-icons/fa';
 import { CgTranscript, CgGhostCharacter } from 'react-icons/cg';
 import { BsTranslate } from 'react-icons/bs';
+import { GiHillConquest, GiBrain, GiSeveredHand } from 'react-icons/gi';
+import { SiTestinglibrary } from 'react-icons/si';
 
 const BirdProfile = (props) => {
 
@@ -95,6 +97,32 @@ const BirdProfile = (props) => {
         <BsTranslate className='icon'></BsTranslate>
             )
     }
+    if (type === 'mission') {
+        return (
+            <GiHillConquest className='icon'></GiHillConquest>
+        )
+    }
+    if (type === 'ls') {
+        return (
+            <FaReceipt className='icon'></FaReceipt>
+        )
+    }
+    if (type === 'NN') {
+        return (
+            <GiBrain className='icon'></GiBrain>
+        )
+    }
+    if (type === 'more') {
+        return (
+            <GiSeveredHand className='icon'></GiSeveredHand>
+        )
+    }
+    if (type === 'data') {
+        return (
+            <SiTestinglibrary className='icon'></SiTestinglibrary>
+        )
+    }
+
     
 }
 export default BirdProfile;
