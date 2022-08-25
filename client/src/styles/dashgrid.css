@@ -49,7 +49,7 @@
 }
 .butts p:hover {
     cursor: pointer;
-    border: 1px dashed #f1686d;
+    border: 2px dashed #f1686d;
 }
 
 /* userdash gridbox styles */
