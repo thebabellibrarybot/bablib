@@ -27,7 +27,7 @@ const getBabeltombMicrofilm = async (req, res) => {
     console.log(buk)
     const query = {
         buk: buk,
-        type: 'micro-film'
+        type: 'micro-film' 
         }
 
     const babeltombfilm = await BabelTombDetailsModel.find(query)

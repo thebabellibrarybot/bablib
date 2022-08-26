@@ -30,21 +30,16 @@ function App() {
             <Route path = "/" element = {<Home/>}/>
           </Routes>
 
-          <Routes>
+          <Routes> 
             <Route path = "/babeltombs/" element = {<BabelTombs/>}/>
           </Routes>
           <Routes>
             <Route path = "/babeltombs/:id" element = { <BabelID/> }/>
           </Routes>
           <Routes>
-            <Route path = "/babeltombs/:id/microfilm" element = { <BabelMicrofilm/> }/>
+            <Route path = "/babeltombs/:id/:type" element = { <BabelMicrofilm/> }/>
           </Routes>
-          <Routes>
-            <Route path = "/babeltombs/:id/translate" element = { <BabelTranslate/> }/>
-          </Routes>
-          <Routes>
-            <Route path = "/babeltombs/:id/transcript" element = { <BabelTranscript/> }/>
-          </Routes>
+         
 
           <Routes>
             <Route path = "/babelusers" element = { <BabelUsers /> } />

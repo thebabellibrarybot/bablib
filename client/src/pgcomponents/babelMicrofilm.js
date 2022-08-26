@@ -9,17 +9,17 @@ import '../styles/flip.css'
 
 const BabelMicrofilm = () => {
 
-    const { id } = useParams()
+    const path  = window.location.pathname;
 
     const [microfilms, setmicrofilms] = useState();
     
     useEffect (() => {
-        axios.get(`/babeltombs/${id}/microfilm`)
+        axios.get(`${path}`)
     .then((res) => { 
         setmicrofilms(res.data)
     })
     .catch((err) => console.log(err))
-    }, [id])
+    }, [path])
 
 
     if (microfilms === undefined) {
@@ -36,7 +36,6 @@ const BabelMicrofilm = () => {
     const url = cover_url.obj_url
     const H = `${microfilms[1].page_size[1] * .1}`
     const W = `${microfilms[1].page_size[0] * .1}`
-    console.log(H, W)
    
 
 

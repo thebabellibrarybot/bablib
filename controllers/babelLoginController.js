@@ -37,7 +37,6 @@ const getUserNav = async (req, res) => {
 }
 
 const getBox = async (req, res)=>{
-
     const {title} = req.params
     console.log(title, 'from ')
     const query = {
@@ -45,9 +44,16 @@ const getBox = async (req, res)=>{
     }
     const nav = await BabelopsModel.find(query);
     res.status(200).json(nav);
-
-
 }
 
+const getDeet = async (req, res)=>{
+    const {title} = req.params
+    console.log(title, 'from deet')
+    const query = {
+        bodyhead: title
+    }
+    const nav = await BabelopsModel.find(query);
+    res.status(200).json(nav);
+}
 
-module.exports = { getUserLogin, getUserNav, getBox };
+module.exports = { getUserLogin, getUserNav, getBox, getDeet };

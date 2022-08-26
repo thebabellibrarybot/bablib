@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../styles/dashgrid.css';
 import BirdProfile from './BirdProfile';
+import GridDeets from './griddeets';
 
 
 const DashGrid = (props) => {
 
     const id = props.className
+    //console.log(id, 'id from dashgrid')
     const [data, setData] = useState();
     const unique = Array.from(new Set(data && data.map((data) => data.gridtitle)));
     const uniqueAboutHead = Array.from(new Set(data && data.map((data) => data.abouthead))) 
@@ -21,12 +23,14 @@ const DashGrid = (props) => {
         .catch((err) => console.log(err))
         }, [id]);
 
-    const [myclass, setMyclass] = useState('forUsers')
-    function clickedPart  (val)  {
+    const [myclass, setMyclass] = useState(null)
+    function clickedpart  (val)  {
+        //console.log(val, 'val')
+        // i could add something like 
+        // if data.bodyhead == myclass setstate(val)
+        // else setState(null)
         setMyclass(val)
-    }
-    console.log(myclass, 'from dashgrid to griddeets')
-    
+    }    
    
     return (
     <div className='fullbox'>
@@ -44,7 +48,7 @@ const DashGrid = (props) => {
                 <p>{unique}</p>
 
                 <div className='grid'>
-                {data && data.map((data)=>{
+                {data && data.map((data, i)=>{
                     return (
                     <div className='header'>
                         <div className='inner'>
@@ -53,19 +57,19 @@ const DashGrid = (props) => {
                         </div>
 
                         <div className='butts'>
-                            <p onClick={() => clickedPart(data.bodyhead)}>{data.bodybutton}</p>
+                            <p onClick={() => clickedpart(data.bodyhead)} key = {i}>{data.bodybutton}</p>
                         </div>
                     </div>
                         )
                     })}
                 </div>
                 </div>
-                    <p>mk a div for this and put grid deets comp in it</p>
+                    <GridDeets className = {myclass}></GridDeets>
                 </div>
                 
                 )
             })}
-        </div>
+        </div> 
  
     </div>
     </div>

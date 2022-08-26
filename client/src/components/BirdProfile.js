@@ -10,7 +10,6 @@ import { SiTestinglibrary } from 'react-icons/si';
 const BirdProfile = (props) => {
 
     const type = props.ability;
-    console.log(type, 'type')
 
     if (type === 'crow' ) {
         return (
