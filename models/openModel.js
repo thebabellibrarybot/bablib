@@ -7,15 +7,9 @@ const babelOps = new Schema ({
     aboutbody: {type: String, required: false},
     title: {type: String, required: false},
     gridtitle: {type: String, required: false},
-    icon: {type: String, required: false},
-    bodyhead: {type: String, required: false},
-    bodybutton: {type: String, required: false},
-    bodydeetH: {type: String, required: false},
-    bodydeetB: [{content: {type: String},
-                links: {type: String}}],
-    classname: [{type: String}]
+    body: [{type: Array}]
 })
 
-const BabelopsModel = mongoose.model('aboutForusers', babelOps);
+const BabelopsModel = mongoose.model('forusers', babelOps);
 
 module.exports = BabelopsModel;

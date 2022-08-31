@@ -1,6 +1,7 @@
 import BirdProfile from "../components/BirdProfile";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import '../styles/userDash.css';
 //import DashGrid from '../components/dashgrid';
 
 
@@ -28,8 +29,9 @@ const UserSpine = () => {
 
     return (
         <div className="userspine-full">
-
-            <BirdProfile ability = {ability}></BirdProfile>
+            <div className="profile-nav">
+            <BirdProfile className = 'icon' ability = {ability}></BirdProfile>
+            </div>
             <div className="dashboard-main">
 
                 <div className="dashitem">

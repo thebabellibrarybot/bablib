@@ -6,8 +6,6 @@ import Home from './components/home';
 import BabelTombs from './pgcomponents/babelTombs';
 import BabelID from './pgcomponents/babelTombDetail'
 import BabelMicrofilm from './pgcomponents/babelMicrofilm';
-import BabelTranslate from './pgcomponents/babelTranslate';
-import BabelTranscript from './pgcomponents/babelTranscript';
 
 import BabelBlogls from './pgcomponents/babelBlogs';
 import BabelBlogDeets from './pgcomponents/babelBlogDetails';

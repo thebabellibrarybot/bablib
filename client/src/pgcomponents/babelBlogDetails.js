@@ -16,13 +16,14 @@ const BabelBlogDeets = () => {
     .then((res) => {
         
         setData(res.data, 'res.data');
-        console.log(res.data, 'res data')
 
     })
     .catch((err) => console.log(err))
     }, [id])
 
     console.log(data, 'blogdeets')
+    const d = data && data.map((data) => data.body)
+    console.log(d, 'd')
     if (data === undefined) {
         return <>Still loading...might not ever stop...</>; 
         }
@@ -30,11 +31,10 @@ const BabelBlogDeets = () => {
     return(
         <>
         <div>
-            <img src = {data.img} alt = {data.alt}/>
             <h2>{data.title}</h2>
-            <h3>{data.author}</h3>
-            <p>{data.full}</p>
-            
+            <h3>{data.auth}</h3>
+            <div className='body'>
+            </div>
         </div>
         </>
     )

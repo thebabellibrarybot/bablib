@@ -20,7 +20,10 @@ const AboutForusers = () => {
     const [myclass, setMyclass] = useState('forUsers')
     function clickedPart  (val)  {
         setMyclass(val)
+        
     }
+
+    
         
     return (
         <div className='usernav'>

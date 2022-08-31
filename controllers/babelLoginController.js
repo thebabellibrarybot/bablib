@@ -29,6 +29,10 @@ const getUserLogin = async (req, res) => {
     }
 };
 
+
+
+
+
 const getUserNav = async (req, res) => {
 
     const nav = await BabelopsModel.find({});
@@ -53,7 +57,14 @@ const getDeet = async (req, res)=>{
         bodyhead: title
     }
     const nav = await BabelopsModel.find(query);
+    // try 
+    // const griddeets = { bodydeetH: nav.bodydeetH,
+    //                     bodydeetB: nav.bodydeetB
+    //                     className: nav.className
+    //                      }
+    // res.status(200).json(griddets)
     res.status(200).json(nav);
+    console.log(nav)
 }
 
 module.exports = { getUserLogin, getUserNav, getBox, getDeet };

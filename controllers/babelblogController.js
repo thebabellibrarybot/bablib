@@ -1,11 +1,11 @@
-const Babelblogls = require('../models/BabelBlogMod')
-
+const Babelblogls = require('../models/BabelBlogMod');
+const Babelblogdeet = require('../models/BabelBlogModel');
 
 
 
 // get all babelblogs
 const getBabelBlogls = async (req, res) => {
-    const babelblogls = await Babelblogls.find({}) //.sort({date: -1})
+    const babelblogls = await Babelblogdeet.find({}) //.sort({date: -1})
     /* 
     change sort to:
 ------------------------------------------------
@@ -21,7 +21,8 @@ const getBabelBlogls = async (req, res) => {
 // get babelblog by id
 const getBabelBlogById = async (req, res) => {
     const { id } = req.params 
-    const babelblogbyID = await Babelblogls.findById(id)
+    console.log(id)
+    const babelblogbyID = await Babelblogdeet.findById(id)
     if (!babelblogbyID) {
         return res.status(404).json({err: 'no such blog ID'})
     }

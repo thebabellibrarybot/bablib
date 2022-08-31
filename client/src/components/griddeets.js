@@ -1,45 +1,37 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios"; 
+import React from "react";
 
-class GridDeets extends React.Component{
-    constructor(props) {
-        super(props);
-        this.state = null
+const GridDeets = (props) => {
+    const data = props.className
+    console.log(data, 'data')
 
-        console.log(this.state, 'this.state')
-        
+    if (props.className === null) {
+        return (null)
     }
-    componentDidUpdate(prevProps) {
-        if (this.props.className !== prevProps.className){
-            this.setState({
-                className: prevProps.className
-            })
-            console.log('set data to:', prevProps.className)
-            
-            const id = this.props.className
-            
-            console.log('axios search with:', id)
+    if (props.className !== null) {
+    return (
 
-            axios.get(`/babelusers/${id}/deet`)
-            .then((res) => {
-                console.log('set data to:', res.data)
-                
-                this.setState({data: res.data})
-            })
-            .catch((err) => console.log(err))
-            console.log('set data from axios', this.state)
-                
-        }
-    }
+        <div className="grid-deet">
+            {data && data.map((data)=>
+            
+                <div className="deetline">
+                    <div className="head">
+                    <h3>{data.bodydeetH}</h3>
+                    </div>
+                    {data.bodydeetB.map((cont)=>{
+                    console.log(cont)
+                    return (
+                    <div className="line">
+                        <p>{cont.content}</p>
+                        <p>{cont.links}</p>
+                    </div>
+                )
+                })}
+                </div>
+            
+            )}
+        </div>
+
+    )}
     
-    render() {
-        if (this.state !== null){
-        console.log(this.state.data, '::state::', '::from render')
-        return (
-        <p>
-           hi
-       </p>
-        )
-    }
-    }}
+}
 export default GridDeets;
