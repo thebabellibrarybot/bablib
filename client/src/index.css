@@ -40,9 +40,9 @@
 .navbar {
   padding: 20px;
   display: flex;
-  align-items: center;
-  margin: 0 auto;
-  border-bottom: 0px;
+  position: fixed;
+  width: 1500px;
+  background-color: white;
 }
 .navbar h1 {
   color: #696969;
@@ -60,6 +60,7 @@
 }
 .content {
   padding: 0px;
+  padding-top: 40px;
 }
 
 
@@ -87,7 +88,9 @@ table {
 .tombscreen h2:hover {
   color: #f1356d;
 }
-
+.tombscreen {
+  margin-top: 3%;
+}
 /* home page */
 
 .homepage {
@@ -97,6 +100,7 @@ table {
   grid-row-gap: 0px;
   grid-column-gap: 0px;
   max-width: 600px;
+  margin-top: 3%;
 }
 .homepage img {
   width: 150px;

@@ -40,7 +40,7 @@ const BabelReg = () => {
         console.log(data);
     }
 
-    return (
+    return ( 
         <div>
             <div className="babelReg">
                 <BirdProfile ability = {ability} className = "icon"></BirdProfile>

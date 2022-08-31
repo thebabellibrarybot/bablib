@@ -23,7 +23,7 @@ const BabelBlogls = () => {
 
     return (
         <>
-        <div>
+        <div className='blogls'>
             <BlogLister blogls = {blogls}></BlogLister>
         </div>
         </>

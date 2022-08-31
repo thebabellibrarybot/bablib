@@ -2,8 +2,7 @@ import axios from 'axios';
 import React, { useEffect } from "react";
 import { useState } from 'react';
 import { useParams } from "react-router-dom";
-
-//import BlogDeetViews from '../components/blogdeets';
+import '../styles/blogbody.css';
 
 const BabelBlogDeets = () => {
 
@@ -22,21 +21,44 @@ const BabelBlogDeets = () => {
     }, [id])
 
     console.log(data, 'blogdeets')
-    const d = data && data.map((data) => data.body)
-    console.log(d, 'd')
+    
     if (data === undefined) {
         return <>Still loading...might not ever stop...</>; 
         }
 
     return(
-        <>
-        <div>
+        <div className='fullblog'>
+            <div className='blogTitle'>
             <h2>{data.title}</h2>
-            <h3>{data.auth}</h3>
-            <div className='body'>
+            <h3>{data.date}</h3>
+            </div>
+            <div className='bcontent'>
+                {data && data.body.map((body)=>{
+                return (
+                    <div>
+                        {body && body.deets.map((e)=>{
+                            return (
+                                <div className='para'>
+                                <h3>{e.sTitle}</h3>
+                                {e && e.sBody.map((sbody, i)=>{
+                                    return (
+                                        <div className='body'>
+                                            <img src = {sbody.pic} alt = {i}></img>
+                                            <p>{sbody.textbody}</p>
+                                        </div>
+                                    )
+                                })}
+                                </div>
+                                
+
+                            )
+                        })}
+                    </div>
+                )
+                    
+                })}
             </div>
         </div>
-        </>
     )
 
 }

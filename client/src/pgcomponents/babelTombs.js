@@ -52,6 +52,7 @@ const BasicTable = () => {
 
   
     return (
+      <div className="tabllz">
       <>
       <GlobalFilter filter = {globalFilter} setFilter={setGlobalFilter} />
         <table {...getTableProps()}>
@@ -113,6 +114,7 @@ const BasicTable = () => {
           <button onClick={() => nextPage()} disabled = {!canNextPage}>next</button>
         </div>
       </>
+      </div>
     )
   }
 

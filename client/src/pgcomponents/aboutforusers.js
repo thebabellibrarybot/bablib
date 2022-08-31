@@ -26,7 +26,8 @@ const AboutForusers = () => {
     
         
     return (
-        <div className='usernav'>
+        <>
+        <div className='usernavs'>
 
             <nav className='about-navbar'>
             {uniqueNav && uniqueNav.map((unique, i)=>(
@@ -36,8 +37,10 @@ const AboutForusers = () => {
             ))}
             </nav>
 
-            <DashGrid className = {myclass}></DashGrid>
         </div>
+        <DashGrid className = {myclass}></DashGrid>
+
+        </>
     )
 }
 export default AboutForusers;

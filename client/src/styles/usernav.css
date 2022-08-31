@@ -1,3 +1,7 @@
+.usernav {
+    border: 1px solid black;
+    margin-top: 3%;
+}
 .usernav-items {
     background-color: grey;
     padding: 8px;
@@ -18,7 +22,7 @@
     padding: 3px;
     font-size: 40px;
 }
-
+ 
 .about-navbar {
     background-color: #696969;
     padding: 5px;
