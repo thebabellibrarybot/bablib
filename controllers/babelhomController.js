@@ -32,7 +32,7 @@ const getBabelHomeimgs = async (req, res) => {
 
     console.log('get home controler')
     res.status(200).json(pulled);
-
+ 
 
 }
  

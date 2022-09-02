@@ -61,11 +61,6 @@ const BirdProfile = (props) => {
         <FaCommentDots className='icon'></FaCommentDots>
             )
     }
-    if (type === 'cubes') {
-        return (
-        <FaCubes className='icon'></FaCubes>
-            )
-    }
     if (type === 'dead-book') {
         return (
         <FaBookDead className='icon'></FaBookDead>
@@ -121,6 +116,13 @@ const BirdProfile = (props) => {
             <SiTestinglibrary className='icon'></SiTestinglibrary>
         )
     }
+    // add brain for neural networks in babelBib 'brainstem'
+
+    // add dead-hand for componens and moar in babelBib 'dead-hand'
+
+    // add octupuss for data_set in babelBib 'octopussy'
+
+
 
     
 }

@@ -18,7 +18,7 @@ const UserSpine = () => {
         })
         .catch((err) => console.log(err))
     }, [])
-    console.log(data)
+    console.log(data, 'data')
 
     const handledash = () => {
         console.log(
@@ -37,11 +37,14 @@ const UserSpine = () => {
                 <div className="dashitem">
                     <div className="dashcontnet">
                         {data && data.map((data) => {
+                            if (data.dashability === 'all')
                             return (
-                                <div>
-                                <p>{data.dashicon}</p>
-                                <p>{data.dashlink}</p>
-                                <button onClick = {handledash}>click</button>
+                                <div className="a-dash">
+                                    <div className="a-cont">
+                                        <p className="icon">{data.dashicon}</p>
+                                        <p>{data.dashitem}</p>
+                                        <p className = 'buttons' onClick = {handledash}>click</p>
+                                    </div>
                                 </div>
                             )
                         })}

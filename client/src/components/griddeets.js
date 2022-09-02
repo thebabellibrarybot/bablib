@@ -2,7 +2,6 @@ import React from "react";
 
 const GridDeets = (props) => {
     const data = props.className
-    console.log(data, 'data')
 
     if (props.className === null) {
         return (null)
@@ -18,14 +17,13 @@ const GridDeets = (props) => {
                     <h3>{data.bodydeetH}</h3>
                     </div>
                     {data.bodydeetB.map((cont)=>{
-                    console.log(cont)
                     return (
                     <div className="line">
                         <p>{cont.content}</p>
                         <p>{cont.links}</p>
                     </div>
                 )
-                })}
+                })} 
                 </div>
             
             )}

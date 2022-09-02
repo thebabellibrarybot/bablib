@@ -9,11 +9,11 @@ const DashGrid = (props) => {
 
     const id = props.className
 
+    // add component did mount for if id or data changes...
     const [data, setData] = useState();
     useEffect (() => {
         axios.get(`/babelusers/${id}`)
         .then((res) => {
-            console.log('dataloaded')
             setData(res.data)
             setMyclass(null)
         })
@@ -46,7 +46,7 @@ const DashGrid = (props) => {
                     <div className='grid'>
                         {d.body.map((body, i)=>{
                             return (
-                                <div className='header'>
+                                <div className='header' key={i}>
                                     <div className='inner'>
                                         <BirdProfile className = 'icon' ability = {body[0].icon}></BirdProfile>
                                         <h3>{body[0].bodyhead}</h3>
