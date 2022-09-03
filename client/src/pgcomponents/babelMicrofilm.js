@@ -5,13 +5,11 @@ import HTMLFlipBook from "react-pageflip";
 import '../styles/flip.css'
 
 
-
 const BabelMicrofilm = () => {
 
+    // loading data
     const path  = window.location.pathname;
-
     const [microfilms, setmicrofilms] = useState();
-    
     useEffect (() => {
         axios.get(`${path}`)
     .then((res) => { 
@@ -24,67 +22,47 @@ const BabelMicrofilm = () => {
     if (microfilms === undefined) {
         return <>Still loading...</>; 
         }
-    
 
-    const cover_url = microfilms.find((e) => {
+    // setting facts
+    const cover_url =microfilms && microfilms.find((e) => {
         const title = ('title_' + microfilms[0].buk + '.jpg')
-  
         return e.access_key === title
-
     })
     const url = cover_url.obj_url
-    const H = `${microfilms[1].page_size[1] * .1}`
-    const W = `${microfilms[1].page_size[0] * .1}`
+    const W = cover_url.page_size[0] * .1 
+    const H = cover_url.page_size[1] * .1
+    console.log(H,'h', W, 'w')
    
-
-
+    // establishing logic 
     return (
-        <div className='tombpage'>
-            <div className='topstuff'>
-                <p>stuff</p>
-            </div>
-        
-        <div className="tombscreen">
+        <div className='full'>
+          <div className="main-page-container" height = {H} width = {W}>
+            <HTMLFlipBook
+              showCover={true}
+              width={W}
+              height={H}
+              style={{ margin: "0 auto" }}
+            >
+              <img src={url} alt="" />
 
-            <div className="book">
-        
-                <HTMLFlipBook
-                width= {W}
-                height = {H}
-                showCover={true}
-                maxShadowOpacity={0.5}
-                mobileScrollSupport={true}
-                >
-
-                <div className="demoPage">
-                <img src = {url} alt = "alt" height = {H} width = {W}/>
-                <p>{microfilms[0].book_title}</p>
+              {microfilms.map((el, i) => (
+                <div className="demoPage" key={i}>
+                <div className='pg'>
+                  <img src={el.obj_url} alt={el.page_num}/>
+                </div>
+                <p>pg:{el.page_num}</p>
                 </div>
 
-                {microfilms && microfilms.map((microfilm, i) => (
-                <div className="page" key={i}>
-                    <img src = {microfilm.obj_url} alt = 'alt' height = {H} width = {W} />
-                    <p>{microfilm.book_title} page:{microfilm.page_num}
-                    </p>
+              ))}
+            </HTMLFlipBook>
+          </div>
+          <div className='info'>
+                <div className='stuff'>
+                <p>this is the info about the book</p>
+
                 </div>
-                ))}
-                
-                </HTMLFlipBook>
-                
             </div>
         </div>
-        </div>
-        
-        )
-}
-
+      );
+              }
 export default BabelMicrofilm;
-
-
-/*
-<div className="demoPage" key='title'>
-                            <img src = {url} alt = "alt" />
-                            <p>{microfilms[0].book_title}</p>
-                            
-                        </div>
-                        */

@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
-import {  useState } from "react";
-import axios from "axios";
+
+
 import { Link } from "react-router-dom";
 import { FaBible } from "react-icons/fa";
 
@@ -10,20 +10,9 @@ const BabelDetails = () => {
 
     const { id } = useParams()
     
-    const [data, setData] = useState();
     
-    useEffect (() => {
-        axios.get(`/babeltombs/${id}`)
-    .then((res) => {
-        
-        setData(res.data, 'res.data');
-        console.log(res.data, 'res data')
+    
 
-    })
-    .catch((err) => console.log(err))
-    }, [id])
-
-    console.log(data)
     
     
 

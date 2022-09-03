@@ -12,12 +12,12 @@ const BlogLister = (props) => {
 
     return (
         <div>
-            {blogls.map(blogls => {
+            {blogls.map((blogls, i) => {
                 return(
                     <Link to = {`/babelblogls/${blogls._id}`}>
                     <div className='blogchart' key = {blogls.title}>
-                        <h2>{blogls.title}
-                            <p>{blogls.date}</p>
+                        <h2 key = {i}>{blogls.title}
+                            <p key = {i}>{blogls.date}</p>
                         </h2>
                     </div>
                     </Link>

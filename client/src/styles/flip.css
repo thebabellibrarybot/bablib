@@ -1,13 +1,26 @@
-.tombscreen {
-  border: 1px black solid;
-  display: flex;
-  justify-content: center;
-}
-.book {
-  border: 1px solid red;
 
+.full {
+  display: inline;
 }
-.page {
-  border: 10px solid black;
-  
+.info {
+  margin-top: 3%;
+  text-align: center;
+  width: auto;
+}
+.stuff {
+  position: relative;
+  border: 1px dashed black;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+.main-page-container {
+  margin: 0 auto;
+  margin-top: 3%;
+}
+.pg {
+  border: 1px dashed black;
 }
