@@ -1,22 +1,24 @@
 const BabelUserModel = require('../models/UserModel');
-
+const bcrypt = require('bcryptjs');
 
 
 const createBabelUser = async (req, res) => {
 
     console.log('add babel user')
     try {
+        const newPassword = await bcrypt.hash(req.body.password, 10)
+
         await BabelUserModel.create({
             username: req.body.username,
             email: req.body.email,
-            password: req.body.password,
+            password: newPassword,
             ability: req.body.ability
         }) 
         console.log(BabelUserModel, 'res from create babel user controller')
-        res.status(200).json(createBabelUser)
+        res.json({ status: 'ok' })
 
-    } catch (err) {
-        console.log({status: 'err'});
+    } catch (err) { 
+        console.log({status: 'err from createbabeluser'});
     }
 
 };

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import React from 'react';
+
 
 const Loginstuff = () => {
 
@@ -21,10 +23,8 @@ const Loginstuff = () => {
             })
         })
         const data = await response.json();
-        console.log(data.status);
 
         if (data.user) {
-            console.log(data.user, 'data from if statement')
             localStorage.setItem('token', data.user)
             alert('login succ! -from loginstuff')
             window.location.href = '/userspine'
@@ -32,7 +32,7 @@ const Loginstuff = () => {
     }
 
 
-
+ 
     return (
         <form onSubmit={(userLogin)}>
 

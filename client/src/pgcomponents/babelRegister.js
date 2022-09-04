@@ -1,9 +1,11 @@
 import {  useState } from "react";
+import React from 'react';
 import BirdProfile from "../components/BirdProfile";
 //import axios from "axios";
 import '../styles/register.css';
 import { FaEarlybirds, FaKiwiBird } from 'react-icons/fa';
 import { GiBirdTwitter, GiEgyptianBird, GiKiwiBird, GiNestBirds } from 'react-icons/gi';
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -11,6 +13,8 @@ import { GiBirdTwitter, GiEgyptianBird, GiKiwiBird, GiNestBirds } from 'react-ic
 
 
 const BabelReg = () => {
+
+    const history = useNavigate();
 
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
@@ -38,6 +42,10 @@ const BabelReg = () => {
         })
         const data = await response.json();
         console.log(data);
+
+        if(data.status === 'ok') {
+            history.push('/babelusers')
+        }
     }
 
     return ( 

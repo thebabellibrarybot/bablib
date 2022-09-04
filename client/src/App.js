@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { Component } from 'react'
 import Navbar from './navbar';
 import Home from './components/home';
 
@@ -17,7 +17,19 @@ import UserSpine from './pgcomponents/userspine';
 import { BrowserRouter as Router, Route, Routes} from  'react-router-dom';
 
 
-function App() {
+
+export default class App extends Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      loggedInStatus: "NOT_LOGGED_IN",
+      user: {}
+    }
+  };
+
+  render() {
   return (
     <Router>
       <div className='app'>
@@ -65,5 +77,5 @@ function App() {
     </Router>
     );
 }
-
-export default App;
+}
+//export default App;

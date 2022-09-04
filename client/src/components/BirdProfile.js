@@ -6,6 +6,7 @@ import { CgTranscript, CgGhostCharacter } from 'react-icons/cg';
 import { BsTranslate } from 'react-icons/bs';
 import { GiHillConquest, GiBrain, GiSeveredHand } from 'react-icons/gi';
 import { SiTestinglibrary } from 'react-icons/si';
+import React from 'react';
 
 const BirdProfile = (props) => {
 

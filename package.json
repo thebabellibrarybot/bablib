@@ -22,6 +22,8 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.1.2",
     "babel-plugin-macros": "^3.1.0",
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
     "concurrently": "^7.3.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
@@ -31,6 +33,7 @@
     "mongoose": "^6.5.0",
     "nodemon": "^2.0.18",
     "npm": "^8.15.1",
+    "react-jwt": "^1.1.6",
     "web-vitals": "^2.1.4"
   }
 }
