@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react'
+import React /*{ Component }*/ from 'react'
 import Navbar from './navbar';
 import Home from './components/home';
 
@@ -14,28 +14,26 @@ import BabelUsers from './pgcomponents/babelUsers';
 import BabelReg from './pgcomponents/babelRegister';
 import UserSpine from './pgcomponents/userspine';
 
+import UserModel from './components/userDashComps/myModel';
+
 import { BrowserRouter as Router, Route, Routes} from  'react-router-dom';
 
+ /* const ROLES = {
+    'User': 2001,
+    'Editor': 1984,
+    'Admin': 5150
+  }
+  */
 
-
-export default class App extends Component {
-
-  constructor() {
-    super();
-
-    this.state = {
-      loggedInStatus: "NOT_LOGGED_IN",
-      user: {}
-    }
-  };
-
-  render() {
+  function App() {
   return (
     <Router>
       <div className='app'>
         <Navbar />
         <div className='content'>
           
+          {/* public app functions */}
+
           <Routes>
             <Route path = "/" element = {<Home/>}/>
           </Routes>
@@ -57,9 +55,7 @@ export default class App extends Component {
           <Routes>
             <Route path = "/register" element = { <BabelReg/>} />
           </Routes>
-          <Routes>
-            <Route path = "/userspine" element = { <UserSpine/> }/>
-          </Routes>
+          
 
           <Routes>
             <Route path = "/babelblogls" element = { <BabelBlogls/>}/>
@@ -67,6 +63,24 @@ export default class App extends Component {
           <Routes>
             <Route path = "/babelblogls/:id" element = { <BabelBlogDeets/> }/>
           </Routes>
+
+          {/* user app functions */}
+
+          <Routes>
+            <Route path = "/userspine" element = {<UserSpine/>}>
+              {/*<Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
+              </Route>*/}
+            </Route>
+          </Routes>
+
+          <Routes>
+            <Route path = "/userspine/mymodels" element = {<UserModel/>}/>
+          </Routes>
+        
+
+          {/* admin app functions */}
+
+
 
 
 
@@ -77,5 +91,9 @@ export default class App extends Component {
     </Router>
     );
 }
-}
-//export default App;
+
+
+export default App;
+/*
+
+*/

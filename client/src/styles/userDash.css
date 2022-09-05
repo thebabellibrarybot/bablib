@@ -21,14 +21,18 @@
     background-color: white;
 }
 .dashboard-main {
-    margin-top: 10%;
+    margin-top: 5%;
     display: inline-block;
     margin-left: 20%;
     margin-right: 20%;
+    text-align: center;
 }
 .dashcontnet {
     display: grid;
     grid-template-columns: repeat(2, 2fr);
+}
+.a-dash {
+    padding: 30px;
 }
 .a-cont {
     text-align: center;
@@ -36,7 +40,7 @@
     border: 1px dashed black;
 }
 .a-cont p {
-    padding: 20px;
+    padding: 10px;
 }
 .buttons {
     border: 1px dashed black;
@@ -45,5 +49,33 @@
     border: 2px dashed greenyellow;
 }
 
+/* styles for user dash pages */
+.usermodel {
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 10px;
+    border: 2px dashed greenyellow}
 
-
+/* styles for userRoleSelector */
+.rotator {
+    margin-top: 3%;
+    margin-left: 20%;
+    margin-right: 20%;
+    display: inline;
+    text-align: center;
+    justify-content: center;
+}
+.rotator .roles {
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+}
+.rotator .roles .role{
+    border: 1px dashed black;
+    padding: 10px;
+    margin: 10px;
+}
+.rotator .roles .role:hover {
+    border: 2px dashed greenyellow
+}

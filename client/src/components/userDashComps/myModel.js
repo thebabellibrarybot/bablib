@@ -1,10 +1,13 @@
+import UserRoleSelector from "./roleSelector"
+
 const UserModel = () => {
 
 
     return (
         <div className="usermodel">
-            welcome to user models
+            <h1>welcome to user models</h1>
+            <UserRoleSelector></UserRoleSelector>
         </div>
     )
 }
-export default UserModel
+export default UserModel;

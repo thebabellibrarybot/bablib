@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 //import { useNavigate  } from 'react-router-dom';
 import '../styles/userDash.css';
-//import DashGrid from '../components/dashgrid';
+
 
 
 const UserSpine = () => {
-    
+
 
     const ability = 'crow'
 
@@ -42,6 +42,7 @@ const UserSpine = () => {
             <BirdProfile className = 'icon' ability = {ability}></BirdProfile>
             </div>
             <div className="dashboard-main">
+                <h1>welcome user</h1>
 
                 <div className="dashitem">
                     <div className="dashcontnet">

@@ -1,5 +1,6 @@
 const BabelUserModel = require('../models/UserModel');
 const UserDashModel = require('../models/UserDashModel');
+const UserRolesModel = require('../models/UserRolesModel');
 
 
 const getBabelDash = async (req, res) => {
@@ -18,5 +19,23 @@ const getBabelDash = async (req, res) => {
 };
 
 
-module.exports = { getBabelDash };
+const getUserDash = async(req,res) => {
+    
+    const url = req.url
+    const query = {rotatorUrlParam: url}
+
+    const rotatorData = await UserRolesModel.find(query)
+    console.log(rotatorData, 'rot data')
+    if (!rotatorData) {
+        return res.status(404).json({err: 'no such rotator'})
+    } else {
+        console.log('rotator works loading', rotatorData)
+        res.status(200).json(rotatorData)
+    }
+
+
+}
+
+
+module.exports = { getBabelDash, getUserDash };
 

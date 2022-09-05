@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const { getBabelDash } = require('../controllers/babelUserController');
+const { getBabelDash, getUserDash } = require('../controllers/babelUserController');
 
 router.get('/', getBabelDash);
 
-module.exports = router; 
+router.get('/mymodels', getUserDash);
+
+module.exports = router;  
