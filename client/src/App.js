@@ -2,6 +2,7 @@
 import React /*{ Component }*/ from 'react'
 import Navbar from './navbar';
 import Home from './components/home';
+import MyProfile from './components/userDashComps/myProfile';
 
 import BabelTombs from './pgcomponents/babelTombs';
 import BabelID from './pgcomponents/babelTombDetail'
@@ -16,7 +17,8 @@ import UserSpine from './pgcomponents/userspine';
 
 import UserModel from './components/userDashComps/myModel';
 
-import { BrowserRouter as Router, Route, Routes} from  'react-router-dom';
+import { Route, Routes} from  'react-router-dom';
+import RequireAuth from './components/RequireAuth';
 
  /* const ROLES = {
     'User': 2001,
@@ -27,54 +29,36 @@ import { BrowserRouter as Router, Route, Routes} from  'react-router-dom';
 
   function App() {
   return (
-    <Router>
+  
       <div className='app'>
         <Navbar />
+        <MyProfile/>
         <div className='content'>
           
           {/* public app functions */}
 
           <Routes>
+
+
             <Route path = "/" element = {<Home/>}/>
-          </Routes>
-
-          <Routes> 
             <Route path = "/babeltombs/" element = {<BabelTombs/>}/>
-          </Routes>
-          <Routes>
             <Route path = "/babeltombs/:id" element = { <BabelID/> }/>
-          </Routes>
-          <Routes>
             <Route path = "/babeltombs/:id/:type" element = { <BabelMicrofilm/> }/>
-          </Routes>
-         
-
-          <Routes>
-            <Route path = "/babelusers" element = { <BabelUsers /> } />
-          </Routes>
-          <Routes>
+            <Route path = "/babelusers" element = { <BabelUsers /> } />   
             <Route path = "/register" element = { <BabelReg/>} />
-          </Routes>
-          
-
-          <Routes>
-            <Route path = "/babelblogls" element = { <BabelBlogls/>}/>
-          </Routes>
-          <Routes>
+            <Route path = "/babelblogls" element = { <BabelBlogls/>}/>        
             <Route path = "/babelblogls/:id" element = { <BabelBlogDeets/> }/>
-          </Routes>
 
           {/* user app functions */}
-
-          <Routes>
-            <Route path = "/userspine" element = {<UserSpine/>}>
-              {/*<Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
-              </Route>*/}
-            </Route>
-          </Routes>
-
-          <Routes>
+          <Route element = { <RequireAuth allowedRoles={[2001, 1984]}/> }>
+            <Route path = "/userspine" element = {<UserSpine/>}/>
             <Route path = "/userspine/mymodels" element = {<UserModel/>}/>
+          </Route>
+
+          {/* admin app functions */}
+          
+
+
           </Routes>
         
 
@@ -88,7 +72,7 @@ import { BrowserRouter as Router, Route, Routes} from  'react-router-dom';
 
         </div>
       </div>
-    </Router>
+    
     );
 }
 

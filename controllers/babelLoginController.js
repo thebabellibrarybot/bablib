@@ -33,14 +33,15 @@ const getUserLogin = async (req, res) => {
     }
 };
 const getUserAuth = async (req, res) => {
-    
+    console.log('get userauth fired')
     const token = req.headers['x-access-token']
+    console.log('getuserauth fired with header', token)
 
     try {
         const decoded = jwt.verify(token, 'supersecuresecretkey')
         const email = decoded.email
         const user = await BabelUserModel.findOne({email: email})
-        return res.json({ status: 'ok', quote: user.quote })
+        return res.json({ status: 'ok', quote: user })
 
     } catch (err) {
         res.json({ status: 'err', err: 'invalid token' })

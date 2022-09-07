@@ -1,7 +1,7 @@
 import {  useState } from "react";
 import React from 'react';
 import BirdProfile from "../components/BirdProfile";
-//import axios from "axios";
+import axios from "axios";
 import '../styles/register.css';
 import { FaEarlybirds, FaKiwiBird } from 'react-icons/fa';
 import { GiBirdTwitter, GiEgyptianBird, GiKiwiBird, GiNestBirds } from 'react-icons/gi';
@@ -28,18 +28,18 @@ const BabelReg = () => {
     }
 
     async function registerUser () {
-        const response = await fetch('/register', {
-            method: 'POST',
-            headers: {
-                'Content-Type': "application/json"
-            },
-            body: JSON.stringify({
-                username,
-                email,
-                password,
-                ability
-            })
-        })
+        const response = await axios.post('/register',
+        JSON.stringify({
+            username,
+            email,
+            password,
+            ability
+        }),
+        {
+            headers: {'Content-Type': 'application/json'},
+            withCredentials: true
+        }
+        );
         const data = await response.json();
         console.log(data);
 

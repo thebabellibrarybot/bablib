@@ -13,7 +13,7 @@ const getBabelDash = async (req, res) => {
         */
     // then get the dashboard options allocated to that user
     const dashboard = await UserDashModel.find({});
-    console.log(dashboard, 'userdashboard stuff')
+
     res.status(200).json(dashboard);
 
 };
@@ -25,11 +25,11 @@ const getUserDash = async(req,res) => {
     const query = {rotatorUrlParam: url}
 
     const rotatorData = await UserRolesModel.find(query)
-    console.log(rotatorData, 'rot data')
+
     if (!rotatorData) {
         return res.status(404).json({err: 'no such rotator'})
     } else {
-        console.log('rotator works loading', rotatorData)
+
         res.status(200).json(rotatorData)
     }
 
