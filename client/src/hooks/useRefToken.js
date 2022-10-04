@@ -12,7 +12,9 @@ const useRefToken = () => {
             console.log(JSON.stringify(prev, 'prev from useREFTOKEN.js react'))
             console.log(response.data.accessToken);
             return {
-                ...prev, accessToken: response.data.accessToken
+                ...prev, 
+                roles: response.data.roles,
+                accessToken: response.data.accessToken
             }
         });
         return response.data.accessToken;

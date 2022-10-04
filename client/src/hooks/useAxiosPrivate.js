@@ -7,6 +7,8 @@ const useAxiosPrivate = () => {
     const refresh = useRefToken();
     const { auth } = useAuth();
 
+    console.log(auth, 'from axios private auth')
+
     useEffect(() => {
 
         const requestIntercept = axiosPrivate.interceptors.request.use(
@@ -31,6 +33,7 @@ const useAxiosPrivate = () => {
                 return Promise.reject(err);
             }
         );
+        
 
         console.log(auth.accessToken, 'auth accesstoken from axiosPrivate')
         // cleanup

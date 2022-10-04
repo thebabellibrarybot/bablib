@@ -21,6 +21,7 @@ import UserModel from './components/userDashComps/myModel';
 
 import { Route, Routes} from  'react-router-dom';
 import RequireAuth from './components/RequireAuth';
+import PresistLogin from './components/PresistLogin';
 
  /* const ROLES = {
     'User': 2001,
@@ -51,9 +52,11 @@ import RequireAuth from './components/RequireAuth';
             <Route path = "/babelblogls/:id" element = { <BabelBlogDeets/> }/>
 
           {/* user app functions */}
+          <Route element = { <PresistLogin /> }>
           <Route element = { <RequireAuth allowedRoles={[2001, 1984]}/> }>
             <Route path = "/userspine" element = {<UserSpine/>}/>
             <Route path = "/userspine/mymodels" element = {<UserModel/>}/>
+          </Route>
           </Route>
 
           {/* admin app functions */}

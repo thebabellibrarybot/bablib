@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
-import axios from 'axios';
+import { axiosPrivate } from "../../api/axiosPrivate";
+
 
 const UserRoleSelector = () => {
 
     // get data for rotator 
     const [data, setData] = useState();
     const path  = window.location.pathname;
+    console.log(path, 'rotatorpath')
     useEffect (() => {
-        axios.get(`${path}`)
+        axiosPrivate.get(`${path}`)
         .then((res) => {
             setData(res.data)
         })
@@ -15,7 +17,6 @@ const UserRoleSelector = () => {
     }, [path])
     console.log(data, 'data')
 
-    const [opened, setOpened] = useState();
 
     const handleextra = (el) => {
         console.log('handle extra triggered', el)

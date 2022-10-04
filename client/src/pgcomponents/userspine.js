@@ -1,6 +1,6 @@
 import BirdProfile from '../components/BirdProfile';
 import { useEffect, useState } from 'react';
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useAxiosPrivate from '../hooks/useAxiosPrivate';
 import { useNavigate, useLocation } from 'react-router-dom';
 
@@ -13,12 +13,10 @@ const UserSpine = () => {
 
     const ability = 'crow' // replace this with a req for user data and find user icon
 
-    const axiosPrivate = useAxiosPrivate();
     const [data, setData] = useState();
+    const axiosPrivate = useAxiosPrivate();
     const navigate = useNavigate();
     const location = useLocation();
-    
-
 
     useEffect(() => {
         let isMounted = true;
@@ -29,12 +27,11 @@ const UserSpine = () => {
                 const response = await axiosPrivate.get('/userspine', {
                     signal: controller.signal
                 });
-                console.log(response.data);
+                //console.log(response.data);
                 isMounted && setData(response.data);
             } catch (err) {
                 console.error(err);
-                navigate('/babelusers', { state: { from: location },
-                replace: true });
+                navigate('/babelusers', { state: { from: location }, replace: true });
             }
         }
 
@@ -42,10 +39,8 @@ const UserSpine = () => {
 
         return () => {
             isMounted = false;
-            controller.abort();
         }
-    }, [])        
-
+    }, [axiosPrivate, location, navigate])
 
 
     // go to screen from dash options
@@ -66,11 +61,10 @@ const UserSpine = () => {
 
                 <div className="dashitem">
                     <div className="dashcontnet">
-                        {data && data.map((data) => {
-                            console.log(data, 'from usersppine data')
-                            if (data.dashability === 'all')
+                        {data && data.map((data, i) => {
+                       
                             return (
-                                <div className="a-dash">
+                                <div className="a-dash" key = {i}>
                                     <div className="a-cont">
                                         <p className="icon">{data.dashicon}</p>
                                         <p>{data.dashitem}</p>

@@ -5,24 +5,18 @@ require('dotenv').config();
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const credentials = require('./middleware/credentials');
 const corsOptions = require('./config/corsOptions');
 
-// routes and authRoutes
+// pub routes
 const babelTombRoutes = require('./routes/babelTombs');
 const babelHomeRoute = require('./routes/babelHomeRoute');
 const babelBloglsRoute = require('./routes/babelBloglsRoute');
+const babelForUsersRoute = require('./routes/babelForUsersRoute');
+
 const babelRegRoute = require('./routes/babelRegRoute');
-const babelAuthRoute = require('./routes/babelauthRoute');
-const babelLogoutRoute = require('./routes/logout');
-const babelLoginRoute = require('./routes/babelLoginRoute');
 
 
 //verified routes
-const babelRefreshRoute = require('./routes/babelRefreshRoute');
-const verifyJWT = require('./middleware/verifyJWT');
-
-const userSpineRoutes = require('./routes/userSpineRoute');
 
 
 const mongoose = require('mongoose');
@@ -34,7 +28,6 @@ console.log(Port, 'port')
 
 
 //app.use(express.json())
-app.use(credentials);
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use((req, res, next) => {
@@ -65,20 +58,14 @@ app.use('/babeltombs', babelTombRoutes);
 // route for blogs
 app.use('/babelblogls', babelBloglsRoute);
 // get forusers or about info
-app.use('/babelusers', babelLoginRoute)
+app.use('/babelusers', babelForUsersRoute)
 
 
 // route for user register 
 app.use('/register', babelRegRoute);
 // route for user login && info
-app.use('/babelauth', babelAuthRoute);
-// route for user dashboard AUTH NEEDED
-app.use('/refresh', babelRefreshRoute);
-app.use('/logout', babelLogoutRoute);  // check in dev 
 
 
-app.use(verifyJWT);
-app.use('/userspine', userSpineRoutes);
 
 
 

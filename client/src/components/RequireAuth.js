@@ -13,8 +13,8 @@ const RequireAuth = ({ allowedRoles }) => {
         auth?.roles?.find(role => allowedRoles?.includes(role))
             ? <Outlet />
             : auth?.user
-                ? <Navigate to="/babelblogs" state={{ from: location }} replace />
-                : <Navigate to="/" state={{ from: location }} replace />
+                ? <Navigate to="/register" state={{ from: location }} replace />
+                : <Navigate to="/babelusers" state={{ from: location }} replace />
     );
 }
 
