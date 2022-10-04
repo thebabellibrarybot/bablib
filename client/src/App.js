@@ -8,6 +8,8 @@ import BabelTombs from './pgcomponents/babelTombs';
 import BabelID from './pgcomponents/babelTombDetail'
 import BabelMicrofilm from './pgcomponents/babelMicrofilm';
 
+
+
 import BabelBlogls from './pgcomponents/babelBlogs';
 import BabelBlogDeets from './pgcomponents/babelBlogDetails';
 
@@ -22,8 +24,7 @@ import RequireAuth from './components/RequireAuth';
 
  /* const ROLES = {
     'User': 2001,
-    'Editor': 1984,
-    'Admin': 5150
+    'Editor': 1984
   }
   */
 

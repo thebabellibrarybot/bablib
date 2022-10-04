@@ -1,4 +1,3 @@
-const BabelUserModel = require('../models/UserModel');
 const UserDashModel = require('../models/UserDashModel');
 const UserRolesModel = require('../models/UserRolesModel');
 
@@ -13,6 +12,7 @@ const getBabelDash = async (req, res) => {
         */
     // then get the dashboard options allocated to that user
     const dashboard = await UserDashModel.find({});
+    console.log('sending dashboard')
 
     res.status(200).json(dashboard);
 

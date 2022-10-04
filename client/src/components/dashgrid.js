@@ -40,7 +40,7 @@ const DashGrid = (props) => {
         <div className='anddeet'>
         {data && data.map((d, i) => {
              return(
-                <div className='extra'>
+                <div className='extra' key = {i}>
                     <div className = 'title'>
                         <p>{d.gridtitle}</p>
 

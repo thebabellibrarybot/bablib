@@ -112,3 +112,7 @@ table {
   filter: blur(4px);
   border: 1px dashed #f1356d;
 }
+
+section {
+  margin: 10%;
+}

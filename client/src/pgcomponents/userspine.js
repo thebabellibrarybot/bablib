@@ -1,34 +1,54 @@
 import BirdProfile from '../components/BirdProfile';
 import { useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
-import axios from 'axios';
-//import { useNavigate  } from 'react-router-dom';
+import { Link, Navigate } from "react-router-dom";
+import useAxiosPrivate from '../hooks/useAxiosPrivate';
+import { useNavigate, useLocation } from 'react-router-dom';
+
 import '../styles/userDash.css';
 
-
+// need to add something that states what dash items are displayed dependant on user login ability
 
 const UserSpine = () => {
 
 
-    const ability = 'crow'
+    const ability = 'crow' // replace this with a req for user data and find user icon
 
+    const axiosPrivate = useAxiosPrivate();
     const [data, setData] = useState();
-    //const [user, setUser] = useState();
-
-    //async function populateUser() {
-    //    const req = await fetch('/userspine')
-    //}
-
-    useEffect (() => {
-        axios.get('/userspine')
-        .then((res) => {
-            setData(res.data)
-        })
-        .catch((err) => console.log(err))
-    }, [])
-    console.log(data, 'data')
+    const navigate = useNavigate();
+    const location = useLocation();
+    
 
 
+    useEffect(() => {
+        let isMounted = true;
+        const controller = new AbortController();
+
+        const getUsers = async () => {
+            try {
+                const response = await axiosPrivate.get('/userspine', {
+                    signal: controller.signal
+                });
+                console.log(response.data);
+                isMounted && setData(response.data);
+            } catch (err) {
+                console.error(err);
+                navigate('/babelusers', { state: { from: location },
+                replace: true });
+            }
+        }
+
+        getUsers();
+
+        return () => {
+            isMounted = false;
+            controller.abort();
+        }
+    }, [])        
+
+
+
+    // go to screen from dash options
     const handledash = (el) => {
         window.location.href = `/userspine${el}`
     }
@@ -47,6 +67,7 @@ const UserSpine = () => {
                 <div className="dashitem">
                     <div className="dashcontnet">
                         {data && data.map((data) => {
+                            console.log(data, 'from usersppine data')
                             if (data.dashability === 'all')
                             return (
                                 <div className="a-dash">
@@ -67,62 +88,7 @@ const UserSpine = () => {
             </div>
         </div>
     )
-// https://github.com/codedamn/full-mern-stack-video/blob/part1/client/src/pages/Dashboard.js
-
-
-
-/*
-
-const UserSpine = () => {
-
-    const ability = 'crow'
-
-    const [data, setData] = useState();
-
-    useEffect (() => {
-        axios.get('/userspine')
-        .then((res) => {
-            setData(res.data)
-        })
-        .catch((err) => console.log(err))
-    }, [])
-    console.log(data, 'data')
-
-    const handledash = () => {
-        console.log(
-            'handle dash'
-        )
-    }
-
-
-    return (
-        <div className="userspine-full">
-            <div className="profile-nav">
-            <BirdProfile className = 'icon' ability = {ability}></BirdProfile>
-            </div>
-            <div className="dashboard-main">
-
-                <div className="dashitem">
-                    <div className="dashcontnet">
-                        {data && data.map((data) => {
-                            if (data.dashability === 'all')
-                            return (
-                                <div className="a-dash">
-                                    <div className="a-cont">
-                                        <p className="icon">{data.dashicon}</p>
-                                        <p>{data.dashitem}</p>
-                                        <p className = 'buttons' onClick = {handledash}>click</p>
-                                    </div>
-                                </div>
-                            )
-                        })}
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    )
-}
-*/
 }
 export default UserSpine;
+
+// https://github.com/codedamn/full-mern-stack-video/blob/part1/client/src/pages/Dashboard.js
