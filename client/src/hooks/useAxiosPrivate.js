@@ -32,7 +32,6 @@ const useAxiosPrivate = () => {
             }
         );
 
-        console.log(auth.accessToken, 'auth accesstoken from axiosPrivate')
         // cleanup
         return () => {
             axiosPrivate.interceptors.request.eject(requestIntercept);

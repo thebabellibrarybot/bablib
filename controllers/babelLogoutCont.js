@@ -5,7 +5,6 @@ const handleLogout = async (req, res) => {
     // on Client, also delete the accessToken
 
     const cookies = req.cookies;
-    console.log(cookies, 'from logout');
     if (!cookies?.jwt) {return res.sendStatus(204)};// nothing to erase
 
     // find and clear refreshToken cookie

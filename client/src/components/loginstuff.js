@@ -39,11 +39,9 @@ const Login = () => {
                     withCredentials: true
                 }
             );
-            console.log(JSON.stringify(response?.data, 'data returned'));
             //console.log(JSON.stringify(response));
             const accessToken = response?.data?.accessToken;
             const roles = response?.data?.user?.ability;
-            console.log(accessToken, roles, response?.data?.user?.email, 'acesstoken, roles, email')
 
             if (email === response?.data?.user?.email){
                 setAuth({ email, password, roles, accessToken });

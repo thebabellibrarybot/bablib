@@ -11,6 +11,7 @@ const { getBabelDash, getUserDash } = require('../controllers/babelUserControlle
 router.route('/')
     .get(verifyRoles(ROLES_LIST.User, ROLES_LIST.Editor), getBabelDash);
 
+// send user info to all user pages somehow
 router.get('/mymodels', getUserDash);
 
 module.exports = router;  

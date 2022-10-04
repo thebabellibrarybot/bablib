@@ -31,7 +31,6 @@ const handleRefreshToken = async (req, res) => {
                 'supersecretAcessToken',
                 { expiresIn: '15m' }
             );
-            console.log(accessToken, 'new accesstoken')
             res.json({ accessToken })
         }
     );
