@@ -29,6 +29,7 @@ const UserSpine = () => {
                 const response = await axiosPrivate.get('/userspine', {
                     signal: controller.signal
                 });
+                console.log(response.data);
                 isMounted && setData(response.data);
             } catch (err) {
                 console.error(err);
