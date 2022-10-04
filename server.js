@@ -13,10 +13,13 @@ const babelHomeRoute = require('./routes/babelHomeRoute');
 const babelBloglsRoute = require('./routes/babelBloglsRoute');
 const babelForUsersRoute = require('./routes/babelForUsersRoute');
 
+// login and auth routes
 const babelRegRoute = require('./routes/babelRegRoute');
-
+const authRoute = require('./routes/authRoute');
 
 //verified routes
+const verifyJWT = require('./middleware/verifyJWT');
+const babelUserhomeRoute = require('./routes/babelUserHomeRoute');
 
 
 const mongoose = require('mongoose');
@@ -64,9 +67,12 @@ app.use('/babelusers', babelForUsersRoute)
 // route for user register 
 app.use('/register', babelRegRoute);
 // route for user login && info
+app.use('/babelauth', authRoute);
 
 
-
+// route for userspine AKA userDash Pages AKA protected routes
+app.use(verifyJWT);
+app.use('/userspine', babelUserhomeRoute);
 
 
 // serve static assests if in production
