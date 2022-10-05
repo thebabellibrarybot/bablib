@@ -20,7 +20,7 @@ const refresh = require('./routes/refresh');
 const logoutRoute = require('./routes/logoutRoute');
 
 //verified routes
-const verifyJWT = require('./middleware/verifyJWT');
+// const verifyJWT = require('./middleware/verifyJWT');
 const babelUserhomeRoute = require('./routes/babelUserHomeRoute');
 
 
@@ -80,7 +80,7 @@ app.use('/logout', logoutRoute);
 
 
 // route for userspine AKA userDash Pages AKA protected routes
-app.use(verifyJWT);
+//app.use(verifyJWT);
 app.use('/userspine', babelUserhomeRoute);
 
 

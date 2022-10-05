@@ -2,7 +2,7 @@
 import React /*{ Component }*/ from 'react'
 import Navbar from './navbar';
 import Home from './components/home';
-import MyProfile from './components/userDashComps/myProfile';
+//import MyProfile from './components/userDashComps/myProfile';
 
 import BabelTombs from './pgcomponents/babelTombs';
 import BabelID from './pgcomponents/babelTombDetail'
@@ -17,7 +17,7 @@ import BabelUsers from './pgcomponents/babelUsers';
 import BabelReg from './pgcomponents/babelRegister';
 import UserSpine from './pgcomponents/userspine';
 
-import UserModel from './components/userDashComps/myModel';
+//import UserModel from './components/userDashComps/myModel';
 
 import { Route, Routes} from  'react-router-dom';
 
@@ -32,7 +32,7 @@ import { Route, Routes} from  'react-router-dom';
   
       <div className='app'>
         <Navbar />
-        <MyProfile/>
+
         <div className='content'>
           
           {/* public app functions */}
@@ -52,7 +52,7 @@ import { Route, Routes} from  'react-router-dom';
           {/* user app functions */}
           
             <Route path = "/userspine" element = {<UserSpine/>}/>
-            <Route path = "/userspine/mymodels" element = {<UserModel/>}/>
+
          
 
           {/* admin app functions */}

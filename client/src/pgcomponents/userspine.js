@@ -1,7 +1,8 @@
 import BirdProfile from '../components/BirdProfile';
 import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
-import useAxiosPrivate from '../hooks/useAxiosPrivate';
+//import useAxiosPrivate from '../hooks/useAxiosPrivate';
+import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 import '../styles/userDash.css';
@@ -14,7 +15,7 @@ const UserSpine = () => {
     const ability = 'crow' // replace this with a req for user data and find user icon
 
     const [data, setData] = useState();
-    const axiosPrivate = useAxiosPrivate();
+//    const axiosPrivate = useAxiosPrivate();
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -24,7 +25,7 @@ const UserSpine = () => {
 
         const getUsers = async () => {
             try {
-                const response = await axiosPrivate.get('/userspine', {
+                const response = await axios.get('/userspine', {
                     signal: controller.signal
                 });
                 //console.log(response.data);
@@ -40,7 +41,7 @@ const UserSpine = () => {
         return () => {
             isMounted = false;
         }
-    }, [axiosPrivate, location, navigate])
+    }, [ location, navigate])
 
 
     // go to screen from dash options
