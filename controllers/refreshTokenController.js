@@ -5,24 +5,22 @@ const handleRefreshToken = async (req, res) => {
 
     console.log('ref token fired')
     const cookies = req.cookies;
-    console.log(cookies, 'cookies from ref token req')
+
     if (!cookies?.jwt) return res.sendStatus(401);
+    console.log('got cookies okay from refTokenCont')
     const refreshToken = cookies.jwt;
-    console.log(refreshToken, 'ref token used for new query')
     const query = { "token": refreshToken }
 
     const foundUser = await BabelUserModel.findOne(query);
-    console.log(foundUser, 'founduser in refreshtoken')
     if (!foundUser) return res.sendStatus(403); //Forbidden 
     // evaluate jwt 
-    console.log('foundUser okay')
+    console.log('foundUser okay from refTokenCont')
     jwt.verify(
         refreshToken,
         'REFRESH_TOKEN_SECRET',
         (err, decoded) => {
-            console.log(err, 'err from refToken jwtVerify')
-            console.log(foundUser.username, decoded.UserInfo.email, 'founduser.username and decoded')
             if (err || foundUser.username !== decoded.UserInfo.email) return res.sendStatus(403);
+            console.log('got decoded okay from refTokenCont')
             const roles = Object.values(foundUser.ability);
             const accessToken = jwt.sign(
                 {

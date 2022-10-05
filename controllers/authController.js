@@ -13,6 +13,7 @@ const handleLogin = async (req, res) => {
     if (!foundUser) return res.sendStatus(401); //Unauthorized 
     // evaluate password 
     const match = await bcrypt.compare(pwd, foundUser.password);
+    console.log('pwd match from auth')
     if (match) {
         const roles = Object.values(foundUser.ability).filter(Boolean);
         // create JWTs
@@ -36,18 +37,11 @@ const handleLogin = async (req, res) => {
             'REFRESH_TOKEN_SECRET',
             { expiresIn: '1d' }
         );
-        /*
-        // Saving refreshToken with current user
-        foundUser.refreshToken = refreshToken;
-        const result = await foundUser.save();
-        console.log(result);
-        console.log(roles);
-        */
 
          // save refresh token to current user mongo database...
          const appendage = { $set: { token: refreshToken } }
          const updatedUser = await BabelUserModel.updateOne(query, appendage)
-         console.log(updatedUser, 'new mongo user field')
+         console.log('new mongo user field with refToken from authCont')
 
         // Creates Secure Cookie with refresh token      *** SameSite = 'none, 'secure' ??
         res.cookie('jwt', refreshToken, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 });
