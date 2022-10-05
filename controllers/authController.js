@@ -6,6 +6,7 @@ const handleLogin = async (req, res) => {
     console.log('fired handle login auth')
     const user = req.body.email
     const pwd = req.body.password
+    console.log('user:', user, 'pwd;', pwd)
     if (!user || !pwd) return res.status(400).json({ 'message': 'Username and password are required.' });
     const query = { "email": user}
 
@@ -48,7 +49,7 @@ const handleLogin = async (req, res) => {
         console.log(refreshToken, 'sent as cokkie from auth')
 
         // Send authorization roles and access token to user
-        res.json({ roles, accessToken });
+        res.json({ roles, accessToken, user });
 
     } else {
         res.sendStatus(401);

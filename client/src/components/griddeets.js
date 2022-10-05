@@ -10,15 +10,15 @@ const GridDeets = (props) => {
     return (
 
         <div className="grid-deet">
-            {data && data.map((data)=>
+            {data && data.map((data, i)=>
             
-                <div className="deetline">
+                <div className="deetline" key = {i}>
                     <div className="head">
                     <h3>{data.bodydeetH}</h3>
                     </div>
-                    {data.bodydeetB.map((cont)=>{
+                    {data.bodydeetB.map((cont, i)=>{
                     return (
-                    <div className="line">
+                    <div className="line" key = {i}>
                         <p>{cont.content}</p>
                         <p>{cont.links}</p>
                     </div>

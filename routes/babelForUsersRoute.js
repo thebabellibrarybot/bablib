@@ -1,8 +1,9 @@
 const express = require('express');
-const router = express.Router();
+const router = express.Router(); 
 
-const { getBox, getDeet } = require('../controllers/babelForUsersController');
+const { getUserNav, getBox, getDeet } = require('../controllers/babelForUsersController');
 
+router.get('/', getUserNav)
 
 router.get('/:title', getBox);
 
