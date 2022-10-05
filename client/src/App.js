@@ -7,9 +7,6 @@ import Home from './components/home';
 import BabelTombs from './pgcomponents/babelTombs';
 import BabelID from './pgcomponents/babelTombDetail'
 import BabelMicrofilm from './pgcomponents/babelMicrofilm';
-
-
-
 import BabelBlogls from './pgcomponents/babelBlogs';
 import BabelBlogDeets from './pgcomponents/babelBlogDetails';
 
@@ -17,7 +14,8 @@ import BabelUsers from './pgcomponents/babelUsers';
 import BabelReg from './pgcomponents/babelRegister';
 import UserSpine from './pgcomponents/userspine';
 
-//import UserModel from './components/userDashComps/myModel';
+import RequireAuth from './components/requireAuth';
+import UserModel from './components/userDashComs/myModel';
 
 import { Route, Routes} from  'react-router-dom';
 
@@ -39,6 +37,7 @@ import { Route, Routes} from  'react-router-dom';
 
           <Routes>
 
+          {/* open paths */}
 
             <Route path = "/" element = {<Home/>}/>
             <Route path = "/babeltombs/" element = {<BabelTombs/>}/>
@@ -50,9 +49,11 @@ import { Route, Routes} from  'react-router-dom';
             <Route path = "/babelblogls/:id" element = { <BabelBlogDeets/> }/>
 
           {/* user app functions */}
-          
-            <Route path = "/userspine" element = {<UserSpine/>}/>
 
+            <Route element = { <RequireAuth allowedRoles={[2001, 1984]}/> }>
+              <Route path = "/userspine" element = {<UserSpine/>}/>
+              <Route path = "/userspine/mymodels" element = {<UserModel/>}/>
+            </Route>
          
 
           {/* admin app functions */}

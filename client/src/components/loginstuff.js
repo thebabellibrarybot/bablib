@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import {  Link, useNavigate, useLocation } from 'react-router-dom';
-//import useAuth from '../hooks/useAuth'
+import useAuth from '../hooks/useAuth'
 import React from 'react';
 import axios from "axios";
 
 const LOGIN_URL = '/babelauth';
 
 const Login = () => {
-    //const { setAuth } = useAuth();
+    const { setAuth } = useAuth();
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -42,9 +42,10 @@ const Login = () => {
             //console.log(JSON.stringify(response));
             const accessToken = response?.data?.accessToken;
             const roles = response?.data?.roles;
+            console.log(accessToken, roles, 'got these tokens and roles as res from /login')
       
             if (email === response?.data?.user){
-                //setAuth({ email, password, roles, accessToken });
+                setAuth({ email, password, roles, accessToken });
                 setEmail('');
                 setPassword('');
                 alert(`succ login for ${email}, msg from loginstuff`)
