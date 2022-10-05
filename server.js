@@ -4,8 +4,8 @@ const { ServerApiVersion } = require('mongodb');
 require('dotenv').config();
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
 const corsOptions = require('./config/corsOptions');
+const credentials = require('./middleware/credentials');
 
 // pub routes
 const babelTombRoutes = require('./routes/babelTombs');
@@ -16,6 +16,8 @@ const babelForUsersRoute = require('./routes/babelForUsersRoute');
 // login and auth routes
 const babelRegRoute = require('./routes/babelRegRoute');
 const authRoute = require('./routes/authRoute');
+const refresh = require('./routes/refresh');
+const logoutRoute = require('./routes/logoutRoute');
 
 //verified routes
 const verifyJWT = require('./middleware/verifyJWT');
@@ -30,18 +32,21 @@ console.log(Port, 'port')
 
 
 
-//app.use(express.json())
+// fetch cookies credentials requirement
+app.use(credentials);
+// cross origin resource sharing
 app.use(cors(corsOptions));
+// built-in middleware to handle urlencoded form data
+app.use(express.urlencoded({ extended: false }));
+// expres w/o custom hook
 app.use(express.json());
+// logger
 app.use((req, res, next) => {
     console.log(req.path, req.method, req.body, 'server msg from port')
     next()
 });
+// midleware for cookies
 app.use(cookieParser());
-app.use(bodyParser.json());
-
-
-
 // mongoDB conn
 const uri = "mongodb+srv://babeluser:babelpassword@babelcluster.fogf4.mongodb.net/test?retryWrites=true&w=majority"
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
@@ -68,6 +73,10 @@ app.use('/babelusers', babelForUsersRoute)
 app.use('/register', babelRegRoute);
 // route for user login && info
 app.use('/babelauth', authRoute);
+// route for refresh token
+app.use('/refresh', refresh);
+// route for logout
+app.use('/logout', logoutRoute);
 
 
 // route for userspine AKA userDash Pages AKA protected routes
@@ -84,7 +93,7 @@ if(process.env.NODE_ENV === 'production') {
         res.sendFile(path.resolve(__dirname, 'clinet', 'build', 'index.html'));
     });
 }
-//app.use('/', babelHomeRoute);
+// port and clear run statements;
 app.listen(Port, () => {
     console.log(`listening on 4000`)
 });
