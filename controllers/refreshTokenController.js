@@ -12,14 +12,14 @@ const handleRefreshToken = async (req, res) => {
     const query = { "token": refreshToken }
 
     const foundUser = await BabelUserModel.findOne(query);
-    if (!foundUser) return res.sendStatus(403); //Forbidden 
+    if (!foundUser) return res.sendStatus(402); //Forbidden 
     // evaluate jwt 
     console.log('foundUser okay from refTokenCont')
     jwt.verify(
         refreshToken,
         'REFRESH_TOKEN_SECRET',
         (err, decoded) => {
-            if (err || foundUser.username !== decoded.UserInfo.email) return res.sendStatus(403);
+            if (err || foundUser.email !== decoded.UserInfo.email) return res.sendStatus(402);
             console.log('got decoded okay from refTokenCont')
             const roles = Object.values(foundUser.ability);
             const accessToken = jwt.sign(
@@ -30,8 +30,9 @@ const handleRefreshToken = async (req, res) => {
                     }
                 },
                 'ACCESS_TOKEN_SECRET',
-                { expiresIn: '30s' }
+                { expiresIn: '15m' }
             );
+            console.log(roles, accessToken, 'from refToken res.json')
             res.json({ roles, accessToken })
         }
     );

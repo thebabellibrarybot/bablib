@@ -13,8 +13,10 @@ import BabelBlogDeets from './pgcomponents/babelBlogDetails';
 import BabelUsers from './pgcomponents/babelUsers';
 import BabelReg from './pgcomponents/babelRegister';
 import UserSpine from './pgcomponents/userspine';
+import MyProfile from './components/userDashComs/myProfile';
 
 import RequireAuth from './components/requireAuth';
+import PresistLogin from './components/PresistLogin';
 import UserModel from './components/userDashComs/myModel';
 
 import { Route, Routes} from  'react-router-dom';
@@ -50,9 +52,12 @@ import { Route, Routes} from  'react-router-dom';
 
           {/* user app functions */}
 
+            <Route element = { <PresistLogin /> }>
             <Route element = { <RequireAuth allowedRoles={[2001, 1984]}/> }>
+              <Route path = "*" element = { <MyProfile />} />
               <Route path = "/userspine" element = {<UserSpine/>}/>
               <Route path = "/userspine/mymodels" element = {<UserModel/>}/>
+            </Route>
             </Route>
          
 

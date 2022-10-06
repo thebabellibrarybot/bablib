@@ -18,18 +18,17 @@ const UserSpine = () => {
     const axiosPrivate = useAxiosPrivate();
     const navigate = useNavigate();
     const location = useLocation();
-
+ 
     useEffect(() => {
-        let isMounted = true;
-        const controller = new AbortController();
+        //let isMounted = true;
+        //const controller = new AbortController();
 
         const getUsers = async () => {
             try {
-                const response = await axiosPrivate.get('/userspine', {
-                    signal: controller.signal
-                });
+                const response = await axiosPrivate.get('/userspine');
                 //console.log(response.data);
-                isMounted && setData(response.data);
+                //isMounted && 
+                setData(response.data);
             } catch (err) {
                 console.error(err);
                 navigate('/babelusers', { state: { from: location }, replace: true });
@@ -37,14 +36,15 @@ const UserSpine = () => {
         }
 
         getUsers();
-
+/*
         return () => {
             isMounted = false;
         }
+*/
     }, [axiosPrivate, location, navigate])
 
 
-    // go to screen from dash options
+    // go to screen from dash options  COPY ACTIONS THAT LEAD FROM LOGIN TO {EL} INVOKING USEAUTH
     const handledash = (el) => {
         window.location.href = `/userspine${el}`
     }
