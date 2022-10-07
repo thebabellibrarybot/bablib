@@ -1,0 +1,31 @@
+AUTH:
+
+presist = 
+https://www.youtube.com/watch?v=27KeYk-5vJw&list=RDCMUCY38RvRIxYODO4penyxUwTg&index=1
+https://github.com/gitdagray/react_persist_login/blob/main/src/components/PersistLogin.js
+
+protected routes = 
+https://www.youtube.com/watch?v=oUZjO00NkhY
+https://github.com/gitdagray/react_protected_routes/blob/main/src/components/RequireAuth.js
+
+backend = 
+https://www.youtube.com/watch?v=f2EqECiTBL8
+https://github.com/gitdagray/mongo_async_crud/blob/main/routes/logout.js
+
+more auth=
+https://www.youtube.com/watch?v=s-4k5TcGKHg&list=RDCMUCY38RvRIxYODO4penyxUwTg&index=6
+
+
+
+BOOK PAGES:
+
+
+
+
+SEARCHBAR:
+
+
+
+USERPROFILE:
+
+
