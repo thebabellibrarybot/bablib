@@ -4,12 +4,20 @@ import './index.css';
 import App from './App';
 import { AuthProvider } from './context/AuthProvider';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+/*
+const foundStuff = localStorage.getItem('stuff')
+if (foundStuff){
+    console.log('INDEX stuff exsists and looks like this:', foundStuff);
+}
+*/
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <AuthProvider>
+    <AuthProvider className = 'darkmode'>
     <Routes>
     <Route path = "/*" element = { <App/> } />
     </Routes>

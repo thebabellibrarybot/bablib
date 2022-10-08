@@ -42,8 +42,17 @@ const Login = () => {
             //console.log(JSON.stringify(response));
             const accessToken = response?.data?.accessToken;
             const roles = response?.data?.roles;
-            console.log(accessToken, roles, 'got these tokens and roles as res from /login')
-      
+            
+            // set localStorage to DARK_MODE so it's clear you're logged in
+            localStorage.setItem('DARK_MODE', true)
+
+            const foundStuff = localStorage.getItem('DARK_MODE');
+            console.log('foundstuff from login local storage', foundStuff)
+
+            if (foundStuff){
+                console.log('stuff exsists and looks like this:', foundStuff);
+            }
+           
             if (email === response?.data?.user){
                 setAuth({ email, password, roles, accessToken });
                 setEmail('');
@@ -109,4 +118,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Login;

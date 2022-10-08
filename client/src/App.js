@@ -28,10 +28,12 @@ import { Route, Routes} from  'react-router-dom';
   */
 
   function App() {
+
   return (
   
       <div className='app'>
         <Navbar />
+        <MyProfile />
 
         <div className='content'>
           
@@ -54,7 +56,6 @@ import { Route, Routes} from  'react-router-dom';
 
             <Route element = { <PresistLogin /> }>
             <Route element = { <RequireAuth allowedRoles={[2001, 1984]}/> }>
-              <Route path = "*" element = { <MyProfile />} />
               <Route path = "/userspine" element = {<UserSpine/>}/>
               <Route path = "/userspine/mymodels" element = {<UserModel/>}/>
             </Route>

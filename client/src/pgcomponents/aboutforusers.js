@@ -5,9 +5,9 @@ import DashGrid from '../components/dashgrid';
 import '../styles/usernav.css';
 
 const AboutForusers = () => {
-    // set babelusers to const {id} = useParams() and change in router to make useable on other routes
+
     const [data, setData] = useState();
-    console.log(data)
+
     useEffect (() => {
         axios.get(`/babelusers`)
         .then((res) => {
@@ -39,6 +39,7 @@ const AboutForusers = () => {
             </nav>
 
         </div>
+
         <DashGrid className = {myclass}></DashGrid>
 
         </>

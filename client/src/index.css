@@ -7,6 +7,8 @@
   margin: 0;
   font-family: 'Ubuntu', sans-serif;
   color: #333;
+
+
 /* sub navbar */
 }
 .subnavbar {
@@ -31,6 +33,10 @@
 }
 .nav-item :hover {
   color: #f1356d;
+}
+.content {
+  padding: 0px;
+  padding-top: 40px;
 }
 
 
@@ -58,10 +64,7 @@
 .navbar a:hover {
   color: #f1356d;
 }
-.content {
-  padding: 0px;
-  padding-top: 40px;
-}
+
 
 
 /* table styles */ 
@@ -116,3 +119,4 @@ table {
 section {
   margin: 10%;
 }
+
