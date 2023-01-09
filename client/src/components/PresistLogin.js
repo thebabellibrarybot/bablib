@@ -28,8 +28,8 @@ const PresistLogin = () => {
     }, [])
 
     useEffect(() => {
-        console.log(`isloading: ${isLoading}`)
-        console.log(`AT: ${JSON.stringify(auth?.accessToken)}`)
+        //console.log(`isloading: ${isLoading}`)
+        //console.log(`AT: ${JSON.stringify(auth?.accessToken)}`)
     }, [isLoading])
 
     return (

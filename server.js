@@ -49,6 +49,7 @@ app.use((req, res, next) => {
 app.use(cookieParser());
 // mongoDB conn
 const uri = "mongodb+srv://babeluser:babelpassword@babelcluster.fogf4.mongodb.net/test?retryWrites=true&w=majority"
+mongoose.set('strictQuery', false);
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 const connection = mongoose.connection;
 connection.once('open', () => {

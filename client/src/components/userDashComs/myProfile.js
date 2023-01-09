@@ -9,10 +9,6 @@ const MyProfile = () => {
     const [currentUser, setCurrentUser] = useState(null);
 
     useEffect(() => {
-        console.log('useEffect from my profile')
-    })
-
-    useEffect(() => {
         
         const loadUser = async () => {
             if (stuff) {
