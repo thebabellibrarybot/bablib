@@ -19,6 +19,9 @@ import RequireAuth from './components/requireAuth';
 import PresistLogin from './components/PresistLogin';
 import UserModel from './components/userDashComs/myModel';
 
+// items for global context hooks
+import UserStateProvider from './context/UserStateProvider';
+
 import { Route, Routes} from  'react-router-dom';
 
  /* const ROLES = {
@@ -32,6 +35,7 @@ import { Route, Routes} from  'react-router-dom';
   return (
   
       <div className='app'>
+        <UserStateProvider>
         <Navbar />
         <MyProfile />
 
@@ -42,6 +46,7 @@ import { Route, Routes} from  'react-router-dom';
           <Routes>
 
           {/* open paths */}
+            <Route element = { <PresistLogin /> }>
 
             <Route path = "/" element = {<Home/>}/>
             <Route path = "/babeltombs/" element = {<BabelTombs/>}/>
@@ -54,11 +59,12 @@ import { Route, Routes} from  'react-router-dom';
 
           {/* user app functions */}
 
-            <Route element = { <PresistLogin /> }>
+            
             <Route element = { <RequireAuth allowedRoles={[2001, 1984]}/> }>
               <Route path = "/userspine" element = {<UserSpine/>}/>
               <Route path = "/userspine/mymodels" element = {<UserModel/>}/>
             </Route>
+            
             </Route>
          
 
@@ -78,6 +84,7 @@ import { Route, Routes} from  'react-router-dom';
           
 
         </div>
+        </UserStateProvider>
       </div>
     
     );

@@ -3,11 +3,14 @@ import {  Link, useNavigate, useLocation } from 'react-router-dom';
 import useAuth from '../hooks/useAuth'
 import React from 'react';
 import axios from "axios";
+import useStateHook from "../hooks/useUserState";
+
 
 const LOGIN_URL = '/babelauth';
  
 const Login = () => {
     const { setAuth } = useAuth();
+    const { isUser, setIsUser } = useStateHook()
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -42,7 +45,6 @@ const Login = () => {
             //console.log(JSON.stringify(response));
             const accessToken = response?.data?.accessToken;
             const roles = response?.data?.roles;
-            console.log(accessToken, 'accesstoken from loginstuff')
             
             // set localStorage to DARK_MODE so it's clear you're logged in
             /* localStorage.setItem('DARK_MODE', true)
@@ -55,12 +57,18 @@ const Login = () => {
             }
            */
             if (email === response?.data?.user){
+                
                 setAuth({ email, password, roles, accessToken });
                 setEmail('');
                 setPassword('');
                 alert(`succ login for ${email}, msg from loginstuff`)
                 navigate(from, { replace: true });
-                localStorage.setItem( 'roles', roles )
+                window.localStorage.setItem( 'roles', roles )
+                window.localStorage.setItem( 'presists', true )
+                window.dispatchEvent(new Event('roles'));
+                setIsUser(localStorage.getItem('roles'))
+                console.log(isUser)
+
                 }
                 else {
                     alert(

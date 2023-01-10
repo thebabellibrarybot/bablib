@@ -1,48 +1,59 @@
-import axios from 'axios';
+//import axios from 'axios';
 import { useEffect, useState } from 'react';
+
+import useStateHook from '../../hooks/useUserState';
+import SignOutButt from './signoutbutt';
 
 import ('../../styles/myprofile.css');
 
 const MyProfile = () => {
 
-    const stuff = localStorage.getItem('roles');
-    const [currentUser, setCurrentUser] = useState(null);
+    const [userRole, setUserRole] = useState(window.localStorage.getItem('roles'));
+    const acceptedRoles = [1984, 2001]
+    const { isUser } = useStateHook()
 
     useEffect(() => {
-        
-        const loadUser = async () => {
-            if (stuff) {
-                console.log(stuff);
-                const response = await axios.get('/refresh', {
-                    withCredentials: true
-                });
-                console.log(response, 'response from myPROFILE', response);
-                if (response) {
-                    setCurrentUser(response);
-                }
-
-                return response;
+        const handleStorageEvent = (event) => {
+            console.log(event)
+            if (event.key === 'roles' && event.newValue !== userRole) {
+                setUserRole(event.newValue)
             }
-        }
-        loadUser();
-    }, [stuff])
-    
-    console.log(currentUser, 'current user')
+        };
 
-    return (
-        <div className="myprofile">
-            <p>MYPROFILE COMP</p>
-            <p>MYPROFILE COMP</p>
-            <p>MYPROFILE COMP</p>
-            <p>MYPROFILE COMP</p>
-            <p>MYPROFILE COMP</p>
-            <p>MYPROFILE COMP</p>
-            <p>MYPROFILE COMP</p>
-            <p>MYPROFILE COMP</p>
-            <p>MYPROFILE COMP</p>
-            
+        window.addEventListener('storage', handleStorageEvent);
+        
+        return () => {
+            window.removeEventListener('storage', handleStorageEvent)
+        };
+    
+
+    }, [userRole])
+
+
+    console.log(acceptedRoles, 'ask', isUser)
+    console.log(acceptedRoles.includes(parseInt(isUser)), 'accepted roles includes')
+
+    if (acceptedRoles.includes(parseInt(isUser)) === true) return (
+        <div className='myprofile'>
+            <h1>{acceptedRoles.includes(isUser) ? isUser : isUser}</h1>
+            <div>
+                <h1>below is: isUser</h1>
+                <p>{isUser}</p>
+                
+            </div>
+            <SignOutButt></SignOutButt>
         </div>
     )
+    /*return (
+        <div className="myprofile">
+            <p>MYPROFILE COMP</p>
+            <p onClick={() => onclickfunc()}>{userRole}</p>
+            <p>{count}</p>
+            <usesignOutBut></usesignOutBut>
+        </div>
+        if (acceptedRoles.includes(isUser))
+    )
+    */
 
 }
 export default MyProfile;
