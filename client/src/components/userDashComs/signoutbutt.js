@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import useStateHook from "../../hooks/useUserState";
 import useAuth from "../../hooks/useAuth";
 
+
 const SignOutButt = () => {
 
     const { isUser, setIsUser } = useStateHook()
@@ -20,8 +21,7 @@ const SignOutButt = () => {
         <div className="out-butt">
 
             <button onClick={handleSignOut}>
-                <p>bye bitch: {signOut}</p>
-                <p>this bitch is: {isUser}</p>
+                <p>userSignout</p>
             </button>
 
         </div>

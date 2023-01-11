@@ -12,12 +12,15 @@ import BabelBlogDeets from './pgcomponents/babelBlogDetails';
 
 import BabelUsers from './pgcomponents/babelUsers';
 import BabelReg from './pgcomponents/babelRegister';
-import UserSpine from './pgcomponents/userspine';
+import UserSpine from './pgcomponents/userDashComponents/userspine';
 import MyProfile from './components/userDashComs/myProfile';
 
 import RequireAuth from './components/requireAuth';
 import PresistLogin from './components/PresistLogin';
 import UserModel from './components/userDashComs/myModel';
+import UserTombs from './components/userDashComs/userTombs';
+import UserBlogs from './components/userDashComs/UserBlogs';
+import UserProfile from './components/userDashComs/UserProfile';
 
 // items for global context hooks
 import UserStateProvider from './context/UserStateProvider';
@@ -63,6 +66,9 @@ import { Route, Routes} from  'react-router-dom';
             <Route element = { <RequireAuth allowedRoles={[2001, 1984]}/> }>
               <Route path = "/userspine" element = {<UserSpine/>}/>
               <Route path = "/userspine/mymodels" element = {<UserModel/>}/>
+              <Route path = "/userspine/mytombs" element = {<UserTombs/>}/>
+              <Route path = "/userspine/myprofile" element = {<UserProfile/>}/>
+              <Route path = "/userspine/myblogs" element = {<UserBlogs/>}/>
             </Route>
             
             </Route>

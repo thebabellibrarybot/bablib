@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 
 import useStateHook from '../../hooks/useUserState';
-import SignOutButt from './signoutbutt';
+import UserNav from "../../pgcomponents/userDashComponents/userNav";
 
 import ('../../styles/myprofile.css');
 
@@ -35,13 +35,13 @@ const MyProfile = () => {
 
     if (acceptedRoles.includes(parseInt(isUser)) === true) return (
         <div className='myprofile'>
-            <h1>{acceptedRoles.includes(isUser) ? isUser : isUser}</h1>
+            <h1>{acceptedRoles.includes(isUser) ? 'hello fiend' : 'hello user'}</h1>
             <div>
-                <h1>below is: isUser</h1>
+                <h1>below is:</h1>
                 <p>{isUser}</p>
                 
             </div>
-            <SignOutButt></SignOutButt>
+            <UserNav></UserNav>
         </div>
     )
     /*return (
