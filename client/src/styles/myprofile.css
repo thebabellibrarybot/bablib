@@ -1,8 +1,55 @@
 .myprofile {
-
     z-index: 99;
     position: absolute;
+    display: flex;
     top: 2rem;
     right: 2rem;
-    border: 1px dashed greenyellow;
+    border: 1px dashed #2fdf75;
+    border-radius: 1rem 1rem 1rem;
+} 
+.text p{
+    color:rgb(228, 228, 228);
 }
+
+.text {
+    display: inline;
+    text-align: center;
+    padding: .03rem;
+}
+.text {/* 
+background-color: #428cff;
+    background-color: #2fdf75;
+*/}
+
+
+
+@keyframes spin {
+    from {
+        transform: scale(1) rotate(0deg);
+    }
+    to {
+        transform: scale(1) rotateY(360deg);
+    }
+}
+.ability {
+    margin-right: 0;
+    top: 0;
+    animation: spin 5s infinite linear;
+    border: 1px solid #2fdf75;
+    border-radius: 1rem 1rem 1rem;
+}
+
+.user-nav-link {
+    text-decoration: none;
+    background-color: transparent;
+    padding: .9rem;
+    color:rgb(228, 228, 228);
+}
+.user-nav-item :hover {
+    color: #2fdf75;
+}
+.user-nav-item {
+    background-color: transparent;
+    padding: .2rem;
+}
+

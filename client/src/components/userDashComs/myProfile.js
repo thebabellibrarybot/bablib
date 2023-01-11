@@ -1,52 +1,63 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import BirdProfile from '../BirdProfile';
+import { FaBars } from 'react-icons/fa';
+import UserNav from './profileNav';
+
 
 import ('../../styles/myprofile.css');
 
+  
 const MyProfile = () => {
 
     const stuff = localStorage.getItem('roles');
     const [currentUser, setCurrentUser] = useState(null);
 
-    useEffect(() => {
-        console.log('useEffect from my profile')
-    })
+    const [display, setDisplay] = useState(false);
+
+
+    const toggleClick =()=>{
+        setDisplay(curr => !curr)
+    }
 
     useEffect(() => {
         
         const loadUser = async () => {
             if (stuff) {
-                console.log(stuff);
+
                 const response = await axios.get('/refresh', {
                     withCredentials: true
                 });
-                console.log(response, 'response from myPROFILE', response);
                 if (response) {
                     setCurrentUser(response);
                 }
-
                 return response;
+            }
+            if (!stuff) {
+                setCurrentUser(null)
             }
         }
         loadUser();
     }, [stuff])
     
-    console.log(currentUser, 'current user')
+    if (currentUser !== null){
 
-    return (
-        <div className="myprofile">
-            <p>MYPROFILE COMP</p>
-            <p>MYPROFILE COMP</p>
-            <p>MYPROFILE COMP</p>
-            <p>MYPROFILE COMP</p>
-            <p>MYPROFILE COMP</p>
-            <p>MYPROFILE COMP</p>
-            <p>MYPROFILE COMP</p>
-            <p>MYPROFILE COMP</p>
-            <p>MYPROFILE COMP</p>
-            
-        </div>
-    )
+        return (
+            <div className="myprofile">
 
+                <div className='ability'>
+                <BirdProfile ability = {currentUser.data.bird}></BirdProfile>
+                </div>
+                
+                <UserNav visability = {display}/>
+
+                <div onClick = {toggleClick} className = 'text'>
+                    <p>{currentUser.data.username}</p>
+                    <FaBars className='bars'/>
+                </div>
+                
+            </div>
+        )
+    }
 }
 export default MyProfile;

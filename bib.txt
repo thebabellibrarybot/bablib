@@ -28,9 +28,28 @@ DARK_MODE:
 
       https://levelup.gitconnected.com/dark-mode-in-react-533faaee3c6e
 
+      https://www.30secondsofcode.org/css/s/polka-dot-pattern
+
+      color chart:
+      https://ionicframework.com/docs/theming/dark-mode#:~:text=The%20first%20way%20to%20enable%20dark%20mode%20is,dark%20mode%20is%20enabled.%20%40media%20%28prefers-color-scheme%3A%20dark%29%20%7B
+
+bib x2: 
+//      bib: https://medium.com/lets-make-something-up/creating-light-dark-mode-on-a-react-app-with-context-589a5465f639
+
+//      https://dev.to/sanspanic/implementing-dark-mode-in-react-via-context-4f1p#:~:text=What%20about%20dark%20mode%3F%201%201.%20Create%20The,...%204%204.%20Consuming%20Context%20wherever%20needed%20
+
+//      https://levelup.gitconnected.com/dark-mode-in-react-533faaee3c6e
 
 
 
+SHOW_HIDE_CONTEXT_CONTROLLER:
+
+https://contactmentor.com/show-hide-component-react-js/#:~:text=How%20to%20Show%2FHide%20component%20in%20React%20JS%201,6%206.%20Wrap%20child%20component%20in%20App.js%20
+
+
+Updating State on Prop:
+
+https://bobbyhadz.com/blog/react-update-state-when-props-change
 
 
 BOOK PAGES:
@@ -44,5 +63,19 @@ SEARCHBAR:
 
 
 USERPROFILE:
+
+
+RESPONSIVE SCREEN SIZE:
+
+      https://medium.com/aniruddhs-blog/context-448f8da12a24#:~:text=Use%20the%20Browser%20Dev%20Tools%20Most%20modern%20web,device%20of%20your%20choice%20from%20the%20given%20options.
+
+
+ANIMATION ONLOAD:
+
+      https://medium.com/@davidfalconbernhard/how-to-animate-once-on-page-load-in-react-js-e357fd899a4b
+
+      http://reactcommunity.org/react-transition-group/transition
+
+      https://www.bing.com/videos/search?&q=how+to+make+an+onload+animation+in+react&view=detail&mid=0A07693881FEEA76495E0A07693881FEEA76495E&form=VDQVAP&ru=%2Fvideos%2Fsearch%3Fq%3Dhow%2Bto%2Bmake%2Ban%2Bonload%2Banimation%2Bin%2Breact%26FORM%3DHDRSC3&rvsmid=48F7A8371EB61D10AB8A48F7A8371EB61D10AB8A&ajaxhist=0
 
 

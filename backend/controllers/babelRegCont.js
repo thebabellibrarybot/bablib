@@ -10,6 +10,7 @@ const handleNewUser = async (req, res) => {
         const arr = ["early-bird", "kiwi-bird", "bird-twitter", "egyptian-bird", "gi-bird", "nest-bird"]
         const adarr = "crow"
         const bird = req.body.ability;
+        console.log(bird)
 
         // add user by role
 

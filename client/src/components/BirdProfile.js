@@ -1,4 +1,4 @@
-import { FaEarlybirds, FaKiwiBird } from 'react-icons/fa';
+import { FaBars, FaEarlybirds, FaKiwiBird } from 'react-icons/fa';
 import { GiBirdTwitter, GiEgyptianBird, GiKiwiBird, GiNestBirds } from 'react-icons/gi';
 import '../styles/register.css';
 import { FaCrow, FaReceipt, FaBalanceScaleRight,FaBookDead, FaCommentDots, FaCubes, FaMortarPestle  } from 'react-icons/fa';
@@ -11,6 +11,12 @@ import React from 'react';
 const BirdProfile = (props) => {
 
     const type = props.ability;
+
+    if (type === 'solidBars') {
+        return (
+            <FaBars className='icon'></FaBars>
+        )
+    }
 
     if (type === 'crow' ) {
         return (

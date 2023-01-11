@@ -18,6 +18,7 @@ import MyProfile from './components/userDashComs/myProfile';
 import RequireAuth from './components/requireAuth';
 import PresistLogin from './components/PresistLogin';
 import UserModel from './components/userDashComs/myModel';
+import DarkThemeProvider from './context/DarkThemeProvider';
 
 import { Route, Routes} from  'react-router-dom';
 
@@ -32,6 +33,7 @@ import { Route, Routes} from  'react-router-dom';
   return (
   
       <div className='app'>
+        <DarkThemeProvider>
         <Navbar />
         <MyProfile />
 
@@ -78,6 +80,7 @@ import { Route, Routes} from  'react-router-dom';
           
 
         </div>
+        </DarkThemeProvider>
       </div>
     
     );

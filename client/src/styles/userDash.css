@@ -1,24 +1,7 @@
-@keyframes spin {
-    from {
-        transform: scale(1) rotate(0deg);
-    }
-    to {
-        transform: scale(1) rotateY(360deg);
-    }
-}
-.profile-nav .icon {
-    font-size: 300%;
-    margin-right: 0;
-    top: 0;
-    animation: spin 5s infinite linear;
-}
-.profile-nav {
-    position: fixed;
-    top: .50%;
-    right: .50%;
-    padding: 5px;
-    border: 3px dashed greenyellow;
-    background-color: white;
+.userspine-full {
+    background-color: #212322;
+    display: flex;
+    border: 1px dashed #49544d;
 }
 .dashboard-main {
     margin-top: 5%;
@@ -26,27 +9,49 @@
     margin-left: 20%;
     margin-right: 20%;
     text-align: center;
+    padding: 1rem;
+}
+.dashboard-main h1 {
+    color: rgb(228, 228, 228);
+    font-size: 1rem;
+    padding: 1rem;
+    border: 1px dashed #49544d;
+    border-radius: 1rem 1rem 1rem;
 }
 .dashcontnet {
     display: grid;
     grid-template-columns: repeat(2, 2fr);
+    border: 1px dashed #49544d;
+    border-radius: 1rem 1rem 1rem;
+    padding: 1rem;
 }
 .a-dash {
     padding: 30px;
+    color: rgb(228, 228, 228);
+}
+.a-dash p{
+    color: rgb(228, 228, 228);
+    font-size: 1rem;
 }
 .a-cont {
     text-align: center;
     font-size: large;
-    border: 1px dashed black;
+    border: 1px dashed #49544d;
+    border-radius: 1rem 1rem 1rem;
+
 }
 .a-cont p {
     padding: 10px;
 }
 .buttons {
-    border: 1px dashed black;
+    border: 1px dashed rgb(111, 142, 65);
+    border-radius: 1rem 1rem 1rem;
+    color:rgb(228, 228, 228)
 }
 .buttons :hover {
-    border: 2px dashed greenyellow;
+    border: 1px dashed #2fdf75;
+    border-radius: 1rem 1rem 1rem;
+    color: #2fdf75;
 }
 
 /* styles for user dash pages */
@@ -55,7 +60,8 @@
     margin-left: 5%;
     margin-right: 5%;
     padding: 10px;
-    border: 2px dashed greenyellow}
+    border: 2px dashed #2fdf75;
+}
 
 /* styles for userRoleSelector */
 .rotator {
@@ -77,5 +83,5 @@
     margin: 10px;
 }
 .rotator .roles .role:hover {
-    border: 2px dashed greenyellow
+    border: 2px dashed #2fdf75
 }
