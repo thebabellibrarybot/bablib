@@ -1,30 +1,30 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import useStateHook from "../../hooks/useUserState";
-import useAuth from "../../hooks/useAuth";
+//import useAuth from "../../hooks/useAuth";
 
 
 const SignOutButt = () => {
 
+    const from = "/"
     const { isUser, setIsUser } = useStateHook()
-    const { setAuth } = useAuth()
     const [signOut, setSignOut] = useState(0)
 
     function handleSignOut () {
         setSignOut(signOut + 1)
         setIsUser(false)
         window.localStorage.setItem('roles', null)
-        setAuth(null)
     }
 
     if (isUser !== null) return (
         <div className="out-butt">
-
-            <button onClick={handleSignOut}>
-                <p>userSignout</p>
-            </button>
-
+            <Link to = {from} onClick={handleSignOut}>userSignout</Link>
         </div>
     )
 }
 export default SignOutButt;
+
+// TODO fix route on sighout
+// fix turning off auth correctly
+// check signout from dave's videos
