@@ -1,6 +1,7 @@
 import SignOutButt from "../../components/userDashComs/signoutbutt"
 import { Link } from "react-router-dom"
 import { useState } from "react"
+import BirdProfile from "../../components/BirdProfile";
 
 const UserNav = () =>{
 
@@ -13,16 +14,20 @@ const UserNav = () =>{
 
     return (
         <div className="usernavbar">
-            <div className="userbar">
-                <p onClick={(() => handleClick())}>icon</p>
-                <div className={cansee ? 'cansee' : 'invisible'}>
-                    <nav>
-                        <Link to = '/userspine' className="nav-link">userSpine</Link>
-                        <p>userSettings</p>
-                        <SignOutButt/>
+
+            <div className={cansee ? 'nav-ls' : 'invisible'}>
+                    <nav className="user-nav">
+                        <Link to = '/userspine' className="user-nav-link">userSpine</Link>
+                        <p className="user-nav-link">userSettings</p>
+                        <div className="user-nav-link"><SignOutButt/></div>
+                        <p className="user-nav-link">userStats</p>
                     </nav>
-                </div>
             </div>
+
+            <div  onClick={(() => handleClick())} className="nav-icon">
+                <BirdProfile ability = 'crow' className = 'icon'/>
+            </div>
+
         </div>
     )
 }

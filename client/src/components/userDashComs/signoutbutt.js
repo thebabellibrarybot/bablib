@@ -18,7 +18,7 @@ const SignOutButt = () => {
     }
 
     if (isUser !== null) return (
-        <div className="out-butt">
+        <div className="signout-butt">
             <Link to = {from} onClick={handleSignOut}>userSignout</Link>
         </div>
     )

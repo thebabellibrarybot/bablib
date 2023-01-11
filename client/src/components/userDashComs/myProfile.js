@@ -35,13 +35,11 @@ const MyProfile = () => {
 
     if (acceptedRoles.includes(parseInt(isUser)) === true) return (
         <div className='myprofile'>
-            <h1>{acceptedRoles.includes(isUser) ? 'hello fiend' : 'hello user'}</h1>
             <div>
-                <h1>below is:</h1>
+                <h1>hello user:</h1>
                 <p>{isUser}</p>
-                
             </div>
-            <UserNav></UserNav>
+            <UserNav></UserNav> 
         </div>
     )
     /*return (

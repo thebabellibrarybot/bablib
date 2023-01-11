@@ -1,0 +1,19 @@
+.underconstruction {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+}
+.ucborder {
+    border: 1px dashed rgb(114, 0, 0);
+    background-color: rgb(255, 161, 161);
+    padding: 50px;
+    border-radius: 10px;
+}
+.ucborder p{
+    color: rgb(114, 0, 0)
+}

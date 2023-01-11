@@ -1,8 +1,48 @@
-.myprofile {
+@keyframes spin {
+    from {
+        transform: scale(1) rotate(0deg);
+    }
+    to {
+        transform: scale(1) rotateY(360deg);
+    }
+}
 
+.myprofile {
     z-index: 99;
     position: absolute;
-    top: 2rem;
+    top: 3rem;
     right: 2rem;
     border: 1px dashed greenyellow;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+} 
+.usernavbar {
+    display: flex;
+    border: 1px solid greenyellow;
+    padding: 10px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
 }
+.nav-icon {
+    width: fit-content;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.nav-ls {
+    padding: 10px;
+}
+.user-nav-link {
+    padding: 2px;
+}
+.user-nav :hover{
+    color: greenyellow;
+    text-shadow: 2px 2px 2px rgb(152, 142, 142);
+}
+.nav-icon .icon{
+    animation: spin 5s infinite linear;
+}
+
