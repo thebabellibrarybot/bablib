@@ -4,7 +4,7 @@ const CurUserPage = () => {
 
     return (
         <div>
-            <nav>
+            <nav className="cursor-nav">
                 <p>page</p>
                 <p>last page</p>
             </nav>

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'; 
-
+import SmMyProfile from './pgcomponents/userDashComponents/smMyProfile';
 
 
 export default class Navbar extends Component {
 
     render() {
         return(
+            <div>
             <nav className = "navbar">
                 <Link to='/'>
                     <h1>babelLibrary</h1>
@@ -23,32 +24,18 @@ export default class Navbar extends Component {
                 <li>
                     <Link to = "/babelusers" className='nav-link'>forUsers</Link>
                 </li>
-              
-                
+                <SmMyProfile/>
             </nav>
+            </div>
         )
     }
 };
 
 
 /*
-const Navbar = () => {
-    return (
-        <nav className = "navbar">
-            <h1>The BabelLibrary</h1>
-            <div className = "links">
-                <a href = "/">Home</a>
-                <a href = "/babelTombs">babelTombs</a>
-                <a href = "/create">createBabelTombs</a>
-                <a href = "/babelBlog">babelBlog</a>
-                <a href = "/babelTools">babelTools</a>
-                <a href = "/about">aboutBabel</a>
-            </div>
-        </nav>
-    );
-}
+TODO:
 
-export default Navbar;
+add a global context hook that will listen for an array of urls and get rid of the smMyProfile if that array is current
 
 */
 

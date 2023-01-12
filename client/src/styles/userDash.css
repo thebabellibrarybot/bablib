@@ -6,6 +6,14 @@
         transform: scale(1) rotateY(360deg);
     }
 }
+.userspine-full {
+    position: absolute;
+    height: 90%;
+    width: 98%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 .profile-nav .icon {
     font-size: 300%;
     margin-right: 0;
@@ -26,6 +34,9 @@
     margin-left: 20%;
     margin-right: 20%;
     text-align: center;
+    border: 1px dashed black;
+    border-radius: 10px;
+    padding: 5%;
 }
 .dashcontnet {
     display: grid;
@@ -38,15 +49,18 @@
     text-align: center;
     font-size: large;
     border: 1px dashed black;
+    border-radius: 10px;
 }
 .a-cont p {
     padding: 10px;
 }
 .buttons {
     border: 1px dashed black;
+    border-radius: 10px;
 }
 .buttons :hover {
     border: 2px dashed greenyellow;
+    border-radius: 10px;
 }
 
 /* styles for user dash pages */
@@ -69,7 +83,7 @@
 .rotator .roles {
     display: flex;
     padding: 20px;
-    justify-content: center;
+    justify-content: center; 
 }
 .rotator .roles .role{
     border: 1px dashed black;
@@ -78,4 +92,67 @@
 }
 .rotator .roles .role:hover {
     border: 2px dashed greenyellow
+}
+/* styles for user-dash-main-pages */
+.user-page {
+    display: flex;
+    margin-top: 2.5%;
+    margin-left: 2.5%;
+    height: 85%;
+    width: 95%;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px dashed black;
+    border-radius: 15px;
+    vertical-align: middle;
+}
+.user-page-head {
+    height: 98%;
+    width: 80%;
+    overflow-y: auto;
+    margin-right: 40px;
+}
+.user-page-sidebar {
+    height: 98%;
+    width: 15%;
+    margin-left: 15px;
+}
+.cust-user-sidebar {
+    border: 1px dashed black;
+    border-radius: 10px;
+    margin-top: 25%;
+    height: 60%;
+    overflow-y: auto;
+}
+.cursor-nav {
+    display: flex;
+    margin-top: .5%;
+    margin-left: .5%;
+    margin-bottom: .5%;
+    text-align: center;
+}
+.usr-head {
+    display: flex;
+    justify-content: space-evenly;
+    height: 92%;
+}
+.usr-head-left {
+    width: 15%;
+    border: 1px dashed black;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+.usr-head-main {
+    width: 68%;
+    border: 1px dashed black;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+.usr-head-right {
+    width: 15%;
+    border: 1px dashed black;
+    border-radius: 10px;
+    overflow-y: auto;
 }

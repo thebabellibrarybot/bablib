@@ -47,7 +47,7 @@
   padding: 20px;
   display: flex;
   position: fixed;
-  width: 1500px;
+  width: 100%;
   background-color: white;
 }
 .navbar h1 {

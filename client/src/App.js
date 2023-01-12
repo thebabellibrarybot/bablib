@@ -13,7 +13,6 @@ import BabelBlogDeets from './pgcomponents/babelBlogDetails';
 import BabelUsers from './pgcomponents/babelUsers';
 import BabelReg from './pgcomponents/babelRegister';
 import UserSpine from './pgcomponents/userDashComponents/userspine';
-import MyProfile from './components/userDashComs/myProfile';
 
 import RequireAuth from './components/requireAuth';
 import PresistLogin from './components/PresistLogin';
@@ -41,7 +40,6 @@ import { Route, Routes} from  'react-router-dom';
       <div className='app'>
         <UserStateProvider>
         <Navbar />
-        <MyProfile />
 
         <div className='content'>
           
