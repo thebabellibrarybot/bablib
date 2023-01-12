@@ -41,7 +41,7 @@ const UserProfile = () => {
             }
         }
         getUserInfo();
-    }, [userInfo, setUserInfo])
+    }, [userInfo, setUserInfo, axiosPrivate])
     console.log(userInfo)
 
     return (
