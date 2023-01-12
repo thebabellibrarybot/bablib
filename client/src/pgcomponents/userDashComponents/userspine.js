@@ -1,9 +1,7 @@
-//import BirdProfile from '../components/BirdProfile';
 import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import { useNavigate, useLocation } from 'react-router-dom';
 import useAxiosPrivate from '../../hooks/useAxiosPrivate';
-
 
 import '../../styles/userDash.css';
 
@@ -11,14 +9,11 @@ import '../../styles/userDash.css';
 
 const UserSpine = () => {
 
-
-    //const ability = 'crow' // replace this with a req for user data and find user icon
-
     const [data, setData] = useState();
     const axiosPrivate = useAxiosPrivate();
     const navigate = useNavigate();
     const location = useLocation();
- 
+  
     useEffect(() => {
 
         const getUsers = async () => {
@@ -35,6 +30,7 @@ const UserSpine = () => {
     const handledash = (el) => {
         window.location.href = `/userspine${el}`
     }
+    console.log(data, 'data from userspine')
 
     return (
         <div className="userspine-full">

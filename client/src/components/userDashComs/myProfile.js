@@ -19,14 +19,10 @@ const MyProfile = () => {
                 setUserRole(event.newValue)
             }
         };
-
         window.addEventListener('storage', handleStorageEvent);
-        
         return () => {
             window.removeEventListener('storage', handleStorageEvent)
         };
-    
-
     }, [userRole])
 
 
@@ -42,16 +38,5 @@ const MyProfile = () => {
             <UserNav></UserNav> 
         </div>
     )
-    /*return (
-        <div className="myprofile">
-            <p>MYPROFILE COMP</p>
-            <p onClick={() => onclickfunc()}>{userRole}</p>
-            <p>{count}</p>
-            <usesignOutBut></usesignOutBut>
-        </div>
-        if (acceptedRoles.includes(isUser))
-    )
-    */
-
 }
 export default MyProfile;

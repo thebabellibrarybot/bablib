@@ -53,7 +53,7 @@ const DashGrid = (props) => {
                                         <h3>{body[0].bodyhead}</h3>
                                     </div>
                                     <div className='butts'>
-                                    <p onClick={() => clickedpart(body[0].bodydeet)}>{body[0].bodybutton}</p>
+                                        <p onClick={() => clickedpart(body[0].bodydeet)}>{body[0].bodybutton}</p>
                                     </div>
                                 </div>
                             )

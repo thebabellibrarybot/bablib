@@ -32,7 +32,7 @@ const BabelReg = () => {
         JSON.stringify({
             username,
             email,
-            password,
+            password, 
             ability
         }),
         {
