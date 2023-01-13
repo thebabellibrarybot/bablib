@@ -22,7 +22,6 @@ const getUserInfo = async (req, res) => {
 
     const query = { "token": refreshToken }
 
-    console.log(refreshToken, 'token')
     const foundUser = await BabelUserModel.findOne(query);
     if (!foundUser) return res.sendStatus(402); //Forbidden 
     // evaluate jwt 
@@ -31,7 +30,6 @@ const getUserInfo = async (req, res) => {
         'REFRESH_TOKEN_SECRET',
         (err, decoded) => {
             if (err || foundUser.email !== decoded.UserInfo.email) return res.sendStatus(402);
-            console.log('got decoded okay from refTokenCont')
             const roles = Object.values(foundUser.ability);
             const username = foundUser.username;
             const id = foundUser._id
@@ -52,24 +50,27 @@ const getUserInfo = async (req, res) => {
             res.json({ roles, accessToken, username, id, email, bird })
         }
     );
-
-
 }
 
-// DELET ??
 const getUserDash = async(req,res) => {
     
     const url = req.url
-    const query = {rotatorUrlParam: url}
-    const rotatorData = await UserRolesModel.find(query)
-
-    if (!rotatorData) {
-        return res.status(404).json({err: 'no such rotator'})
-    } else {
-
-        res.status(200).json(rotatorData)
+    console.log(url, 'url')
+    const query = {
+        rotatorUrlParam: url
     }
-    console.log('getUserDashFired')
-};
+    console.log(query)
+    const nav = await UserRolesModel.findOne(query);
+    try {
+        console.log(nav, 'userroatar')
+        res.status(200).json(nav)
+    } catch (err) {
+        console.log('err from rotator')
+        res.status(404).json({
+            "err": err
+        })
+    }
+    console.log(nav, 'userRotator')
+}
 
 module.exports = { getBabelDash, getUserDash, getUserInfo };

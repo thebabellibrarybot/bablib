@@ -12,6 +12,7 @@ const UserProfile = () => {
     const [left, setLeft] = useState('usr-head-left');
     const [right, setRight] = useState('usr-head-right');
     const [data, setData] = useState(null);
+    const [rotatorData, setRotatorData] = useState(null);
     const {id} = useParams();
 
     // add if (setMain == pressed) then useDoOpposite()
@@ -45,6 +46,20 @@ const UserProfile = () => {
         getUsers();
     }, [axiosPrivate, id])
     console.log(data, 'data from userProfile')
+
+    // fetch rotator data
+    useEffect(() => {
+        const getRotator = async () => {
+            try {
+                const response = await axiosPrivate.get(`/userspine/rotator/${id}`)
+                setRotatorData(response.data)
+            } catch (err) {
+                console.log(err, 'err from userProfile rotator')
+            }
+        }
+        getRotator();
+    }, [axiosPrivate, id])
+    console.log(rotatorData, 'data from userProfile Rotator')
 
     if (!data) return (
         <p>loading</p>
@@ -86,3 +101,6 @@ const UserProfile = () => {
     )
 }
 export default UserProfile;
+
+// mk filter userProfileMain, userProfileLeft, userProfileRight to return correct component
+// mk above components that take data props to show screen basics
