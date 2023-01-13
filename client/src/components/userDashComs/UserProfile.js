@@ -3,6 +3,7 @@ import CurUserPage from '../../pgcomponents/userDashComponents/curuserpage';
 import MyProfile from './myProfile'
 import useAxiosPrivate from '../../hooks/useAxiosPrivate';
 import { useParams } from 'react-router-dom';
+import { FilterLeft, FilterMain, FilterRight } from '../../pgcomponents/userDashComponents/UserFilters';
 
 const UserProfile = () => {
 
@@ -64,6 +65,10 @@ const UserProfile = () => {
     if (!data) return (
         <p>loading</p>
     )
+    if (!rotatorData) return (
+        <p>isLoading</p>
+    )
+
 
     return (
         <div className='user-page'>
@@ -75,16 +80,19 @@ const UserProfile = () => {
                         <div className='usr-head-header'>
                             <button onClick={handleLeft}>{left === 'usr-head-left'? <p>+</p>: <p>-</p> }</button>
                         </div>
+                        <FilterLeft props = {rotatorData}/>
                     </div>
                     <div className={main}>
                         <div className='usr-head-header'>
                             <button onClick={handleMain}>{main === 'usr-head-main'? <p>-</p>: <p>+</p> }</button>
                         </div>
+                        <FilterMain props = {rotatorData}/>
                     </div>
                     <div className={right}>
                         <div className='usr-head-header'>
                             <button onClick={handleRight}>{right === 'usr-head-right'? <p>+</p>: <p>-</p> }</button>
                         </div>
+                        <FilterRight props = {rotatorData}/>
                     </div>
                 </div>
 

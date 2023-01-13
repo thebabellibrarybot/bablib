@@ -10,14 +10,14 @@ const verifyJWT = require('../middleware/verifyJWT');
 router.route('/')
     .get( verifyJWT, verifyRoles(ROLES_LIST.User, ROLES_LIST.Editor), babelUserDashController.getBabelDash);
 
-//router.get('/:id')
-//    .get( verifyJWT, verifyRoles(ROLES_LIST.User, ROLES_LIST.Editor), babelUserDashController.getUserInfo);
-
-//const { getUserInfo } = require('../controllers/babelRegCont');
-
 router.route('/:id')
     .get( babelUserDashController.getUserInfo )
 
+router.route('/:id/optpanel')
+    .get( babelUserDashController.getUserOptionsPanel )
+    
+router.route(':id/userstats')
+    .get( babelUserDashController.getUserOptionsPanel)
 
 router.route('/rotator/:id')
     .get( babelUserDashController.getUserDash);

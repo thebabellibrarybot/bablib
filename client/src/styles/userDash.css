@@ -146,7 +146,7 @@
 }
 .usr-head-main {
     width: 68%;
-    border: 1px dashed black;
+    border: 1px dashed greenyellow;
     border-radius: 10px;
     overflow-y: auto;
 }

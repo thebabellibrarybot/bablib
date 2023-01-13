@@ -1,0 +1,27 @@
+/* left side */
+.userprof-left {
+    display: inline;
+    background-color: transparent;
+}
+.userprof-left p {
+    padding: 5px;
+    background-color: transparent;
+    margin-top: 5px;
+}
+.options-panel :hover{
+    color: greenyellow;
+}
+
+/* right side */
+.userprof-right {
+    display: inline;
+    background-color: transparent;
+}
+.userprof-right p {
+    padding: 5px;
+    background-color: transparent;
+    margin-top: 5px;
+}
+.options-panel :hover{
+    color: greenyellow;
+}

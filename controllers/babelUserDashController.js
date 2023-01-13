@@ -55,22 +55,36 @@ const getUserInfo = async (req, res) => {
 const getUserDash = async(req,res) => {
     
     const url = req.url
-    console.log(url, 'url')
     const query = {
         rotatorUrlParam: url
     }
-    console.log(query)
     const nav = await UserRolesModel.findOne(query);
     try {
-        console.log(nav, 'userroatar')
         res.status(200).json(nav)
     } catch (err) {
-        console.log('err from rotator')
         res.status(404).json({
             "err": err
         })
     }
-    console.log(nav, 'userRotator')
 }
 
-module.exports = { getBabelDash, getUserDash, getUserInfo };
+const getUserOptionsPanel = async (req, res) => {
+    const url = req.url;
+    console.log(url, 'from user options')
+    const query = {
+        rotatorUrlParam : url
+    }
+    console.log(query)
+    const ops = await UserRolesModel.findOne(query);
+    try {
+        res.status(200).json(ops.rotatorRoles)
+    } catch (err) {
+        res.status(400).json({
+            "err": err
+        })
+    }
+    console.log(ops)
+}
+
+
+module.exports = { getBabelDash, getUserDash, getUserInfo, getUserOptionsPanel };
