@@ -9,12 +9,6 @@ import { FaBible } from "react-icons/fa";
 const BabelDetails = () => {
 
     const { id } = useParams()
-    
-    
-    
-
-    
-    
 
 return (
     <div className="tombscreen">

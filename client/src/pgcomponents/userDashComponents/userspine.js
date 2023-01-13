@@ -23,7 +23,7 @@ const UserSpine = () => {
             } catch (err) {
                 navigate('/babelusers', { state: { from: location }, replace: true });
             }
-        }
+        } 
         getUsers();
     }, [axiosPrivate, location, navigate])
 

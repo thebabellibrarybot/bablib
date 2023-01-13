@@ -15,7 +15,7 @@ const UserStateProvider = ({children}) => {
         if (isUser === false) {
             window.addEventListener('roles', handleStorageEvent)
             setIsUser(localStorage.getItem('roles'))
-            console.log(isUser, 'isuser')
+            //console.log(isUser, 'isuser')
         }
 
     }, [isUser])

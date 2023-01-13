@@ -11,4 +11,4 @@ const babelUserDashModel = new Schema ({
 
 const UserDashModel = mongoose.model('userdashboards', babelUserDashModel);
 
-module.exports = UserDashModel;
+module.exports = UserDashModel; 

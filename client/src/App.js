@@ -66,7 +66,7 @@ import { Route, Routes} from  'react-router-dom';
               <Route path = "/userspine" element = {<UserSpine/>}/>
               <Route path = "/userspine/mymodels" element = {<UnderConstruction/>}/>
               <Route path = "/userspine/mytombs" element = {<UnderConstruction/>}/>
-              <Route path = "/userspine/myprofile" element = {<UserProfile/>}/>
+              <Route path = "/userspine/:id" element = {<UserProfile/>}/>
               <Route path = "/userspine/myblogs" element = {<UnderConstruction/>}/>
             </Route>
             

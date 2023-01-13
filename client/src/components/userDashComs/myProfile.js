@@ -6,11 +6,14 @@ import UserNav from "../../pgcomponents/userDashComponents/userNav";
 
 import ('../../styles/myprofile.css');
 
-const MyProfile = () => {
+const MyProfile = (props) => {
 
+    const data = props.props
     const [userRole, setUserRole] = useState(window.localStorage.getItem('roles'));
     const acceptedRoles = [1984, 2001]
     const { isUser } = useStateHook()
+
+    console.log(data, 'props in myprofile')
 
     useEffect(() => {
         const handleStorageEvent = (event) => {
@@ -26,14 +29,14 @@ const MyProfile = () => {
     }, [userRole])
 
 
-    console.log(acceptedRoles, 'ask', isUser)
-    console.log(acceptedRoles.includes(parseInt(isUser)), 'accepted roles includes')
+    //console.log(acceptedRoles, 'ask', isUser)
+    //console.log(acceptedRoles.includes(parseInt(isUser)), 'accepted roles includes')
 
     if (acceptedRoles.includes(parseInt(isUser)) === true) return (
         <div className='myprofile'>
             <div>
                 <h1>hello user:</h1>
-                <p>{isUser}</p>
+                <p>{data.username}</p>
             </div>
             <UserNav></UserNav> 
         </div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'; 
-import SmMyProfile from './pgcomponents/userDashComponents/smMyProfile';
+//import SmMyProfile from './pgcomponents/userDashComponents/smMyProfile';
 
 
 export default class Navbar extends Component {
@@ -24,7 +24,6 @@ export default class Navbar extends Component {
                 <li>
                     <Link to = "/babelusers" className='nav-link'>forUsers</Link>
                 </li>
-                <SmMyProfile/>
             </nav>
             </div>
         )

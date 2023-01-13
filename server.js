@@ -82,7 +82,7 @@ app.use('/logout', logoutRoute);
 
 // route for userspine AKA userDash Pages AKA protected routes
 //app.use(verifyJWT);
-app.use('/userspine', babelUserhomeRoute);
+app.use('/userspine', babelUserhomeRoute); 
 
 
 // serve static assests if in production

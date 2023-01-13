@@ -10,10 +10,18 @@ const verifyJWT = require('../middleware/verifyJWT');
 router.route('/')
     .get( verifyJWT, verifyRoles(ROLES_LIST.User, ROLES_LIST.Editor), babelUserDashController.getBabelDash);
 
+//router.get('/:id')
+//    .get( verifyJWT, verifyRoles(ROLES_LIST.User, ROLES_LIST.Editor), babelUserDashController.getUserInfo);
+
+//const { getUserInfo } = require('../controllers/babelRegCont');
+
+router.route('/:id')
+    .get( babelUserDashController.getUserInfo )
+
 
 router.route('/models')
     .get( verifyJWT, verifyRoles(ROLES_LIST.User, ROLES_LIST.Editor), babelUserDashController.getUserDash);
 
  
-
+ 
 module.exports = router; 

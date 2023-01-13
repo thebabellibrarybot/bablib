@@ -65,9 +65,11 @@ const Login = () => {
                 navigate(from, { replace: true });
                 window.localStorage.setItem( 'roles', roles )
                 window.localStorage.setItem( 'presists', true )
+                window.localStorage.setItem( 'email', email ) 
                 window.dispatchEvent(new Event('roles'));
                 setIsUser(localStorage.getItem('roles'))
-                console.log(isUser)
+                console.log(response, 'res from login')
+                console.log(isUser, 'is user from login')
 
                 }
                 else {

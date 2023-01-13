@@ -41,9 +41,8 @@ const BabelReg = () => {
         }
         );
         const data = await response.json();
-        console.log(data);
 
-        if(data.status === 'ok') {
+        if(data.status) {
             history.push('/babelusers')
         }
     }
