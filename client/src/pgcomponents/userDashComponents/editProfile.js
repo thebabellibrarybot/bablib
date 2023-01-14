@@ -2,6 +2,7 @@ import useAxiosPrivate from '../../hooks/useAxiosPrivate';
 import { useEffect, useState } from 'react';
 import '../../styles/userProfile.css';
 import { useNavigate } from 'react-router-dom';
+import BirdProfile from '../../components/BirdProfile';
 
 export function LeftProf({props}) {
 
@@ -113,7 +114,17 @@ export function MainProf({props, propID}) {
                 <h2>userSettings Editor</h2>
             </div>
             <div className='show-cur-user'>
-                <h2>{id.username}</h2>
+                <div className='cur-username'>
+                    <div className='show-cur-username'>
+                        <h2>{id.username}</h2>
+                        <BirdProfile ability = {id.bird}></BirdProfile>
+                    </div>
+                    <div className='edit-cur-username'>
+                        <form>
+                            
+                        </form>
+                    </div>
+                </div>
                 <p>email: {id.email}</p>
                 <p>password: xxxxxxxxxxx</p>
                 <p>bird: {id.bird}</p>

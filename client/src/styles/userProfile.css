@@ -58,6 +58,10 @@
     border-bottom: 1px solid #aaa;
 }
 .show-cur-user {
-    margin-top: 10px;
+    margin-top: 5px;
+    display: flex;
     border: 1px solid black;
+    height: 90%;
+    align-items: center;
+    justify-content: baseline;
 }   
