@@ -8,8 +8,17 @@
     background-color: transparent;
     margin-top: 5px;
 }
-.options-panel :hover{
-    color: greenyellow;
+.options-panel {
+    justify-content: center;
+    display: flex;
+    margin-top: 30px;
+}
+.options-panel p:hover{
+    display: flex;
+    justify-content: center;
+    background-color: greenyellow;
+    border-radius: 10px;
+    width: fit-content;
 }
 
 /* right side */
@@ -22,6 +31,33 @@
     background-color: transparent;
     margin-top: 5px;
 }
-.options-panel :hover{
-    color: greenyellow;
+.userprof-left .right-title {
+    border-bottom: 1px solid #aaa;
 }
+.userprof-right .right-title {
+    border-bottom: 1px solid #aaa;
+}
+.options-panel-right {
+    margin-top: 30px;
+    justify-content: center;
+    display: flex;
+}
+.options-panel-right p:hover {
+    display: flex;
+    justify-content: center;
+    background-color: greenyellow;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+/* main */
+.userprof-main {
+    display: inline;
+}
+.userprof-main .right-title {
+    border-bottom: 1px solid #aaa;
+}
+.show-cur-user {
+    margin-top: 10px;
+    border: 1px solid black;
+}   

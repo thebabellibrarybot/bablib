@@ -46,7 +46,6 @@ const UserProfile = () => {
         }
         getUsers();
     }, [axiosPrivate, id])
-    console.log(data, 'data from userProfile')
 
     // fetch rotator data
     useEffect(() => {
@@ -60,7 +59,6 @@ const UserProfile = () => {
         }
         getRotator();
     }, [axiosPrivate, id])
-    console.log(rotatorData, 'data from userProfile Rotator')
 
     if (!data) return (
         <p>loading</p>
@@ -86,7 +84,7 @@ const UserProfile = () => {
                         <div className='usr-head-header'>
                             <button onClick={handleMain}>{main === 'usr-head-main'? <p>-</p>: <p>+</p> }</button>
                         </div>
-                        <FilterMain props = {rotatorData}/>
+                        <FilterMain props = {rotatorData} propID = {data}/>
                     </div>
                     <div className={right}>
                         <div className='usr-head-header'>

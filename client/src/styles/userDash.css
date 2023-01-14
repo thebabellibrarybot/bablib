@@ -149,6 +149,9 @@
     border: 1px dashed greenyellow;
     border-radius: 10px;
     overflow-y: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 .usr-head-right {
     width: 15%;

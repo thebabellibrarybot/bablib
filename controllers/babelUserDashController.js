@@ -70,11 +70,10 @@ const getUserDash = async(req,res) => {
 
 const getUserOptionsPanel = async (req, res) => {
     const url = req.url;
-    console.log(url, 'from user options')
+    console.log(url, 'from userOptionsPanel')
     const query = {
         rotatorUrlParam : url
     }
-    console.log(query)
     const ops = await UserRolesModel.findOne(query);
     try {
         res.status(200).json(ops.rotatorRoles)
@@ -83,8 +82,23 @@ const getUserOptionsPanel = async (req, res) => {
             "err": err
         })
     }
-    console.log(ops)
+}
+const getUserStats = async (req, res) => {
+    const url = req.url;
+    console.log(url, 'from userOptionsPanel')
+    const query = {
+        rotatorUrlParam : url
+    }
+    console.log(query, 'from stats')
+    const ops = await UserRolesModel.findOne(query);
+    try {
+        res.status(200).json(ops.rotatorRoles)
+    } catch (err) {
+        res.status(400).json({
+            "err": err
+        })
+    }
 }
 
 
-module.exports = { getBabelDash, getUserDash, getUserInfo, getUserOptionsPanel };
+module.exports = { getBabelDash, getUserDash, getUserInfo, getUserOptionsPanel, getUserStats };

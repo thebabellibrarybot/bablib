@@ -35,19 +35,23 @@
 
 .user-nav-link {
     padding: 2px;
+    text-decoration: none;
 }
 .user-nav :hover{
-    color: greenyellow;
-    text-shadow: 2px 2px 2px rgb(152, 142, 142);
+    background-color: greenyellow;
+    border-radius: 10px;
+    text-decoration: none;
 }
 .nav-icon .icon{
     animation: spin 5s infinite linear;
-    border: 1px solid greenyellow;
     border-radius: 10px;
 }
 .nav-icon :hover{
     border: 1px solid rgba(1, 131, 1, 0.801);
     border-radius: 10px;
     background-color: greenyellow;
+}
+.signout-butt {
+    text-decoration: none;
 }
 

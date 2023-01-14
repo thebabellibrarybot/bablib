@@ -22,10 +22,8 @@ export function LeftProf({props}) {
         }
         getUsers();
     }, [axiosPrivate, prop])
-    console.log(data, 'data from user ops')
 
     function handleops (url) {
-        console.log(url, 'from handleops')
         if (url[0] === 'edit user') {
             console.log('pass')
         } 
@@ -34,15 +32,16 @@ export function LeftProf({props}) {
         }
         if (url[0] === 'delet user') {
             navigate('/deletuser')
-        }
-        
+        }   
     }
     if (!data) return (
         <p>loading</p>
     )
     return (
         <div className="userprof-left">
-            <p>{prop}</p>
+            <div className='right-title'>
+                <h2>userOtionsList</h2>
+            </div>
             <div className="options-panel">
                 <div>{data.map((data) => {
                     return (
@@ -53,18 +52,19 @@ export function LeftProf({props}) {
         </div>
     )
 }
+
 export function RightProf({props}) {
 
-    const prop = props
     const navigate = useNavigate()
     const axiosPrivate = useAxiosPrivate()
+    const prop = props
     const [data, setData] = useState(null);
 
     useEffect(() => {
-
+        
         const getUsers = async () => {
             try {
-                const response = await axiosPrivate.get(`/userspine/${prop}/userstats`); 
+                const response = await axiosPrivate.get(`/userspine/userstats/${prop}`); 
                 setData(response.data);
             } catch (err) {
                 console.log(err, 'err from userProfile');
@@ -72,47 +72,57 @@ export function RightProf({props}) {
         }
         getUsers();
     }, [axiosPrivate, prop])
-    console.log(data, 'data from user ops')
 
-
-    function handleClickedStat({url}) {
-        console.log(url, 'url from right panel')
-        if (url === '/mymodels') {
-            navigate('/userspine/mymodels')
-        }
-        if (url === '/mytombs') {
-            navigate('/userspine/mytombs')
-        }
-        if (url === '/myblogs') {
+    function handleops (url) {
+        if (url[0] === 'num of myModels') {
+            navigate('/userspine/myModels')
+        } 
+        if (url[0] === 'num of myBlogs'){
             navigate('/userspine/myblogs')
         }
+        if (url[0] === 'num of myTombs') {
+            navigate('/userspine/mytombs')
+        }   
     }
-
     if (!data) return (
         <p>loading</p>
     )
-
     return (
         <div className="userprof-right">
-            <p>{prop}'s statistics</p>
-            <div className='options-panel'>
+            <div className='right-title'>
+                <h2>userStats</h2>
+            </div>
+            <div className="options-panel-right">
                 <div>{data.map((data) => {
                     return (
-                        <p onClick={() => handleClickedStat(data)} key = {data}>{data}</p>
+                        <p onClick={() => handleops(data)} key = {data}>{data}: 0</p>
                     )
-                })}
-                </div>
+                })}</div>
             </div>
         </div>
     )
 }
-export function MainProf() {
-    const hi = 'hi from main'
+
+export function MainProf({props, propID}) {
+    const prop = props
+    const id = propID
+    console.log(prop, 'from main', id)
     return (
         <div className="userprof-main">
-            <p>{hi}</p>
+            <div className='right-title'>
+                <h2>userSettings Editor</h2>
+            </div>
+            <div className='show-cur-user'>
+                <h2>{id.username}</h2>
+                <p>email: {id.email}</p>
+                <p>password: xxxxxxxxxxx</p>
+                <p>bird: {id.bird}</p>
+            </div>
         </div>
     )
 }
 // i should just have a component named options panel that can
-// be used where the myProfile drop-down usernav is too....
+// be used where the myProfile drop-down usernav is too.... 
+
+// do i need to be drilling // filering these props or is it really functionally useful...
+// lets add a myTombs or myModels before we know for sure

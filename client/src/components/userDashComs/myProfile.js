@@ -1,6 +1,4 @@
-//import axios from 'axios';
 import { useEffect, useState } from 'react';
-
 import useStateHook from '../../hooks/useUserState';
 import UserNav from "../../pgcomponents/userDashComponents/userNav";
 
@@ -13,11 +11,8 @@ const MyProfile = (props) => {
     const acceptedRoles = [1984, 2001]
     const { isUser } = useStateHook()
 
-    console.log(data, 'props in myprofile')
-
     useEffect(() => {
         const handleStorageEvent = (event) => {
-            console.log(event)
             if (event.key === 'roles' && event.newValue !== userRole) {
                 setUserRole(event.newValue)
             }

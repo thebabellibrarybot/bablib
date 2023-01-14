@@ -18,8 +18,8 @@ const UserNav = () =>{
             <div className={cansee ? 'nav-ls' : 'invisible'}>
                     <nav className="user-nav">
                         <Link to = '/userspine' className="user-nav-link">userSpine</Link>
-                        <p className="user-nav-link">userSettings</p>
                         <div className="user-nav-link"><SignOutButt/></div>
+                        <Link to = '/userspine/myprofile' className="user-nav-link">userSettings</Link>
                         <p className="user-nav-link">userStats</p>
                     </nav>
             </div>

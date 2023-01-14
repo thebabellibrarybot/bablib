@@ -8,12 +8,13 @@ export function FilterLeft({props}) {
             <LeftProf props = {type}/>
     )
 }
-export function FilterMain({props}) {
+export function FilterMain({props, propID}) {
     const data = props
+    const id = propID
     const type = data.rotatorType
 
     if (type === 'myprofile') return (
-            <MainProf/>
+            <MainProf props = {data} propID = {id}/>
     )
 }
 export function FilterRight({props}) {
