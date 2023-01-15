@@ -7,11 +7,6 @@ import { FaEarlybirds, FaKiwiBird } from 'react-icons/fa';
 import { GiBirdTwitter, GiEgyptianBird, GiKiwiBird, GiNestBirds } from 'react-icons/gi';
 import { useNavigate } from "react-router-dom";
 
-
-
-
-
-
 const BabelReg = () => {
 
     const history = useNavigate();

@@ -59,9 +59,30 @@
 }
 .show-cur-user {
     margin-top: 5px;
+    display: inline;
+    height: 80%;
+}   
+.cur-username {
     display: flex;
-    border: 1px solid black;
-    height: 90%;
+    justify-content: space-evenly;
+}
+.show-cur-username {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+.show-cur-username h2 {
+    margin-right: 10px;
+}
+.edit-cur-username {
+    display: flex;
     align-items: center;
+<<<<<<< HEAD
     justify-content: baseline;
 }    
+=======
+    width: 100%;
+    padding: 10px;
+}
+>>>>>>> fb578cb5c00fb18cac03ed7efcf49b99e287f4af
