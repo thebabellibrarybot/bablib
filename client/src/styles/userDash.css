@@ -55,11 +55,13 @@
     padding: 10px;
 }
 .buttons {
-    border: 1px dashed black;
+    border: 1px solid #aaa;
     border-radius: 10px;
+    width: fit-content;
+    margin: 5px;
 }
 .buttons :hover {
-    border: 2px dashed greenyellow;
+    background-color: greenyellow;
     border-radius: 10px;
 }
 
@@ -93,6 +95,7 @@
 .rotator .roles .role:hover {
     border: 2px dashed greenyellow
 }
+
 /* styles for user-dash-main-pages */
 .user-page {
     display: flex;
@@ -163,4 +166,22 @@
     display: flex;
     justify-content: space-between;
     padding: 5px;
+    align-items: center;
+}
+.user-headbutt {
+    border-radius: 10px;
+    width: 20px;
+    align-items: center;
+    justify-content:center;
+    text-align: center;
+    border: 1px solid #aaa;
+}
+.user-headbutt :hover{
+    background-color: greenyellow;
+    border-radius: 10px;
+    width: 20px;
+    align-items: center;
+    justify-content:center;
+    text-align: center;
+    border: green;
 }

@@ -76,19 +76,19 @@ const UserProfile = () => {
                 <div className='usr-head'>
                     <div className={left}>
                         <div className='usr-head-header'>
-                            <button onClick={handleLeft}>{left === 'usr-head-left'? <p>+</p>: <p>-</p> }</button>
+                            <div className='user-headbutt' onClick={handleLeft}>{left === 'usr-head-left'? <p>+</p>: <p>-</p> }</div>
                         </div>
                         <FilterLeft props = {rotatorData}/>
                     </div>
                     <div className={main}>
                         <div className='usr-head-header'>
-                            <button onClick={handleMain}>{main === 'usr-head-main'? <p>-</p>: <p>+</p> }</button>
+                            <div className='user-headbutt' onClick={handleMain}>{main === 'usr-head-main'? <p>-</p>: <p>+</p> }</div>
                         </div>
                         <FilterMain props = {rotatorData} propID = {data}/>
                     </div>
                     <div className={right}>
                         <div className='usr-head-header'>
-                            <button onClick={handleRight}>{right === 'usr-head-right'? <p>+</p>: <p>-</p> }</button>
+                            <div className='user-headbutt' onClick={handleRight}>{right === 'usr-head-right'? <p>+</p>: <p>-</p> }</div>
                         </div>
                         <FilterRight props = {rotatorData}/>
                     </div>

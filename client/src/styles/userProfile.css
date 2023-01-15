@@ -1,3 +1,4 @@
+
 /* left side */
 .userprof-left {
     display: inline;
@@ -19,6 +20,10 @@
     background-color: greenyellow;
     border-radius: 10px;
     width: fit-content;
+}
+.options-panel p {
+    border: 1px solid #aaa;
+    border-radius: 10px;
 }
 
 /* right side */
@@ -42,29 +47,36 @@
     justify-content: center;
     display: flex;
 }
+.options-panel-right p {
+    border: 1 px solid #aaa;
+    border-radius: 10px;
+}
 .options-panel-right p:hover {
     display: flex;
     justify-content: center;
     background-color: greenyellow;
     border-radius: 10px;
-    width: fit-content;
 }
+.option p {
+    border: 1px solid #aaa;
+    border-radius: 10px;
+} 
 
 /* main */
 .userprof-main {
     display: inline;
+    
 }
 .userprof-main .right-title {
     border-bottom: 1px solid #aaa;
 }
 .show-cur-user {
-    margin-top: 5px;
     display: inline;
     height: 80%;
 }   
 .cur-username {
     display: flex;
-    justify-content: space-evenly;
+    align-items: center;
 }
 .show-cur-username {
     display: flex;
@@ -78,11 +90,45 @@
 .edit-cur-username {
     display: flex;
     align-items: center;
-<<<<<<< HEAD
-    justify-content: baseline;
-}    
-=======
     width: 100%;
+    margin-right: 10px;
+    padding: 5px;
+}    
+.submit-useredits {
+    border-radius: 10px;
+    border: none;
+    margin-top: 10%;
+}
+.submit-ed {
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
     padding: 10px;
 }
->>>>>>> fb578cb5c00fb18cac03ed7efcf49b99e287f4af
+.submit-useredits :hover {
+    background-color: greenyellow;
+}
+.user-birdview {
+    margin-left: 10%;
+}
+.edit-cur-username select {
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px solid #aaa;
+}
+.edit-cur-username :hover{
+    background-color: greenyellow;
+    border-radius: 10px;
+}
+.edit-cur-username input {
+    background-color: transparent;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+}
+
+select.decorated option:hover {
+    background-color: red;
+}
+
+  

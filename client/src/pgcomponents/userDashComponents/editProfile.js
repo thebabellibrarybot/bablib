@@ -95,7 +95,7 @@ export function RightProf({props}) {
                 <h2>userStats</h2>
             </div>
             <div className="options-panel-right">
-                <div>{data.map((data) => {
+                <div className='option'>{data.map((data) => {
                     return (
                         <p onClick={() => handleops(data)} key = {data}>{data}: 0</p>
                     )
@@ -135,11 +135,11 @@ export function MainProf({props, propID}) {
             withCredentials: true
         }
         );
-        const newdata = await response.json();
+        //const newdata = await response.json();
 
-        if(newdata.status) {
-            navigate.push('/userspine/myprofile')
-        }
+        //if(newdata.status) {
+        //    navigate.push('/userspine/myprofile')
+        //}
     }
 
     return (
@@ -154,7 +154,7 @@ export function MainProf({props, propID}) {
                         <BirdProfile ability = {id.bird}></BirdProfile>
                     </div>
                     <div className='edit-cur-username'>
-                        <input className='edit-cur-username' value = {username} onChange = {(e) => setUsername(e.target.value)} type="text" placeholder="change username">
+                        <input className='edit-cur-username' value = {password} onChange = {(e) => setUsername(e.target.value)} type="text" placeholder="change username">
                         </input>
                     </div>
                 </div>
@@ -184,15 +184,17 @@ export function MainProf({props, propID}) {
                     </div>
                     <div className='edit-cur-username'>
                         <select value = {ability} onChange = {(e) => setAbility(e.target.value)}>
-                            <option value = "crow">crow</option>
-                            <option value = "early-bird">'early-bird'</option>
-                            <option value = "kiwi-bird">kiwi-bird</option>
-                            <option value = "bird-twitter">bird-twitter</option>
-                            <option value = "egyptian-bird">egyptian-bird</option>
-                            <option value = "gi-bird">gi-bird</option>
-                            <option value = "nest-bird">nest-bird</option>
+                            <option className='option' value = "crow">crow</option>
+                            <option className='option' value = "early-bird">'early-bird'</option>
+                            <option className='option' value = "kiwi-bird">kiwi-bird</option>
+                            <option className='option' value = "bird-twitter">bird-twitter</option>
+                            <option className='option' value = "egyptian-bird">egyptian-bird</option>
+                            <option className='option' value = "gi-bird">gi-bird</option>
+                            <option className='option' value = "nest-bird">nest-bird</option>
                         </select>
-                        <BirdProfile ability = {ability}></BirdProfile>
+                        <div className='user-birdview'>
+                            <BirdProfile ability = {ability}></BirdProfile>
+                        </div>
                     </div>
                 </div>
 
@@ -201,18 +203,19 @@ export function MainProf({props, propID}) {
                         <p>current theme: ___</p>
                     </div>
                     <div className='edit-cur-username'>
-                        <div>
-                            <select value = {theme} onChange = {(e) => setTheme(e.target.value)}>
-                                <option value = "dark">darkmode default</option>
-                                <option value = "userdark">darkmode user</option>
-                                <option value = "light">lightmode consistent</option>
-                                <option vlaue = "userlight">lightmode default</option>
+                            <select value = {theme} onChange = {(e) => setTheme(e.target.value)}
+                            
+                            >
+                                <option className='option' value = "dark">darkmode default</option>
+                                <option className='option' value = "userdark">darkmode user</option>
+                                <option className='option' value = "light">lightmode consistent</option>
+                                <option className='option' vlaue = "userlight">lightmode default</option>
                             </select>
-                        </div>
                     </div>
                 </div>
-
-                <input className = "submit-useredits" type='submit' value="save edits"/>
+                <div className = "submit-useredits" >
+                    <input className='submit-ed' type='submit' value="save edits"/>
+                </div>
             </form>
         </div>
     )
@@ -222,3 +225,5 @@ export function MainProf({props, propID}) {
 
 // do i need to be drilling // filering these props or is it really functionally useful...
 // lets add a myTombs or myModels before we know for sure
+
+// logger https://codesandbox.io/s/github/final-form/react-final-form/tree/main/examples/subscriptions?file=/index.js
