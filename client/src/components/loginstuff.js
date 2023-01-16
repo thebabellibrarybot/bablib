@@ -51,7 +51,7 @@ const Login = () => {
 
             const foundStuff = localStorage.getItem('DARK_MODE');
             console.log('foundstuff from login local storage', foundStuff)
-
+ 
             if (foundStuff){
                 console.log('stuff exsists and looks like this:', foundStuff);
             }

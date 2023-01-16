@@ -33,7 +33,7 @@ const MyProfile = (props) => {
                 <h1>hello user:</h1>
                 <p>{data.username}</p>
             </div>
-            <UserNav></UserNav> 
+            <UserNav props = {data.bird}></UserNav> 
         </div>
     )
 }

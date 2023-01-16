@@ -15,6 +15,7 @@ const UserProfile = () => {
     const [data, setData] = useState(null);
     const [rotatorData, setRotatorData] = useState(null);
     const {id} = useParams();
+    console.log(data, 'data sent to my profile')
 
     // add if (setMain == pressed) then useDoOpposite()
     function handleMain () {

@@ -22,8 +22,10 @@ const handleNewUser = async (req, res) => {
                 email:req.body.email,
                 password: newPassword,
                 ability: ability,
-                bird: bird
+                bird: bird,
+                theme: "lightmode default"
             })
+            console.log(req.body.username, 'added to reg')
             res.json({status: 'ok'})
         }
         if (adarr.includes(role)) {
@@ -44,6 +46,7 @@ const handleNewUser = async (req, res) => {
         
     }
 }
+
 
 
 module.exports = { handleNewUser };

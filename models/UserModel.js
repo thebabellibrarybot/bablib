@@ -8,7 +8,8 @@ const babelUserDataModel = new Schema ({
     password: { type: String, required: true },
     bird: { type:String, required: true },
     ability: {type: Array, required: true},
-    token: { type: String, required: false }
+    token: { type: String, required: false },
+    theme: { type: String, required: false }
 })
 
 const BabelUserModel = mongoose.model('userdata', babelUserDataModel);

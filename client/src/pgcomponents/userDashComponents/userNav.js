@@ -3,9 +3,10 @@ import { Link } from "react-router-dom"
 import { useState } from "react"
 import BirdProfile from "../../components/BirdProfile";
 
-const UserNav = () =>{
+const UserNav = (props) =>{
 
     const [cansee, setCansee] = useState(false);
+    const bird = props.props
 
     function handleClick () {
         console.log('handleClick')
@@ -25,7 +26,7 @@ const UserNav = () =>{
             </div>
 
             <div  onClick={(() => handleClick())} className="nav-icon">
-                <BirdProfile ability = 'crow' className = 'icon'/>
+                <BirdProfile ability = {bird} className = 'icon'/>
             </div>
 
         </div>

@@ -23,6 +23,7 @@ const getUserInfo = async (req, res) => {
     const query = { "token": refreshToken }
 
     const foundUser = await BabelUserModel.findOne(query);
+    console.log(foundUser, 'founduser')
     if (!foundUser) return res.sendStatus(402); //Forbidden 
     // evaluate jwt 
     jwt.verify(
@@ -35,6 +36,7 @@ const getUserInfo = async (req, res) => {
             const id = foundUser._id
             const email = foundUser.email
             const bird = foundUser.bird
+            const theme = foundUser.theme
 
             const accessToken = jwt.sign(
                 {
@@ -47,7 +49,7 @@ const getUserInfo = async (req, res) => {
                 'ACCESS_TOKEN_SECRET',
                 { expiresIn: '15m' }
             );
-            res.json({ roles, accessToken, username, id, email, bird })
+            res.json({ roles, accessToken, username, id, email, bird, theme })
         }
     );
 }
@@ -75,6 +77,7 @@ const getUserOptionsPanel = async (req, res) => {
         rotatorUrlParam : url
     }
     const ops = await UserRolesModel.findOne(query);
+    console.log(ops, 'from useroptionspanel in userdashcontroller')
     try {
         res.status(200).json(ops.rotatorRoles)
     } catch (err) {
