@@ -70,6 +70,7 @@
         margin-left: 10px;
         margin-right: 10px;
         border: none;
+        font-size: medium;
     }
     .user-icon {
         display: flex;
@@ -86,6 +87,7 @@
     .user-item button {
         background-color: $dark-focus-backdark;
         border: none;
+        font-size: medium;
     }
     .user-item :hover {
         background-color: $dark-base;
