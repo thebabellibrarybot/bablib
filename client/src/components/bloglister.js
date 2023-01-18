@@ -1,28 +1,35 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import useTheme from '../hooks/useTheme';
+import Navbar from '../navbar';
 
 
 const BlogLister = (props) => {
 
     const blogls = props.blogls
+    const { isDarkMode } = useTheme();
     
     if (blogls === undefined) {
         return <>Still loading...</>; 
         }
 
     return (
-        <div>
+        <div className = { isDarkMode }>
+            <Navbar></Navbar>
+            <div className = 'blog-page'>
             {blogls.map((blogls, i) => {
                 return(
-                    <Link to = {`/babelblogls/${blogls._id}`}>
-                    <div className='blogchart' key = {blogls.title}>
-                        <h2 key = {i}>{blogls.title}
-                            <p key = {i}>{blogls.date}</p>
-                        </h2>
+                    <div className= 'clicked'>
+                        <Link className = 'link' to = {`/babelblogls/${blogls._id}`}>
+                            <div className='blog-option' key = {blogls.title}>
+                                <h2 key = {i}>{blogls.title}</h2>
+                                <p key = {i}>{blogls.date}</p>
+                            </div>
+                        </Link>
                     </div>
-                    </Link>
                     )
             })}
+            </div>
         </div>
     )
 }

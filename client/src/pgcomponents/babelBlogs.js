@@ -2,11 +2,11 @@ import React from 'react';
 import { useEffect, useState } from "react";
 import axios from "axios";
 import BlogLister from '../components/bloglister';
-import '../styles/blogchart.css'
-
+import useTheme from '../hooks/useTheme';
 
 const BabelBlogls = () => {
 
+    const { isDarkMode } = useTheme;
     const [blogls, setBlogls] = useState([]);
     
     useEffect(() => {
@@ -22,11 +22,11 @@ const BabelBlogls = () => {
         }
 
     return (
-        <>
-        <div className='blogls'>
-            <BlogLister blogls = {blogls}></BlogLister>
+        <div className={ isDarkMode }> 
+            <div className='blogls'>
+                <BlogLister blogls = {blogls}></BlogLister>
+            </div>
         </div>
-        </>
     )
 }
 

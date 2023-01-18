@@ -1,0 +1,107 @@
+.dark {
+    .usernav-items {
+        background-color: $dark-focus-backdark;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .user-item {
+        margin: 10px;
+        color: $dark-text
+    }
+    .nav-link {
+        color: $dark-text;
+    }
+    .user-item link {
+        text-decoration: none;
+    }
+    // user login stuff //
+    .usernav-items {
+        align-items: center;
+    }
+    .login-section {
+        align-items: center;
+    }
+    .login-section form {
+        display: flex;
+        justify-content: space-evenly;
+        color: $dark-text;
+        align-items: center;
+    }
+    .login-section label {
+        color: $dark-text;
+        padding: 5px;
+    }
+    .login-section input {
+        color: $dark-text;
+        background-color: $dark-focus-background;
+        border: none;
+    }
+    .login-section button {
+        background-color: $dark-focus-background;
+        margin: 10px;
+        border: none;
+        color: $dark-text;
+    }
+    .button :hover {
+        background-color: $dark-text;
+        color: $dark-background;
+    }
+    .for-reg{
+        padding: 5px;
+    }
+    .for-reg .link:hover{
+        background-color: $dark-text;
+        color: $dark-background;
+        padding: 1px;
+        border-radius: 10px;
+    }
+    
+    // aboutuser-nav //
+    .usernavs {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: $dark-focus-background;
+        color: $dark-text;
+        padding: 10px;
+    }
+    .about-navbar button{
+        background-color: $dark-focus-background;
+        color: $dark-text;
+        margin-left: 10px;
+        margin-right: 10px;
+        border: none;
+    }
+    .user-icon {
+        display: flex;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 300%;
+    }
+    .about-navbar :hover {
+        background-color: $dark-base;
+        color: $dark-background;
+        border-radius: 10px;
+    }
+    .user-item button {
+        background-color: $dark-focus-backdark;
+        border: none;
+    }
+    .user-item :hover {
+        background-color: $dark-base;
+        color: $dark-background;
+        border: 1px solid $dark-focus-background;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    .nav-link {
+        text-decoration: none;
+    }
+    .nav-link :hover {
+        background-color: $dark-base;
+        color: $dark-background;
+        border-radius: 10px;
+    }
+    
+
+}

@@ -4,7 +4,7 @@ import useAuth from '../hooks/useAuth'
 import React from 'react';
 import axios from "axios";
 import useStateHook from "../hooks/useUserState";
-
+import useTheme from "../hooks/useTheme";
 
 const LOGIN_URL = '/babelauth';
  
@@ -15,6 +15,7 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/userspine";
+    const { isDarkMode } = useTheme();
 
     const userRef = useRef();
     const errRef = useRef();
@@ -93,11 +94,10 @@ const Login = () => {
     }
 
     return (
-
-        <section>
+        <section className="login-section">
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
             <h1>Sign In</h1>
-            <form onSubmit={handleSubmit}>
+            <form className = 'form' onSubmit={handleSubmit}>
                 <label htmlFor="email">email:</label>
                 <input
                     type="text"
@@ -117,14 +117,14 @@ const Login = () => {
                     value={password}
                     required
                 />
-                <button>Sign In</button>
+                <div className="button">
+                    <button>Sign In</button>
+                </div>
             </form>
-            <p>
-                Need an Account?<br />
-                <span className="line">
-                    <Link to="/register">Sign Up</Link>
-                </span>
-            </p>
+            <div className="for-reg">
+                <p>Need an Accound?</p>
+                <Link className = 'link' to="/register">Sign Up</Link>
+            </div>
         </section>
 
     )

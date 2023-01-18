@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 import  AboutForusers  from '../pgcomponents/aboutforusers';
 import { FaCrow } from "react-icons/fa";
 import Loginstuff from '../components/loginstuff';
-import '../styles/usernav.css';
-
+import useTheme from '../hooks/useTheme';
+import Navbar from '../navbar';
 
 const BabelUsers = () => {
    
     const [login, setlogin] = useState(false);
+    const {isDarkMode} = useTheme();
 
     const handleLogin = () => {
         setlogin(current => !current)
@@ -16,7 +17,8 @@ const BabelUsers = () => {
     
 
     return (
-        <div>
+        <div className={ isDarkMode }>
+            <Navbar></Navbar>
             <nav className = "usernav">
                 <div className='usernav-items'>
                     <div className={login ? 'user-inputs': 'invisible'}>

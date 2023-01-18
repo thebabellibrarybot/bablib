@@ -1,0 +1,68 @@
+@import './colors';
+
+.dark {
+    .tabllz {
+        padding: 10px;
+        margin: 10px;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+    table td, table th {
+    border: 1px solid $dark-base;
+    padding: 8px;
+    color: $dark-text;
+    }
+    table tr:nth-child(even){
+        background-color: $dark-focus-backdark;
+        color: $dark-text;
+    }
+    .span {
+        color: $dark-text;
+    }
+    .span strong {
+        color: $dark-text;
+    }
+   .rows {
+    color: $dark-text;
+    text-decoration: none;
+   }
+  
+    table tr:hover {
+        background-color: $dark-base;
+        .rows {
+            color: $dark-background;
+        }
+    }
+    table th, tfoot td {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: $dark-focus-background;
+      }
+    .table-search {
+        color: $dark-text;
+        padding: 10px;
+    }
+    .table-search input {
+        background-color: $dark-focus-backdark;
+        border: 1px solid $dark-border-main;
+        color: $dark-text;
+    }
+    .table-search input :focus {
+        color: $dark-text;
+        border: $dark-base;
+    }
+    .table-buttons button{
+        background-color: $dark-focus-backdark;
+        color: $dark-text;
+        margin: 5px;
+        padding: 5px;
+        border: 1px solid $dark-border-main;
+    }
+    .table-buttons :hover {
+        background-color: $dark-base;
+        color: $dark-background;
+    }
+}

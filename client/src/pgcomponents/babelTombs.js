@@ -2,15 +2,18 @@ import React, { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { useTable, useSortBy, useGlobalFilter, usePagination, useRowSelect } from 'react-table';
 import { COLUMNS } from '../components/tombcolumns';
-import '../styles/table.css';
+//import '../styles/table.css';
 import { useEffect, useState } from "react";
 import axios from "axios";
 import GlobalFilter from "../components/globalFilter";
+import Navbar from "../navbar";
+import useTheme from '../hooks/useTheme';
 
 
 const BasicTable = () => {
 
     const [data, setData] = useState([]);
+    const { isDarkMode } = useTheme();
  
     useEffect(() => {
       axios('/babeltombs/')
@@ -52,9 +55,13 @@ const BasicTable = () => {
 
   
     return (
+      <div className={ isDarkMode }>
+        <Navbar></Navbar>
+     
       <div className="tabllz">
-      <>
+      
       <GlobalFilter filter = {globalFilter} setFilter={setGlobalFilter} />
+      
         <table {...getTableProps()}>
           <thead>
             {headerGroups.map(headerGroup => (
@@ -82,7 +89,7 @@ const BasicTable = () => {
                   <tr {...row.getRowProps()}>
                   {row.cells.map(cell => {
                     return (
-                    <td {...cell.getCellProps()}><Link to = {`/babeltombs/${row.original._id}`}>{cell.render('Cell')}</Link></td>
+                    <td {...cell.getCellProps()}><Link className = 'rows' to = {`/babeltombs/${row.original._id}`}>{cell.render('Cell')}</Link></td>
                     )
                   })}
                 </tr>
@@ -103,8 +110,8 @@ const BasicTable = () => {
 
         </table>
 
-        <div>
-          <span>
+        <div className="table-buttons">
+          <span className="span">
             Page{' '}
             <strong>
               {pageIndex + 1} of {pageOptions.length}
@@ -113,7 +120,9 @@ const BasicTable = () => {
           <button onClick = {() => previousPage()} disabled = {!canPreviousPage}>back</button>
           <button onClick={() => nextPage()} disabled = {!canNextPage}>next</button>
         </div>
-      </>
+      
+      </div>
+
       </div>
     )
   }

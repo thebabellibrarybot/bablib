@@ -4,7 +4,7 @@ const GlobalFilter = ({ filter, setFilter }) => {
 
 
     return(
-        <div>
+        <div className="table-search">
             Search: {' '}
             <input value={filter || ''}
             onChange={e => setFilter(e.target.value)} />

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import { useNavigate, useLocation } from 'react-router-dom';
+import MyProfile from '../../components/userDashComs/myProfile';
 import useAxiosPrivate from '../../hooks/useAxiosPrivate';
 
 import '../../styles/userDash.css';
@@ -10,9 +11,24 @@ import '../../styles/userDash.css';
 const UserSpine = () => {
 
     const [data, setData] = useState();
+    const [userData, setUserData] = useState();
     const axiosPrivate = useAxiosPrivate();
     const navigate = useNavigate();
     const location = useLocation();
+    const id = 'getuser';
+
+    useEffect(() => {
+
+        const getUsers = async () => {
+            try {
+                const response = await axiosPrivate.get(`/userspine/${id}`); 
+                setUserData(response.data);
+            } catch (err) {
+                console.log(err, 'err from userProfile');
+            }
+        }
+        getUsers();
+    }, [axiosPrivate, id])
   
     useEffect(() => {
 
@@ -30,13 +46,22 @@ const UserSpine = () => {
     const handledash = (el) => {
         window.location.href = `/userspine${el}`
     }
-    console.log(data, 'data from userspine')
+    console.log(userData, 'data from userspine')
+
+    if (!userData) {
+        return (
+            <p>loading</p>
+        )
+    }
 
     return (
         <div className="userspine-full">
             
             <div className="dashboard-main">
-                <h1>welcome user</h1>
+                <div className='userspine-header'>
+                    <h1>welcome to UserSpine</h1>
+                    <MyProfile props = {userData}></MyProfile>
+                </div>
 
                 <div className="dashitem">
                     <div className="dashcontnet">

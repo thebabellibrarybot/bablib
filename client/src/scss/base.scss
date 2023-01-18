@@ -1,0 +1,71 @@
+@import '../scss/colors';
+* {
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+  }
+.light{
+
+    .app {
+        background-color: $light-background;
+        color: $light-text;
+    }
+}
+
+.lightuser {
+    .app {
+        background-color: $lightuser-background;
+        color: $lightuser-text;
+    }
+}
+
+.dark {
+    position: absolute;
+    height: 100%;
+    display: inline;
+    background-color: $dark-background;
+    color: $dark-text;
+
+    .app {
+        color: $dark-text;
+    }
+    .navbar {
+        color: $dark-text;
+        display: flex;
+        padding: 10px;
+        align-items: center;
+    }
+    .navbar h1 {
+        color: $dark-text;
+        text-decoration: none;
+    }
+    .babelLibrary {
+        text-decoration: none;
+    }
+    .link {
+        color: $dark-text;
+        text-decoration: none;
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+    p, h1, h2 {
+        color: $dark-text;
+        text-decoration: none;
+    }
+    .clicked :hover{
+        color: $dark-background;
+        background-color: $dark-border-main;
+        border: $dark-border-sub;
+        border-radius: 10px;
+        padding: 5px;
+    }
+   
+}
+
+.darkuser {
+    .app {
+        background-color: $dark-background;
+        color: $darkuser-text;
+        display: inline;
+    }
+}
+

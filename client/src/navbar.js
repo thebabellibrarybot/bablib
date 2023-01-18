@@ -6,23 +6,28 @@ import { Link } from 'react-router-dom';
 export default class Navbar extends Component {
 
     render() {
+
+        console.log(localStorage.getItem('theme'))
+
+
+
         return(
-            <div>
+            <div className='light'>
             <nav className = "navbar">
-                <Link to='/'>
+                <Link className = 'babelLibrary' to='/'>
                     <h1>babelLibrary</h1>
                 </Link>
-                <li className = "nav-item">
-                    <Link to="/" className="nav-link">Home</Link>
+                <li className = "clicked">
+                    <Link to="/" className="link">Home</Link>
                 </li>
-                <li className = "nav-item">
-                    <Link to="/babelTombs" className="nav-link">babelTombs</Link>
+                <li className = "clicked">
+                    <Link to="/babelTombs" className="link">babelTombs</Link>
                 </li>
-                <li className='nav-item'>
-                    <Link to="/babelblogls" className='nav-link'>babelBlogls</Link>
+                <li className='clicked'>
+                    <Link to="/babelblogls" className='link'>babelBlogls</Link>
                 </li>
-                <li>
-                    <Link to = "/babelusers" className='nav-link'>forUsers</Link>
+                <li className='clicked'>
+                    <Link to = "/babelusers" className='link'>forUsers</Link>
                 </li>
             </nav>
             </div>

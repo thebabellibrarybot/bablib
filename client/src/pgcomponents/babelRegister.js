@@ -6,11 +6,13 @@ import '../styles/register.css';
 import { FaEarlybirds, FaKiwiBird } from 'react-icons/fa';
 import { GiBirdTwitter, GiEgyptianBird, GiKiwiBird, GiNestBirds } from 'react-icons/gi';
 import { useNavigate } from "react-router-dom";
+import Navbar from "../navbar";
+import useTheme from "../hooks/useTheme";
 
 const BabelReg = () => {
 
     const history = useNavigate();
-
+    const { isDarkMode } = useTheme();
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -43,7 +45,8 @@ const BabelReg = () => {
     }
 
     return ( 
-        <div>
+        <div className={isDarkMode}>
+            <Navbar/>
             <div className="babelReg">
                 <BirdProfile ability = {ability} className = "icon"></BirdProfile>
                 <form className = 'mainform' onSubmit={(registerUser)}>

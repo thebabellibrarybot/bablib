@@ -1,0 +1,16 @@
+@import './colors';
+
+.dark {
+    .blog-option {
+        padding: 5px;
+    }
+    .blog-page {
+        border: 1px solid $dark-base;
+        margin: 10px;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    .blog-option p {
+        width: fit-content;
+    }
+}

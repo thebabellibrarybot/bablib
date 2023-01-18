@@ -2,11 +2,12 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import DashGrid from '../components/dashgrid';
-import '../styles/usernav.css';
+import useTheme from '../hooks/useTheme';
 
 const AboutForusers = () => {
 
     const [data, setData] = useState();
+    const { isDarkMode } = useTheme;
 
     useEffect (() => {
         axios.get(`/babelusers`)
@@ -27,7 +28,7 @@ const AboutForusers = () => {
     
         
     return (
-        <>
+        <div className = { isDarkMode }>
         <div className='usernavs'>
 
             <nav className='about-navbar'>
@@ -42,7 +43,7 @@ const AboutForusers = () => {
 
         <DashGrid className = {myclass}></DashGrid>
 
-        </>
+        </div>
     )
 }
 export default AboutForusers;
