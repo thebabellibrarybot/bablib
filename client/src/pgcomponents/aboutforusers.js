@@ -20,23 +20,22 @@ const AboutForusers = () => {
 
     const uniqueNav = Array.from(new Set(data && data.map((data) => data.title))) 
     const [myclass, setMyclass] = useState('forUsers')
-    function clickedPart  (val)  {
-        setMyclass(val)
-        
-    }
 
-    
-        
+    function clickedPart  (val)  {
+        setMyclass(val)    
+    }
     return (
         <div className = { isDarkMode }>
         <div className='usernavs'>
 
-            <nav className='about-navbar'>
-            {uniqueNav && uniqueNav.map((unique, i)=>(
-            <button onClick={() => clickedPart(unique)} key = {i}>
-                {unique}
-            </button>
-            ))}
+            <nav className='navbar'>
+                {uniqueNav && uniqueNav.map((unique, i)=>(
+                <div className = 'clicked'>
+                <button onClick={() => clickedPart(unique)} key = {i}>
+                    {unique}
+                </button>
+                </div>
+                ))}
             </nav>
 
         </div>

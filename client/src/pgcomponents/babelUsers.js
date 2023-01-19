@@ -24,11 +24,11 @@ const BabelUsers = () => {
                     <div className={login ? 'user-inputs': 'invisible'}>
                         <Loginstuff></Loginstuff>
                     </div>
-                    <li className = "user-item">
-                        <button className="nav-link" onClick={(handleLogin)}>Login</button>
+                    <li className = "clicked">
+                        <button onClick={(handleLogin)}>Login</button>
                     </li>
-                    <li className = "user-item">
-                        <Link to="/register" className="nav-link">Register</Link>
+                    <li className = "clicked">
+                        <Link to="/register" className="link">Register</Link>
                     </li>
                     <div className='user-icon'>
                     <FaCrow></FaCrow>

@@ -19,14 +19,12 @@ const BlogLister = (props) => {
             <div className = 'blog-page'>
             {blogls.map((blogls, i) => {
                 return(
-                    <div className= 'clicked'>
-                        <Link className = 'link' to = {`/babelblogls/${blogls._id}`}>
-                            <div className='blog-option' key = {blogls.title}>
-                                <h2 key = {i}>{blogls.title}</h2>
-                                <p key = {i}>{blogls.date}</p>
-                            </div>
-                        </Link>
-                    </div>
+                    <Link className = 'link' to = {`/babelblogls/${blogls._id}`}>
+                        <div className='blog-option' key = {blogls.title}>
+                            <h2 key = {i}>{blogls.title}</h2>
+                            <p key = {i}>{blogls.date}</p>
+                        </div>
+                    </Link>
                     )
             })}
             </div>

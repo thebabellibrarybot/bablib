@@ -9,8 +9,12 @@
         margin: 10px;
         border-radius: 10px;
         padding: 10px;
+        background-color: $dark-focus-backdark;
     }
     .blog-option p {
         width: fit-content;
+    }
+    .blog-option h2:hover {
+        color: $dark-base;
     }
 }

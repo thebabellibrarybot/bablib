@@ -1,59 +1,30 @@
+@keyframes spin {
+    from {
+        transform: scale(1) rotate(0deg);
+    }
+    to {
+        transform: scale(1) rotateY(360deg);
+    }
+}
+
 .dark {
+    /*user nav login//reg */
     .usernav-items {
         background-color: $dark-focus-backdark;
         display: flex;
         justify-content: space-evenly;
-    }
-    .user-item {
-        margin: 10px;
-        color: $dark-text
-    }
-    .nav-link {
-        color: $dark-text;
-    }
-    .user-item link {
-        text-decoration: none;
     }
     // user login stuff //
     .usernav-items {
         align-items: center;
     }
     .login-section {
-        align-items: center;
+        padding: 10px;
     }
-    .login-section form {
+  
+    .for-reg {
         display: flex;
-        justify-content: space-evenly;
-        color: $dark-text;
         align-items: center;
-    }
-    .login-section label {
-        color: $dark-text;
-        padding: 5px;
-    }
-    .login-section input {
-        color: $dark-text;
-        background-color: $dark-focus-background;
-        border: none;
-    }
-    .login-section button {
-        background-color: $dark-focus-background;
-        margin: 10px;
-        border: none;
-        color: $dark-text;
-    }
-    .button :hover {
-        background-color: $dark-text;
-        color: $dark-background;
-    }
-    .for-reg{
-        padding: 5px;
-    }
-    .for-reg .link:hover{
-        background-color: $dark-text;
-        color: $dark-background;
-        padding: 1px;
-        border-radius: 10px;
     }
     
     // aboutuser-nav //
@@ -78,11 +49,10 @@
         padding: 10px;
         border-radius: 10px;
         font-size: 300%;
+        color: $dark-base;
     }
     .about-navbar :hover {
-        background-color: $dark-base;
-        color: $dark-background;
-        border-radius: 10px;
+        color: $dark-base;
     }
     .user-item button {
         background-color: $dark-focus-backdark;
@@ -90,20 +60,136 @@
         font-size: medium;
     }
     .user-item :hover {
-        background-color: $dark-base;
-        color: $dark-background;
-        border: 1px solid $dark-focus-background;
-        border-radius: 10px;
-        padding: 10px;
+        color: $dark-base;
     }
     .nav-link {
         text-decoration: none;
     }
-    .nav-link :hover {
-        background-color: $dark-base;
-        color: $dark-background;
-        border-radius: 10px;
+
+    /* register pg */
+    .babelReg {
+        display: flex;
+        justify-content: center;
+        height: 90%;
+        align-items: center;
+        
+        .input {
+            background-color: $dark-focus-backdark;
+            color: $dark-base;
+            margin: 2px;
+            border: 1px dashed $dark-focus-background;
+            padding: 20px;
+        }
+        input {
+            color: $dark-text;
+        }
+        input :focus {
+            color: $dark-base
+        }
+        .input :focus {
+            border: none;
+            color: $dark-base;
+        }
+     
+        .form-reg {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            grid-template-columns: repeat(2, 1fr);
+            grid-row-gap: 0px;
+            grid-column-gap: 0px;
+            max-width: 600px;
+        }
+        .ablities {
+            padding: 10px;
+        }
+        .i {
+            font-size: 420%;
+            padding: 5px;
+        }
+        .submit {
+            padding: 10px;
+        }
+    }
+
+    /* dashgrid */
+    .fullbox {
+        display: flex;
+
+        .anddeet {
+            display: inline;
+            padding: 20px;
+        }
+        .aboutsection {
+            text-align: center;
+            display: inline-block;
+            padding: 20px;
+            max-width: 50%;
+        }
+        /* gridbox title */
+        .title {
+            display: flex;
+            padding: 5px;
+        }
+        .title p {
+            border: 1px dashed $dark-base;
+            padding: 10px;
+        }
+        /* the actual gridbox */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 2fr);
+        }
+        .header {
+            display: inline;
+        }
+        .inner {
+            border: 1px dashed $dark-text;
+            padding: 5px;
+        }
+        .butts p{
+            border: 1px dashed $dark-text;
+            padding: 4px
+        }
+        .butts p:hover {
+            cursor: pointer;
+            color: $dark-base;
+        }
+
+        /* userdash gridbox styles */
+        .deet {
+            overflow: auto;
+            text-align: center;
+            background-color: transparent;
+            height: 350px;
+            margin-right: 5%;
+            margin-top: 1%;
+            max-width: 20%;
+        }
+        .grid-deet {
+            width: auto;
+            border: 2px dashed $dark-text;
+
+        }
+        .head {
+            background-color: $dark-focus-backdark;
+            position: relative;
+            height: auto;
+            width: auto;
+            text-align: center;
+            justify-content: baseline;
+            padding: 2px;
+        }
+        .line {
+            padding: 4px;
+            border: 1px dashed $dark-text;
+            height: auto;
+
+            
+        }
+        .line :nth-child(even) {
+            background-color: $dark-focus-background;
+        }
     }
     
-
 }

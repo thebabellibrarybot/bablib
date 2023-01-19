@@ -94,7 +94,7 @@ const Login = () => {
     }
 
     return (
-        <section className="login-section">
+        <section className="form-headers">
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
             <h1>Sign In</h1>
             <form className = 'form' onSubmit={handleSubmit}>
@@ -117,14 +117,18 @@ const Login = () => {
                     value={password}
                     required
                 />
-                <div className="button">
+                <div className="clicked">
                     <button>Sign In</button>
                 </div>
             </form>
+
             <div className="for-reg">
-                <p>Need an Accound?</p>
-                <Link className = 'link' to="/register">Sign Up</Link>
+                <p>Need an Account?</p>
+                <div className="clicked">
+                    <Link className = 'link' to="/register">Sign Up</Link>
+                </div>
             </div>
+
         </section>
 
     )

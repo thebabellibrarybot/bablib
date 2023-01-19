@@ -1,6 +1,6 @@
 import { FaEarlybirds, FaKiwiBird } from 'react-icons/fa';
 import { GiBirdTwitter, GiEgyptianBird, GiKiwiBird, GiNestBirds } from 'react-icons/gi';
-import '../styles/register.css';
+//import '../styles/register.css';
 import { FaCrow, FaReceipt, FaBalanceScaleRight,FaBookDead, FaCommentDots, FaCubes, FaMortarPestle  } from 'react-icons/fa';
 import { CgTranscript, CgGhostCharacter } from 'react-icons/cg';
 import { BsTranslate } from 'react-icons/bs';

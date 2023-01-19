@@ -2,7 +2,6 @@ import {  useState } from "react";
 import React from 'react';
 import BirdProfile from "../components/BirdProfile";
 import axios from "axios";
-import '../styles/register.css';
 import { FaEarlybirds, FaKiwiBird } from 'react-icons/fa';
 import { GiBirdTwitter, GiEgyptianBird, GiKiwiBird, GiNestBirds } from 'react-icons/gi';
 import { useNavigate } from "react-router-dom";
@@ -48,30 +47,33 @@ const BabelReg = () => {
         <div className={isDarkMode}>
             <Navbar/>
             <div className="babelReg">
-                <BirdProfile ability = {ability} className = "icon"></BirdProfile>
-                <form className = 'mainform' onSubmit={(registerUser)}>
-                    <input className = 'main-input' 
+
+                <form className = 'form-reg' onSubmit={(registerUser)}>
+                    <input className = 'input' 
                     value = {username}
                     onChange={(e) => setNewUser(e)}
                     type="text" 
                     placeholder="username" />
-                    <input className = 'main-input' 
+
+                    <input className = 'input' 
                     value = {email}
                     onChange={(e) => setEmail(e.target.value)}
                     type="text" 
                     placeholder="email" />
-                    <input className = 'main-input'
+
+                    <input className = 'input'
                     value = {password}
                     onChange={(e) => setPassword(e.target.value)}
                     type="text"
                     placeholder="password" />
-                    <input className = 'main-input'
+                    
+                    <input className = 'input'
                     value = {ability}
                     onChange={(e) => setAbility(e.target.value)}
                     type="text"
                     placeholder="ability"/>
-                    <div>
-                        <div className="ablities">
+
+                    <div className="ablities">
                         <p>set ability</p>
                             <FaEarlybirds className="i" onClick={() => setAbility('early-bird')}></FaEarlybirds>
                             <FaKiwiBird className="i" onClick = {() => setAbility('kiwi-bird')}></FaKiwiBird>
@@ -79,9 +81,13 @@ const BabelReg = () => {
                             <GiEgyptianBird className="i" onClick = {() => setAbility('egyptian-bird')}></GiEgyptianBird>
                             <GiKiwiBird className="i" onClick = {() => setAbility('gi-bird')}></GiKiwiBird>
                             <GiNestBirds className="i" onClick = {() => setAbility('nest-bird')}></GiNestBirds>
-                        </div>
                     </div>
-                    <input className = "submit" type='submit' value="register user"/>
+                    <div className="user-icon">
+                        <BirdProfile ability = {ability} className = "icon"></BirdProfile>
+                    </div>
+                    <div className="clicked">
+                    <input className = "submit" type='submit' value="register newUser"/>
+                    </div>
                 </form>
             </div>
             

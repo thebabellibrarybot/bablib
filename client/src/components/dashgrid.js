@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import React from 'react';
 import axios from 'axios';
-import '../styles/dashgrid.css';
 import BirdProfile from './BirdProfile';
 import GridDeets from './griddeets';
 
@@ -39,7 +38,7 @@ const DashGrid = (props) => {
                 <p>{uniqueAboutBody}</p>
         <div className='anddeet'>
         {data && data.map((d, i) => {
-             return(
+             return( 
                 <div className='extra' key = {i}>
                     <div className = 'title'>
                         <p>{d.gridtitle}</p>
