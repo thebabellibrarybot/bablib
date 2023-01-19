@@ -4,7 +4,8 @@ import '../../styles/underConstruction.css';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-
+import Navbar from '../../navbar';
+import useTheme from '../../hooks/useTheme';
 
 const UnderConstruction = () => {
 
@@ -12,6 +13,7 @@ const UnderConstruction = () => {
     const id = useParams();
     const axiosPrivate = useAxiosPrivate();
     const [data, setData] = useState(null);
+    const { isDarkMode } = useTheme();
 
     useEffect(() => {
 
@@ -34,6 +36,10 @@ const UnderConstruction = () => {
     }
 
     if (underConstruction === true) return (
+        <div className={ isDarkMode }>
+            <div className='logged-in-nav'>
+                <Navbar></Navbar>
+            </div>
         <div className='uc'>
             <div className='ucb'>
                 <MyProfile props = {data}/>
@@ -43,6 +49,7 @@ const UnderConstruction = () => {
                 <p>this div is under construction please have patience with our handworking team</p>
                 </div>
             </div>
+        </div>
         </div>
     )
 }

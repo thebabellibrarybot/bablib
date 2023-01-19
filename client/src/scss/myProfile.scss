@@ -1,0 +1,44 @@
+.dark {
+    .myprofile {
+       border: 1px solid $darkuser-text;
+       border-radius: 10px;
+       background-color: transparent;
+       margin: 10px;
+       .myprof-titlecard {
+        margin: 5px;
+        border-bottom: 1px solid $darkuser-text;
+        h1 {
+            color: $darkuser-text;
+            padding: 0;
+        }
+        p {
+            color: $darkuser-base;
+        }
+       }
+       .usernavbar {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+       }
+       .user-nav :hover {
+        color: $darkuser-base;
+       }
+       .user-nav-link {
+        padding: 3px;
+        font-size: medium;
+        color: $darkuser-text;
+        text-decoration: none;
+       }
+       .user-nav-link :hover {
+        color: $darkuser-base;
+       }
+       .signout-butt {
+        .link {
+            color: $darkuser-text;
+        }
+       }
+       .signout-butt :hover {
+        color: $darkuser-base
+       }
+    } 
+}

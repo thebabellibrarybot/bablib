@@ -1,7 +1,7 @@
 import useAxiosPrivate from '../../hooks/useAxiosPrivate';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import '../../styles/userProfile.css';
+//import '../../styles/userProfile.css';
 import { useNavigate } from 'react-router-dom';
 import BirdProfile from '../../components/BirdProfile';
 import useAuth from '../../hooks/useAuth';

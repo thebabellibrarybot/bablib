@@ -4,6 +4,8 @@ import MyProfile from './myProfile'
 import useAxiosPrivate from '../../hooks/useAxiosPrivate';
 import { useParams } from 'react-router-dom';
 import { FilterLeft, FilterMain, FilterRight } from '../../pgcomponents/userDashComponents/UserFilters';
+import useTheme from '../../hooks/useTheme';
+import Navbar from '../../navbar';
 
 const UserProfile = () => {
 
@@ -15,6 +17,7 @@ const UserProfile = () => {
     const [data, setData] = useState(null);
     const [rotatorData, setRotatorData] = useState(null);
     const {id} = useParams();
+    const { isDarkMode } = useTheme();
     console.log(data, 'data sent to my profile')
 
     // add if (setMain == pressed) then useDoOpposite()
@@ -70,6 +73,10 @@ const UserProfile = () => {
 
 
     return (
+        <div className={ isDarkMode }>
+            <div className='logged-in-nav'>
+                <Navbar></Navbar>
+            </div>
         <div className='user-page'>
 
             <div className = 'user-page-head'>
@@ -104,6 +111,7 @@ const UserProfile = () => {
                 </div>
             </div>
 
+        </div>
         </div>
     )
 }

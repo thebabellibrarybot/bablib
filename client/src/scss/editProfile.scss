@@ -1,12 +1,13 @@
-
+.dark {
+    
+    
 /* left side */
 .userprof-left {
     display: inline;
-    background-color: transparent;
+    color: $darkuser-text;
 }
 .userprof-left p {
     padding: 5px;
-    background-color: transparent;
     margin-top: 5px;
 }
 .options-panel {
@@ -15,32 +16,28 @@
     margin-top: 30px;
 }
 .options-panel p:hover{
-    display: flex;
-    justify-content: center;
-    background-color: greenyellow;
-    border-radius: 10px;
-    width: fit-content;
+    color: $darkuser-base;
 }
 .options-panel p {
-    border: 1px solid #aaa;
+    border: 1px solid $darkuser-text;
     border-radius: 10px;
+    background-color: $dark-focus-background;
 }
 
 /* right side */
 .userprof-right {
     display: inline;
-    background-color: transparent;
+    color: $darkuser-text;
 }
 .userprof-right p {
     padding: 5px;
-    background-color: transparent;
     margin-top: 5px;
 }
 .userprof-left .right-title {
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid $darkuser-text;
 }
 .userprof-right .right-title {
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid $darkuser-text;
 }
 .options-panel-right {
     margin-top: 30px;
@@ -48,27 +45,28 @@
     display: flex;
 }
 .options-panel-right p {
-    border: 1 px solid #aaa;
+    border: 1 px solid $darkuser-text;
     border-radius: 10px;
+    background-color: $dark-focus-background;
 }
 .options-panel-right p:hover {
     display: flex;
     justify-content: center;
-    background-color: greenyellow;
+    background-color: red;
     border-radius: 10px;
+    color: $dark-focus-backdark
 }
 .option p {
-    border: 1px solid #aaa;
+    border: 1px solid $darkuser-text;
     border-radius: 10px;
 } 
 
 /* main */
 .userprof-main {
     display: inline;
-    
 }
 .userprof-main .right-title {
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid $darkuser-text;
 }
 .show-cur-user {
     display: inline;
@@ -77,6 +75,7 @@
 .cur-username {
     display: flex;
     align-items: center;
+    color: $darkuser-text;
 }
 .show-cur-username {
     display: flex;
@@ -95,19 +94,18 @@
     padding: 5px;
 }    
 .submit-useredits {
-    border-radius: 10px;
-    border: none;
-    margin-top: 10%;
-}
-.submit-ed {
-    background-color: transparent;
-    border-radius: 10px;
-    border: 1px solid #aaa;
-    border-radius: 10px;
-    padding: 10px;
+    margin-top: 5%;
 }
 .submit-useredits :hover {
-    background-color: greenyellow;
+    color: $darkuser-base;
+}
+.submit-ed {
+    border-radius: 10px;
+    border: 1px solid $darkuser-base;
+    border-radius: 10px;
+    background-color: $dark-focus-background;
+    padding: 10px;
+    color: $darkuser-text;
 }
 .user-birdview {
     margin-left: 10%;
@@ -115,20 +113,22 @@
 .edit-cur-username select {
     background-color: transparent;
     border-radius: 10px;
-    border: 1px solid #aaa;
+    border: 1px solid $darkuser-text;
+    color: $darkuser-text;
 }
 .edit-cur-username :hover{
-    background-color: greenyellow;
+    background-color: $dark-focus-backdark;
     border-radius: 10px;
+    color: $darkuser-base;
 }
 .edit-cur-username input {
     background-color: transparent;
-    border: 1px solid #aaa;
+    border: 1px solid $darkuser-text;
     border-radius: 10px;
+    color: $darkuser-text;
 }
 
 select.decorated option:hover {
     background-color: red;
 }
-
-  
+}
