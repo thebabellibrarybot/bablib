@@ -6,20 +6,133 @@
   }
 
 .light{
-
+    position: absolute;
+    height: 100%;
+    display: inline;
+    background-color: $light-background;
+    color: $light-text;
+    font-size: medium;
     .app {
-        background-color: $light-background;
         color: $light-text;
     }
-}
+    .icon{
+        font-size: 40px;
+    }
+    .invisible {
+        display: none;
+    }
 
-.lightuser {
-    .app {
-        background-color: $lightuser-background;
+    /* scroll bar */
+    ::-webkit-scrollbar {
+        background-color: $light-focus-background;
+        width: 15px;
+        margin-left: 5px;
+        border-radius: 10px;
+        border: 1px solid $light-focus-backdark;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: $light-base;
+        border-radius: 10px;
+    }
+    
+    /* handle forms */
+    .form-headers {
+        padding: 5px;
+        width: 100%;
+        height: 90%;
+    }
+    .form {
+        display: flex;
+    }
+    .form-headers h1 {
+        color: $light-base;
+    }
+    input {
+        background-color: $light-focus-background;
+        border: none;
+        border-radius: 10px;
+        margin: 3px;
+        color: $light-text;
+    }
+    input :focus {
+        border: none;
+    }
+
+
+    /*handle links*/
+    .clicked :hover {
+        color: $light-base;
+    }
+    .link {
+        color: $light-text;
+        text-decoration: none;
+        padding: 5px;
+    }
+    button {
+        margin-left: 10px;
+        margin-right: 10px;
+        background-color: transparent;
+        border: none;
+        color: $light-text;
+        font-size: medium;
+    }
+
+    /*handle navbars*/
+    .navbar {
+        display: flex;
+        margin: 10px;
+        align-items: center;
+        .navbar :hover {
+            color: $light-base;
+        }
+        .link-title {
+            color: $light-text;
+            text-decoration: none;
+            padding: 10px;
+        }
+    }
+    /* nav-bar when logged in */
+    .logged-in-nav {
+        .navbar {
+            display: flex;
+            margin: 10px;
+            align-items: center;
+        }
+        .navbar :hover {
+            color: $lightuser-base;
+        }
+        .link {
+            color: $lightuser-text;
+        }
         color: $lightuser-text;
+        background-color: $lightuser-background;
+    }
+
+    /*handle user-icon*/
+    .user-icon {
+        border: 1px dashed $light-base;
+        border-radius: 10px;
+        height: fit-content;
+        width: fit-content;
+        animation: spin 5s infinite linear;
+    }
+    /* handle nav - icon */
+    .nav-icon {
+        padding: 5px;
+        .icon {
+            color: $lightuser-base;
+            border: 1px solid $lightuser-base;
+            border-radius: 10px;
+            padding: 5px;
+            animation: spin 5s infinite linear;
+        }
+    }
+    .nav-icon :hover {
+        background-color: $lightuser-base;
+        border: 1px solid $lightuser-border-sub;
+        color: $light-focus-backdark;
     }
 }
-
 .dark {
     position: absolute;
     height: 100%;
@@ -153,14 +266,20 @@
 
     
 }
+.lightuser {
 
-.darkuser {
-    .app {
-        background-color: $dark-background;
-        color: $darkuser-text;
-        display: inline;
-    }
 }
+.darkuser {
+
+}
+.darkmolly {
+
+}
+.mummy {
+    
+}
+
+
 
 /* things to standardize: 
 

@@ -194,3 +194,190 @@
     }
     
 }
+.light {
+    /*user nav login//reg */
+    .usernav-items {
+        background-color: $light-focus-backdark;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    // user login stuff //
+    .usernav-items {
+        align-items: center;
+    }
+    .login-section {
+        padding: 10px;
+    }
+  
+    .for-reg {
+        display: flex;
+        align-items: center;
+    }
+    
+    // aboutuser-nav //
+    .usernavs {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: $light-focus-background;
+        color: $light-text;
+        padding: 10px;
+    }
+    .about-navbar button{
+        background-color: $light-focus-background;
+        color: $light-text;
+        margin-left: 10px;
+        margin-right: 10px;
+        border: none;
+        font-size: medium;
+    }
+    .user-icon {
+        display: flex;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 300%;
+        color: $light-base;
+    }
+    .about-navbar :hover {
+        color: $light-base;
+    }
+    .user-item button {
+        background-color: $light-focus-backdark;
+        border: none;
+        font-size: medium;
+    }
+    .user-item :hover {
+        color: $light-base;
+    }
+    .nav-link {
+        text-decoration: none;
+    }
+
+    /* register pg */
+    .babelReg {
+        display: flex;
+        justify-content: center;
+        height: 90%;
+        align-items: center;
+        
+        .input {
+            background-color: $light-focus-backdark;
+            color: $light-base;
+            margin: 2px;
+            border: 1px dashed $light-focus-background;
+            padding: 20px;
+        }
+        input {
+            color: $light-text;
+        }
+        input :focus {
+            color: $light-base
+        }
+        .input :focus {
+            border: none;
+            color: $light-base;
+        }
+     
+        .form-reg {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            grid-template-columns: repeat(2, 1fr);
+            grid-row-gap: 0px;
+            grid-column-gap: 0px;
+            max-width: 600px;
+        }
+        .ablities {
+            padding: 10px;
+        }
+        .i {
+            font-size: 420%;
+            padding: 5px;
+        }
+        .submit {
+            padding: 10px;
+        }
+    }
+
+    /* dashgrid */
+    .fullbox {
+        display: flex;
+
+        .anddeet {
+            display: inline;
+            padding: 20px;
+        }
+        .aboutsection {
+            text-align: center;
+            display: inline-block;
+            padding: 20px;
+            max-width: 50%;
+        }
+        /* gridbox title */
+        .title {
+            display: flex;
+            padding: 5px;
+        }
+        .title p {
+            border: 1px dashed $light-base;
+            padding: 10px;
+        }
+        /* the actual gridbox */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 2fr);
+        }
+        .header {
+            display: inline;
+        }
+        .inner {
+            border: 1px dashed $light-text;
+            padding: 5px;
+        }
+        .butts p{
+            border: 1px dashed $light-text;
+            padding: 4px;
+        }
+        .butts p:hover {
+            cursor: pointer;
+            color: $light-base;
+        }
+
+        /* userdash gridbox styles */
+        .deet {
+            overflow: auto;
+            overflow-x: hidden;
+            width: fit-content;
+            text-align: center;
+            height: 350px;
+            margin-right: 5%;
+            margin-top: 1%;
+            max-width: 20%;
+        }
+        .grid-deet {
+            width: auto;
+            border: 2px dashed $light-text;
+
+        }
+        .head {
+            background-color: $light-base;
+            position: relative;
+            height: auto;
+            width: auto;
+            text-align: center;
+            justify-content: baseline;
+            padding: 5px;
+            color: $light-background
+        }
+        .line {
+            padding: 4px;
+            border: 1px dashed $light-text;
+            height: auto;
+            
+        }
+        .line :nth-child(even) {
+            background-color: $light-focus-background;
+        }
+    }
+ 
+}

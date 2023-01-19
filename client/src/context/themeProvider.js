@@ -7,6 +7,7 @@ const ThemeProvider = ({children}) => {
 
     const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem('theme') || 'dark');
     localStorage.setItem('theme', isDarkMode)
+    console.log('theme from themeProvider', isDarkMode)
     const setIsTheme = (props) => {
         setIsDarkMode(props)
         localStorage.setItem('theme', props)

@@ -28,6 +28,7 @@ const handleLogin = async (req, res) => {
         const username = foundUser.username;
         const bird = foundUser.bird;
         const id = foundUser.id;
+        const theme = foundUser.theme;
         // create JWTs
         const accessToken = jwt.sign(
             {
@@ -59,7 +60,7 @@ const handleLogin = async (req, res) => {
         res.cookie('jwt', refreshToken, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 });
 
         // Send authorization roles and access token to user
-        res.json({ roles, accessToken, username, user, bird, id });
+        res.json({ roles, accessToken, username, user, bird, id, theme });
 
     } else {
         res.sendStatus(401);

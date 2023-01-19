@@ -54,3 +54,58 @@
     }
 
 }
+.light {
+    .userspine-full {
+        display: flex;
+        position: absolute;
+        height: 80%;
+        width: 99.9%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-radius: 10px;
+        margin-top: 2%;
+    }
+    .dashboard-main {
+        border: 1px solid $lightuser-text;
+        border-radius: 10px;
+        height: 90%;
+        width: 90%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 10px;
+    }
+    .userspine-header {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border: 1px solid $lightuser-base;
+        border-radius: 10px;
+    }
+    .userspine-header h1 {
+        padding: 10px;
+    }
+    .dashitem {
+        display: inline-flex;
+        width: 50%;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    .a-dash {
+        border: 1px dashed $lightuser-base;
+        border-radius: 10px;
+        background-color: $lightuser-focus-background;
+        margin: 10px;
+    }
+    .buttons p{
+        border: 1px dashed #aaa;
+        border-radius: 10px;
+        margin: 5px;
+        width: 20%;
+    }
+    .buttons p:hover {
+        color: $lightuser-base;
+    }
+}

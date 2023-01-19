@@ -66,3 +66,69 @@
         color: $dark-background;
     }
 }
+.light {
+    .tabllz {
+        padding: 10px;
+        margin: 10px;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+    table td, table th {
+    border: 1px solid $light-base;
+    padding: 8px;
+    color: $light-text;
+    }
+    table tr:nth-child(even){
+        background-color: $light-focus-backdark;
+        color: $light-text;
+    }
+    .span {
+        color: $light-text;
+    }
+    .span strong {
+        color: $light-text;
+    }
+   .rows {
+    color: $light-text;
+    text-decoration: none;
+   }
+  
+    table tr:hover {
+        background-color: $light-base;
+        .rows {
+            color: $light-background;
+        }
+    }
+    table th, tfoot td {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: $light-focus-background;
+      }
+    .table-search {
+        color: $light-text;
+        padding: 10px;
+    }
+    .table-search input {
+        background-color: $light-focus-backdark;
+        border: 1px solid $light-border-main;
+        color: $light-text;
+    }
+    .table-search input :focus {
+        color: $light-text;
+        border: $light-base;
+    }
+    .table-buttons button{
+        background-color: $light-focus-backdark;
+        color: $light-text;
+        margin: 5px;
+        padding: 5px;
+        border: 1px solid $light-border-main;
+    }
+    .table-buttons :hover {
+        background-color: $light-base;
+        color: $light-background;
+    }
+}

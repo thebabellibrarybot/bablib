@@ -4,12 +4,14 @@ import useAuth from '../hooks/useAuth'
 import React from 'react';
 import axios from "axios";
 import useStateHook from "../hooks/useUserState";
+import useTheme from "../hooks/useTheme";
 
 const LOGIN_URL = '/babelauth';
  
 const Login = () => {
     const { setAuth } = useAuth();
-    const { isUser, setIsUser } = useStateHook()
+    const { setIsUser } = useStateHook();
+    const { setIsTheme } = useTheme();
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -60,6 +62,8 @@ const Login = () => {
                 setAuth({ email, password, roles, accessToken });
                 setEmail('');
                 setPassword('');
+                setIsTheme(response.data.theme)
+                window.localStorage.setItem('resfromlogin', response.data.theme)
                 alert(`succ login for ${email}, msg from loginstuff`)
                 navigate(from, { replace: true });
                 window.localStorage.setItem( 'roles', roles )
@@ -67,8 +71,6 @@ const Login = () => {
                 window.localStorage.setItem( 'email', email ) 
                 window.dispatchEvent(new Event('roles'));
                 setIsUser(localStorage.getItem('roles'))
-                console.log(response, 'res from login')
-                console.log(isUser, 'is user from login')
 
                 }
                 else {

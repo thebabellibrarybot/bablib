@@ -1,25 +1,29 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import useStateHook from "../../hooks/useUserState";
 //import useAuth from "../../hooks/useAuth";
+import useTheme from '../../hooks/useTheme';
 
 
 const SignOutButt = () => {
 
-    const from = "/"
     const { isUser, setIsUser } = useStateHook()
-    const [signOut, setSignOut] = useState(0)
+    const { setIsTheme } = useTheme();
+    const navigate = useNavigate();
 
     function handleSignOut () {
-        setSignOut(signOut + 1)
-        setIsUser(false)
+        setIsTheme('light')
         window.localStorage.setItem('roles', null)
+        window.localStorage.setItem('theme', 'light')
+        setIsUser(false)
+        navigate('/')
+        console.log('clicked')
     }
 
     if (isUser !== null) return (
-        <div className="signout-butt">
-            <Link className = 'link' to = {from} onClick={handleSignOut}>userSignout</Link>
+        <div className="signout-butt" onClick={handleSignOut}>
+            <p className = 'link'>userSignout</p>
         </div>
     )
 }

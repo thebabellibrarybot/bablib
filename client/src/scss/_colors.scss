@@ -1,9 +1,12 @@
+/* lightuser */
 $lightuser-background: #f8f8f8;
 $lightuser-border-main: #0c0c0c;
 $lightuser-border-sub: #aaa;
+$lightuser-focus-background: #dbdbdb;
 $lightuser-base: #a2f12b;
 $lightuser-text: #0c0c0c;
 
+/* darkuser */
 $darkuser-background: #28262b;
 $darkuser-focus-background: #322e36;
 $darkuser-border-main: #a2f12b;
@@ -11,12 +14,16 @@ $darkuser-border-sub: #aaa;
 $darkuser-base: #a2f12b;
 $darkuser-text: #c4d3ae;
 
+/* light */
 $light-background: #f8f8f8;
 $light-border-main: #0c0c0c;
 $light-border-sub: #aaa;
+$light-focus-background: #dbdbdb;
+$light-focus-backdark: #818181;
 $light-base: #f1356d;
 $light-text: #0c0c0c;
 
+/* dark */
 $dark-background: #28262b;
 $dark-focus-background: #322e36;
 $dark-focus-backdark: #1e1922;
@@ -24,3 +31,35 @@ $dark-border-main: #e76e93;
 $dark-border-sub: #aaa;
 $dark-base: #e76e93;
 $dark-text: #e4c3cd;
+
+/* darkmolly */
+/* userside */
+$darkmollyuser-background: #302a39;
+$darkmollyuser-focus-background: #3e2e3f;
+$darkmollyuser-border-main: #ff93e9;
+$darkmollyuser-border-sub: #a7ffba;
+$darkmollyuser-base: #7af2ff;
+$darkmollyuser-text: #dcfffd;
+$darkmolly-background: #28262b;
+
+/* main side */
+$darkmolly-focus-background: #41364b;
+$darkmolly-focus-backdark: #1e1923;
+$darkmolly-border-main: #85acff;
+$darkmolly-border-sub: #e3ff7f;
+$darkmolly-base: #ffa7c1;
+$darkmolly-text: #e1e4c6;
+
+
+
+/* mummy */
+/* userside */
+
+/* main side */
+
+
+
+/* dead bird */
+/* userside */
+
+/* main side */

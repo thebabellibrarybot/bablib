@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import BirdProfile from '../../components/BirdProfile';
 import useAuth from '../../hooks/useAuth';
 import useStateHook from "../../hooks/useUserState";
+import useTheme from '../../hooks/useTheme';
 
 
 export function LeftProf({props}) {
@@ -122,8 +123,8 @@ export function MainProf({props, propID}) {
     const [theme, setTheme] = useState(id.theme);
     const { setAuth } = useAuth();
     const { isUser, setIsUser } = useStateHook()
-    const LOGIN_URL = '/babelauth/edited'
-    
+    const LOGIN_URL = '/babelauth/edited';
+    const { setIsTheme } = useTheme();
 
 
     //console.log(propID, 'propID')
@@ -138,6 +139,9 @@ export function MainProf({props, propID}) {
         if (ability === '') {
             setAbility(id.bird)
         }
+        if (theme === '') {
+            setTheme(id.theme)
+        }
         if (password === '') {
             alert('user must enter password to update settings!')
         } else {
@@ -148,6 +152,8 @@ export function MainProf({props, propID}) {
             console.log('from main')
 
             // mk a login req
+            window.localStorage.setItem('theme', theme)
+            setIsTheme(theme)
             
             const response = await axios.post(LOGIN_URL,
                 JSON.stringify({ email, password, mid, theme, username, ability }),
@@ -160,11 +166,13 @@ export function MainProf({props, propID}) {
             if (email === response.email) {
                 const accessToken = response?.data?.accessToken;
                 const roles = response?.data?.roles;
+                setIsTheme(theme)
                 setAuth({ email, password, roles, accessToken })
                 setEmail('');
                 setPassword('');
                 alert(`succ login for ${email}, msg from loginstuff`)
     //            navigate(from, { replace: true });
+                window.localStorage.setItem( 'theme', theme )
                 window.localStorage.setItem( 'added', response )
                 window.localStorage.setItem( 'roles', roles )
                 window.localStorage.setItem( 'presists', true )
@@ -241,13 +249,12 @@ export function MainProf({props, propID}) {
                         <p>current theme: {theme}</p>
                     </div>
                     <div className='edit-cur-username'>
-                            <select value = {theme} onChange = {(e) => setTheme(e.target.value)}
-                            
-                            >
+                            <select value = {theme} onChange = {(e) => setTheme(e.target.value)}>
                                 <option className='option' value = "dark">darkmode default</option>
                                 <option className='option' value = "userdark">darkmode user</option>
-                                <option className='option' value = "light">lightmode consistent</option>
-                                <option className='option' vlaue = "userlight">lightmode default</option>
+                                <option className='option' value = "light">lightmode default</option>
+                                <option className='option' value = "userlight">lightmode user</option>
+                                <option className='option' value = "darkmolly">dark molly</option>
                             </select>
                     </div>
                 </div>

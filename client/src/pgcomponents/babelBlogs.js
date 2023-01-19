@@ -6,7 +6,7 @@ import useTheme from '../hooks/useTheme';
 
 const BabelBlogls = () => {
 
-    const { isDarkMode } = useTheme;
+    const { isDarkMode } = useTheme();
     const [blogls, setBlogls] = useState([]);
     
     useEffect(() => {

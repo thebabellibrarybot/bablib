@@ -49,3 +49,52 @@
         background-color: $dark-focus-background;
     }
 }
+.light {
+    .blog-option {
+        padding: 5px;
+    }
+    .blog-page {
+        border: 1px solid $light-base;
+        margin: 10px;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: $light-focus-backdark;
+    }
+    .blog-option p {
+        width: fit-content;
+    }
+    .blog-option h2:hover {
+        color: $light-base;
+    }
+
+    /* blog body */
+    .fullblog {
+        display: flex;
+        background-color: $light-background;
+    }
+    .blogTitle {
+        position: fixed;
+        border: 1px dashed $light-base;
+        text-align: center;
+        margin-left: 10%;
+        top: 2px;
+        width: 80%;
+        padding: 25px;
+        background-color: $light-focus-backdark;
+    }
+    .bcontent {
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-top: 5%;
+        overflow-y: auto;
+    }
+    .para h3 {
+        padding: 5px;
+    }
+    .body {
+        margin: 2%;
+    }
+    .body img {
+        background-color: $light-focus-background;
+    }
+}

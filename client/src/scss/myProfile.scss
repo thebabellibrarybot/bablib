@@ -42,3 +42,47 @@
        }
     } 
 }
+.light {
+    .myprofile {
+        border: 1px solid $lightuser-text;
+        border-radius: 10px;
+        background-color: transparent;
+        margin: 10px;
+        .myprof-titlecard {
+         margin: 5px;
+         border-bottom: 1px solid $lightuser-text;
+         h1 {
+             color: $lightuser-text;
+             padding: 0;
+         }
+         p {
+             color: $lightuser-base;
+         }
+        }
+        .usernavbar {
+         display: flex;
+         justify-content: space-evenly;
+         align-items: center;
+        }
+        .user-nav :hover {
+         color: $lightuser-base;
+        }
+        .user-nav-link {
+         padding: 3px;
+         font-size: medium;
+         color: $lightuser-text;
+         text-decoration: none;
+        }
+        .user-nav-link :hover {
+         color: $lightuser-base;
+        }
+        .signout-butt {
+         .link {
+             color: $lightuser-text;
+         }
+        }
+        .signout-butt :hover {
+         color: $lightuser-base
+        }
+     } 
+}
