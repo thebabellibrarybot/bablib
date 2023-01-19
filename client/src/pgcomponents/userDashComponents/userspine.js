@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import { useNavigate, useLocation } from 'react-router-dom';
 import MyProfile from '../../components/userDashComs/myProfile';
 import useAxiosPrivate from '../../hooks/useAxiosPrivate';
+import useTheme from '../../hooks/useTheme';
+import Navbar from '../../navbar';
 
-import '../../styles/userDash.css';
+//import '../../styles/userDash.css';
 
 // need to add something that states what dash items are displayed dependant on user login ability
 
@@ -16,6 +18,7 @@ const UserSpine = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const id = 'getuser';
+    const { isDarkMode } = useTheme();
 
     useEffect(() => {
 
@@ -55,6 +58,10 @@ const UserSpine = () => {
     }
 
     return (
+        <div className = { isDarkMode }>
+        <div className='logged-in-nav'>
+            <Navbar></Navbar>
+        
         <div className="userspine-full">
             
             <div className="dashboard-main">
@@ -84,6 +91,8 @@ const UserSpine = () => {
                 </div>
 
             </div>
+        </div>
+        </div>
         </div>
     )
 }

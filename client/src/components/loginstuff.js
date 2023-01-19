@@ -4,7 +4,6 @@ import useAuth from '../hooks/useAuth'
 import React from 'react';
 import axios from "axios";
 import useStateHook from "../hooks/useUserState";
-import useTheme from "../hooks/useTheme";
 
 const LOGIN_URL = '/babelauth';
  
@@ -15,7 +14,6 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/userspine";
-    const { isDarkMode } = useTheme();
 
     const userRef = useRef();
     const errRef = useRef();

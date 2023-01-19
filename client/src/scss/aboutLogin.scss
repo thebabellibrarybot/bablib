@@ -159,8 +159,9 @@
         /* userdash gridbox styles */
         .deet {
             overflow: auto;
+            overflow-x: hidden;
+            width: fit-content;
             text-align: center;
-            background-color: transparent;
             height: 350px;
             margin-right: 5%;
             margin-top: 1%;
@@ -172,19 +173,19 @@
 
         }
         .head {
-            background-color: $dark-focus-backdark;
+            background-color: $dark-base;
             position: relative;
             height: auto;
             width: auto;
             text-align: center;
             justify-content: baseline;
-            padding: 2px;
+            padding: 5px;
+            color: $dark-background
         }
         .line {
             padding: 4px;
             border: 1px dashed $dark-text;
             height: auto;
-
             
         }
         .line :nth-child(even) {

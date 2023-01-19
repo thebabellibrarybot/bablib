@@ -17,4 +17,35 @@
     .blog-option h2:hover {
         color: $dark-base;
     }
+
+    /* blog body */
+    .fullblog {
+        display: flex;
+        background-color: $dark-background;
+    }
+    .blogTitle {
+        position: fixed;
+        border: 1px dashed $dark-base;
+        text-align: center;
+        margin-left: 10%;
+        top: 2px;
+        width: 80%;
+        padding: 25px;
+        background-color: $dark-focus-backdark;
+    }
+    .bcontent {
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-top: 5%;
+        overflow-y: auto;
+    }
+    .para h3 {
+        padding: 5px;
+    }
+    .body {
+        margin: 2%;
+    }
+    .body img {
+        background-color: $dark-focus-background;
+    }
 }

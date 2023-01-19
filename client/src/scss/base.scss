@@ -2,7 +2,9 @@
 * {
     margin: 0;
     font-family: 'Ubuntu', sans-serif;
+    
   }
+
 .light{
 
     .app {
@@ -33,6 +35,19 @@
     }
     .invisible {
         display: none;
+    }
+
+    /* scroll bar */
+    ::-webkit-scrollbar {
+        background-color: $dark-focus-background;
+        width: 15px;
+        margin-left: 5px;
+        border-radius: 10px;
+        border: 1px solid $dark-focus-backdark;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: $dark-base;
+        border-radius: 10px;
     }
     
     /* handle forms */

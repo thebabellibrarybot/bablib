@@ -2,12 +2,12 @@ import axios from 'axios';
 import React, { useEffect } from "react";
 import { useState } from 'react';
 import { useParams } from "react-router-dom";
-import '../styles/blogbody.css';
+import useTheme from '../hooks/useTheme';
 
 const BabelBlogDeets = () => {
 
     const { id } = useParams()
-    
+    const { isDarkMode } = useTheme();
     const [data, setData] = useState();
     
     useEffect (() => {
@@ -27,6 +27,7 @@ const BabelBlogDeets = () => {
         }
 
     return(
+        <div className={isDarkMode}>
         <div className='fullblog'>
             <div className='blogTitle'>
             <h2>{data.title}</h2>
@@ -58,6 +59,7 @@ const BabelBlogDeets = () => {
                     
                 })}
             </div>
+        </div>
         </div>
     )
 
