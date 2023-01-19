@@ -381,3 +381,750 @@
     }
  
 }
+.lightuser {
+    /*user nav login//reg */
+    .usernav-items {
+        background-color: $lightuser-focus-backdark;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    // user login stuff //
+    .usernav-items {
+        align-items: center;
+    }
+    .login-section {
+        padding: 10px;
+    }
+  
+    .for-reg {
+        display: flex;
+        align-items: center;
+    }
+    
+    // aboutuser-nav //
+    .usernavs {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: $lightuser-focus-background;
+        color: $lightuser-text;
+        padding: 10px;
+    }
+    .about-navbar button{
+        background-color: $lightuser-focus-background;
+        color: $lightuser-text;
+        margin-left: 10px;
+        margin-right: 10px;
+        border: none;
+        font-size: medium;
+    }
+    .user-icon {
+        display: flex;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 300%;
+        color: $lightuser-base;
+    }
+    .about-navbar :hover {
+        color: $lightuser-base;
+    }
+    .user-item button {
+        background-color: $lightuser-focus-backdark;
+        border: none;
+        font-size: medium;
+    }
+    .user-item :hover {
+        color: $lightuser-base;
+    }
+    .nav-link {
+        text-decoration: none;
+    }
+
+    /* register pg */
+    .babelReg {
+        display: flex;
+        justify-content: center;
+        height: 90%;
+        align-items: center;
+        
+        .input {
+            background-color: $lightuser-focus-backdark;
+            color: $lightuser-base;
+            margin: 2px;
+            border: 1px dashed $lightuser-focus-background;
+            padding: 20px;
+        }
+        input {
+            color: $lightuser-text;
+        }
+        input :focus {
+            color: $lightuser-base
+        }
+        .input :focus {
+            border: none;
+            color: $lightuser-base;
+        }
+     
+        .form-reg {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            grid-template-columns: repeat(2, 1fr);
+            grid-row-gap: 0px;
+            grid-column-gap: 0px;
+            max-width: 600px;
+        }
+        .ablities {
+            padding: 10px;
+        }
+        .i {
+            font-size: 420%;
+            padding: 5px;
+        }
+        .submit {
+            padding: 10px;
+        }
+    }
+
+    /* dashgrid */
+    .fullbox {
+        display: flex;
+
+        .anddeet {
+            display: inline;
+            padding: 20px;
+        }
+        .aboutsection {
+            text-align: center;
+            display: inline-block;
+            padding: 20px;
+            max-width: 50%;
+        }
+        /* gridbox title */
+        .title {
+            display: flex;
+            padding: 5px;
+        }
+        .title p {
+            border: 1px dashed $lightuser-base;
+            padding: 10px;
+        }
+        /* the actual gridbox */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 2fr);
+        }
+        .header {
+            display: inline;
+        }
+        .inner {
+            border: 1px dashed $lightuser-text;
+            padding: 5px;
+        }
+        .butts p{
+            border: 1px dashed $lightuser-text;
+            padding: 4px;
+        }
+        .butts p:hover {
+            cursor: pointer;
+            color: $lightuser-base;
+        }
+
+        /* userdash gridbox styles */
+        .deet {
+            overflow: auto;
+            overflow-x: hidden;
+            width: fit-content;
+            text-align: center;
+            height: 350px;
+            margin-right: 5%;
+            margin-top: 1%;
+            max-width: 20%;
+        }
+        .grid-deet {
+            width: auto;
+            border: 2px dashed $lightuser-text;
+
+        }
+        .head {
+            background-color: $lightuser-base;
+            position: relative;
+            height: auto;
+            width: auto;
+            text-align: center;
+            justify-content: baseline;
+            padding: 5px;
+            color: $lightuser-background
+        }
+        .line {
+            padding: 4px;
+            border: 1px dashed $lightuser-text;
+            height: auto;
+            
+        }
+        .line :nth-child(even) {
+            background-color: $lightuser-focus-background;
+        }
+    }
+}
+.darkuser {
+    /*user nav login//reg */
+    .usernav-items {
+        background-color: $darkuser-focus-backdark;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    // user login stuff //
+    .usernav-items {
+        align-items: center;
+    }
+    .login-section {
+        padding: 10px;
+    }
+  
+    .for-reg {
+        display: flex;
+        align-items: center;
+    }
+    
+    // aboutuser-nav //
+    .usernavs {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: $darkuser-focus-background;
+        color: $darkuser-text;
+        padding: 10px;
+    }
+    .about-navbar button{
+        background-color: $darkuser-focus-background;
+        color: $darkuser-text;
+        margin-left: 10px;
+        margin-right: 10px;
+        border: none;
+        font-size: medium;
+    }
+    .user-icon {
+        display: flex;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 300%;
+        color: $darkuser-base;
+    }
+    .about-navbar :hover {
+        color: $darkuser-base;
+    }
+    .user-item button {
+        background-color: $darkuser-focus-backdark;
+        border: none;
+        font-size: medium;
+    }
+    .user-item :hover {
+        color: $darkuser-base;
+    }
+    .nav-link {
+        text-decoration: none;
+    }
+
+    /* register pg */
+    .babelReg {
+        display: flex;
+        justify-content: center;
+        height: 90%;
+        align-items: center;
+        
+        .input {
+            background-color: $darkuser-focus-backdark;
+            color: $darkuser-base;
+            margin: 2px;
+            border: 1px dashed $darkuser-focus-background;
+            padding: 20px;
+        }
+        input {
+            color: $darkuser-text;
+        }
+        input :focus {
+            color: $darkuser-base
+        }
+        .input :focus {
+            border: none;
+            color: $darkuser-base;
+        }
+     
+        .form-reg {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            grid-template-columns: repeat(2, 1fr);
+            grid-row-gap: 0px;
+            grid-column-gap: 0px;
+            max-width: 600px;
+        }
+        .ablities {
+            padding: 10px;
+        }
+        .i {
+            font-size: 420%;
+            padding: 5px;
+        }
+        .submit {
+            padding: 10px;
+        }
+    }
+
+    /* dashgrid */
+    .fullbox {
+        display: flex;
+
+        .anddeet {
+            display: inline;
+            padding: 20px;
+        }
+        .aboutsection {
+            text-align: center;
+            display: inline-block;
+            padding: 20px;
+            max-width: 50%;
+        }
+        /* gridbox title */
+        .title {
+            display: flex;
+            padding: 5px;
+        }
+        .title p {
+            border: 1px dashed $darkuser-base;
+            padding: 10px;
+        }
+        /* the actual gridbox */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 2fr);
+        }
+        .header {
+            display: inline;
+        }
+        .inner {
+            border: 1px dashed $darkuser-text;
+            padding: 5px;
+        }
+        .butts p{
+            border: 1px dashed $darkuser-text;
+            padding: 4px;
+        }
+        .butts p:hover {
+            cursor: pointer;
+            color: $darkuser-base;
+        }
+
+        /* userdash gridbox styles */
+        .deet {
+            overflow: auto;
+            overflow-x: hidden;
+            width: fit-content;
+            text-align: center;
+            height: 350px;
+            margin-right: 5%;
+            margin-top: 1%;
+            max-width: 20%;
+        }
+        .grid-deet {
+            width: auto;
+            border: 2px dashed $darkuser-text;
+
+        }
+        .head {
+            background-color: $darkuser-base;
+            position: relative;
+            height: auto;
+            width: auto;
+            text-align: center;
+            justify-content: baseline;
+            padding: 5px;
+            color: $darkuser-background
+        }
+        .line {
+            padding: 4px;
+            border: 1px dashed $darkuser-text;
+            height: auto;
+            
+        }
+        .line :nth-child(even) {
+            background-color: $darkuser-focus-background;
+        }
+    }
+ 
+}
+.darkmolly {
+    /*user nav login//reg */
+    .usernav-items {
+        background-color: $darkmolly-focus-backdark;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    // user login stuff //
+    .usernav-items {
+        align-items: center;
+    }
+    .login-section {
+        padding: 10px;
+    }
+  
+    .for-reg {
+        display: flex;
+        align-items: center;
+    }
+    
+    // aboutuser-nav //
+    .usernavs {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: $darkmolly-focus-background;
+        color: $darkmolly-text;
+        padding: 10px;
+    }
+    .about-navbar button{
+        background-color: $darkmolly-focus-background;
+        color: $darkmolly-text;
+        margin-left: 10px;
+        margin-right: 10px;
+        border: none;
+        font-size: medium;
+    }
+    .user-icon {
+        display: flex;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 300%;
+        color: $darkmolly-base;
+    }
+    .about-navbar :hover {
+        color: $darkmolly-base;
+    }
+    .user-item button {
+        background-color: $darkmolly-focus-backdark;
+        border: none;
+        font-size: medium;
+    }
+    .user-item :hover {
+        color: $darkmolly-base;
+    }
+    .nav-link {
+        text-decoration: none;
+    }
+
+    /* register pg */
+    .babelReg {
+        display: flex;
+        justify-content: center;
+        height: 90%;
+        align-items: center;
+        
+        .input {
+            background-color: $darkmolly-focus-backdark;
+            color: $darkmolly-base;
+            margin: 2px;
+            border: 1px dashed $darkmolly-focus-background;
+            padding: 20px;
+        }
+        input {
+            color: $darkmolly-text;
+        }
+        input :focus {
+            color: $darkmolly-base
+        }
+        .input :focus {
+            border: none;
+            color: $darkmolly-base;
+        }
+     
+        .form-reg {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            grid-template-columns: repeat(2, 1fr);
+            grid-row-gap: 0px;
+            grid-column-gap: 0px;
+            max-width: 600px;
+        }
+        .ablities {
+            padding: 10px;
+        }
+        .i {
+            font-size: 420%;
+            padding: 5px;
+        }
+        .submit {
+            padding: 10px;
+        }
+    }
+
+    /* dashgrid */
+    .fullbox {
+        display: flex;
+
+        .anddeet {
+            display: inline;
+            padding: 20px;
+        }
+        .aboutsection {
+            text-align: center;
+            display: inline-block;
+            padding: 20px;
+            max-width: 50%;
+        }
+        /* gridbox title */
+        .title {
+            display: flex;
+            padding: 5px;
+        }
+        .title p {
+            border: 1px dashed $darkmolly-base;
+            padding: 10px;
+        }
+        /* the actual gridbox */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 2fr);
+        }
+        .header {
+            display: inline;
+        }
+        .inner {
+            border: 1px dashed $darkmolly-text;
+            padding: 5px;
+        }
+        .butts p{
+            border: 1px dashed $darkmolly-text;
+            padding: 4px;
+        }
+        .butts p:hover {
+            cursor: pointer;
+            color: $darkmolly-base;
+        }
+
+        /* userdash gridbox styles */
+        .deet {
+            overflow: auto;
+            overflow-x: hidden;
+            width: fit-content;
+            text-align: center;
+            height: 350px;
+            margin-right: 5%;
+            margin-top: 1%;
+            max-width: 20%;
+        }
+        .grid-deet {
+            width: auto;
+            border: 2px dashed $darkmolly-text;
+
+        }
+        .head {
+            background-color: $darkmolly-base;
+            position: relative;
+            height: auto;
+            width: auto;
+            text-align: center;
+            justify-content: baseline;
+            padding: 5px;
+            color: $darkmolly-background
+        }
+        .line {
+            padding: 4px;
+            border: 1px dashed $darkmolly-text;
+            height: auto;
+            
+        }
+        .line :nth-child(even) {
+            background-color: $darkmolly-focus-background;
+        }
+    }
+ 
+}
+.mummy {
+    /*user nav login//reg */
+    .usernav-items {
+        background-color: $mummy-focus-backdark;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    // user login stuff //
+    .usernav-items {
+        align-items: center;
+    }
+    .login-section {
+        padding: 10px;
+    }
+  
+    .for-reg {
+        display: flex;
+        align-items: center;
+    }
+    
+    // aboutuser-nav //
+    .usernavs {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: $mummy-focus-background;
+        color: $mummy-text;
+        padding: 10px;
+    }
+    .about-navbar button{
+        background-color: $mummy-focus-background;
+        color: $mummy-text;
+        margin-left: 10px;
+        margin-right: 10px;
+        border: none;
+        font-size: medium;
+    }
+    .user-icon {
+        display: flex;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 300%;
+        color: $mummy-base;
+    }
+    .about-navbar :hover {
+        color: $mummy-base;
+    }
+    .user-item button {
+        background-color: $mummy-focus-backdark;
+        border: none;
+        font-size: medium;
+    }
+    .user-item :hover {
+        color: $mummy-base;
+    }
+    .nav-link {
+        text-decoration: none;
+    }
+
+    /* register pg */
+    .babelReg {
+        display: flex;
+        justify-content: center;
+        height: 90%;
+        align-items: center;
+        
+        .input {
+            background-color: $mummy-focus-backdark;
+            color: $mummy-base;
+            margin: 2px;
+            border: 1px dashed $mummy-focus-background;
+            padding: 20px;
+        }
+        input {
+            color: $mummy-text;
+        }
+        input :focus {
+            color: $mummy-base
+        }
+        .input :focus {
+            border: none;
+            color: $mummy-base;
+        }
+     
+        .form-reg {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            grid-template-columns: repeat(2, 1fr);
+            grid-row-gap: 0px;
+            grid-column-gap: 0px;
+            max-width: 600px;
+        }
+        .ablities {
+            padding: 10px;
+        }
+        .i {
+            font-size: 420%;
+            padding: 5px;
+        }
+        .submit {
+            padding: 10px;
+        }
+    }
+
+    /* dashgrid */
+    .fullbox {
+        display: flex;
+
+        .anddeet {
+            display: inline;
+            padding: 20px;
+        }
+        .aboutsection {
+            text-align: center;
+            display: inline-block;
+            padding: 20px;
+            max-width: 50%;
+        }
+        /* gridbox title */
+        .title {
+            display: flex;
+            padding: 5px;
+        }
+        .title p {
+            border: 1px dashed $mummy-base;
+            padding: 10px;
+        }
+        /* the actual gridbox */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 2fr);
+        }
+        .header {
+            display: inline;
+        }
+        .inner {
+            border: 1px dashed $mummy-text;
+            padding: 5px;
+        }
+        .butts p{
+            border: 1px dashed $mummy-text;
+            padding: 4px;
+        }
+        .butts p:hover {
+            cursor: pointer;
+            color: $mummy-base;
+        }
+
+        /* userdash gridbox styles */
+        .deet {
+            overflow: auto;
+            overflow-x: hidden;
+            width: fit-content;
+            text-align: center;
+            height: 350px;
+            margin-right: 5%;
+            margin-top: 1%;
+            max-width: 20%;
+        }
+        .grid-deet {
+            width: auto;
+            border: 2px dashed $mummy-text;
+
+        }
+        .head {
+            background-color: $mummy-base;
+            position: relative;
+            height: auto;
+            width: auto;
+            text-align: center;
+            justify-content: baseline;
+            padding: 5px;
+            color: $mummy-background
+        }
+        .line {
+            padding: 4px;
+            border: 1px dashed $mummy-text;
+            height: auto;
+            
+        }
+        .line :nth-child(even) {
+            background-color: $mummy-focus-background;
+        }
+    }
+ 
+}

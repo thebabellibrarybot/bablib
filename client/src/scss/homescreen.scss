@@ -28,7 +28,34 @@
     border-radius: 10px;
     }
 }
+.lightuser {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    background-color: $lightuser-background;
+    color: $lightuser-text;
 
+    .homepage {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 5%;
+    width: 50%;
+}
+    .homepage img {
+    width: 150px;
+    height: 200px;
+    margin: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    }
+    
+    .homepage img:hover {
+    filter: blur(4px);
+    border: 5px dashed $lightuser-base;
+    border-radius: 10px;
+    }
+}
 .dark {
     display: flex;
     height: 100%;
@@ -54,6 +81,90 @@
     .homepage img:hover {
     filter: blur(4px);
     border: 5px dashed $dark-base;
+    border-radius: 10px;
+    }
+}
+.darkuser {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    background-color: $darkuser-background;
+    color: $darkuser-text;
+
+    .homepage {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 5%;
+    width: 50%;
+}
+    .homepage img {
+    width: 150px;
+    height: 200px;
+    margin: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    }
+    
+    .homepage img:hover {
+    filter: blur(4px);
+    border: 5px dashed $darkuser-base;
+    border-radius: 10px;
+    }
+}
+.darkmolly {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    background-color: $darkmolly-background;
+    color: $darkmolly-text;
+
+    .homepage {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 5%;
+    width: 50%;
+}
+    .homepage img {
+    width: 150px;
+    height: 200px;
+    margin: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    }
+    
+    .homepage img:hover {
+    filter: blur(4px);
+    border: 5px dashed $darkmolly-base;
+    border-radius: 10px;
+    }
+}
+.mummy {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    background-color: $mummy-background;
+    color: $mummy-text;
+
+    .homepage {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 5%;
+    width: 50%;
+}
+    .homepage img {
+    width: 150px;
+    height: 200px;
+    margin: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    }
+    
+    .homepage img:hover {
+    filter: blur(4px);
+    border: 5px dashed $mummy-base;
     border-radius: 10px;
     }
 }

@@ -86,3 +86,91 @@
         }
      } 
 }
+.darkmolly {
+    .myprofile {
+        border: 1px solid $darkmollyuser-text;
+        border-radius: 10px;
+        background-color: transparent;
+        margin: 10px;
+        .myprof-titlecard {
+         margin: 5px;
+         border-bottom: 1px solid $darkmollyuser-text;
+         h1 {
+             color: $darkmollyuser-text;
+             padding: 0;
+         }
+         p {
+             color: $darkmollyuser-base;
+         }
+        }
+        .usernavbar {
+         display: flex;
+         justify-content: space-evenly;
+         align-items: center;
+        }
+        .user-nav :hover {
+         color: $darkmollyuser-base;
+        }
+        .user-nav-link {
+         padding: 3px;
+         font-size: medium;
+         color: $darkmollyuser-text;
+         text-decoration: none;
+        }
+        .user-nav-link :hover {
+         color: $darkmollyuser-base;
+        }
+        .signout-butt {
+         .link {
+             color: $darkmollyuser-text;
+         }
+        }
+        .signout-butt :hover {
+         color: $darkmollyuser-base
+        }
+     } 
+}
+.mummy {
+    .myprofile {
+        border: 1px solid $mummyuser-text;
+        border-radius: 10px;
+        background-color: transparent;
+        margin: 10px;
+        .myprof-titlecard {
+         margin: 5px;
+         border-bottom: 1px solid $mummyuser-text;
+         h1 {
+             color: $mummyuser-text;
+             padding: 0;
+         }
+         p {
+             color: $mummyuser-base;
+         }
+        }
+        .usernavbar {
+         display: flex;
+         justify-content: space-evenly;
+         align-items: center;
+        }
+        .user-nav :hover {
+         color: $mummyuser-base;
+        }
+        .user-nav-link {
+         padding: 3px;
+         font-size: medium;
+         color: $mummyuser-text;
+         text-decoration: none;
+        }
+        .user-nav-link :hover {
+         color: $mummyuser-base;
+        }
+        .signout-butt {
+         .link {
+             color: $mummyuser-text;
+         }
+        }
+        .signout-butt :hover {
+         color: $mummyuser-base
+        }
+     } 
+}

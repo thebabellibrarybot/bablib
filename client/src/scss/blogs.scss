@@ -98,3 +98,199 @@
         background-color: $light-focus-background;
     }
 }
+.lightuser {
+    .blog-option {
+        padding: 5px;
+    }
+    .blog-page {
+        border: 1px solid $lightuser-base;
+        margin: 10px;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: $lightuser-focus-backdark;
+    }
+    .blog-option p {
+        width: fit-content;
+    }
+    .blog-option h2:hover {
+        color: $lightuser-base;
+    }
+
+    /* blog body */
+    .fullblog {
+        display: flex;
+        background-color: $lightuser-background;
+    }
+    .blogTitle {
+        position: fixed;
+        border: 1px dashed $lightuser-base;
+        text-align: center;
+        margin-left: 10%;
+        top: 2px;
+        width: 80%;
+        padding: 25px;
+        background-color: $lightuser-focus-backdark;
+    }
+    .bcontent {
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-top: 5%;
+        overflow-y: auto;
+    }
+    .para h3 {
+        padding: 5px;
+    }
+    .body {
+        margin: 2%;
+    }
+    .body img {
+        background-color: $lightuser-focus-background;
+    }
+}
+.darkuser {
+    .blog-option {
+        padding: 5px;
+    }
+    .blog-page {
+        border: 1px solid $darkuser-base;
+        margin: 10px;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: $darkuser-focus-backdark;
+    }
+    .blog-option p {
+        width: fit-content;
+    }
+    .blog-option h2:hover {
+        color: $darkuser-base;
+    }
+
+    /* blog body */
+    .fullblog {
+        display: flex;
+        background-color: $darkuser-background;
+    }
+    .blogTitle {
+        position: fixed;
+        border: 1px dashed $darkuser-base;
+        text-align: center;
+        margin-left: 10%;
+        top: 2px;
+        width: 80%;
+        padding: 25px;
+        background-color: $darkuser-focus-backdark;
+    }
+    .bcontent {
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-top: 5%;
+        overflow-y: auto;
+    }
+    .para h3 {
+        padding: 5px;
+    }
+    .body {
+        margin: 2%;
+    }
+    .body img {
+        background-color: $darkuser-focus-background;
+    }
+}
+.darkmolly {
+    .blog-option {
+        padding: 5px;
+    }
+    .blog-page {
+        border: 1px solid $darkmolly-base;
+        margin: 10px;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: $darkmolly-focus-backdark;
+    }
+    .blog-option p {
+        width: fit-content;
+    }
+    .blog-option h2:hover {
+        color: $darkmolly-base;
+    }
+
+    /* blog body */
+    .fullblog {
+        display: flex;
+        background-color: $darkmolly-background;
+    }
+    .blogTitle {
+        position: fixed;
+        border: 1px dashed $darkmolly-base;
+        text-align: center;
+        margin-left: 10%;
+        top: 2px;
+        width: 80%;
+        padding: 25px;
+        background-color: $darkmolly-focus-backdark;
+    }
+    .bcontent {
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-top: 5%;
+        overflow-y: auto;
+    }
+    .para h3 {
+        padding: 5px;
+    }
+    .body {
+        margin: 2%;
+    }
+    .body img {
+        background-color: $darkmolly-focus-background;
+    }
+}
+.mummy {
+    .blog-option {
+        padding: 5px;
+    }
+    .blog-page {
+        border: 1px solid $mummy-base;
+        margin: 10px;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: $mummy-focus-backdark;
+    }
+    .blog-option p {
+        width: fit-content;
+    }
+    .blog-option h2:hover {
+        color: $mummy-base;
+    }
+
+    /* blog body */
+    .fullblog {
+        display: flex;
+        background-color: $mummy-background;
+    }
+    .blogTitle {
+        position: fixed;
+        border: 1px dashed $mummy-base;
+        text-align: center;
+        margin-left: 10%;
+        top: 2px;
+        width: 80%;
+        padding: 25px;
+        background-color: $mummy-focus-backdark;
+    }
+    .bcontent {
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-top: 5%;
+        overflow-y: auto;
+    }
+    .para h3 {
+        padding: 5px;
+    }
+    .body {
+        margin: 2%;
+    }
+    .body img {
+        background-color: $mummy-focus-background;
+    }
+}

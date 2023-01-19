@@ -109,3 +109,113 @@
         color: $lightuser-base;
     }
 }
+.darkmolly {
+    .userspine-full {
+        display: flex;
+        position: absolute;
+        height: 80%;
+        width: 99.9%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-radius: 10px;
+        margin-top: 2%;
+    }
+    .dashboard-main {
+        border: 1px solid $darkmollyuser-text;
+        border-radius: 10px;
+        height: 90%;
+        width: 90%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 10px;
+    }
+    .userspine-header {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border: 1px solid $darkmollyuser-base;
+        border-radius: 10px;
+    }
+    .userspine-header h1 {
+        padding: 10px;
+    }
+    .dashitem {
+        display: inline-flex;
+        width: 50%;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    .a-dash {
+        border: 1px dashed $darkmollyuser-base;
+        border-radius: 10px;
+        background-color: $darkmollyuser-focus-background;
+        margin: 10px;
+    }
+    .buttons p{
+        border: 1px dashed #aaa;
+        border-radius: 10px;
+        margin: 5px;
+        width: 20%;
+    }
+    .buttons p:hover {
+        color: $darkmollyuser-base;
+    }
+}
+.mummy {
+    .userspine-full {
+        display: flex;
+        position: absolute;
+        height: 80%;
+        width: 99.9%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-radius: 10px;
+        margin-top: 2%;
+    }
+    .dashboard-main {
+        border: 1px solid $mummyuser-text;
+        border-radius: 10px;
+        height: 90%;
+        width: 90%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 10px;
+    }
+    .userspine-header {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border: 1px solid $mummyuser-base;
+        border-radius: 10px;
+    }
+    .userspine-header h1 {
+        padding: 10px;
+    }
+    .dashitem {
+        display: inline-flex;
+        width: 50%;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    .a-dash {
+        border: 1px dashed $mummyuser-base;
+        border-radius: 10px;
+        background-color: $mummyuser-focus-background;
+        margin: 10px;
+    }
+    .buttons p{
+        border: 1px dashed #aaa;
+        border-radius: 10px;
+        margin: 5px;
+        width: 20%;
+    }
+    .buttons p:hover {
+        color: $mummyuser-base;
+    }
+}

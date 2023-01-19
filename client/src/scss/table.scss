@@ -132,3 +132,267 @@
         color: $light-background;
     }
 }
+.lightuser {
+    .tabllz {
+        padding: 10px;
+        margin: 10px;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+    table td, table th {
+    border: 1px solid $lightuser-base;
+    padding: 8px;
+    color: $lightuser-text;
+    }
+    table tr:nth-child(even){
+        background-color: $lightuser-focus-backdark;
+        color: $lightuser-text;
+    }
+    .span {
+        color: $lightuser-text;
+    }
+    .span strong {
+        color: $lightuser-text;
+    }
+   .rows {
+    color: $lightuser-text;
+    text-decoration: none;
+   }
+  
+    table tr:hover {
+        background-color: $lightuser-base;
+        .rows {
+            color: $lightuser-background;
+        }
+    }
+    table th, tfoot td {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: $lightuser-focus-background;
+      }
+    .table-search {
+        color: $lightuser-text;
+        padding: 10px;
+    }
+    .table-search input {
+        background-color: $lightuser-focus-backdark;
+        border: 1px solid $lightuser-border-main;
+        color: $lightuser-text;
+    }
+    .table-search input :focus {
+        color: $lightuser-text;
+        border: $lightuser-base;
+    }
+    .table-buttons button{
+        background-color: $lightuser-focus-backdark;
+        color: $lightuser-text;
+        margin: 5px;
+        padding: 5px;
+        border: 1px solid $lightuser-border-main;
+    }
+    .table-buttons :hover {
+        background-color: $lightuser-base;
+        color: $lightuser-background;
+    }
+}
+.darkuser {
+    .tabllz {
+        padding: 10px;
+        margin: 10px;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+    table td, table th {
+    border: 1px solid $darkuser-base;
+    padding: 8px;
+    color: $darkuser-text;
+    }
+    table tr:nth-child(even){
+        background-color: $darkuser-focus-backdark;
+        color: $darkuser-text;
+    }
+    .span {
+        color: $darkuser-text;
+    }
+    .span strong {
+        color: $darkuser-text;
+    }
+   .rows {
+    color: $darkuser-text;
+    text-decoration: none;
+   }
+  
+    table tr:hover {
+        background-color: $darkuser-base;
+        .rows {
+            color: $darkuser-background;
+        }
+    }
+    table th, tfoot td {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: $darkuser-focus-background;
+      }
+    .table-search {
+        color: $darkuser-text;
+        padding: 10px;
+    }
+    .table-search input {
+        background-color: $darkuser-focus-backdark;
+        border: 1px solid $darkuser-border-main;
+        color: $darkuser-text;
+    }
+    .table-search input :focus {
+        color: $darkuser-text;
+        border: $darkuser-base;
+    }
+    .table-buttons button{
+        background-color: $darkuser-focus-backdark;
+        color: $darkuser-text;
+        margin: 5px;
+        padding: 5px;
+        border: 1px solid $darkuser-border-main;
+    }
+    .table-buttons :hover {
+        background-color: $darkuser-base;
+        color: $darkuser-background;
+    }
+}
+.darkmolly {
+    .tabllz {
+        padding: 10px;
+        margin: 10px;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+    table td, table th {
+    border: 1px solid $darkmolly-base;
+    padding: 8px;
+    color: $darkmolly-text;
+    }
+    table tr:nth-child(even){
+        background-color: $darkmolly-focus-backdark;
+        color: $darkmolly-text;
+    }
+    .span {
+        color: $darkmolly-text;
+    }
+    .span strong {
+        color: $darkmolly-text;
+    }
+   .rows {
+    color: $darkmolly-text;
+    text-decoration: none;
+   }
+  
+    table tr:hover {
+        background-color: $darkmolly-base;
+        .rows {
+            color: $darkmolly-background;
+        }
+    }
+    table th, tfoot td {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: $darkmolly-focus-background;
+      }
+    .table-search {
+        color: $darkmolly-text;
+        padding: 10px;
+    }
+    .table-search input {
+        background-color: $darkmolly-focus-backdark;
+        border: 1px solid $darkmolly-border-main;
+        color: $darkmolly-text;
+    }
+    .table-search input :focus {
+        color: $darkmolly-text;
+        border: $darkmolly-base;
+    }
+    .table-buttons button{
+        background-color: $darkmolly-focus-backdark;
+        color: $darkmolly-text;
+        margin: 5px;
+        padding: 5px;
+        border: 1px solid $darkmolly-border-main;
+    }
+    .table-buttons :hover {
+        background-color: $darkmolly-base;
+        color: $darkmolly-background;
+    }
+}
+.mummy {
+    .tabllz {
+        padding: 10px;
+        margin: 10px;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+    table td, table th {
+    border: 1px solid $mummy-base;
+    padding: 8px;
+    color: $mummy-text;
+    }
+    table tr:nth-child(even){
+        background-color: $mummy-focus-backdark;
+        color: $mummy-text;
+    }
+    .span {
+        color: $mummy-text;
+    }
+    .span strong {
+        color: $mummy-text;
+    }
+   .rows {
+    color: $mummy-text;
+    text-decoration: none;
+   }
+  
+    table tr:hover {
+        background-color: $mummy-base;
+        .rows {
+            color: $mummy-background;
+        }
+    }
+    table th, tfoot td {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: $mummy-focus-background;
+      }
+    .table-search {
+        color: $mummy-text;
+        padding: 10px;
+    }
+    .table-search input {
+        background-color: $mummy-focus-backdark;
+        border: 1px solid $mummy-border-main;
+        color: $mummy-text;
+    }
+    .table-search input :focus {
+        color: $mummy-text;
+        border: $mummy-base;
+    }
+    .table-buttons button{
+        background-color: $mummy-focus-backdark;
+        color: $mummy-text;
+        margin: 5px;
+        padding: 5px;
+        border: 1px solid $mummy-border-main;
+    }
+    .table-buttons :hover {
+        background-color: $mummy-base;
+        color: $mummy-background;
+    }
+}

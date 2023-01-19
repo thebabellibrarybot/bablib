@@ -2,12 +2,14 @@
 $lightuser-background: #f8f8f8;
 $lightuser-border-main: #0c0c0c;
 $lightuser-border-sub: #aaa;
+$lightuser-focus-backdark: #322e36;
 $lightuser-focus-background: #dbdbdb;
 $lightuser-base: #a2f12b;
 $lightuser-text: #0c0c0c;
 
 /* darkuser */
 $darkuser-background: #28262b;
+$darkuser-focus-backdark: #322e36;
 $darkuser-focus-background: #322e36;
 $darkuser-border-main: #a2f12b;
 $darkuser-border-sub: #aaa;
@@ -34,28 +36,41 @@ $dark-text: #e4c3cd;
 
 /* darkmolly */
 /* userside */
-$darkmollyuser-background: #302a39;
+$darkmollyuser-background: #38225a;
 $darkmollyuser-focus-background: #3e2e3f;
 $darkmollyuser-border-main: #ff93e9;
 $darkmollyuser-border-sub: #a7ffba;
-$darkmollyuser-base: #7af2ff;
-$darkmollyuser-text: #dcfffd;
-$darkmolly-background: #28262b;
+$darkmollyuser-base: #ff7ade;
+$darkmollyuser-text: #b9fffc;
+$darkmolly-background: #291a3e;
 
 /* main side */
-$darkmolly-focus-background: #41364b;
+$darkmolly-focus-background: #462a60;
 $darkmolly-focus-backdark: #1e1923;
 $darkmolly-border-main: #85acff;
 $darkmolly-border-sub: #e3ff7f;
-$darkmolly-base: #ffa7c1;
-$darkmolly-text: #e1e4c6;
+$darkmolly-base: #fff87d;
+$darkmolly-text: #91fffd;
 
 
 
 /* mummy */
 /* userside */
+$mummyuser-background: #27231b;
+$mummyuser-focus-background: #5b4937;
+$mummyuser-border-main: #ffd093;
+$mummyuser-border-sub: #a7ffba;
+$mummyuser-base: #b5dca0;
+$mummyuser-text: #a4b1a2;
+$mummy-background: #25201c;
 
 /* main side */
+$mummy-focus-background: #41364b;
+$mummy-focus-backdark: #1e1923;
+$mummy-border-main: #7a9be1;
+$mummy-border-sub: #cede93;
+$mummy-base: #dbbe84;
+$mummy-text: #e1e4c6;
 
 
 

@@ -264,3 +264,535 @@
         background-color: red;
     }
 }
+.lightuser {
+    
+    /* left side */
+    .userprof-left {
+        display: inline;
+        color: $lightuser-text;
+    }
+    .userprof-left p {
+        padding: 5px;
+        margin-top: 5px;
+    }
+    .options-panel {
+        justify-content: center;
+        display: flex;
+        margin-top: 30px;
+    }
+    .options-panel p:hover{
+        color: $lightuser-base;
+    }
+    .options-panel p {
+        border: 1px solid $lightuser-text;
+        border-radius: 10px;
+        background-color: $light-focus-background;
+    }
+
+    /* right side */
+    .userprof-right {
+        display: inline;
+        color: $lightuser-text;
+    }
+    .userprof-right p {
+        padding: 5px;
+        margin-top: 5px;
+    }
+    .userprof-left .right-title {
+        border-bottom: 1px solid $lightuser-text;
+    }
+    .userprof-right .right-title {
+        border-bottom: 1px solid $lightuser-text;
+    }
+    .options-panel-right {
+        margin-top: 30px;
+        justify-content: center;
+        display: flex;
+    }
+    .options-panel-right p {
+        border: 1 px solid $lightuser-text;
+        border-radius: 10px;
+        background-color: $light-focus-background;
+    }
+    .options-panel-right p:hover {
+        display: flex;
+        justify-content: center;
+        background-color: red;
+        border-radius: 10px;
+        color: $light-focus-backdark
+    }
+    .option p {
+        border: 1px solid $lightuser-text;
+        border-radius: 10px;
+    } 
+
+    /* main */
+    .userprof-main {
+        display: inline;
+    }
+    .userprof-main .right-title {
+        border-bottom: 1px solid $lightuser-text;
+    }
+    .show-cur-user {
+        display: inline;
+        height: 80%;
+    }   
+    .cur-username {
+        display: flex;
+        align-items: center;
+        color: $lightuser-text;
+    }
+    .show-cur-username {
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        padding: 10px;
+    }
+    .show-cur-username h2 {
+        margin-right: 10px;
+    }
+    .edit-cur-username {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-right: 10px;
+        padding: 5px;
+    }    
+    .submit-useredits {
+        margin-top: 5%;
+    }
+    .submit-useredits :hover {
+        color: $lightuser-base;
+    }
+    .submit-ed {
+        border-radius: 10px;
+        border: 1px solid $lightuser-base;
+        border-radius: 10px;
+        background-color: $light-focus-background;
+        padding: 10px;
+        color: $lightuser-text;
+    }
+    .user-birdview {
+        margin-left: 10%;
+    }
+    .edit-cur-username select {
+        background-color: transparent;
+        border-radius: 10px;
+        border: 1px solid $lightuser-text;
+        color: $lightuser-text;
+    }
+    .edit-cur-username :hover{
+        background-color: $light-focus-backdark;
+        border-radius: 10px;
+        color: $lightuser-base;
+    }
+    .edit-cur-username input {
+        background-color: transparent;
+        border: 1px solid $lightuser-text;
+        border-radius: 10px;
+        color: $lightuser-text;
+    }
+
+    select.decorated option:hover {
+        background-color: red;
+    }
+}
+.darkuser {
+
+    /* left side */
+    .userprof-left {
+        display: inline;
+        color: $darkuser-text;
+    }
+    .userprof-left p {
+        padding: 5px;
+        margin-top: 5px;
+    }
+    .options-panel {
+        justify-content: center;
+        display: flex;
+        margin-top: 30px;
+    }
+    .options-panel p:hover{
+        color: $darkuser-base;
+    }
+    .options-panel p {
+        border: 1px solid $darkuser-text;
+        border-radius: 10px;
+        background-color: $dark-focus-background;
+    }
+
+    /* right side */
+    .userprof-right {
+        display: inline;
+        color: $darkuser-text;
+    }
+    .userprof-right p {
+        padding: 5px;
+        margin-top: 5px;
+    }
+    .userprof-left .right-title {
+        border-bottom: 1px solid $darkuser-text;
+    }
+    .userprof-right .right-title {
+        border-bottom: 1px solid $darkuser-text;
+    }
+    .options-panel-right {
+        margin-top: 30px;
+        justify-content: center;
+        display: flex;
+    }
+    .options-panel-right p {
+        border: 1 px solid $darkuser-text;
+        border-radius: 10px;
+        background-color: $dark-focus-background;
+    }
+    .options-panel-right p:hover {
+        display: flex;
+        justify-content: center;
+        background-color: red;
+        border-radius: 10px;
+        color: $dark-focus-backdark
+    }
+    .option p {
+        border: 1px solid $darkuser-text;
+        border-radius: 10px;
+    } 
+
+    /* main */
+    .userprof-main {
+        display: inline;
+    }
+    .userprof-main .right-title {
+        border-bottom: 1px solid $darkuser-text;
+    }
+    .show-cur-user {
+        display: inline;
+        height: 80%;
+    }   
+    .cur-username {
+        display: flex;
+        align-items: center;
+        color: $darkuser-text;
+    }
+    .show-cur-username {
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        padding: 10px;
+    }
+    .show-cur-username h2 {
+        margin-right: 10px;
+    }
+    .edit-cur-username {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-right: 10px;
+        padding: 5px;
+    }    
+    .submit-useredits {
+        margin-top: 5%;
+    }
+    .submit-useredits :hover {
+        color: $darkuser-base;
+    }
+    .submit-ed {
+        border-radius: 10px;
+        border: 1px solid $darkuser-base;
+        border-radius: 10px;
+        background-color: $dark-focus-background;
+        padding: 10px;
+        color: $darkuser-text;
+    }
+    .user-birdview {
+        margin-left: 10%;
+    }
+    .edit-cur-username select {
+        background-color: transparent;
+        border-radius: 10px;
+        border: 1px solid $darkuser-text;
+        color: $darkuser-text;
+    }
+    .edit-cur-username :hover{
+        background-color: $dark-focus-backdark;
+        border-radius: 10px;
+        color: $darkuser-base;
+    }
+    .edit-cur-username input {
+        background-color: transparent;
+        border: 1px solid $darkuser-text;
+        border-radius: 10px;
+        color: $darkuser-text;
+    }
+
+    select.decorated option:hover {
+        background-color: red;
+    }
+}
+.darkmolly {
+
+    /* left side */
+    .userprof-left {
+        display: inline;
+        color: $darkmollyuser-text;
+    }
+    .userprof-left p {
+        padding: 5px;
+        margin-top: 5px;
+    }
+    .options-panel {
+        justify-content: center;
+        display: flex;
+        margin-top: 30px;
+    }
+    .options-panel p:hover{
+        color: $darkmollyuser-base;
+    }
+    .options-panel p {
+        border: 1px solid $darkmollyuser-text;
+        border-radius: 10px;
+        background-color: $darkmolly-focus-background;
+    }
+
+    /* right side */
+    .userprof-right {
+        display: inline;
+        color: $darkmollyuser-text;
+    }
+    .userprof-right p {
+        padding: 5px;
+        margin-top: 5px;
+    }
+    .userprof-left .right-title {
+        border-bottom: 1px solid $darkmollyuser-text;
+    }
+    .userprof-right .right-title {
+        border-bottom: 1px solid $darkmollyuser-text;
+    }
+    .options-panel-right {
+        margin-top: 30px;
+        justify-content: center;
+        display: flex;
+    }
+    .options-panel-right p {
+        border: 1 px solid $darkmollyuser-text;
+        border-radius: 10px;
+        background-color: $darkmolly-focus-background;
+    }
+    .options-panel-right p:hover {
+        display: flex;
+        justify-content: center;
+        background-color: red;
+        border-radius: 10px;
+        color: $darkmolly-focus-backdark
+    }
+    .option p {
+        border: 1px solid $darkmollyuser-text;
+        border-radius: 10px;
+    } 
+
+    /* main */
+    .userprof-main {
+        display: inline;
+    }
+    .userprof-main .right-title {
+        border-bottom: 1px solid $darkmollyuser-text;
+    }
+    .show-cur-user {
+        display: inline;
+        height: 80%;
+    }   
+    .cur-username {
+        display: flex;
+        align-items: center;
+        color: $darkmollyuser-text;
+    }
+    .show-cur-username {
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        padding: 10px;
+    }
+    .show-cur-username h2 {
+        margin-right: 10px;
+    }
+    .edit-cur-username {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-right: 10px;
+        padding: 5px;
+    }    
+    .submit-useredits {
+        margin-top: 5%;
+    }
+    .submit-useredits :hover {
+        color: $darkmollyuser-base;
+    }
+    .submit-ed {
+        border-radius: 10px;
+        border: 1px solid $darkmollyuser-base;
+        border-radius: 10px;
+        background-color: $darkmolly-focus-background;
+        padding: 10px;
+        color: $darkmollyuser-text;
+    }
+    .user-birdview {
+        margin-left: 10%;
+    }
+    .edit-cur-username select {
+        background-color: transparent;
+        border-radius: 10px;
+        border: 1px solid $darkmollyuser-text;
+        color: $darkmollyuser-text;
+    }
+    .edit-cur-username :hover{
+        background-color: $darkmolly-focus-backdark;
+        border-radius: 10px;
+        color: $darkmollyuser-base;
+    }
+    .edit-cur-username input {
+        background-color: transparent;
+        border: 1px solid $darkmollyuser-text;
+        border-radius: 10px;
+        color: $darkmollyuser-text;
+    }
+
+    select.decorated option:hover {
+        background-color: red;
+    }
+}
+.mummy {
+
+    /* left side */
+    .userprof-left {
+        display: inline;
+        color: $mummyuser-text;
+    }
+    .userprof-left p {
+        padding: 5px;
+        margin-top: 5px;
+    }
+    .options-panel {
+        justify-content: center;
+        display: flex;
+        margin-top: 30px;
+    }
+    .options-panel p:hover{
+        color: $mummyuser-base;
+    }
+    .options-panel p {
+        border: 1px solid $mummyuser-text;
+        border-radius: 10px;
+        background-color: $mummy-focus-background;
+    }
+
+    /* right side */
+    .userprof-right {
+        display: inline;
+        color: $mummyuser-text;
+    }
+    .userprof-right p {
+        padding: 5px;
+        margin-top: 5px;
+    }
+    .userprof-left .right-title {
+        border-bottom: 1px solid $mummyuser-text;
+    }
+    .userprof-right .right-title {
+        border-bottom: 1px solid $mummyuser-text;
+    }
+    .options-panel-right {
+        margin-top: 30px;
+        justify-content: center;
+        display: flex;
+    }
+    .options-panel-right p {
+        border: 1 px solid $mummyuser-text;
+        border-radius: 10px;
+        background-color: $mummy-focus-background;
+    }
+    .options-panel-right p:hover {
+        display: flex;
+        justify-content: center;
+        background-color: red;
+        border-radius: 10px;
+        color: $mummy-focus-backdark
+    }
+    .option p {
+        border: 1px solid $mummyuser-text;
+        border-radius: 10px;
+    } 
+
+    /* main */
+    .userprof-main {
+        display: inline;
+    }
+    .userprof-main .right-title {
+        border-bottom: 1px solid $mummyuser-text;
+    }
+    .show-cur-user {
+        display: inline;
+        height: 80%;
+    }   
+    .cur-username {
+        display: flex;
+        align-items: center;
+        color: $mummyuser-text;
+    }
+    .show-cur-username {
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        padding: 10px;
+    }
+    .show-cur-username h2 {
+        margin-right: 10px;
+    }
+    .edit-cur-username {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-right: 10px;
+        padding: 5px;
+    }    
+    .submit-useredits {
+        margin-top: 5%;
+    }
+    .submit-useredits :hover {
+        color: $mummyuser-base;
+    }
+    .submit-ed {
+        border-radius: 10px;
+        border: 1px solid $mummyuser-base;
+        border-radius: 10px;
+        background-color: $mummy-focus-background;
+        padding: 10px;
+        color: $mummyuser-text;
+    }
+    .user-birdview {
+        margin-left: 10%;
+    }
+    .edit-cur-username select {
+        background-color: transparent;
+        border-radius: 10px;
+        border: 1px solid $mummyuser-text;
+        color: $mummyuser-text;
+    }
+    .edit-cur-username :hover{
+        background-color: $mummy-focus-backdark;
+        border-radius: 10px;
+        color: $mummyuser-base;
+    }
+    .edit-cur-username input {
+        background-color: transparent;
+        border: 1px solid $mummyuser-text;
+        border-radius: 10px;
+        color: $mummyuser-text;
+    }
+
+    select.decorated option:hover {
+        background-color: red;
+    }
+}

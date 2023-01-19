@@ -251,10 +251,9 @@ export function MainProf({props, propID}) {
                     <div className='edit-cur-username'>
                             <select value = {theme} onChange = {(e) => setTheme(e.target.value)}>
                                 <option className='option' value = "dark">darkmode default</option>
-                                <option className='option' value = "userdark">darkmode user</option>
                                 <option className='option' value = "light">lightmode default</option>
-                                <option className='option' value = "userlight">lightmode user</option>
                                 <option className='option' value = "darkmolly">dark molly</option>
+                                <option className='option' value = "mummy">mummy</option>
                             </select>
                     </div>
                 </div>
@@ -272,3 +271,6 @@ export function MainProf({props, propID}) {
 // lets add a myTombs or myModels before we know for sure
 
 // logger https://codesandbox.io/s/github/final-form/react-final-form/tree/main/examples/subscriptions?file=/index.js
+
+// removed                                 <option className='option' value = "lightuser">lightmode user</option>
+// removed                                <option className='option' value = "darkuser">darkmode user</option>

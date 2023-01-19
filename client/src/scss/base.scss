@@ -266,17 +266,517 @@
 
     
 }
-.lightuser {
-
-}
 .darkuser {
+    position: absolute;
+    height: 100%;
+    display: inline;
+    background-color: $darkuser-background;
+    color: $darkuser-text;
+    font-size: medium;
+    .app {
+        color: $darkuser-text;
+    }
+    .icon{
+        font-size: 40px;
+    }
+    .invisible {
+        display: none;
+    }
 
-}
-.darkmolly {
-
-}
-.mummy {
+    /* scroll bar */
+    ::-webkit-scrollbar {
+        background-color: $darkuser-focus-background;
+        width: 15px;
+        margin-left: 5px;
+        border-radius: 10px;
+        border: 1px solid $darkuser-focus-backdark;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: $darkuser-base;
+        border-radius: 10px;
+    }
     
+    /* handle forms */
+    .form-headers {
+        padding: 5px;
+        width: 100%;
+        height: 90%;
+    }
+    .form {
+        display: flex;
+    }
+    .form-headers h1 {
+        color: $darkuser-base;
+    }
+    input {
+        background-color: $darkuser-focus-background;
+        border: none;
+        border-radius: 10px;
+        margin: 3px;
+        color: $darkuser-text;
+    }
+    input :focus {
+        border: none;
+    }
+
+
+    /*handle links*/
+    .clicked :hover {
+        color: $darkuser-base;
+    }
+    .link {
+        color: $darkuser-text;
+        text-decoration: none;
+        padding: 5px;
+    }
+    button {
+        margin-left: 10px;
+        margin-right: 10px;
+        background-color: transparent;
+        border: none;
+        color: $darkuser-text;
+        font-size: medium;
+    }
+
+    /*handle navbars*/
+    .navbar {
+        display: flex;
+        margin: 10px;
+        align-items: center;
+        .navbar :hover {
+            color: $darkuser-base;
+        }
+        .link-title {
+            color: $darkuser-text;
+            text-decoration: none;
+            padding: 10px;
+        }
+    }
+    /* nav-bar when logged in */
+    .logged-in-nav {
+        .navbar {
+            display: flex;
+            margin: 10px;
+            align-items: center;
+        }
+        .navbar :hover {
+            color: $darkuser-base;
+        }
+        .link {
+            color: $darkuser-text;
+        }
+        color: $darkuser-text;
+        background-color: $darkuser-background;
+    }
+
+    /*handle user-icon*/
+    .user-icon {
+        border: 1px dashed $darkuser-base;
+        border-radius: 10px;
+        height: fit-content;
+        width: fit-content;
+        animation: spin 5s infinite linear;
+    }
+    /* handle nav - icon */
+    .nav-icon {
+        padding: 5px;
+        .icon {
+            color: $darkuser-base;
+            border: 1px solid $darkuser-base;
+            border-radius: 10px;
+            padding: 5px;
+            animation: spin 5s infinite linear;
+        }
+    }
+    .nav-icon :hover {
+        background-color: $darkuser-base;
+        border: 1px solid $darkuser-border-sub;
+        color: $darkuser-focus-backdark;
+    } 
+}
+.lightuser {
+    position: absolute;
+    height: 100%;
+    display: inline;
+    background-color: $lightuser-background;
+    color: $lightuser-text;
+    font-size: medium;
+    .app {
+        color: $lightuser-text;
+    }
+    .icon{
+        font-size: 40px;
+    }
+    .invisible {
+        display: none;
+    }
+
+    /* scroll bar */
+    ::-webkit-scrollbar {
+        background-color: $lightuser-focus-background;
+        width: 15px;
+        margin-left: 5px;
+        border-radius: 10px;
+        border: 1px solid $lightuser-focus-backdark;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: $lightuser-base;
+        border-radius: 10px;
+    }
+    
+    /* handle forms */
+    .form-headers {
+        padding: 5px;
+        width: 100%;
+        height: 90%;
+    }
+    .form {
+        display: flex;
+    }
+    .form-headers h1 {
+        color: $lightuser-base;
+    }
+    input {
+        background-color: $lightuser-focus-background;
+        border: none;
+        border-radius: 10px;
+        margin: 3px;
+        color: $lightuser-text;
+    }
+    input :focus {
+        border: none;
+    }
+
+
+    /*handle links*/
+    .clicked :hover {
+        color: $lightuser-base;
+    }
+    .link {
+        color: $lightuser-text;
+        text-decoration: none;
+        padding: 5px;
+    }
+    button {
+        margin-left: 10px;
+        margin-right: 10px;
+        background-color: transparent;
+        border: none;
+        color: $lightuser-text;
+        font-size: medium;
+    }
+
+    /*handle navbars*/
+    .navbar {
+        display: flex;
+        margin: 10px;
+        align-items: center;
+        .navbar :hover {
+            color: $lightuser-base;
+        }
+        .link-title {
+            color: $lightuser-text;
+            text-decoration: none;
+            padding: 10px;
+        }
+    }
+    /* nav-bar when logged in */
+    .logged-in-nav {
+        .navbar {
+            display: flex;
+            margin: 10px;
+            align-items: center;
+        }
+        .navbar :hover {
+            color: $lightuser-base;
+        }
+        .link {
+            color: $lightuser-text;
+        }
+        color: $lightuser-text;
+        background-color: $lightuser-background;
+    }
+
+    /*handle user-icon*/
+    .user-icon {
+        border: 1px dashed $lightuser-base;
+        border-radius: 10px;
+        height: fit-content;
+        width: fit-content;
+        animation: spin 5s infinite linear;
+    }
+    /* handle nav - icon */
+    .nav-icon {
+        padding: 5px;
+        .icon {
+            color: $lightuser-base;
+            border: 1px solid $lightuser-base;
+            border-radius: 10px;
+            padding: 5px;
+            animation: spin 5s infinite linear;
+        }
+    }
+    .nav-icon :hover {
+        background-color: $lightuser-base;
+        border: 1px solid $lightuser-border-sub;
+        color: $lightuser-focus-backdark;
+    }
+}
+.darkmolly{
+    position: absolute;
+    height: 100%;
+    display: inline;
+    background-color: $darkmolly-background;
+    color: $darkmolly-text;
+    font-size: medium;
+    .app {
+        color: $darkmolly-text;
+    }
+    .icon{
+        font-size: 40px;
+    }
+    .invisible {
+        display: none;
+    }
+
+    /* scroll bar */
+    ::-webkit-scrollbar {
+        background-color: $darkmolly-focus-background;
+        width: 15px;
+        margin-left: 5px;
+        border-radius: 10px;
+        border: 1px solid $darkmolly-focus-backdark;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: $darkmolly-base;
+        border-radius: 10px;
+    }
+    
+    /* handle forms */
+    .form-headers {
+        padding: 5px;
+        width: 100%;
+        height: 90%;
+    }
+    .form {
+        display: flex;
+    }
+    .form-headers h1 {
+        color: $darkmolly-base;
+    }
+    input {
+        background-color: $darkmolly-focus-background;
+        border: none;
+        border-radius: 10px;
+        margin: 3px;
+        color: $darkmolly-text;
+    }
+    input :focus {
+        border: none;
+    }
+
+
+    /*handle links*/
+    .clicked :hover {
+        color: $darkmolly-base;
+    }
+    .link {
+        color: $darkmolly-text;
+        text-decoration: none;
+        padding: 5px;
+    }
+    button {
+        margin-left: 10px;
+        margin-right: 10px;
+        background-color: transparent;
+        border: none;
+        color: $darkmolly-text;
+        font-size: medium;
+    }
+
+    /*handle navbars*/
+    .navbar {
+        display: flex;
+        margin: 10px;
+        align-items: center;
+        .navbar :hover {
+            color: $darkmolly-base;
+        }
+        .link-title {
+            color: $darkmolly-text;
+            text-decoration: none;
+            padding: 10px;
+        }
+    }
+    /* nav-bar when logged in */
+    .logged-in-nav {
+        .navbar {
+            display: flex;
+            margin: 10px;
+            align-items: center;
+        }
+        .navbar :hover {
+            color: $darkmollyuser-base;
+        }
+        .link {
+            color: $darkmollyuser-text;
+        }
+        color: $darkmollyuser-text;
+        background-color: $darkmollyuser-background;
+    }
+
+    /*handle user-icon*/
+    .user-icon {
+        border: 1px dashed $darkmolly-base;
+        border-radius: 10px;
+        height: fit-content;
+        width: fit-content;
+        animation: spin 5s infinite linear;
+    }
+    /* handle nav - icon */
+    .nav-icon {
+        padding: 5px;
+        .icon {
+            color: $darkmollyuser-base;
+            border: 1px solid $darkmollyuser-base;
+            border-radius: 10px;
+            padding: 5px;
+            animation: spin 5s infinite linear;
+        }
+    }
+    .nav-icon :hover {
+        background-color: $darkmollyuser-base;
+        border: 1px solid $darkmollyuser-border-sub;
+        color: $darkmolly-focus-backdark;
+    }
+}
+.mummy{
+    position: absolute;
+    height: 100%;
+    display: inline;
+    background-color: $mummy-background;
+    color: $mummy-text;
+    font-size: medium;
+    .app {
+        color: $mummy-text;
+    }
+    .icon{
+        font-size: 40px;
+    }
+    .invisible {
+        display: none;
+    }
+
+    /* scroll bar */
+    ::-webkit-scrollbar {
+        background-color: $mummy-focus-background;
+        width: 15px;
+        margin-left: 5px;
+        border-radius: 10px;
+        border: 1px solid $mummy-focus-backdark;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: $mummy-base;
+        border-radius: 10px;
+    }
+    
+    /* handle forms */
+    .form-headers {
+        padding: 5px;
+        width: 100%;
+        height: 90%;
+    }
+    .form {
+        display: flex;
+    }
+    .form-headers h1 {
+        color: $mummy-base;
+    }
+    input {
+        background-color: $mummy-focus-background;
+        border: none;
+        border-radius: 10px;
+        margin: 3px;
+        color: $mummy-text;
+    }
+    input :focus {
+        border: none;
+    }
+
+
+    /*handle links*/
+    .clicked :hover {
+        color: $mummy-base;
+    }
+    .link {
+        color: $mummy-text;
+        text-decoration: none;
+        padding: 5px;
+    }
+    button {
+        margin-left: 10px;
+        margin-right: 10px;
+        background-color: transparent;
+        border: none;
+        color: $mummy-text;
+        font-size: medium;
+    }
+
+    /*handle navbars*/
+    .navbar {
+        display: flex;
+        margin: 10px;
+        align-items: center;
+        .navbar :hover {
+            color: $mummy-base;
+        }
+        .link-title {
+            color: $mummy-text;
+            text-decoration: none;
+            padding: 10px;
+        }
+    }
+    /* nav-bar when logged in */
+    .logged-in-nav {
+        .navbar {
+            display: flex;
+            margin: 10px;
+            align-items: center;
+        }
+        .navbar :hover {
+            color: $mummyuser-base;
+        }
+        .link {
+            color: $mummyuser-text;
+        }
+        color: $mummyuser-text;
+        background-color: $mummyuser-background;
+    }
+
+    /*handle user-icon*/
+    .user-icon {
+        border: 1px dashed $mummy-base;
+        border-radius: 10px;
+        height: fit-content;
+        width: fit-content;
+        animation: spin 5s infinite linear;
+    }
+    /* handle nav - icon */
+    .nav-icon {
+        padding: 5px;
+        .icon {
+            color: $mummyuser-base;
+            border: 1px solid $mummyuser-base;
+            border-radius: 10px;
+            padding: 5px;
+            animation: spin 5s infinite linear;
+        }
+    }
+    .nav-icon :hover {
+        background-color: $mummyuser-base;
+        border: 1px solid $mummyuser-border-sub;
+        color: $mummy-focus-backdark;
+    }
 }
 
 
