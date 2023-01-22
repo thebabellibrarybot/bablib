@@ -16,6 +16,11 @@ more auth=
 https://www.youtube.com/watch?v=s-4k5TcGKHg&list=RDCMUCY38RvRIxYODO4penyxUwTg&index=6
 
 
+docker = 
+https://logfetch.com/docker-mern-development/
+
+aws = 
+https://medium.com/bb-tutorials-and-thoughts/how-to-build-and-deploy-mern-stack-on-aws-ecs-2a760a1f4de1
 
 
 
