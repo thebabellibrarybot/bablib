@@ -7,16 +7,9 @@
   },
   "main": "server.js",
   "scripts": {
-    "client-install": "npm install --prefix client",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server",
-    "server": "nodemon server.js",
-    "build": "cd client && npm run build",
-    "install-client": "cd client && npm install",
-    "client": "cd ../client && npm start client",
-    "dev": "nodemon -L src/index.js",
-    "heroku-postbuild": "npm run install-client && npm run build"
-  },
+    "dev": "nodemone server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },  
   "author": "",
   "license": "ISC",
   "dependencies": {
