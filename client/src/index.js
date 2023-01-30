@@ -4,13 +4,6 @@ import './scss/_main.scss';
 import App from './App';
 import { AuthProvider } from './context/AuthProvider';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-/*
-const foundStuff = localStorage.getItem('stuff')
-if (foundStuff){
-    console.log('INDEX stuff exsists and looks like this:', foundStuff);
-}
-*/
-
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
