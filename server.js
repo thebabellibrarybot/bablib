@@ -26,7 +26,7 @@ const babelUserhomeRoute = require('./routes/babelUserHomeRoute');
 
 const mongoose = require('mongoose');
 const app = express();
-const Port = process.env.PORT || 4000
+const Port = process.env.PORT || 5000
 console.log(Port, 'port')
 
 
@@ -96,7 +96,7 @@ if(process.env.NODE_ENV === 'production') {
 }
 // port and clear run statements;
 app.listen(Port, () => {
-    console.log(`listening on 4000`)
+    console.log(`listening on ${Port}`)
 });
 
 
