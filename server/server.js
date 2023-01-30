@@ -84,6 +84,9 @@ app.use('/logout', logoutRoute);
 //app.use(verifyJWT);
 app.use('/userspine', babelUserhomeRoute); 
 
+app.get('/', (request, response) => {
+    response.send("Hello, World!");
+  });
 
 // serve static assests if in production
 if(process.env.NODE_ENV === 'production') {
