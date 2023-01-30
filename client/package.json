@@ -3,8 +3,8 @@
   "name": "babelbase",
   "version": "0.1.0",
   "engines": {
-    "node": "16.14.2"
-  },
+    "node": "^16.17"
+  }, 
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
