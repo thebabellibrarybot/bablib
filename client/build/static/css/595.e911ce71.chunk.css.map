@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/595.e911ce71.chunk.css","mappings":"AAAA,WAMI,yBAA8B,CAH9B,iBAAkB,CAElB,UAAW,CADX,QAAS,CAFT,UAKJ","sources":["styles/myprofile.css"],"sourcesContent":[".myprofile {\n\n    z-index: 99;\n    position: absolute;\n    top: 2rem;\n    right: 2rem;\n    border: 1px dashed greenyellow;\n}"],"names":[],"sourceRoot":""}

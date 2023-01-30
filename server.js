@@ -48,7 +48,7 @@ app.use((req, res, next) => {
 // midleware for cookies
 app.use(cookieParser());
 // mongoDB conn
-const uri = "mongodb+srv://babeluser:babelpassword@babelcluster.fogf4.mongodb.net/test?retryWrites=true&w=majority"
+const uri = process.env.MONGO_URI 
 mongoose.set('strictQuery', false);
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 const connection = mongoose.connection;
@@ -91,7 +91,7 @@ if(process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'))
 
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'clinet', 'build', 'index.html'));
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
 }
 // port and clear run statements;
