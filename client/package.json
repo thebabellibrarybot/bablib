@@ -3,13 +3,10 @@
   "name": "babelbase",
   "version": "0.1.0",
   "engines": {
-    "node": "16.14.2"
+    "node": "17.14.0"
   },
   "private": false,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
     "babel-plugin-macros": "^3.1.0",
     "babelbackend": "file:..",
@@ -25,8 +22,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "react-table": "^7.8.0",
-    "sass": "^1.57.1",
-    "web-vitals": "^2.1.4"
+    "sass": "^1.57.1"
   },
   "scripts": {
     "start": "react-scripts start",
