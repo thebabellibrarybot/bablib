@@ -23,7 +23,7 @@ const handleNewUser = async (req, res) => {
                 password: newPassword,
                 ability: ability,
                 bird: bird,
-                theme: "lightmode default"
+                theme: "light"
             })
             console.log(req.body.username, 'added to reg')
             res.json({status: 'ok'})
