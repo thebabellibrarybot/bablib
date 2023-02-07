@@ -1,5 +1,5 @@
 import MyProfile from '../../components/userDashComs/myProfile';
-import useAxiosPrivate from '../../hooks/useAxiosPrivate';
+import axios from 'axios';
 import '../../styles/underConstruction.css';
 import { useEffect } from 'react';
 import { useState } from 'react';
@@ -11,7 +11,6 @@ const UnderConstruction = () => {
 
     const underConstruction = true;
     const id = useParams();
-    const axiosPrivate = useAxiosPrivate();
     const [data, setData] = useState(null);
     const { isDarkMode } = useTheme();
 
@@ -19,14 +18,14 @@ const UnderConstruction = () => {
 
         const getUsers = async () => {
             try {
-                const response = await axiosPrivate.get(`/userspine/${id}`); 
+                const response = await axios.get(`/userspine/${id}`); 
                 setData(response.data);
             } catch (err) {
                 console.log(err, 'err from userProfile');
             }
         }
         getUsers();
-    }, [axiosPrivate, id])
+    }, [id])
     console.log(data, 'data from userProfile')
 
     if (!data) {

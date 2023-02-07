@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import { useNavigate, useLocation } from 'react-router-dom';
 import MyProfile from '../../components/userDashComs/myProfile';
-import useAxiosPrivate from '../../hooks/useAxiosPrivate';
 import useTheme from '../../hooks/useTheme';
 import Navbar from '../../navbar';
+import axios from 'axios';
 
 //import '../../styles/userDash.css';
 
@@ -14,7 +14,6 @@ const UserSpine = () => {
 
     const [data, setData] = useState();
     const [userData, setUserData] = useState();
-    const axiosPrivate = useAxiosPrivate();
     const navigate = useNavigate();
     const location = useLocation();
     const id = 'getuser';
@@ -24,27 +23,27 @@ const UserSpine = () => {
 
         const getUsers = async () => {
             try {
-                const response = await axiosPrivate.get(`/userspine/${id}`); 
+                const response = await axios.get(`/userspine/${id}`); 
                 setUserData(response.data);
             } catch (err) {
                 console.log(err, 'err from userProfile');
             }
         }
         getUsers();
-    }, [axiosPrivate, id])
+    }, [id])
   
     useEffect(() => {
 
         const getUsers = async () => {
             try {
-                const response = await axiosPrivate.get('/userspine'); 
+                const response = await axios.get('/userspine'); 
                 setData(response.data);
             } catch (err) {
                 navigate('/babelusers', { state: { from: location }, replace: true });
             }
         }  
         getUsers();
-    }, [axiosPrivate, location, navigate])
+    }, [location, navigate])
 
     const handledash = (el) => {
         window.location.href = `/userspine${el}`

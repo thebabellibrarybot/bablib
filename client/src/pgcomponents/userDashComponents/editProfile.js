@@ -1,4 +1,3 @@
-import useAxiosPrivate from '../../hooks/useAxiosPrivate';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 //import '../../styles/userProfile.css';
@@ -12,7 +11,6 @@ import useTheme from '../../hooks/useTheme';
 export function LeftProf({props}) {
 
     const navigate = useNavigate()
-    const axiosPrivate = useAxiosPrivate()
     const prop = props
     const [data, setData] = useState(null);
 
@@ -20,14 +18,14 @@ export function LeftProf({props}) {
 
         const getUsers = async () => {
             try {
-                const response = await axiosPrivate.get(`/userspine/${prop}/optpanel`); 
+                const response = await axios.get(`/userspine/${prop}/optpanel`); 
                 setData(response.data);
             } catch (err) {
                 console.log(err, 'err from userProfile');
             }
         }
         getUsers();
-    }, [axiosPrivate, prop])
+    }, [prop])
 
     function handleops (url) {
         if (url[0] === 'edit user') {
@@ -62,7 +60,6 @@ export function LeftProf({props}) {
 export function RightProf({props}) {
 
     const navigate = useNavigate()
-    const axiosPrivate = useAxiosPrivate()
     const prop = props
     const [data, setData] = useState(null);
 
@@ -70,14 +67,14 @@ export function RightProf({props}) {
         
         const getUsers = async () => {
             try {
-                const response = await axiosPrivate.get(`/userspine/userstats/${prop}`); 
+                const response = await axios.get(`/userspine/userstats/${prop}`); 
                 setData(response.data);
             } catch (err) {
                 console.log(err, 'err from userProfile');
             }
         }
         getUsers();
-    }, [axiosPrivate, prop])
+    }, [prop])
 
     function handleops (url) {
         if (url[0] === 'num of myModels') {
