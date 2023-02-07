@@ -35,7 +35,7 @@ const handleLogin = async (req, res) => {
                 "UserInfo": {
                     "email": foundUser.email,
                     "roles": roles
-                }
+                } 
             },
             'ACCESS_TOKEN_SECRET',
             { expiresIn: '15m' }
