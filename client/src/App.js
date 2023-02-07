@@ -71,6 +71,11 @@ import { Route, Routes} from  'react-router-dom';
               <Route path = "/babelblogls/:id" element = { <BabelBlogDeets/> }/>
 
             {/* user app functions */}
+                <Route path = "/userspine" element = {<UserSpine/>}/>
+                <Route path = "/userspine/mymodels" element = {<UnderConstruction/>}/>
+                <Route path = "/userspine/mytombs" element = {<UnderConstruction/>}/>
+                <Route path = "/userspine/:id" element = {<UserProfile/>}/>
+                <Route path = "/userspine/myblogs" element = {<UnderConstruction/>}/>
 
               <Route element = { <RequireAuth allowedRoles={[2001, 1984]}/> }>
                 <Route path = "/userspine" element = {<UserSpine/>}/>

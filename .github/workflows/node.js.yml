@@ -27,5 +27,4 @@ jobs:
     - run: npm ci
     - run: cd client && npm install
     - run: npm run build --if-present
-    - run: npm run build
     - run: sudo pm2 restart backend
