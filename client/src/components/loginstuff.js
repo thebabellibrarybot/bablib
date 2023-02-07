@@ -36,6 +36,7 @@ const Login = () => {
         e.preventDefault();
 
         try {
+            console.log(email, password, 'from auth')
             const response = await axios.post(LOGIN_URL,
                 JSON.stringify({ email, password }),
                 {
