@@ -24,6 +24,7 @@ const BabelHomePg = () => {
         <div className={isDarkMode}>
             <Navbar/>
             <div className = 'homepage'>
+                <p>this is pretty cool.</p>
                 {imgs && imgs.map((img) => (
                     <img src = {img.s3_uri} alt = {img.book_title} height = "100" width = "100" key = {img.s3_uri}/>
                 ))}
