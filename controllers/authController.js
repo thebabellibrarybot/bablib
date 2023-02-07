@@ -17,7 +17,7 @@ const handleLogin = async (req, res) => {
     const query = { 
         "email": user
     }
-
+    console.log('prod from auth controller')
     const foundUser = await BabelUserModel.findOne(query).exec();
     if (!foundUser) return res.sendStatus(403); //Unauthorized 
     // evaluate password 
