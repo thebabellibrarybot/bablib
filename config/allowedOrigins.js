@@ -9,7 +9,10 @@ const allowedOrigins = [
     'http://thebabelpublixlibrary.com',
     'http://thebabelpublixlibrary.org',
     'http://thebabelpubliclibrary.org',
-    'https://thebabelpubliclibrary.org'
+    'https://thebabelpubliclibrary.org',
+    'http://ec2-18-214-214-116.compute-1.amazonaws.com/',
+    'http://thebabelpubliclibrary.org/',
+    '18.214.214.116'
 ];
 
 module.exports = allowedOrigins
