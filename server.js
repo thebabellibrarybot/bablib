@@ -20,7 +20,6 @@ const refresh = require('./routes/refresh');
 const logoutRoute = require('./routes/logoutRoute');
 
 //verified routes
-// const verifyJWT = require('./middleware/verifyJWT');
 const babelUserhomeRoute = require('./routes/babelUserHomeRoute');
 
 

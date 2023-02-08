@@ -4,7 +4,7 @@ const { getBabelHomeimgs } = require('../controllers/babelhomController')
 
 // get all tombs list
 router.get('/', getBabelHomeimgs)
-
+ 
  
 
 module.exports = router; 

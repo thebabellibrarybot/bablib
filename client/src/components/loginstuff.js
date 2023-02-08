@@ -1,21 +1,20 @@
 import { useState, useEffect, useRef } from "react";
-import {  Link, useNavigate, useLocation } from 'react-router-dom';
-import useAuth from '../hooks/useAuth'
+import {  Link, useNavigate, /*useLocation*/ } from 'react-router-dom';
 import React from 'react';
-import axios from "axios";
+//import axios from "axios";
 import useStateHook from "../hooks/useUserState";
 import useTheme from "../hooks/useTheme";
+import axios from "axios";
 
 const LOGIN_URL = '/babelauth';
  
 const Login = () => {
-    const { setAuth } = useAuth();
     const { setIsUser } = useStateHook();
     const { setIsTheme } = useTheme();
 
     const navigate = useNavigate();
-    const location = useLocation();
-    const from = location.state?.from?.pathname || "/userspine";
+    //const location = useLocation();
+    //const from = location.state?.from?.pathname || "/userspine";
 
     const userRef = useRef();
     const errRef = useRef();
@@ -44,8 +43,7 @@ const Login = () => {
                     withCredentials: true
                 }
             );
-            //console.log(JSON.stringify(response));
-            const accessToken = response?.data?.accessToken;
+            console.log(response, 'login res');
             const roles = response?.data?.roles;
             
             // set localStorage to DARK_MODE so it's clear you're logged in
@@ -60,19 +58,17 @@ const Login = () => {
            */
             if (email === response?.data?.user){
                 
-                setAuth({ email, password, roles, accessToken });
                 setEmail('');
                 setPassword('');
                 setIsTheme(response.data.theme)
                 window.localStorage.setItem('resfromlogin', response.data.theme)
                 alert(`succ login for ${email}, msg from loginstuff`)
-                navigate(from, { replace: true });
                 window.localStorage.setItem( 'roles', roles )
                 window.localStorage.setItem( 'presists', true )
                 window.localStorage.setItem( 'email', email ) 
                 window.dispatchEvent(new Event('roles'));
                 setIsUser(localStorage.getItem('roles'))
-
+                navigate('/userspine');
                 }
                 else {
                     alert(

@@ -4,7 +4,7 @@ const verifyJWT = (req, res, next) => {
 
     console.log('verify fired')
     const authHeader = req.headers.authorization || req.headers.Authorization;  
-    if (!authHeader?.startsWith('Bearer ')) return res.sendStatus(401).json({"msg": "no auth header from verify JWT"});
+    if (!authHeader?.startsWith('Bearer ')) return res.sendStatus(405).json({"msg": "no auth header from verify JWT"});
     const token = authHeader.split(' ')[1];
     jwt.verify(
         token,

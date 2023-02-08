@@ -63,7 +63,7 @@ const handleLogin = async (req, res) => {
         res.json({ roles, accessToken, username, user, bird, id, theme });
 
     } else {
-        res.sendStatus(401);
+        res.sendStatus(403);
     }
 } 
 
@@ -150,7 +150,7 @@ const editLogin = async (req, res) => {
         res.json({ roles, accessToken, username, email, bird, id, theme });
 
     } else {
-        res.sendStatus(401);
+        res.sendStatus(404);
     }
 
 }
