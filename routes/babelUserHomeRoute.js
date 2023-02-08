@@ -8,7 +8,7 @@ const verifyJWT = require('../middleware/verifyJWT');
 
 // get all tombs list
 router.route('/')
-    .get( verifyJWT, verifyRoles(ROLES_LIST.User, ROLES_LIST.Editor), babelUserDashController.getBabelDash);
+    .get(babelUserDashController.getBabelDash);
 
 router.route('/:id')
     .get( babelUserDashController.getUserInfo );
