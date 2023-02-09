@@ -43,15 +43,21 @@
         background-color: $darkuser-focus-background;
         margin: 10px;
     }
-    .buttons p{
+    .buttons {
         border: 1px dashed #aaa;
         border-radius: 10px;
         margin: 5px;
         width: 20%;
+        text-decoration: none;
     }
-    .buttons p:hover {
+    .buttons :hover {
         color: $darkuser-base;
+        text-decoration: none;
     }
+    .buttons {
+        text-decoration: none;
+    }
+
 
 }
 .light {
@@ -104,9 +110,16 @@
         border-radius: 10px;
         margin: 5px;
         width: 20%;
+        text-decoration: none;
     }
     .buttons p:hover {
         color: $lightuser-base;
+    }
+    Link {
+        text-decoration: none;
+        p {
+            text-decoration: none;
+        }
     }
 }
 .darkmolly {
@@ -159,9 +172,16 @@
         border-radius: 10px;
         margin: 5px;
         width: 20%;
+        text-decoration: none;
     }
     .buttons p:hover {
         color: $darkmollyuser-base;
+    }
+    Link {
+        text-decoration: none;
+        p {
+            text-decoration: none;
+        }
     }
 }
 .mummy {
@@ -209,13 +229,21 @@
         background-color: $mummyuser-focus-background;
         margin: 10px;
     }
+    
     .buttons p{
         border: 1px dashed #aaa;
         border-radius: 10px;
         margin: 5px;
         width: 20%;
+        text-decoration: none;
     }
     .buttons p:hover {
         color: $mummyuser-base;
+    }
+    Link {
+        text-decoration: none;
+        p {
+            text-decoration: none;
+        }
     }
 }

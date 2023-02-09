@@ -45,10 +45,6 @@ const UserSpine = () => {
         getUsers();
     }, [location, navigate])
 
-    const handledash = (el) => {
-        window.location.href = `/userspine${el}`
-    }
-    console.log(userData, 'data from userspine')
 
     if (!userData) {
         return (
@@ -78,9 +74,8 @@ const UserSpine = () => {
                                     <div className="a-cont">
                                         <p className="icon">{data.dashicon}</p>
                                         <p>{data.dashitem}</p>
-                                        <Link to = {`/userspine/${data.dashlink}`}/>
-                                        <div className = 'buttons' onClick = {() => handledash(data.dashlink)}>
-                                            <p>click me</p>
+                                        <div className = 'buttons'>
+                                            <Link to = {`/userspine${data.dashlink}`} className="link">click here</Link>
                                         </div>
                                     </div>
                                 </div>

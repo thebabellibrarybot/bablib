@@ -15,7 +15,7 @@ const UserNav = (props) =>{
 
     return (
         <div className="usernavbar">
-
+ 
             <div className={cansee ? 'nav-ls' : 'invisible'}>
                     <nav className="user-nav">
                         <Link to = '/userspine' className="user-nav-link">userSpine</Link>
