@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useState } from 'react';
 import { useParams } from "react-router-dom";
 import useTheme from '../hooks/useTheme';
+import Navbar from '../navbar';
 
 const BabelBlogDeets = () => {
 
@@ -29,9 +30,11 @@ const BabelBlogDeets = () => {
     return(
         <div className={isDarkMode}>
         <div className='fullblog'>
+        
             <div className='blogTitle'>
-            <h2>{data.title}</h2>
-            <h3>{data.date}</h3>
+            <Navbar/>
+                <h2>{data.title}</h2>
+                <h3>{data.date}</h3>
             </div>
             <div className='bcontent'>
                 {data && data.body.map((body)=>{

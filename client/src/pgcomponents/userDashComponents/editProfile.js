@@ -174,12 +174,12 @@ export function MainProf({props, propID}) {
                 window.localStorage.setItem( 'roles', roles )
                 window.localStorage.setItem( 'presists', true )
                 window.localStorage.setItem( 'email', email ) 
-                window.dispatchEvent(new Event('roles'));
                 setIsUser(localStorage.getItem('roles'))
                 console.log(response, 'res from login')
                 console.log(isUser, 'is user from login')
+                navigate('/')
             }
-            navigate('/babelusers')
+            
             //if(newdata.status) {
             //    navigate.push('/userspine/myprofile')
         }

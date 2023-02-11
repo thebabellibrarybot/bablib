@@ -4,19 +4,24 @@ import { useParams } from "react-router-dom";
 
 import { Link } from "react-router-dom";
 import { FaBible } from "react-icons/fa";
+import Navbar from "../navbar";
+import useTheme from "../hooks/useTheme";
 
 
 const BabelDetails = () => {
 
     const { id } = useParams()
+    const { isDarkMode } = useTheme()
 
 return (
+    <div className={isDarkMode}>
+        <Navbar/>
     <div className="tombscreen">
         <Link to = {`/babeltombs/${id}/microfilm`}>
             <button>
                 <h2><FaBible />
                     {`[ microFilmssss ]`}</h2>             
-            </button>
+            </button> 
         </Link>
         <Link to = {`/babeltombs/${id}/transcript`}>
         <button>
@@ -30,11 +35,7 @@ return (
                 {`[ transLate ]`}</h2>             
         </button>
         </Link>
-
-
-
-
-        
+    </div>
     </div>
 )
 }

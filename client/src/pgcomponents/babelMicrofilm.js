@@ -2,7 +2,9 @@ import React from 'react'
 import { useEffect, useState } from "react";
 import axios from "axios";
 import HTMLFlipBook from "react-pageflip";
-import '../styles/flip.css'
+//import '../styles/flip.css'
+import Navbar from '../navbar';
+import useTheme from '../hooks/useTheme';
 
 
 const BabelMicrofilm = () => {
@@ -10,6 +12,8 @@ const BabelMicrofilm = () => {
     // loading data
     const path  = window.location.pathname;
     const [microfilms, setmicrofilms] = useState();
+    const {isDarkMode} = useTheme();
+
     useEffect (() => {
         axios.get(`${path}`)
     .then((res) => { 
@@ -35,34 +39,24 @@ const BabelMicrofilm = () => {
    
     // establishing logic 
     return (
-        <div className='full'>
-          <div className="main-page-container" height = {H} width = {W}>
-            <HTMLFlipBook
-              showCover={true}
-              width={W}
-              height={H}
-              style={{ margin: "0 auto" }}
-            >
-              <img src={url} alt="" />
+        <div className={isDarkMode}>
 
+          <Navbar/>
+
+          <div className="main-page-container" height = {H} width = {W}>
+            <HTMLFlipBook showCover={true} width={W} height={H} className = 'bookpage'>
+              <img src={url} alt="" />
               {microfilms.map((el, i) => (
                 <div className="demoPage" key={i}>
-                <div className='pg'>
-                  <img src={el.obj_url} alt={el.page_num}/>
+                  <div className='pg'>
+                    <img src={el.obj_url} alt={el.page_num}/>
+                  </div>
+                  <p>pg:{el.page_num}</p>
                 </div>
-                <p>pg:{el.page_num}</p>
-                </div>
-
               ))}
             </HTMLFlipBook>
           </div>
-          <div className='info'>
-                <div className='stuff'>
-                <p>this is the info about the book</p>
-
-                </div>
-            </div>
         </div>
-      );
+      )
               }
 export default BabelMicrofilm;
