@@ -8,7 +8,7 @@ const babelUserRoleModel = new Schema ({
     rotatorRoles: [{type: Array}],
     rotatorSyle: { type: String, required: false },
     rotatorAbility: {type: String, required: false}
-})
+}) 
 
 const UserRolesModel = mongoose.model('userRotators', babelUserRoleModel);
 

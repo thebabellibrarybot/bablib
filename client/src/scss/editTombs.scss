@@ -1,0 +1,31 @@
+.tombeditor {
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    .active-image {
+        display: flex;
+        height: 75%;
+        justify-content: space-evenly;
+    }
+    .active-imageview {
+        width: 100%;
+    }
+    .active-imageinfo {
+        overflow-y: auto;
+    }
+    .editor-actions {
+        background-color: $darkuser-focus-background;
+        border-radius: 10px;
+        margin-top: 3px;
+    }
+    .effects-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding: 5px;
+        button {
+            padding: 3px;
+        }
+    }
+}

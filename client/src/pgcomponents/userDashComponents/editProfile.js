@@ -13,6 +13,7 @@ export function LeftProf({props}) {
     const navigate = useNavigate()
     const prop = props
     const [data, setData] = useState(null);
+    const [cansee, setCansee] = useState(false)
 
     useEffect(() => {
 
@@ -36,11 +37,15 @@ export function LeftProf({props}) {
         }
         if (url[0] === 'delet user') {
             navigate('/deletuser')
-        }   
+        }
+        if (url[0] === 'view tombs') {
+            setCansee(!cansee)
+        }
     }
     if (!data) return (
         <p>loading</p>
     )
+    console.log(data, 'from edit profile left')
     return (
         <div className="userprof-left">
             <div className='right-title'>
@@ -52,6 +57,9 @@ export function LeftProf({props}) {
                         <p onClick={() => handleops(data)} key = {data}>{data}</p>
                     )
                 })}</div>
+            </div>
+            <div className={cansee ? 'viewtombs' : 'invisible' }>
+                <p>you currently have 0 tombs</p>
             </div>
         </div>
     )
@@ -110,7 +118,6 @@ export function MainProf({props, propID}) {
 
 //    const prop = props
     const id = propID
-    console.log(id, 'from editProfile')
     const mid = id.id
     const navigate = useNavigate()
     const [username, setUsername] = useState('');
@@ -119,7 +126,7 @@ export function MainProf({props, propID}) {
     const [ability, setAbility] = useState(id.bird);
     const [theme, setTheme] = useState(id.theme);
     const { setAuth } = useAuth();
-    const { isUser, setIsUser } = useStateHook()
+    const { setIsUser } = useStateHook()
     const LOGIN_URL = '/babelauth/edited';
     const { setIsTheme } = useTheme();
 
@@ -146,7 +153,6 @@ export function MainProf({props, propID}) {
             // save data in localstorage for theme global hook
             // change settings in backend so reload shows updated status
             // have an err catch that will show is user is no longer available
-            console.log('from main')
 
             // mk a login req
             window.localStorage.setItem('theme', theme)
@@ -159,7 +165,7 @@ export function MainProf({props, propID}) {
                     withCredentials: true
                 }
             )
-            console.log(response, 'response from axios post')
+            // this isn't working right... i'm not even getting the alert but the post is working
             if (email === response.email) {
                 const accessToken = response?.data?.accessToken;
                 const roles = response?.data?.roles;
@@ -175,9 +181,7 @@ export function MainProf({props, propID}) {
                 window.localStorage.setItem( 'presists', true )
                 window.localStorage.setItem( 'email', email ) 
                 setIsUser(localStorage.getItem('roles'))
-                console.log(response, 'res from login')
-                console.log(isUser, 'is user from login')
-                navigate('/')
+                navigate('/babelusers')
             }
             
             //if(newdata.status) {
