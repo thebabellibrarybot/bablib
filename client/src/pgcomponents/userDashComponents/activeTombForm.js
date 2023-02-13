@@ -1,9 +1,11 @@
 import { useState } from "react";
+import useCurTomb from "../../hooks/useCurTomb";
 
 const ActiveTombForm = (props) => {
 
     const userid = props.propID
     console.log('userid from activetombform', userid)
+
 
     const [tombname, setTombName] = useState('');
     const [tombSubName, setTombSubName] = useState('');
@@ -13,14 +15,26 @@ const ActiveTombForm = (props) => {
     const [country, setCountry] = useState('');
     const [digitization, setDigitization] = useState('');
     const [library, setLibrary] = useState('');
-
-
+    const {curTombInfo, setCurTombInfo} = useCurTomb();
     const [submit, setSubmitted] = useState(false);
 
     function subTombInfo () {
         setSubmitted(true)
-
-    }
+        const tombInfo = {
+            tombname: tombname,
+            tombSubName: tombSubName,
+            originalLanguage: originalLanguage,
+            dateCreated: dateCreated,
+            patron: patron,
+            country: country,
+            digitization: digitization,
+            library: library
+        };
+        setCurTombInfo(tombInfo)
+        console.log(tombInfo, 'tomb info send to memory')
+        window.localStorage.setItem('curTombInfo', JSON.stringify(tombInfo))
+        console.log(curTombInfo, 'curTombInfo from useCurTomb effect after sent to localstorage')
+    }   
 
     return (
         <div className={submit ? "invisible" : "userprof-main"}>

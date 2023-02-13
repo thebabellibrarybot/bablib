@@ -5,6 +5,7 @@ import MyProfile from '../../components/userDashComs/myProfile';
 import useTheme from '../../hooks/useTheme';
 import Navbar from '../../navbar';
 import axios from 'axios';
+import useStateHook from '../../hooks/useUserState';
 
 //import '../../styles/userDash.css';
 
@@ -18,6 +19,8 @@ const UserSpine = () => {
     const location = useLocation();
     const id = 'getuser';
     const { isDarkMode } = useTheme();
+    const { isUser } = useStateHook();
+    console.log(isUser, ' isuser from userspine')
 
     useEffect(() => {
 

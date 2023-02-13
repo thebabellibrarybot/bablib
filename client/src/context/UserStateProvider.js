@@ -1,30 +1,19 @@
-import React, { useEffect, useState} from "react";
+import React, { useState} from "react";
 
 import { useStateContex } from "./UseStateContext";
 
 const UserStateProvider = ({children}) => {
 
-    const [isUser, setIsUser] = useState(JSON.parse(localStorage.getItem("role")) || false);
+    const userData = window.localStorage.getItem('userState')
 
-    useEffect(() => {
+    const [isUser, setIsUser] = useState(JSON.parse(userData) || 'bop');
 
-        const handleStorageEvent = (event) => {
-            console.log(event.key, event.newValue, 'handlestorage event')
-        }
-
-        if (isUser === false) {
-            window.addEventListener('roles', handleStorageEvent)
-            setIsUser(localStorage.getItem('roles'))
-            //console.log(isUser, 'isuser')
-        }
-
-    }, [isUser])
 
 
     return (
         <useStateContex.Provider value = {{isUser, setIsUser}}>
             {children}
-        </useStateContex.Provider>
+        </useStateContex.Provider> 
     )
 }
 

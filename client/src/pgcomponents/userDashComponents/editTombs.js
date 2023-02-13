@@ -1,14 +1,16 @@
 import ActiveTombForm from "./activeTombForm";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import useCurTomb from "../../hooks/useCurTomb";
+import { TombUploader } from "./tombUploader";
+//import useCurTomb from "../../hooks/useCurTomb";
 
 export function LeftTomb({props}) {
 
     const prop = props
     const [data, setData] = useState(null);
     const [cansee, setCansee] = useState(false)
-    const { curTombArray, setCurTombArray } = useCurTomb();
+    const [form, setForm] = useState(false);
+    //const { curTombArray, setCurTombArray } = useCurTomb();
 
     useEffect(() => {
 
@@ -25,10 +27,17 @@ export function LeftTomb({props}) {
 
     function handleops (url) {
         if (url[0] === 'view tombs') {
+            if (form === true) {
+                setForm(false)
+            }
             setCansee(!cansee)
         }
         if (url[0] === 'add pages') {
             console.log('add pages button tiggered')
+            if (cansee === true) {
+                setCansee(false)
+            }
+            setForm(!form)
         }
     }
     if (!data) return (
@@ -49,12 +58,14 @@ export function LeftTomb({props}) {
             <div className={cansee ? 'viewtombs' : 'invisible' }>
                 <p>you currently have 0 tombs</p>
             </div>
+            <div className={form ? 'viewform' : 'invisible'}>
+                <TombUploader/>
+            </div>
         </div>
     )
 }
 export function RightTomb({props}) {
 
-    console.log('these are the RightTomb props', props)
 
     return (
         <p>active image wheele</p>
@@ -62,7 +73,7 @@ export function RightTomb({props}) {
 }
 export function MainTomb({props, propID}) {
 
-    console.log('these are the MainTomb props', props, propID)
+    
 
     return (
         <div className="tombeditor">

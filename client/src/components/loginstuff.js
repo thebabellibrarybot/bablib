@@ -9,7 +9,7 @@ import axios from "axios";
 const LOGIN_URL = '/babelauth';
  
 const Login = () => {
-    const { setIsUser } = useStateHook();
+    const { isUser, setIsUser } = useStateHook();
     const { setIsTheme } = useTheme();
 
     const navigate = useNavigate();
@@ -61,13 +61,15 @@ const Login = () => {
                 setEmail('');
                 setPassword('');
                 setIsTheme(response.data.theme)
+                window.localStorage.setItem('userState', JSON.stringify(response.data))
+                setIsUser(response)
+                console.log(response, 'response.data', isUser, 'is user')
                 window.localStorage.setItem('resfromlogin', response.data.theme)
                 alert(`succ login for ${email}, msg from loginstuff`)
                 window.localStorage.setItem( 'roles', roles )
                 window.localStorage.setItem( 'presists', true )
                 window.localStorage.setItem( 'email', email ) 
                 window.dispatchEvent(new Event('roles'));
-                setIsUser(localStorage.getItem('roles'))
                 navigate('/userspine');
                 }
                 else {
