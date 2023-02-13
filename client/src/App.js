@@ -22,6 +22,7 @@ import UnderConstruction from './pgcomponents/userDashComponents/underConstructi
 import UserStateProvider from './context/UserStateProvider';
 import useTheme from './hooks/useTheme';
 import ThemeProvider from './context/themeProvider';
+import CurTombProvider from './context/curTombProvider';
 
 // styles
 import './scss/_main.scss';
@@ -51,6 +52,7 @@ import { Route, Routes} from  'react-router-dom';
         <div className='app'>
           
           <UserStateProvider>
+          <CurTombProvider>
 
           <div className='content'>
             
@@ -89,6 +91,7 @@ import { Route, Routes} from  'react-router-dom';
             {/* admin app functions */}
 
           </div>
+          </CurTombProvider>
           </UserStateProvider>
           
         </div>

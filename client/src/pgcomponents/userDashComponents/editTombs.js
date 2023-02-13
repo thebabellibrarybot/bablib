@@ -1,12 +1,14 @@
 import ActiveTombForm from "./activeTombForm";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import useCurTomb from "../../hooks/useCurTomb";
 
 export function LeftTomb({props}) {
 
     const prop = props
     const [data, setData] = useState(null);
     const [cansee, setCansee] = useState(false)
+    const { curTombArray, setCurTombArray } = useCurTomb();
 
     useEffect(() => {
 
@@ -25,11 +27,13 @@ export function LeftTomb({props}) {
         if (url[0] === 'view tombs') {
             setCansee(!cansee)
         }
+        if (url[0] === 'add pages') {
+            console.log('add pages button tiggered')
+        }
     }
     if (!data) return (
         <p>loading</p>
     )
-    console.log(data, 'from edit profile left')
     return (
         <div className="userprof-left">
             <div className='right-title'>
