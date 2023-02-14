@@ -21,7 +21,7 @@ const logoutRoute = require('./routes/logoutRoute');
 
 //verified routes
 const babelUserhomeRoute = require('./routes/babelUserHomeRoute');
-
+const babelusertombsRoute = require('./routes/babelusertombsRoute');
 
 const mongoose = require('mongoose');
 const app = express();
@@ -82,6 +82,8 @@ app.use('/logout', logoutRoute);
 // route for userspine AKA userDash Pages AKA protected routes
 //app.use(verifyJWT);
 app.use('/userspine', babelUserhomeRoute); 
+//route for editing // viewing tombs
+app.use('/usertombs', babelusertombsRoute);
 
 
 // serve static assests if in production
