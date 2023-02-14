@@ -51,6 +51,7 @@ export function TombUploader(){
 							<p>Size in bytes: {data.size}</p>
 							<p>lastModifiedDate:{' '}
 						{data.lastModifiedDate.toLocaleDateString()}</p>
+							<p>path: {data.path}</p>
 						</div>
 					)
 				})
