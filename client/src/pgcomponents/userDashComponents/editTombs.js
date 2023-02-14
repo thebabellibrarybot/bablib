@@ -2,7 +2,7 @@ import ActiveTombForm from "./activeTombForm";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { TombUploader } from "./tombUploader";
-//import useCurTomb from "../../hooks/useCurTomb";
+import useCurTomb from "../../hooks/useCurTomb";
 
 export function LeftTomb({props}) {
 
@@ -10,7 +10,6 @@ export function LeftTomb({props}) {
     const [data, setData] = useState(null);
     const [cansee, setCansee] = useState(false)
     const [form, setForm] = useState(false);
-    //const { curTombArray, setCurTombArray } = useCurTomb();
 
     useEffect(() => {
 
@@ -64,16 +63,38 @@ export function LeftTomb({props}) {
         </div>
     )
 }
-export function RightTomb({props}) {
+export function RightTomb() {
 
+    const { curTombArray } = useCurTomb();
 
-    return (
-        <p>active image wheele</p>
+    useEffect(() => {
+        console.log(curTombArray, 'from use effecrt')
+    }, [curTombArray])
+
+    if (curTombArray === 'bop') {
+        return (
+            <p>no tombs added yet</p>
+        )
+    }
+    if (curTombArray !== null) {return (
+        <div>
+            <p>active image wheele</p>
+            {curTombArray.file.map((tomb, i)=>{
+                console.log(tomb.name, i, 'from added to right')
+                return (
+                    <div>
+                    <p>page name:{tomb.name}</p>
+                    <p>page num: {i}</p>
+                    </div>
+                )
+            })}
+        </div>
     ) 
+    }
 }
 export function MainTomb({props, propID}) {
 
-    
+
 
     return (
         <div className="tombeditor">

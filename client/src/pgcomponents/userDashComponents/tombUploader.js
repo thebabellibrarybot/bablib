@@ -21,9 +21,11 @@ export function TombUploader(){
 	};
 
 	const handleSubmission = () => {
-		setCurTombArray(selectedFile);
-		console.log(curTombArray, 'new curtomb array', selectedFile, 'and selected file');
-		console.log(isUser, 'userstate')
+		const myfile = {
+			file: selectedFile
+		}
+		setCurTombArray(myfile);
+		console.log(curTombArray, 'new curtomb array', myfile, 'and selected file');
 		const myFiles = { 
 			file: selectedFile,
 			userinfo: isUser }

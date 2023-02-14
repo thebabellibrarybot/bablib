@@ -1,5 +1,6 @@
 import { useState } from "react";
 import useCurTomb from "../../hooks/useCurTomb";
+import useStateHook from "../../hooks/useUserState";
 
 const ActiveTombForm = (props) => {
 
@@ -17,6 +18,8 @@ const ActiveTombForm = (props) => {
     const [library, setLibrary] = useState('');
     const {curTombInfo, setCurTombInfo} = useCurTomb();
     const [submit, setSubmitted] = useState(false);
+    const { isUser } = useStateHook();
+
 
     function subTombInfo () {
         setSubmitted(true)
@@ -32,8 +35,12 @@ const ActiveTombForm = (props) => {
         };
         setCurTombInfo(tombInfo)
         console.log(tombInfo, 'tomb info send to memory')
-        window.localStorage.setItem('curTombInfo', JSON.stringify(tombInfo))
         console.log(curTombInfo, 'curTombInfo from useCurTomb effect after sent to localstorage')
+        // for axios post
+        const myInfo = {
+            tombinfo: tombInfo,
+            userinfo: isUser
+        }
     }   
 
     return (
@@ -41,7 +48,7 @@ const ActiveTombForm = (props) => {
         <div className='right-title'>
             <h3>Tomb Info</h3>
         </div>
-        <div className='show-cur-user'>
+        <form className='show-cur-user' onSubmit={subTombInfo}>
             <div className='cur-username'>
                 <div className='edit-cur-username'>
                     <input className='edit-cur-username' value = {tombname} onChange = {(e) => setTombName(e.target.value)} type="text" placeholder="tomb name">
@@ -93,9 +100,9 @@ const ActiveTombForm = (props) => {
             </div>
 
             <div className = "cur-username">
-                <button className='edit-cur-username' onClick={subTombInfo}>save info</button>
+                <button className='edit-cur-username' type = 'submit'>save info</button>
             </div>
-        </div>
+        </form>
     </div>
     )
 }

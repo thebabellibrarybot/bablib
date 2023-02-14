@@ -5,10 +5,9 @@ const ThemeProvider = ({children}) => {
     
     // add state saver in local storage for onload...
 
-    const curTombInfoMemory = window.localStorage.getItem('curTombInfo')
 
-    const [curTombArray, setCurTombArray] = useState(null);
-    const [curTombInfo, setCurTombInfo] = useState(JSON.stringify(curTombInfoMemory));
+    const [curTombArray, setCurTombArray] = useState('bop');
+    const [curTombInfo, setCurTombInfo] = useState('bop');
     const [curTombEffect, setCurTombEffect] = useState(null);
 
 
