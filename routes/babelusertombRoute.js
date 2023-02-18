@@ -4,7 +4,7 @@ const babelusertombsController = require('../controllers/babelusertombsControlle
 const multer = require('multer');
 
 // Create a Multer storage object with S3 options // MIDDLEWARE ELEMENT (SHOULD BE EXPORTED TO MIDDLEWARE DIR)
-const storage = multer.memoryStorage({
+const storage = multer.memoryStorage({ 
     destination: function (req, file, cb) {
       cb(null, '');
     },

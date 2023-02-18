@@ -65,25 +65,39 @@ export function LeftTomb({props}) {
 export function RightTomb() {
 
     const { curTombArray } = useCurTomb();
+    const [checkedItem, setCheckedItem] = useState(null);
 
     // updates when curTombArray changes
     useEffect(() => {
-        console.log(curTombArray, 'from use effecrt')
+        //console.log(curTombArray, 'from use effecrt')
     }, [curTombArray])
 
+    // set curImage with checkbox-onclickevent
+    const handleCheck = (tomb) => {
+        setCheckedItem(tomb);
+        console.log('checked item', checkedItem);
+      };
+
+    // return if no tombs added
     if (curTombArray === 'bop') {
         return (
             <p>no tombs added yet</p>
         )
     }
+    // return once tombs are added
     if (curTombArray !== null) {return (
         <div>
-            <p>active image wheele</p>
             {curTombArray.file.map((tomb, i)=>{
                 return (
-                    <div>
-                    <p>page num: {i}</p>
-                    <img src = {tomb.Location} alt = {tomb.originalName} key = {i}></img>
+                    <div key = {i}>
+                        <input 
+                        type="checkbox"
+                        onChange={() => handleCheck(i)}
+                        checked={checkedItem === i}
+                        />
+                        <p>page num: {i}</p>
+                        <p>{checkedItem}</p>
+                        <img src = {tomb.Location} alt = {tomb.originalName} key = {i}></img>
                     </div>
                 )
             })}
