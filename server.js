@@ -5,6 +5,7 @@ require('dotenv').config();
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const corsOptions = require('./config/corsOptions');
+//const bodyParser = require('body-parser');
 const credentials = require('./middleware/credentials');
 
 // pub routes
@@ -21,8 +22,9 @@ const logoutRoute = require('./routes/logoutRoute');
 
 //verified routes
 const babelUserhomeRoute = require('./routes/babelUserHomeRoute');
-const babelusertombsRoute = require('./routes/babelusertombsRoute');
+const babelusertombsRoute = require('./routes/babelusertombRoute');
 
+// basic vars 
 const mongoose = require('mongoose');
 const app = express();
 const Port = process.env.PORT || 5000
@@ -33,6 +35,8 @@ console.log(Port, 'port')
 
 // fetch cookies credentials requirement
 app.use(credentials);
+//body parser
+//app.use(bodyParser.json());
 // cross origin resource sharing
 app.use(cors(corsOptions));
 // built-in middleware to handle urlencoded form data
@@ -57,11 +61,11 @@ connection.once('open', () => {
  
 
 
-// routes
+// routes \\
 
 // get home data
 app.use('/home', babelHomeRoute);   
-// route for tombs
+// route for public_tombs
 app.use('/babeltombs', babelTombRoutes);
 // route for blogs
 app.use('/babelblogls', babelBloglsRoute);
@@ -83,7 +87,7 @@ app.use('/logout', logoutRoute);
 //app.use(verifyJWT);
 app.use('/userspine', babelUserhomeRoute); 
 //route for editing // viewing tombs
-app.use('/usertombs', babelusertombsRoute);
+app.use('/usertombs', babelusertombsRoute); 
 
 
 // serve static assests if in production
@@ -98,5 +102,3 @@ app.get('*', (req, res) => {
 app.listen(Port, () => {
     console.log(`listening on ${Port}`)
 });
-
-

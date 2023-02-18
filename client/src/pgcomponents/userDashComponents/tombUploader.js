@@ -1,57 +1,52 @@
 import React, {useState} from 'react';
 import useCurTomb from '../../hooks/useCurTomb';
 import useStateHook from "../../hooks/useUserState";
+import axios from 'axios';
 
 export function TombUploader(){
+
 	const [selectedFile, setSelectedFile] = useState();
 	const [isFilePicked, setIsFilePicked] = useState(false);
-	const { curTombArray, setCurTombArray } = useCurTomb();
+	const { setCurTombArray } = useCurTomb();
     const { isUser } = useStateHook();
 
-	console.log(isUser, 'from edit tomb for user')
-
 	const changeHandler = (event) => {
-		//setSelectedFile(event.target.files);
-        //console.log(selectedFile, 'file selected')
-		//setIsFilePicked(true);
         const chosenfiles = Array.prototype.slice.call(event.target.files);
-        setSelectedFile(chosenfiles)
-		setIsFilePicked(true)
-        console.log(chosenfiles, 'chosen files')
+        setSelectedFile(chosenfiles);	
+		setIsFilePicked(true);
 	};
-
-	const handleSubmission = () => {
-		const myfile = {
-			file: selectedFile
-		}
-		setCurTombArray(myfile);
-		console.log(curTombArray, 'new curtomb array', myfile, 'and selected file');
-		const myFiles = { 
-			file: selectedFile,
-			userinfo: isUser }
-		//axios.post myfiles
-		console.log(myFiles, 'fired from handleSubmission')
-		 };
-
-		// post file meta-data to the api as well, use userState to find users bucket ect
-		// add custom api to post file // return s3 bucket strings and upload s3 bucket string to global_CurTombArray
-	
-
+	const handleSubmission = async () => {
+			
+		// set form to upload to s3 and mongoDB
+		const formData = new FormData();
+		for (let i = 0; i < selectedFile.length; i++) {
+			formData.append('files', selectedFile[i]);
+			formData.append("userInfo", JSON.stringify(isUser));
+		  }
+		try {
+			const response = await axios.post('/usertombs/addusertomb', formData);
+			const myfileID = {
+				file: response.data
+			}
+			// set curTombArray with info from axios res(including tombID)
+			setCurTombArray(myfileID)
+			} catch (error) {
+			console.error(error);
+			}
+	 	};
 	return(
         <div>
 			<input name="file" onChange={changeHandler} type='file' multiple/>
 			{isFilePicked ? (
 				selectedFile.map((data, i) => {
-					console.log(data, 'data')
 					return (
 						<div>
-							<p>File: {i}</p>
-							<p>FileName: {data.name}</p>
-							<p>Filetype: {data.type}</p>
-							<p>Size in bytes: {data.size}</p>
-							<p>lastModifiedDate:{' '}
+							<p key = {i}>File: {i}</p>
+							<p key = {i + 1}>FileName: {data.name}</p>
+							<p key = {i + 2}>Filetype: {data.type}</p>
+							<p key = {i + 3}>Size in bytes: {data.size}</p>
+							<p key = {i + 4}>lastModifiedDate:{' '}
 						{data.lastModifiedDate.toLocaleDateString()}</p>
-							<p>path: {data.path}</p>
 						</div>
 					)
 				})

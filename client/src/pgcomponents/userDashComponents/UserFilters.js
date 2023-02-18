@@ -16,7 +16,6 @@ export function FilterMain({props, propID}) {
     const data = props
     const id = propID
     const type = data.rotatorType
-    console.log(id, 'id from filtermain')
 
     if (type === 'myprofile') return (
         <MainProf props = {data} propID = {id}/>

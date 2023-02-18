@@ -1,24 +1,19 @@
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema
-
+ 
 const babelusertombsSchema = new Schema({
-    tombname: { type: String, required: true },
-    tombSubName: { type: String, required: true },
-    oriiginalLanguage: { type: String, required: true },
-    dateCreated: { type: String, required: true },
-    patron: { type: String, required: true },
-    country: { type: String, required: true },
-    digitization: { type: String, required: true },
-    library: { type: String, required: true },
-    filename: { type: String, required: true },
-    filetype: { type: String, required: true },
-    size: { type: String, required: true },
-    lastModifiedDate: { type: String, required: true },
-    path: { type: String, required: true },
-    s3_buk: {type: String, required: true },
-    email: { type: String, required: true },
-    pwd: { type: String, required: true }
+    tombname: { type: String, required: false },
+    tombID: { type: String, required: false },
+    originalLanguage: { type: String, required: false },
+    dateCreated: { type: String, required: false },
+    patron: { type: String, required: false },
+    country: { type: String, required: false },
+    digitization: { type: String, required: false },
+    library: { type: String, required: false },
+    file: { type: Array, required: false }, //array
+    s3_buk: {type: String, required: false },
+    username: { type: String, required: false }
 })
 
 const BabelUserTombModel = mongoose.model('userbooksoverview', babelusertombsSchema)

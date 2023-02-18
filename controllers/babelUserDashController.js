@@ -62,7 +62,7 @@ const getUserDash = async(req,res) => {
     }
     console.log(url, 'url')
     const nav = await UserRolesModel.findOne(query);
-    console.log(nav, 'nav')
+    //console.log(nav, 'nav')
     try {
         res.status(200).json(nav)
     } catch (err) {
@@ -79,7 +79,7 @@ const getUserOptionsPanel = async (req, res) => {
         rotatorUrlParam : url
     }
     const ops = await UserRolesModel.findOne(query);
-    console.log(ops, 'from useroptionspanel in userdashcontroller')
+    //console.log(ops, 'from useroptionspanel in userdashcontroller')
     try {
         res.status(200).json(ops.rotatorRoles)
     } catch (err) {
@@ -94,7 +94,7 @@ const getUserStats = async (req, res) => {
     const query = {
         rotatorUrlParam : url
     }
-    console.log(query, 'from stats')
+    //console.log(query, 'from stats')
     const ops = await UserRolesModel.findOne(query);
     try {
         res.status(200).json(ops.rotatorRoles)

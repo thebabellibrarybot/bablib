@@ -5,7 +5,7 @@ import useStateHook from "../../hooks/useUserState";
 const ActiveTombForm = (props) => {
 
     const userid = props.propID
-    console.log('userid from activetombform', userid)
+    //console.log('userid from activetombform', userid)
 
 
     const [tombname, setTombName] = useState('');
@@ -34,8 +34,8 @@ const ActiveTombForm = (props) => {
             library: library
         };
         setCurTombInfo(tombInfo)
-        console.log(tombInfo, 'tomb info send to memory')
-        console.log(curTombInfo, 'curTombInfo from useCurTomb effect after sent to localstorage')
+        //console.log(tombInfo, 'tomb info send to memory')
+        //console.log(curTombInfo, 'curTombInfo from useCurTomb effect after sent to localstorage')
         // for axios post
         const myInfo = {
             tombinfo: tombInfo,

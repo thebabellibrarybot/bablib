@@ -13,7 +13,7 @@ const UserRoleSelector = () => {
         })
         .catch((err) => console.log(err))
     }, [path])
-    console.log(data, 'data from ROLESELECTOR')
+    //console.log(data, 'data from ROLESELECTOR')
 
     const handleextra = (el) => {
         console.log('handle extra triggered', el)

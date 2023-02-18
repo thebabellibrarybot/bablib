@@ -9,15 +9,15 @@ const handleLogin = async (req, res) => {
     const user = req.body.email
     const pwd = req.body.password
 
-    console.log('looking for', user, pwd)
+    //console.log('looking for', user, pwd)
 
     if (!user || !pwd)  {
-        console.log( 'err from handlelogin') 
+        //console.log( 'err from handlelogin') 
         return res.status(409).json({ 'message': 'Username and password are required.' })};
     const query = { 
         "email": user
     }
-    console.log('prod from auth controller')
+    //console.log('prod from auth controller')
     const foundUser = await BabelUserModel.findOne(query).exec();
     if (!foundUser) return res.sendStatus(403); //Unauthorized 
     // evaluate password 
@@ -54,7 +54,7 @@ const handleLogin = async (req, res) => {
          // save refresh token to current user mongo database...
          const appendage = { $set: { token: refreshToken } }
          const updatedUser = await BabelUserModel.updateOne(query, appendage)
-         console.log('new mongo user field with refToken from authCont', updatedUser)
+        // console.log('new mongo user field with refToken from authCont', updatedUser)
 
         // Creates Secure Cookie with refresh token      *** SameSite = 'none, 'secure' ??
         res.cookie('jwt', refreshToken, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 });
@@ -67,19 +67,18 @@ const handleLogin = async (req, res) => {
     }
 } 
 
-
 const editLogin = async (req, res) => {
-    console.log('editLogin fired')
+    //console.log('editLogin fired')
 
     const mid = req.body.mid
     const newPassword = await bcrypt.hash(req.body.password, 10)
 
-    console.log(req.body.ability,'bird')
+    //console.log(req.body.ability,'bird')
 
-    console.log(mid, newPassword)
+    //console.log(mid, newPassword)
 
     if (!mid || !newPassword)  {
-        console.log( 'err from no new mid or newpassword found') 
+       // console.log( 'err from no new mid or newpassword found') 
         return res.status(409).json({ 'message': 'Username and password are required.' })};
 
     const query = { 
@@ -93,7 +92,7 @@ const editLogin = async (req, res) => {
         "ability": 2001,
         "theme": req.body.theme
     } 
-    console.log('new info from user', newinfo)
+    //console.log('new info from user', newinfo)
 
     const editedUser = await BabelUserModel.updateOne(query, newinfo)
     if (!editedUser) {
@@ -102,10 +101,10 @@ const editLogin = async (req, res) => {
     }
     const foundUser = await BabelUserModel.findOne(query).exec();
 
-    console.log('looking for', query, 'found', foundUser)
+    //console.log('looking for', query, 'found', foundUser)
 
     if (!foundUser) {
-        console.log(foundUser, 'no user found in founduser')
+        //console.log(foundUser, 'no user found in founduser')
         return res.sendStatus(401);
     }
 
@@ -141,7 +140,7 @@ const editLogin = async (req, res) => {
          // save refresh token to current user mongo database...
          const appendage = { $set: { token: refreshToken } }
          const updatedUser = await BabelUserModel.updateOne(query, appendage)
-         console.log('new mongo user field with refToken from authCont', updatedUser)
+         //console.log('new mongo user field with refToken from authCont', updatedUser)
 
         // Creates Secure Cookie with refresh token      *** SameSite = 'none, 'secure' ??
         res.cookie('jwt', refreshToken, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 });

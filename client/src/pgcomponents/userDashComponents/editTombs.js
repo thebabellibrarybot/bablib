@@ -11,8 +11,8 @@ export function LeftTomb({props}) {
     const [cansee, setCansee] = useState(false)
     const [form, setForm] = useState(false);
 
+    // get user props // will update if props change (mayb mk props that can change to delet tomb if tomb is uploaded)
     useEffect(() => {
-
         const getUsers = async () => {
             try {
                 const response = await axios.get(`/userspine/${prop}/optpanel`); 
@@ -32,7 +32,6 @@ export function LeftTomb({props}) {
             setCansee(!cansee)
         }
         if (url[0] === 'add pages') {
-            console.log('add pages button tiggered')
             if (cansee === true) {
                 setCansee(false)
             }
@@ -67,6 +66,7 @@ export function RightTomb() {
 
     const { curTombArray } = useCurTomb();
 
+    // updates when curTombArray changes
     useEffect(() => {
         console.log(curTombArray, 'from use effecrt')
     }, [curTombArray])
@@ -80,11 +80,11 @@ export function RightTomb() {
         <div>
             <p>active image wheele</p>
             {curTombArray.file.map((tomb, i)=>{
-                console.log(tomb.name, i, 'from added to right')
+                console.log(tomb, i, 'from added to right')
                 return (
                     <div>
-                    <p>page name:{tomb.name}</p>
                     <p>page num: {i}</p>
+                    <img src = {tomb.Location} alt = {tomb.originalName} key = {i}></img>
                     </div>
                 )
             })}

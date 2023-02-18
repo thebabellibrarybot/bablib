@@ -18,8 +18,8 @@ const UserProfile = () => {
     const [rotatorData, setRotatorData] = useState(null);
     const {id} = useParams();
     const { isDarkMode } = useTheme();
-    console.log(data, 'data sent to my profile')
-    console.log(id, 'id')
+    //console.log(data, 'data sent to my profile')
+    //console.log(id, 'id')
 
     // add if (setMain == pressed) then useDoOpposite()
     function handleMain () {
@@ -64,7 +64,7 @@ const UserProfile = () => {
         }
         getRotator();
     }, [axiosPrivate, id])
-    console.log(rotatorData, 'rotatorData form userprofile')
+    //.log(rotatorData, 'rotatorData form userprofile')
 
     if (!data) return (
         <p>loading</p>

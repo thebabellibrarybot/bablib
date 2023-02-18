@@ -36,7 +36,8 @@ const handleNewUser = async (req, res) => {
                 email: req.body.email,
                 password: newPassword,
                 ability: ability,
-                bird: bird
+                bird: bird,
+                theme: 'light'
             }) 
 
             res.json({ status: 'ok' })

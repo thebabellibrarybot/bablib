@@ -39,11 +39,8 @@ import { Route, Routes} from  'react-router-dom';
 
   function App() {
 
-  // do useTheme and setTheme
-
-  // classname = {theme}s
+  // do useTheme 
   const { isDarkMode } = useTheme()
-  console.log(isDarkMode, 'from home')
 
   return (
     <ThemeProvider>
