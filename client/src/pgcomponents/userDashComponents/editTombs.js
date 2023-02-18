@@ -80,7 +80,6 @@ export function RightTomb() {
         <div>
             <p>active image wheele</p>
             {curTombArray.file.map((tomb, i)=>{
-                console.log(tomb, i, 'from added to right')
                 return (
                     <div>
                     <p>page num: {i}</p>
