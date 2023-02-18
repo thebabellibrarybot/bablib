@@ -1,12 +1,12 @@
 import { useState } from "react";
 import useCurTomb from "../../hooks/useCurTomb";
-import useStateHook from "../../hooks/useUserState";
+//import useStateHook from "../../hooks/useUserState";
 
 const ActiveTombForm = (props) => {
 
-    const userid = props.propID
+    //const userid = props.propID
     //console.log('userid from activetombform', userid)
-
+ 
 
     const [tombname, setTombName] = useState('');
     const [tombSubName, setTombSubName] = useState('');
@@ -16,9 +16,9 @@ const ActiveTombForm = (props) => {
     const [country, setCountry] = useState('');
     const [digitization, setDigitization] = useState('');
     const [library, setLibrary] = useState('');
-    const {curTombInfo, setCurTombInfo} = useCurTomb();
+    const { setCurTombInfo} = useCurTomb();
     const [submit, setSubmitted] = useState(false);
-    const { isUser } = useStateHook();
+    //const { isUser } = useStateHook();
 
 
     function subTombInfo () {
@@ -37,10 +37,7 @@ const ActiveTombForm = (props) => {
         //console.log(tombInfo, 'tomb info send to memory')
         //console.log(curTombInfo, 'curTombInfo from useCurTomb effect after sent to localstorage')
         // for axios post
-        const myInfo = {
-            tombinfo: tombInfo,
-            userinfo: isUser
-        }
+        
     }   
 
     return (
