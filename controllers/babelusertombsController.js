@@ -38,7 +38,7 @@ const postusertomb = async (req, res) => {
       region: 'us-east-1'
       });
   // establish basic info
-    const userInfo = req.body.userInfo[0];
+    const userInfo = req.body.userInfo.length > 1000 ? req.body.userInfo : req.body.userInfo[0];
     const usernameObj = JSON.parse(userInfo);
     const bucketName = 'thisthatbukfornola';
     const user = usernameObj.username
