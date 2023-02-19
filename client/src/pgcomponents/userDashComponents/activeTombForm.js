@@ -1,11 +1,12 @@
 import { useState } from "react";
 import useCurTomb from "../../hooks/useCurTomb";
+import axios from "axios";
 //import useStateHook from "../../hooks/useUserState";
 
 const ActiveTombForm = (props) => {
 
-    //const userid = props.propID
-    //console.log('userid from activetombform', userid)
+    const tombID = props.curTombImg.tombID
+    console.log('tombID from activetombform', tombID)
  
 
     const [tombname, setTombName] = useState('');
@@ -21,7 +22,7 @@ const ActiveTombForm = (props) => {
     //const { isUser } = useStateHook();
 
 
-    function subTombInfo () {
+    const subTombInfo = async () => {
         setSubmitted(true)
         const tombInfo = {
             tombname: tombname,
@@ -31,13 +32,19 @@ const ActiveTombForm = (props) => {
             patron: patron,
             country: country,
             digitization: digitization,
-            library: library
+            library: library,
+            tombID: tombID
         };
-        setCurTombInfo(tombInfo)
-        //console.log(tombInfo, 'tomb info send to memory')
-        //console.log(curTombInfo, 'curTombInfo from useCurTomb effect after sent to localstorage')
-        // for axios post
-        
+        try {
+            // for axios post
+            const response = await axios.post('/usertombs/addusertombinfo', tombInfo);
+                
+            // gonna change this to include image array by getting it from axios res
+            setCurTombInfo(response)
+
+        } catch (err) {
+            console.log(err, 'err from post tomb info')
+        }
     }   
 
     return (

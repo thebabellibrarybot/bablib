@@ -14,7 +14,8 @@ const storage = multer.memoryStorage({
 router.route('/usertombslist')
     .get( babelusertombsController.getusertombs );
 
-// add a tomb
+// append tomb info to uploaded files
+router.post('/addusertombinfo', babelusertombsController.postusertombinfo)
 
 
 // Route to handle file uploads

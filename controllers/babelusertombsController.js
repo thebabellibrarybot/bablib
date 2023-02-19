@@ -11,30 +11,23 @@ const { v4: uuidv4 } = require('uuid');
 const getusertombs = async (req, res) => {
     console.log(req)
 };
+
 // i can delet this prac
-const postuserbucker = async (req, res) => {
-  const s3 = new AWS.S3({
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    region: 'us-east-1'
-    });
-
-  const bucketName = 'sdlakfjksalnfksaldjfklsajflsdf-my-new-bucket';
-  console.log(bucketName, 'buk name')
-
-  const params = {
-    Bucket: bucketName,
-    ACL: 'public-read' // set permissions for the bucket
-  };
-
-  s3.createBucket(params, (err, data) => {
-    if (err) {
-      console.log('Error creating bucket:', err);
-    } else {
-      console.log('Bucket created successfully!', data);
-    }
-  });
+const postusertombinfo = async (req, res) => {
+  console.log('user tomb info post fired')
+  const tombID = req.body.tombID
+  /*
+  const appendInfo = {
+    tombname: ,
+    originalLanguage: ,
+    dateCreated: ,
+    patron: ,
+    country: ,
+    digitization: ,
   }
+  */
+
+}
 
 // adds curTombArray to s3_userTombs and mongoDB.userTombs
 const postusertomb = async (req, res) => {
@@ -101,4 +94,4 @@ const postusertomb = async (req, res) => {
     // in frontend: setCurTombArray([curTombArray, tombID])
 
 };
-module.exports = { getusertombs, postusertomb, postuserbucker };
+module.exports = { getusertombs, postusertomb, postusertombinfo };
