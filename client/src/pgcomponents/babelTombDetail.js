@@ -29,12 +29,7 @@ return (
                 {`[ transScript ]`}</h2>             
         </button>
         </Link>
-        <Link to = {`/babeltombs/${id}/translate`} >
-        <button>
-            <h2><FaBible />
-                {`[ transLate ]`}</h2>             
-        </button>
-        </Link>
+        
     </div>
     </div>
 )

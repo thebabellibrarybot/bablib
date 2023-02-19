@@ -21,9 +21,7 @@ export default class Navbar extends Component {
                     <Link to="/babelTombs" className="link">babelTombs</Link>
                 </li>
                 
-                <li className='clicked'>
-                    <Link to="/babelblogls" className='link'>babelBlogls</Link>
-                </li>
+               
                 
                 <li className='clicked'>
                     <Link to = "/babelusers" className='link'>forUsers</Link>

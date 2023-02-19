@@ -89,7 +89,7 @@ const BasicTable = () => {
                   <tr {...row.getRowProps()}>
                   {row.cells.map(cell => {
                     return (
-                    <td {...cell.getCellProps()}><Link className = 'rows' to = {`/babeltombs/${row.original._id}`}>{cell.render('Cell')}</Link></td>
+                    <td {...cell.getCellProps()}><Link className = 'rows' to = {`/babeltombs/${row.original._id}/microfilm`}>{cell.render('Cell')}</Link></td>
                     )
                   })}
                 </tr>
