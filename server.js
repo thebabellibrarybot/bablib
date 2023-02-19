@@ -8,7 +8,7 @@ const corsOptions = require('./config/corsOptions');
 //const bodyParser = require('body-parser');
 const credentials = require('./middleware/credentials');
 
-// pub routes
+// pub routes  
 const babelTombRoutes = require('./routes/babelTombs');
 const babelHomeRoute = require('./routes/babelHomeRoute');
 const babelBloglsRoute = require('./routes/babelBloglsRoute');
