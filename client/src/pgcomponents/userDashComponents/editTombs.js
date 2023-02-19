@@ -64,7 +64,7 @@ export function LeftTomb({props}) {
 }
 export function RightTomb() {
 
-    const { curTombArray } = useCurTomb();
+    const { curTombArray, setCurTombImg } = useCurTomb();
     const [checkedItem, setCheckedItem] = useState(null);
 
     // updates when curTombArray changes
@@ -73,9 +73,11 @@ export function RightTomb() {
     }, [curTombArray])
 
     // set curImage with checkbox-onclickevent
-    const handleCheck = (tomb) => {
-        setCheckedItem(tomb);
+    const handleCheck = (tomb, i) => {
+        setCheckedItem(i);
+        console.log('selected tomb', tomb)
         console.log('checked item', checkedItem);
+        setCurTombImg(tomb);
       };
 
     // return if no tombs added
@@ -92,7 +94,7 @@ export function RightTomb() {
                     <div key = {i}>
                         <input 
                         type="checkbox"
-                        onChange={() => handleCheck(i)}
+                        onChange={() => handleCheck(tomb, i)}
                         checked={checkedItem === i}
                         />
                         <p>page num: {i}</p>
@@ -107,7 +109,19 @@ export function RightTomb() {
 }
 export function MainTomb({props, propID}) {
 
+    const { curTombImg } = useCurTomb();
+    
+    useEffect(() => {
+        console.log(curTombImg, 'from use effecrt curtombimg')
+    }, [curTombImg])
 
+    // waiting screen if curTombImg isn't selected
+    if (curTombImg === 'bop') {
+        return (
+            <p>no cur image selected</p>
+        )
+    }
+    // axios post to add tomb info once tomb is uploaded and curImg is selected
 
     return (
         <div className="tombeditor">
@@ -115,9 +129,10 @@ export function MainTomb({props, propID}) {
             <div className="active-image">
                 <div className="active-imageview">
                     <p>view active imge[0]</p>
+                    <img src = {curTombImg.Location} alt = {curTombImg.filename}></img>
                 </div>
                 <div className="active-imageinfo">
-                    <ActiveTombForm propID = {propID}/>
+                    <ActiveTombForm curTombImg = {curTombImg}/>
                 </div>
             </div>
 

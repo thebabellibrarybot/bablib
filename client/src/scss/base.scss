@@ -2,7 +2,14 @@
 * {
     margin: 0;
     font-family: 'Ubuntu', sans-serif;
-    
+    // babeltomb deets
+    .tombscreen {
+        display: flex;
+        justify-content:space-evenly;
+        align-items: center;
+        text-align: center;
+        border: 1px solid white;
+    }
   }
 
 .light{

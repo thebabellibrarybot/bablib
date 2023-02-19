@@ -9,11 +9,10 @@ const ThemeProvider = ({children}) => {
     const [curTombArray, setCurTombArray] = useState('bop');
     const [curTombInfo, setCurTombInfo] = useState('bop');
     const [curTombEffect, setCurTombEffect] = useState(null);
+    const [curTombImg, setCurTombImg] = useState('bop');
 
-
-    
     return ( 
-        <CurTombContext.Provider value = {{ curTombArray, setCurTombArray, curTombInfo, setCurTombInfo, curTombEffect, setCurTombEffect }}>
+        <CurTombContext.Provider value = {{ curTombArray, setCurTombArray, curTombImg, setCurTombImg, curTombInfo, setCurTombInfo, curTombEffect, setCurTombEffect }}>
             {children}
         </CurTombContext.Provider>
     )

@@ -13,7 +13,7 @@ const babelusertombsSchema = new Schema({
     library: { type: String, required: false },
     file: { type: Array, required: false }, //array
     s3_buk: {type: String, required: false },
-    username: { type: String, required: false }
+    username: { type: String, required: false } 
 })
 
 const BabelUserTombModel = mongoose.model('userbooksoverview', babelusertombsSchema)
