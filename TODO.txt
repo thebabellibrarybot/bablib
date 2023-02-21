@@ -1,0 +1,10 @@
+- seems to be a problem with NGINX upload parameters
+
+- seems to be a problem with attaching {userInfo} from userState(); to mongo.create(TombUploader) 
+    * this only happens in production so far... possibly an issue with NGINX also.
+
+- apply themes to new sections and normalize themes to minize space
+
+- add loading buffer and lazy loading to multer
+
+- start work on secondary backend with html forms

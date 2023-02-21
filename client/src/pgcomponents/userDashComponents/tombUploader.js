@@ -15,6 +15,7 @@ export function TombUploader(){
         const chosenfiles = Array.prototype.slice.call(event.target.files);
         setSelectedFile(chosenfiles);	
 		setIsFilePicked(true);
+		console.log(isUser, 'isuser')
 	};
 	const handleSubmission = async () => {
 			

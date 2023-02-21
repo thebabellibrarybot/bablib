@@ -6,6 +6,7 @@ import { COLUMNS } from '../components/tombcolumns';
 import { useEffect, useState } from "react";
 import axios from "axios";
 import GlobalFilter from "../components/globalFilter";
+import useCurTomb from "../hooks/useCurTomb";
 
 
 const BasicTable = (prop) => {
@@ -13,17 +14,19 @@ const BasicTable = (prop) => {
     const url = prop.prop.url;
     const style = prop.prop.style;
     const endpoint = prop.prop.endpoint;
+    const {curTombArray} = useCurTomb();
 
     const [data, setData] = useState([]);
     
  
     useEffect(() => {
+      console.log(curTombArray)
       axios(`${url}`)
         .then((res) => {
          setData(res.data);
         })
         .catch((err) => console.log(err))
-    }, [url]);
+    }, [curTombArray, url]);
 
     
 
