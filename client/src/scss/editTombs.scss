@@ -7,12 +7,14 @@
         display: flex;
         height: 75%;
         justify-content: space-evenly;
+        overflow: hidden;
     }
     .active-imageview {
-        width: 100%;
+        width: 50%;
     }
     .active-imageinfo {
         overflow-y: auto;
+        width: 20%;
     }
     .editor-actions {
         background-color: $darkuser-focus-background;
@@ -29,3 +31,49 @@
         }
     }
 }
+.preview {
+    img {
+        width: 60%;
+    }
+}
+.tomb-viewset {
+    margin-top: 15px;
+}
+
+.checkbox input[type="checkbox"] + .checkmark::before {
+    background-color: $darkuser-focus-background;
+  }
+  
+  .checkbox input[type="checkbox"]:checked + .checkmark::before {
+    background-color: $darkuser-base;
+  }
+  
+  .checkbox .checkmark {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $darkuser-base;
+    border-radius: 4px;
+    position: relative;
+  }
+  
+  .checkbox .checkmark::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    background-color: $darkuser-focus-background;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  
+  .checkbox input[type="checkbox"]:checked + .checkmark::before {
+    opacity: 1;
+  }
+  

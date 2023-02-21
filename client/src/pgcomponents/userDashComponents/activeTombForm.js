@@ -25,14 +25,14 @@ const ActiveTombForm = (props) => {
     const subTombInfo = async () => {
         setSubmitted(true)
         const tombInfo = {
-            tombname: tombname,
+            book_title: tombname,
             tombSubName: tombSubName,
-            originalLanguage: originalLanguage,
-            dateCreated: dateCreated,
+            language: originalLanguage,
+            date: dateCreated,
             patron: patron,
-            country: country,
+            location: country,
             digitization: digitization,
-            library: library,
+            current_lib: library,
             tombID: tombID
         };
         try {
@@ -52,7 +52,7 @@ const ActiveTombForm = (props) => {
         <div className='right-title'>
             <h3>Tomb Info</h3>
         </div>
-        <form className='show-cur-user' onSubmit={subTombInfo}>
+        <div className='show-cur-user'>
             <div className='cur-username'>
                 <div className='edit-cur-username'>
                     <input className='edit-cur-username' value = {tombname} onChange = {(e) => setTombName(e.target.value)} type="text" placeholder="tomb name">
@@ -104,9 +104,9 @@ const ActiveTombForm = (props) => {
             </div>
 
             <div className = "cur-username">
-                <button className='edit-cur-username' type = 'submit'>save info</button>
+                <button className='edit-cur-username' onClick={subTombInfo}>save info</button>
             </div>
-        </form>
+        </div>
     </div>
     )
 }

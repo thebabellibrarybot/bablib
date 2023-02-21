@@ -91,15 +91,21 @@ export function RightTomb() {
         <div>
             {curTombArray.file.map((tomb, i)=>{
                 return (
-                    <div key = {i}>
+                    <div className = 'tomb-viewset' key = {i}>
+                        <label className="checkbox">
                         <input 
                         type="checkbox"
+                        style={{ display: 'none' }}
                         onChange={() => handleCheck(tomb, i)}
                         checked={checkedItem === i}
                         />
-                        <p>page num: {i}</p>
-                        <p>{checkedItem}</p>
-                        <img src = {tomb.Location} alt = {tomb.originalName} key = {i}></img>
+                        <span className="checkmark"></span>
+                        select page
+                        </label>
+                        <p>pg:{i}</p>
+                        <div className = 'preview'>
+                            <img src = {tomb.Location} alt = {tomb.originalName} key = {i}></img>
+                        </div>
                     </div>
                 )
             })}
@@ -128,7 +134,6 @@ export function MainTomb({props, propID}) {
 
             <div className="active-image">
                 <div className="active-imageview">
-                    <p>view active imge[0]</p>
                     <img src = {curTombImg.Location} alt = {curTombImg.filename}></img>
                 </div>
                 <div className="active-imageinfo">

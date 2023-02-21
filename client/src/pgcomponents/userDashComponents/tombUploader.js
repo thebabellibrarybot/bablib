@@ -8,6 +8,7 @@ export function TombUploader(){
 	const [selectedFile, setSelectedFile] = useState();
 	const [isFilePicked, setIsFilePicked] = useState(false);
 	const { setCurTombArray } = useCurTomb();
+	const [visible, setVisible] = useState(true);
     const { isUser } = useStateHook();
 
 	const changeHandler = (event) => {
@@ -32,7 +33,11 @@ export function TombUploader(){
 			setCurTombArray(myfileID)
 			} catch (error) {
 			console.error(error);
+			alert(
+				'too many files uploaded, users  are restricted to 10 imgs per tomb, files must be smaller than 1mb, and files must be in .jpg or .png format, thank you for abiding by out guidelines'
+			)
 			}
+			setVisible(false)
 	 	};
 	return(
         <div>
@@ -40,7 +45,7 @@ export function TombUploader(){
 			{isFilePicked ? (
 				selectedFile.map((data, i) => {
 					return (
-						<div>
+						<div className={visible ? 'nada' : 'invisible'}>
 							<p key = {i}>File: {i}</p>
 							<p key = {i + 1}>FileName: {data.name}</p>
 							<p key = {i + 2}>Filetype: {data.type}</p>

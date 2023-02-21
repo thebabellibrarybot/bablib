@@ -2,35 +2,59 @@ const BabelUserTombModel = require('../models/usertombModel');
 const AWS = require('aws-sdk');
 AWS.config.update({ region: 'us-east-1' });
 const { v4: uuidv4 } = require('uuid');
+const { findOneAndUpdate } = require('../models/usertombModel');
 
 
 
 // get all user tombs list
-//router.route('/usertombslist')
-  //  .get( babelusertombsController.getusertombs );
 const getusertombs = async (req, res) => {
-    console.log(req)
+    console.log('fired')
+    console.log(req.params, 'searching for tombs')
+    const { id } = req.params 
+    const query = {
+        username: id
+    }
+    console.log(id)
+
+    const babeltomb = await BabelUserTombModel.find(query)
+    if (!babeltomb) {
+        return res.status(404).json({err: 'no such tombP'})
+    }
+    console.log(babeltomb, 'returned tombs')
+    res.status(200).json(babeltomb);
 };
 
-// i can delet this prac
+// update a tombs info
 const postusertombinfo = async (req, res) => {
   console.log('user tomb info post fired')
-  const tombID = req.body.tombID
-  /*
+
   const appendInfo = {
-    tombname: ,
-    originalLanguage: ,
-    dateCreated: ,
-    patron: ,
-    country: ,
-    digitization: ,
-  }
-  */
+    book_title: req.body.book_title,
+    tombSubName: req.body.tombSubName,
+    language: req.body.language,
+    date: req.body.date,
+    patron: req.body.patron,
+    location: req.body.location,
+    digitization: req.body.digitization,
+    current_lib: req.body.current_lib,
+    tombID: req.body.tombID
+  };
+
+  const query = {
+    tombID: req.body.tombID
+  };
+
+  const response = await BabelUserTombModel.findOneAndUpdate(query, appendInfo);
+
+  console.log(response, 'response from postusertombinfo');
+
+  res.status(200);
 
 }
 
 // adds curTombArray to s3_userTombs and mongoDB.userTombs
 const postusertomb = async (req, res) => {
+  console.log('post usertomb fired', req.files.length );
   // setup s3 connection
     const s3 = new AWS.S3({
       accessKeyId: process.env.AWS_ACCESS_KEY_ID,
@@ -38,7 +62,8 @@ const postusertomb = async (req, res) => {
       region: 'us-east-1'
       });
   // establish basic info
-    const userInfo = req.body.userInfo.length > 1000 ? req.body.userInfo : req.body.userInfo[0];
+  console.log(req.files.length)
+    const userInfo = req.files.length <= 1  ? req.body.userInfo : req.body.userInfo[0];
     const usernameObj = JSON.parse(userInfo);
     const bucketName = 'thisthatbukfornola';
     const user = usernameObj.username
@@ -82,11 +107,27 @@ const postusertomb = async (req, res) => {
       const res = {
         tombID: tombID,
         file: [uploadedFiles],
-        s3_buk: bucketName,
+        s3buk: bucketName,
         username: user
       }
       await BabelUserTombModel.create(res);
     }
+    const appendInfo = {
+      book_title: 'NaN',
+      tombSubName: 'NaN',
+      language: 'NaN',
+      date: 'NaN',
+      patron: 'NaN',
+      location: 'NaN',
+      digitization: 'NaN',
+      current_lib: 'NaN',
+    };
+  
+    const query = {
+      tombID: tombID
+    };
+  
+    const response = await BabelUserTombModel.findOneAndUpdate(query, appendInfo);
     res.status(200).json( uploadedFiles );
 
     // mk mongoDB storage with tomb name and info and an array of the image urls

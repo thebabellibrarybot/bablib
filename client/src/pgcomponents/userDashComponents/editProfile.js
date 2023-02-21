@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-//import '../../styles/userProfile.css';
 import { useNavigate } from 'react-router-dom';
 import BirdProfile from '../../components/BirdProfile';
 import useAuth from '../../hooks/useAuth';
@@ -63,7 +62,7 @@ export function LeftProf({props}) {
             </div>
         </div>
     )
-}
+};
 
 export function RightProf({props}) {
 
@@ -75,7 +74,7 @@ export function RightProf({props}) {
         
         const getUsers = async () => {
             try {
-                const response = await axios.get(`/userspine/userstats/${prop}`); 
+                const response = await axios.get(`/userspine/userstats/myprofile`); 
                 setData(response.data);
             } catch (err) {
                 console.log(err, 'err from userProfile');
@@ -112,7 +111,7 @@ export function RightProf({props}) {
             </div>
         </div>
     )
-}
+};
 
 export function MainProf({props, propID}) {
 
@@ -264,14 +263,4 @@ export function MainProf({props, propID}) {
             </form>
         </div>
     )
-}
-// i should just have a component named options panel that can
-// be used where the myProfile drop-down usernav is too.... 
-
-// do i need to be drilling // filering these props or is it really functionally useful...
-// lets add a myTombs or myModels before we know for sure
-
-// logger https://codesandbox.io/s/github/final-form/react-final-form/tree/main/examples/subscriptions?file=/index.js
-
-// removed                                 <option className='option' value = "lightuser">lightmode user</option>
-// removed                                <option className='option' value = "darkuser">darkmode user</option>
+};
