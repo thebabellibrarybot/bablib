@@ -3,6 +3,7 @@ const FormData = require('form-data');
 
 // post tombs into text lines
 const mkTextLines = async (req, res) => {
+    // also need to add a docker wrap and resturcute all files
 // need to add a handler for files or urls * files in req.files and urls in req.headers
     const formData = new FormData();
 
