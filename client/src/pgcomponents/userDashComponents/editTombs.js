@@ -134,6 +134,7 @@ export function MainTomb({props, propID}) {
 
             <div className="active-image">
                 <div className="active-imageview">
+                    <p>name: {curTombImg.Location}</p>
                     <img src = {curTombImg.Location} alt = {curTombImg.filename}></img>
                 </div>
                 <div className="active-imageinfo">
