@@ -1,0 +1,60 @@
+Bablib ECC files
+
+NGINX
+/etc/nginx/sites-available
+
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+       root /home/ubuntu/bablib/client/build;
+
+        # Add index.php to the list if you are using PHP
+        index index.html;
+
+        server_name babserverII;
+
+        location / {
+                proxy_pass http://localhost:5000;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection 'upgrade';
+                proxy_set_header Host $host;
+                proxy_cache_bypass $http_upgrade;
+        }
+        #       server_name _;
+
+#       location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+#               try_files $uri $uri/ =404;
+#       }
+
+        # pass PHP scripts to FastCGI server
+        #
+        #location ~ \.php$ {
+        #       include snippets/fastcgi-php.conf;
+        #
+        #       # With php-fpm (or other unix sockets):
+        #       fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+        #       # With php-cgi (or other tcp sockets):
+        #       fastcgi_pass 127.0.0.1:9000;
+        #}
+
+        # deny access to .htaccess files, if Apache's document root
+        # concurs with nginx's one
+        #
+        #location ~ /\.ht {
+        #       deny all;
+        #}
+}
+
+--------------------------------------------------------------------------------------------------
+
+.ENV
+
+PORT = 5000
+MONGO_URI = mongodb+srv://babeluser:babelpassword@babelcluster.fogf4.mongodb.net/test?retryWrites=true&w=majority
+AWS_ACCESS_KEY_ID = AKIAYWD73ZQORRG3CVEN
+AWS_SECRET_ACCESS_KEY = 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
+AWS_REGION = us-east-1
+
