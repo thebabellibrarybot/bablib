@@ -12,6 +12,7 @@ COPY package*.json ./
 RUN npm install --silent
 
 # Copy to app 
+COPY .env .
 COPY . .
 
 # Exports
