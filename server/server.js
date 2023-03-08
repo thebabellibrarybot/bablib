@@ -93,13 +93,13 @@ app.use('/usertombs', babelusertombsRoute);
 
 // serve static assests if in production
     // set static folder
-app.use(express.static('../client/build')) 
+app.use(express.static('/client/build')) 
 
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 });
 
 // port and clear run statements;
-app.listen(Port, () => { 
+app.listen(Port, () => {  
     console.log(`listening on ${Port}`)
 });

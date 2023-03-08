@@ -8,12 +8,13 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install 
+RUN npm install --production
 
 # Copy the rest of the application
 COPY . .
 
-USER node
+# Build the React app
+RUN npm run build
 
 # Start the application
 CMD ["npm", "start"]
